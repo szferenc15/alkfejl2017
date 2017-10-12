@@ -1,6 +1,6 @@
 Alkalmazások fejlesztése
 
-Bevezető:
+## Bevezető:
 	A projektről:
 		A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely MVC (Model-View-Controller) architektúrában épül fel. Használt technológiák: H2 adatbáziskezelő, JPA (Java Persistence API) relációs adatkezelő,
 		Thymeleaf szerveroldali template motor XHTML/HTML5/XML-hez és Lombok szerveroldali automatikus erőforrás menedzser
