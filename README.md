@@ -1,10 +1,9 @@
 # Alkalmazások fejlesztése - Cinema World
 
-## Bevezető:
-### A projektről:
+## A projektről:
 A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely MVC (Model-View-Controller) architektúrában épül fel.
 
-### Célközönség:
+## Célközönség:
 A program célközönsége bármely személy, akinek a moziba járás nem csak a filmnézésről szól, hanem az élményekről, a kényelemről és a prémium minőségi finomságokról.
 
 ## Szerepkörök:
@@ -34,7 +33,7 @@ A program célközönsége bármely személy, akinek a moziba járás nem csak a
 [//]: <> (Adatbázisok)
 [//]: <> (UML diagram)
 
-#### Használt technológiák|fejlesztő eszközök:
+## Használt technológiák|fejlesztő eszközök:
 + H2 adatbáziskezelő,
 + JPA (Java Persistence API) relációs adatkezelő,
 + Thymeleaf szerveroldali template motor XHTML/HTML5/XML-hez
