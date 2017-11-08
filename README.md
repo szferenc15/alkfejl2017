@@ -31,8 +31,8 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + Platformfüggetlenség
 + Felhasználóbarát design
 
-[comment]: # "(Adatbázisok)"
-[comment]: # "(UML diagram)"
+[//]: <> "(Adatbázisok)"
+[//]: <> "(UML diagram)"
 
 ## Használt technológiák, fejlesztői környezetek, programozási nyelvek:
 + [**H2**](http://www.h2database.com/html/tutorial.html) - Adatbáziskezelő,
