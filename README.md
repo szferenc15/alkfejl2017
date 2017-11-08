@@ -1,4 +1,4 @@
-# Alkalmazások fejlesztése - **Cinema World**
+# Alkalmazások fejlesztése - Cinema World
 
 A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm) (Model-View-Controller) architektúrában épül fel.
 
@@ -31,9 +31,6 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + Platformfüggetlenség
 + Felhasználóbarát design
 
-[//]: <> "(Adatbázisok)"
-[//]: <> "(UML diagram)"
-
 ## Használt technológiák, fejlesztői környezetek, programozási nyelvek:
 + [**H2**](http://www.h2database.com/html/tutorial.html) - Adatbáziskezelő,
 + [**JPA**](https://www.tutorialspoint.com/jpa/index.htm) - (Java Persistence API) Relációs adatkezelő
@@ -44,6 +41,12 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + [**Microsoft Visual Studio Code**](https://code.visualstudio.com/) - Forráskód szerkesztő
 + [**Angular 2/4**](https://angular.io/) - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
 + [**JAVA 7/8**](https://en.wikipedia.org/wiki/Java_(programming_language)) - Programozási nyelv (szerveroldal)
+
+```
+TODO:
+    1. Adatbázis séma leírása
+    2. UML diagramok
+```
 
 ## Szerzők:
 + **Kapás Dorina Anita**
