@@ -1,42 +1,56 @@
-# Alkalmazások fejlesztése - Cinema World
+<span style="color: black;">
 
-## A projektről:
-A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely MVC (Model-View-Controller) architektúrában épül fel.
+# <span style="color:orange;">Alkalmazások fejlesztése - **Cinema World**</span>
 
-## Célközönség:
-A program célközönsége bármely személy, akinek a moziba járás nem csak a filmnézésről szól, hanem az élményekről, a kényelemről és a prémium minőségi finomságokról.
+A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm) (Model-View-Controller) architektúrában épül fel.
 
-## Szerepkörök:
-+ Vendég: Filmek adatlapját tudja megnézni, trailereket tudja megnézni.
-+ Felhasználó: Tud foglalni, venni jegyet, illetve filmet értékelni.
-+ Admin: Filmeket tudja felvenni az adatbazisba, illetve törölni tudja őket.
+## <span style="color:orange;">Célközönség:</span>
+Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, hanem az élményekről, a kényelemről és a prémium minőségű finomságokról.
 
-## Funkcionális követelmények:
-+ Vendégként szeretnék a filmek között szabadon böngészni.
-+ Vendégként szeretnék egy film adatait, leírását megtekinteni.
-+ Vendégként szeretnék filmeket keresni.
-+ Vendégként szeretnék tudni regisztrálni az oldalra.
-+ Felhasználóként szeretnék tudni bejelentkezni az oldalra.
-+ Felhasználóként szeretném tudni a profiladataimat szerkeszteni.
-+ Felhasználóként szeretném a saját foglalásaim, illetve vásárlásaim megnézni.
-+ Felhasználóként szeretném értékelni a filmeket.
-+ Adminként szeretnék új filmeket hozzáadni a műsorlistához, illetve törölni is róla.
+## <span style="color:orange;">Szerepkörök:</span>
++ **Vendég**: Filmek adatlapját, illetve előzeteseit tudja megtekinteni.
++ **Felhasználó**: Tud foglalni, venni jegyet, illetve filmet értékelni.
++ **Adminisztrátor**: Új filmeket tud felvenni az adatbázisba, illetve azokat törölni is tudja (ha például egy filmet már nem vetítenek).
 
-## Nem funkcionális követelmények:
+## <span style="color:orange;">Funkcionális követelmények:</span>
++ **Vendégként** szeretnék a filmek között szabadon böngészni.
++ **Vendégként** szeretném egy film adatait, leírását, előzeteseit megtekinteni.
++ **Vendégként** szeretnék filmeket keresni.
++ **Vendégként** szeretnék regisztrálni az oldalra.
++ **Felhasználóként** szeretnék bejelentkezni az oldalra.
++ **Felhasználóként** szeretném szerkeszteni a profiladataimat.
++ **Felhasználóként** szeretném a saját foglalásaim, illetve vásárlásaim megtekinteni.
++ **Felhasználóként** szeretném értékelni a filmeket.
++ **Adminisztrátorként** szeretnék új filmeket hozzáadni a műsorlistához, illetve törölni is róla.
+
+## <span style="color:orange;">Nem funkcionális követelmények:</span>
 + Használhatóság
 + Teljesítmény
++ Hatékonyság
 + Rendelkezésre állás
 + Biztonság
 + Karbantarthatóság
 + Platformfüggetlenség
++ Felhasználóbarát design
 
 [//]: <> (Adatbázisok)
 [//]: <> (UML diagram)
 
-## Használt technológiák|fejlesztő eszközök:
-+ H2 adatbáziskezelő,
-+ JPA (Java Persistence API) relációs adatkezelő,
-+ Thymeleaf szerveroldali template motor XHTML/HTML5/XML-hez
-+ Lombok szerveroldali automatikus erőforrás menedzser
-+ VS Code, Angular 2/4, JAVA Spring Boot, Git, Typescript, JAVA 7/8
-		
+## <span style="color:orange;">Használt technológiák, fejlesztői környezetek, programozási nyelvek:</span>
++ [**H2**](http://www.h2database.com/html/tutorial.html) - Adatbáziskezelő,
++ [**JPA**](https://www.tutorialspoint.com/jpa/index.htm) - (Java Persistence API) Relációs adatkezelő
++ [**Thymeleaf**](http://www.thymeleaf.org/) - Szerveroldali template motor XHTML/HTML5/XML-hez
++ [**Lombok**](https://projectlombok.org/) - Szerveroldali automatikus erőforrás menedzser
++ [**JAVA Spring Boot**](https://projects.spring.io/spring-boot/) - JAVA szerveroldali keretrendszer
++ [**Git**](https://git-scm.com/) - Verziókezelő rendszer
++ [**Microsoft Visual Studio Code**](https://code.visualstudio.com/) - Forráskód szerkesztő
++ [**Angular 2/4**](https://angular.io/) - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
++ [**JAVA 7/8**](https://en.wikipedia.org/wiki/Java_(programming_language)) - Programozási nyelv (szerveroldal)
+
+## <span style="color:orange;">Szerzők:</span>
++ **Kapás Dorina Anita**
++ **Szendrei Ferenc**
+
+[**Eötvös Loránd Tudományegyetem Informatikai Kar**](inf.elte.hu)
+
+</span>
