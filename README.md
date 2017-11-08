@@ -1,18 +1,16 @@
-<span style="color: black;">
-
-# <span style="color:orange;">Alkalmazások fejlesztése - **Cinema World**</span>
+# Alkalmazások fejlesztése - **Cinema World**
 
 A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm) (Model-View-Controller) architektúrában épül fel.
 
-## <span style="color:orange;">Célközönség:</span>
+## Célközönség:
 Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, hanem az élményekről, a kényelemről és a prémium minőségű finomságokról.
 
-## <span style="color:orange;">Szerepkörök:</span>
+## Szerepkörök:
 + **Vendég**: Filmek adatlapját, illetve előzeteseit tudja megtekinteni.
 + **Felhasználó**: Tud foglalni, venni jegyet, illetve filmet értékelni.
 + **Adminisztrátor**: Új filmeket tud felvenni az adatbázisba, illetve azokat törölni is tudja (ha például egy filmet már nem vetítenek).
 
-## <span style="color:orange;">Funkcionális követelmények:</span>
+## Funkcionális követelmények:
 + **Vendégként** szeretnék a filmek között szabadon böngészni.
 + **Vendégként** szeretném egy film adatait, leírását, előzeteseit megtekinteni.
 + **Vendégként** szeretnék filmeket keresni.
@@ -23,7 +21,7 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + **Felhasználóként** szeretném értékelni a filmeket.
 + **Adminisztrátorként** szeretnék új filmeket hozzáadni a műsorlistához, illetve törölni is róla.
 
-## <span style="color:orange;">Nem funkcionális követelmények:</span>
+## Nem funkcionális követelmények:
 + Használhatóság
 + Teljesítmény
 + Hatékonyság
@@ -33,10 +31,10 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + Platformfüggetlenség
 + Felhasználóbarát design
 
-[//]: <> (Adatbázisok)
-[//]: <> (UML diagram)
+[comment]: # "(Adatbázisok)"
+[comment]: # "(UML diagram)"
 
-## <span style="color:orange;">Használt technológiák, fejlesztői környezetek, programozási nyelvek:</span>
+## Használt technológiák, fejlesztői környezetek, programozási nyelvek:
 + [**H2**](http://www.h2database.com/html/tutorial.html) - Adatbáziskezelő,
 + [**JPA**](https://www.tutorialspoint.com/jpa/index.htm) - (Java Persistence API) Relációs adatkezelő
 + [**Thymeleaf**](http://www.thymeleaf.org/) - Szerveroldali template motor XHTML/HTML5/XML-hez
@@ -47,10 +45,8 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + [**Angular 2/4**](https://angular.io/) - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
 + [**JAVA 7/8**](https://en.wikipedia.org/wiki/Java_(programming_language)) - Programozási nyelv (szerveroldal)
 
-## <span style="color:orange;">Szerzők:</span>
+## Szerzők:
 + **Kapás Dorina Anita**
 + **Szendrei Ferenc**
 
 [**Eötvös Loránd Tudományegyetem Informatikai Kar**](inf.elte.hu)
-
-</span>
