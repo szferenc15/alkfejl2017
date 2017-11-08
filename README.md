@@ -1,6 +1,18 @@
+[MVC]: https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm
+[H2]: http://www.h2database.com/html/tutorial.html
+[JPA]: https://www.tutorialspoint.com/jpa/index.htm
+[Thymeleaf]: http://www.thymeleaf.org/
+[Lombok]: https://projectlombok.org/
+[JAVA Spring Boot]: https://projects.spring.io/spring-boot/
+[Git]: https://git-scm.com/
+[Microsoft Visual Studio Code]: https://code.visualstudio.com/
+[Angular 2/4]: https://angular.io/
+[JAVA 7/8]: https://en.wikipedia.org/wiki/Java_(programming_language)
+[Eötvös Loránd Tudományegyetem Informatikai Kar]: http://inf.elte.hu
+
 # Alkalmazások fejlesztése - Cinema World
 
-A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm) (Model-View-Controller) architektúrában épül fel.
+A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC] (Model-View-Controller) architektúrában épül fel.
 
 ## Célközönség:
 Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, hanem az élményekről, a kényelemről és a prémium minőségű finomságokról.
@@ -32,15 +44,15 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + Felhasználóbarát design
 
 ## Használt technológiák, fejlesztői környezetek, programozási nyelvek:
-+ [**H2**](http://www.h2database.com/html/tutorial.html) - Adatbáziskezelő,
-+ [**JPA**](https://www.tutorialspoint.com/jpa/index.htm) - (Java Persistence API) Relációs adatkezelő
-+ [**Thymeleaf**](http://www.thymeleaf.org/) - Szerveroldali template motor XHTML/HTML5/XML-hez
-+ [**Lombok**](https://projectlombok.org/) - Szerveroldali automatikus erőforrás menedzser
-+ [**JAVA Spring Boot**](https://projects.spring.io/spring-boot/) - JAVA szerveroldali keretrendszer
-+ [**Git**](https://git-scm.com/) - Verziókezelő rendszer
-+ [**Microsoft Visual Studio Code**](https://code.visualstudio.com/) - Forráskód szerkesztő
-+ [**Angular 2/4**](https://angular.io/) - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
-+ [**JAVA 7/8**](https://en.wikipedia.org/wiki/Java_(programming_language)) - Programozási nyelv (szerveroldal)
++ **[H2]** - Adatbáziskezelő,
++ **[JPA]** - (Java Persistence API) Relációs adatkezelő
++ **[Thymeleaf]** - Szerveroldali template motor XHTML/HTML5/XML-hez
++ **[Lombok]** - Szerveroldali automatikus erőforrás menedzser
++ **[JAVA Spring Boot]** - JAVA szerveroldali keretrendszer
++ **[Git]** - Verziókezelő rendszer
++ **[Microsoft Visual Studio Code]** - Forráskód szerkesztő
++ **[Angular 2/4]** - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
++ **[JAVA 7/8]** - Programozási nyelv (szerveroldal)
 
 ```
 TODO:
@@ -52,4 +64,4 @@ TODO:
 + **Kapás Dorina Anita**
 + **Szendrei Ferenc**
 
-[**Eötvös Loránd Tudományegyetem Informatikai Kar**](inf.elte.hu)
+**[Eötvös Loránd Tudományegyetem Informatikai Kar]**
