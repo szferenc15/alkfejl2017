@@ -61,39 +61,39 @@ TODO:
 ```
 
 ## Adatbázis séma
-| CATEGORY                                                            |
-|---------------------|---------------------|-------------------------|
-|          ID         |          INT        | A kategória azonosítója |
-|       CATEGORY      |      VARCHAR(15)    | A kategória neve        |
+|CATEGORY                                                              |
+|---------------------|---------------------|--------------------------|
+|ID                   |INT                  |kategória azonosítója     |
+|CATEGORY             |VARCHAR(15)          |kategória neve            |
 
-|                               FILM                              |
-|---------------------|---------------------|---------------------|
-|          ID         |          INT        | A film azonosítója  |
-|       CATEGORY_ID   |          INT        | A film kategória azonosítója        |
-|        TITLE       |      VARCHAR(50)        | A film címe |
-|        THREED       |      BOOLEAN        | A film háromdimenzióban is elérhető-e |
-|        PLAYTIME       |      INT        | A film játékideje |
-|        PREMIERE        |      DATE        | A film premier dátuma |
-|        AGELIMIT        |      INT        | A film korhatára |
-|        DIRECTORFIRSTNAME       |      VARCHAR(20)        | A rendező vezetékneve |
-|        DIRECTORLASTNAME        |      VARCHAR(20)        | A rendező keresztneve |
-|        COUNTRY        |      VARCHAR(30)        | Származási ország |
-|        YEAR        |      INT        | A film címe |
-|        DESCRIPTION        |      VARCHAR(500)        | A film leírása |
+|FILM                                                                  |
+|---------------------|---------------------|--------------------------|
+|ID                   |INT                  |film azonosítója          |
+|CATEGORY_ID          |INT                  |kategória azonosítója     |
+|TITLE                |VARCHAR(50)          |film címe                 |
+|THREED               |BOOLEAN              |film van-e 3D-ben         |
+|PLAYTIME             |INT                  |film játékideje           |
+|PREMIERE             |DATE                 |film premier dátuma       |
+|AGELIMIT             |INT                  |film korhatára            |
+|DIRECTORFIRSTNAME    |VARCHAR(20)          |rendező vezetékneve       |
+|DIRECTORLASTNAME     |VARCHAR(20)          |rendező keresztneve       |
+|COUNTRY              |VARCHAR(30)          |film származási országa   |
+|YEAR                 |INT                  |film címe                 |
+|DESCRIPTION          |VARCHAR(500)         |film leírása              |
 
-|                             FILM_CATEGORY                            |
-|---------------------|---------------------|---------------------|
-|          FILM_ID         |          INT        | A film azonosítója |
-|       CATEGORY_ID      |      INT   | A kategória azonosítója        |
+|FILM_CATEGORY                                                         |
+|---------------------|---------------------|--------------------------|
+|FILM_ID              |INT                  |film azonosítója          |
+|CATEGORY_ID          |INT                  |kategória azonosítója     |
 
-|                             RESERVATION                            |
-|---------------------|---------------------|---------------------|
-|          ID         |          INT        | A film azonosítója |
-|       USER_ID      |      INT   | A kategória azonosítója        |
-|       SCREEN_ID      |      INT   | A kategória azonosítója        |
-|       NUMBEROFRESERVATIONS      |      INT   | A kategória azonosítója  |
+|RESERVATION                                                           |
+|---------------------|---------------------|--------------------------|
+|ID                   |INT                  |foglalás azonosítója      |
+|USER_ID              |INT                  |felhasználó azonosítója   |
+|SCREEN_ID            |INT                  |vetítés azonosítója       |
+|NUMBEROFRESERVATIONS |INT                  |1 fő foglalásainak száma  |
 
-|User                                                                  |
+|USER                                                                  |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |felhasználó id-ja         |
 |USERNAME             |VARCHAR(15)          |felhasználó neve          |
@@ -103,7 +103,7 @@ TODO:
 |ADMINRIGHT           |BOOLEAN              |rendelkezik-e admin joggal|
 
 
-|Screening                                                             |
+|SCREENING                                                            |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |vetítés id-ja             |
 |ROOM_ID              |INT                  |vetítés terem id-ja       |
@@ -111,7 +111,7 @@ TODO:
 |SCREENDAY            |DATE                 |vetítés napja             |
 |SCREENTIME           |TIME                 |vetítés ideje hh:mm       |
 
-|Room                                                                  |
+|ROOM                                                                  |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |terem id-ja               |
 |SEATNUMBER           |INT                  |terem üléseinek száma     |
