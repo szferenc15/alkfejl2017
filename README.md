@@ -59,6 +59,11 @@ TODO:
     1. Adatbázis séma leírása
     2. UML diagramok
 ```
+## Adatbázis séma
+|       |       |       |
+|-------|-------|-------|
+|       |       |       |
+|       |       |       |
 
 ## Szerzők:
 + **Kapás Dorina Anita**

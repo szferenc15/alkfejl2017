@@ -13,13 +13,15 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Entity
 
-public class Reservation { // TODO
+public class Screening { // TODO
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public int id;
     @Id
-    public int user_id;
+    public int room_id;
     @Id
-    public int screen_id;
-    public int numberOfReservation;
+    public int film_id;
+    public Date screenDay;
+    public Time screenTime;
+
 }
