@@ -61,7 +61,7 @@ TODO:
 ```
 
 ## Adatbázis séma
-|CATEGORY                                                              |
+|CATEGORY             | |                                             |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |kategória azonosítója     |
 |CATEGORY             |VARCHAR(15)          |kategória neve            |
@@ -103,7 +103,7 @@ TODO:
 |ADMINRIGHT           |BOOLEAN              |rendelkezik-e admin joggal|
 
 
-|SCREENING                                                            |
+|SCREENING                                                             |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |vetítés id-ja             |
 |ROOM_ID              |INT                  |vetítés terem id-ja       |
