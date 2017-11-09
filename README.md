@@ -118,7 +118,7 @@ TODO: -
 
 
 ## Egyed-kapcsolat diagram:
-![alt text](./alkfejl2017/img/Entity_Relationship_diagram.png)
+![alt text](./img/Entity_Relationship_diagram.png)
 
 ## Szerzők:
 + **Kapás Dorina Anita H5BG9F**
