@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 @Data
 @NoArgsConstructor
@@ -17,9 +21,14 @@ public class Reservation { // TODO
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public int id;
-    @Id
+
+    //@ManyToMany
+    //@JoinColumn(name = "id")
     public int user_id;
-    @Id
+
+    //@OneToMany
+    //@JoinColumn(name = "id")
     public int screen_id;
+
     public int numberOfReservation;
 }

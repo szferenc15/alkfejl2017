@@ -5,6 +5,12 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GenerationType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Data
 @NoArgsConstructor
@@ -13,7 +19,15 @@ import javax.persistence.Id;
 
 public class FilmCategory {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name="id")
+    public int id;
+    
+    //@OneToMany
+    //@JoinColumn(name = "id")
     public int film_id;
-    @Id
+
+    //@OneToOne
+    //@JoinColumn(name = "id")
     public int category_id;
 }

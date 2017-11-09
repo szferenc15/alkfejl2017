@@ -1,7 +1,6 @@
 package ca.irvine.cinema_world.util;
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
 
 @Data
 
@@ -9,11 +8,10 @@ public class Response<T>{
     public String error;
     public T data;
 
-    public Response(String error, T data){
+    public Response( String error, T data){
         this.error = error;
         this.data = data;
     }
-
     public static <T> Response<T> ok(T data){
         return new Response<T>(null, data);
     }

@@ -11,11 +11,11 @@ import java.util.Optional;
 @Service
 public class UserService{
 
-@Autowired
+    @Autowired
     private UserRepository userRepository;
 
     public Optional<User> login(String username,String password){
-    
+
         Optional<User> optionalUser = userRepository.findByUsername(username);
         return optionalUser.filter(user -> user.getPassword().equals(password));
     }
@@ -25,7 +25,7 @@ public class UserService{
 
         if(!optionalUser.isPresent()){
             User user = new User();
-    
+
             user.setUsername(username);
             user.setPassword(password);
             userRepository.save(user);

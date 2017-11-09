@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 
 @Data
 @NoArgsConstructor
@@ -17,8 +20,13 @@ import javax.persistence.GeneratedValue;
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name="id")
     public int id;
+
+    //@OneToMany
+    //@JoinColumn(name = "id")
     public int category_id;
+
     public String title;
     public boolean threeD;
     public int playTime;

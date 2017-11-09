@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
 
 @Data
 @NoArgsConstructor
@@ -16,6 +17,7 @@ import javax.persistence.GeneratedValue;
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name="id")
     public int id;
     public int seatNumber;
     public boolean IMAX;

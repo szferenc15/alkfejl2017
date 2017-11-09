@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Time;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 
 @Data
 @NoArgsConstructor
@@ -18,11 +21,17 @@ import java.util.Date;
 public class Screening { // TODO
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name="id")
     public int id;
-    @Id
+
+    //@OneToMany
+    //@JoinColumn(name = "id")
     public int room_id;
-    @Id
+
+    //@OneToMany
+    //@JoinColumn(name = "id")
     public int film_id;
+
     public Date screenDay;
     public Time screenTime;
 
