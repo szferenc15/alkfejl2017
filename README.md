@@ -61,12 +61,12 @@ TODO:
 ```
 
 ## Adatbázis séma
-|CATEGORY             | |                                             |
+|CATEGORY             |                     |                          |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |kategória azonosítója     |
 |CATEGORY             |VARCHAR(15)          |kategória neve            |
 
-|FILM                                                                  |
+|FILM                 |                                                |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |film azonosítója          |
 |CATEGORY_ID          |INT                  |kategória azonosítója     |
@@ -81,19 +81,19 @@ TODO:
 |YEAR                 |INT                  |film címe                 |
 |DESCRIPTION          |VARCHAR(500)         |film leírása              |
 
-|FILM_CATEGORY                                                         |
+|FILM_CATEGORY        |                     |                          |
 |---------------------|---------------------|--------------------------|
 |FILM_ID              |INT                  |film azonosítója          |
 |CATEGORY_ID          |INT                  |kategória azonosítója     |
 
-|RESERVATION                                                           |
+|RESERVATION          |                     |                          |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |foglalás azonosítója      |
 |USER_ID              |INT                  |felhasználó azonosítója   |
 |SCREEN_ID            |INT                  |vetítés azonosítója       |
 |NUMBEROFRESERVATIONS |INT                  |1 fő foglalásainak száma  |
 
-|USER                                                                  |
+|USER                 |                     |                          |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |felhasználó id-ja         |
 |USERNAME             |VARCHAR(15)          |felhasználó neve          |
@@ -103,7 +103,7 @@ TODO:
 |ADMINRIGHT           |BOOLEAN              |rendelkezik-e admin joggal|
 
 
-|SCREENING                                                             |
+|SCREENING            |                     |                          |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |vetítés id-ja             |
 |ROOM_ID              |INT                  |vetítés terem id-ja       |
@@ -111,7 +111,7 @@ TODO:
 |SCREENDAY            |DATE                 |vetítés napja             |
 |SCREENTIME           |TIME                 |vetítés ideje hh:mm       |
 
-|ROOM                                                                  |
+|ROOM                 |                     |                          |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |terem id-ja               |
 |SEATNUMBER           |INT                  |terem üléseinek száma     |
