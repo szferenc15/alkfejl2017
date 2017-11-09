@@ -59,14 +59,36 @@ TODO:
     1. Adatbázis séma leírása
     2. UML diagramok
 ```
+
 ## Adatbázis séma
-|                     |                     |                     |
-|---------------------|---------------------|---------------------|
-|                     |                     |                     |
-|                     |                     |                     |
-|                     |                     |                     |
+|User                                                                  |
+|---------------------|---------------------|--------------------------|
+|ID                   |INT                  |felhasználó id-ja         |
+|USERNAME             |VARCHAR(15)          |felhasználó neve          |
+|PASSWORD             |VARCHAR(42)          |felhasználó jelszava      |
+|EMAIL                |VARCHAR(50)          |felhasználó email-e       |
+|PHONENUMBER          |VARCHAR(11)          |felhazsnáló telefonszama  |
+|ADMINRIGHT           |BOOLEAN              |rendelkezik-e admin joggal|
+
+
+|Screening                                                             |
+|---------------------|---------------------|--------------------------|
+|ID                   |INT                  |vetítés id-ja             |
+|ROOM_ID              |INT                  |vetítés terem id-ja       |
+|FILM_ID              |INT                  |vetítés film id-ja        |
+|SCREENDAY            |DATE                 |vetítés napja             |
+|SCREENTIME           |TIME                 |vetítés ideje hh:mm       |
+
+|Room                                                                  |
+|---------------------|---------------------|--------------------------|
+|ID                   |INT                  |terem id-ja               |
+|SEATNUMBER           |INT                  |terem üléseinek száma     |
+|IMAX                 |BOOLEAN              |terem IMAX-es terem-e     |
+|FOURD                |BOOLEAN              |terem 4D-s terem-e        |
+
+
 ## Szerzők:
-+ **Kapás Dorina Anita**
-+ **Szendrei Ferenc**
++ **Kapás Dorina Anita H5BG9F**
++ **Szendrei Ferenc UBRPLU**
 
 **[Eötvös Loránd Tudományegyetem Informatikai Kar]**
