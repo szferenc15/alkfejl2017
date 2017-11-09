@@ -55,8 +55,7 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + **[JAVA 7/8]** - Programozási nyelv (szerveroldal)
 
 ```
-TODO:
-    UML diagramok
+TODO: -
 ```
 
 ## Adatbázis séma
@@ -117,6 +116,9 @@ TODO:
 |IMAX                 |BOOLEAN              |terem IMAX-es terem-e     |
 |FOUR_D               |BOOLEAN              |terem 4D-s terem-e        |
 
+
+## Egyed-kapcsolat diagram:
+![alt text]: 
 
 ## Szerzők:
 + **Kapás Dorina Anita H5BG9F**
