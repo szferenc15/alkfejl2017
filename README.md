@@ -66,7 +66,7 @@ TODO:
 |ID                   |INT                  |kategória azonosítója     |
 |CATEGORY             |VARCHAR(15)          |kategória neve            |
 
-|FILM                 |                                                |
+|FILM                 |                     |                          |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |film azonosítója          |
 |CATEGORY_ID          |INT                  |kategória azonosítója     |
