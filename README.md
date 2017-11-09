@@ -115,7 +115,7 @@ TODO:
 |ID                   |INT                  |terem id-ja               |
 |SEATNUMBER           |INT                  |terem üléseinek száma     |
 |IMAX                 |BOOLEAN              |terem IMAX-es terem-e     |
-|FOUR_D                |BOOLEAN              |terem 4D-s terem-e        |
+|FOUR_D               |BOOLEAN              |terem 4D-s terem-e        |
 
 
 ## Szerzők:
