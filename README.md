@@ -61,7 +61,7 @@ TODO:
 ```
 
 ## Adatbázis séma
-|<td colspan=3>CATEGORY                                                |
+|<th colspan=3>CATEGORY                                                |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |kategória azonosítója     |
 |CATEGORY             |VARCHAR(15)          |kategória neve            |
