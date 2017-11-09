@@ -71,7 +71,7 @@ TODO:
 |ID                   |INT                  |film azonosítója          |
 |CATEGORY_ID          |INT                  |kategória azonosítója     |
 |TITLE                |VARCHAR(50)          |film címe                 |
-|THREED               |BOOLEAN              |film van-e 3D-ben         |
+|THREE_D              |BOOLEAN              |film van-e 3D-ben         |
 |PLAYTIME             |INT                  |film játékideje           |
 |PREMIERE             |DATE                 |film premier dátuma       |
 |AGELIMIT             |INT                  |film korhatára            |
@@ -116,7 +116,7 @@ TODO:
 |ID                   |INT                  |terem id-ja               |
 |SEATNUMBER           |INT                  |terem üléseinek száma     |
 |IMAX                 |BOOLEAN              |terem IMAX-es terem-e     |
-|FOURD                |BOOLEAN              |terem 4D-s terem-e        |
+|FOUR_D                |BOOLEAN              |terem 4D-s terem-e        |
 
 
 ## Szerzők:
