@@ -56,8 +56,7 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 
 ```
 TODO:
-    1. Adatbázis séma leírása
-    2. UML diagramok
+    UML diagramok
 ```
 
 ## Adatbázis séma
@@ -100,7 +99,7 @@ TODO:
 |PASSWORD             |VARCHAR(42)          |felhasználó jelszava      |
 |EMAIL                |VARCHAR(50)          |felhasználó email-e       |
 |PHONENUMBER          |VARCHAR(11)          |felhasználó telefonszáma  |
-|ADMINRIGHT           |BOOLEAN              |rendelkezik-e admin joggal|
+|ADMIN_RIGHT          |BOOLEAN              |rendelkezik-e admin joggal|
 
 
 |SCREENING            |                     |                          |
