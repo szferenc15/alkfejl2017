@@ -61,7 +61,7 @@ TODO:
 ```
 
 ## Adatbázis séma
-|CATEGORY             |                     |                          |
+|<td colspan=3>CATEGORY                                                |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |kategória azonosítója     |
 |CATEGORY             |VARCHAR(15)          |kategória neve            |
@@ -99,7 +99,7 @@ TODO:
 |USERNAME             |VARCHAR(15)          |felhasználó neve          |
 |PASSWORD             |VARCHAR(42)          |felhasználó jelszava      |
 |EMAIL                |VARCHAR(50)          |felhasználó email-e       |
-|PHONENUMBER          |VARCHAR(11)          |felhazsnáló telefonszama  |
+|PHONENUMBER          |VARCHAR(11)          |felhasználó telefonszáma  |
 |ADMINRIGHT           |BOOLEAN              |rendelkezik-e admin joggal|
 
 
