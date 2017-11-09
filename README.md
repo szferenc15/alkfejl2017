@@ -10,6 +10,8 @@
 [JAVA 7/8]: https://en.wikipedia.org/wiki/Java_(programming_language)
 [Eötvös Loránd Tudományegyetem Informatikai Kar]: http://inf.elte.hu
 
+[ER]: ./img/Entity_Relationship_diagram.png "Egyed-kapcsolat diagram"
+
 # Alkalmazások fejlesztése - Cinema World
 
 A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC] (Model-View-Controller) architektúrában épül fel.
@@ -118,7 +120,7 @@ TODO: -
 
 
 ## Egyed-kapcsolat diagram:
-![alt text](./img/Entity_Relationship_diagram.png)
+![alt text][ER]
 
 ## Szerzők:
 + **Kapás Dorina Anita H5BG9F**
