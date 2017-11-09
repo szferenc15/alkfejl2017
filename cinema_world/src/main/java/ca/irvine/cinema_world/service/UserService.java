@@ -1,4 +1,4 @@
-package edu.elte.hello.service;
+package ca.irvine.cinema_world.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +25,7 @@ public class UserService{
 
         if(!optionalUser.isPresent()){
             User user = new User();
+    
             user.setUsername(username);
             user.setPassword(password);
             userRepository.save(user);

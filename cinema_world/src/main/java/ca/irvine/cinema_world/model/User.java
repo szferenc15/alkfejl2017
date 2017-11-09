@@ -1,7 +1,9 @@
 package ca.irvine.cinema_world.model;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,4 +24,25 @@ public class User {
     public String email;
     public String phoneNumber;
     public boolean adminRight;
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
 }
