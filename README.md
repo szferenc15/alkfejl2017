@@ -61,6 +61,38 @@ TODO:
 ```
 
 ## Adatbázis séma
+| CATEGORY                                                            |
+|---------------------|---------------------|-------------------------|
+|          ID         |          INT        | A kategória azonosítója |
+|       CATEGORY      |      VARCHAR(15)    | A kategória neve        |
+
+|                               FILM                              |
+|---------------------|---------------------|---------------------|
+|          ID         |          INT        | A film azonosítója  |
+|       CATEGORY_ID   |          INT        | A film kategória azonosítója        |
+|        TITLE       |      VARCHAR(50)        | A film címe |
+|        THREED       |      BOOLEAN        | A film háromdimenzióban is elérhető-e |
+|        PLAYTIME       |      INT        | A film játékideje |
+|        PREMIERE        |      DATE        | A film premier dátuma |
+|        AGELIMIT        |      INT        | A film korhatára |
+|        DIRECTORFIRSTNAME       |      VARCHAR(20)        | A rendező vezetékneve |
+|        DIRECTORLASTNAME        |      VARCHAR(20)        | A rendező keresztneve |
+|        COUNTRY        |      VARCHAR(30)        | Származási ország |
+|        YEAR        |      INT        | A film címe |
+|        DESCRIPTION        |      VARCHAR(500)        | A film leírása |
+
+|                             FILM_CATEGORY                            |
+|---------------------|---------------------|---------------------|
+|          FILM_ID         |          INT        | A film azonosítója |
+|       CATEGORY_ID      |      INT   | A kategória azonosítója        |
+
+|                             RESERVATION                            |
+|---------------------|---------------------|---------------------|
+|          ID         |          INT        | A film azonosítója |
+|       USER_ID      |      INT   | A kategória azonosítója        |
+|       SCREEN_ID      |      INT   | A kategória azonosítója        |
+|       NUMBEROFRESERVATIONS      |      INT   | A kategória azonosítója  |
+
 |User                                                                  |
 |---------------------|---------------------|--------------------------|
 |ID                   |INT                  |felhasználó id-ja         |
