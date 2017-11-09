@@ -1,4 +1,4 @@
-package edu.elte.hello.controller;
+package ca.irvine.cinema_world.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import edu.elte.hello.service.UserService;
-import edu.elte.hello.model.User;
+import ca.irvine.cinema_world.service.UserService;
+import ca.irvine.cinema_world.model.User;
 
 import java.util.Optional;
 
-import edu.elte.hello.util.Response;
+import ca.irvine.cinema_world.util.Response;
 
 @RestController
 @RequestMapping("/api")
