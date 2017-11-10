@@ -4,35 +4,48 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Time;
-import java.util.Date;
+import java.util.ArrayList;
+import java.sql.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 
-public class Screening { // TODO
+public class Screening {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name="id")
-    public int id;
+    public long id;
 
-    //@OneToMany
-    //@JoinColumn(name = "id")
-    public int room_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id")
+    public Room roomId;
 
-    //@OneToMany
-    //@JoinColumn(name = "id")
-    public int film_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "film_id")
+    public Film filmId;
 
+    @OneToMany(
+        mappedBy = "screeningId",
+        cascade = CascadeType.ALL, 
+        orphanRemoval = true
+    )
+    public List<Reservation> reservations = new ArrayList<>();
+
+    @Column(name = "screen_day")
     public Date screenDay;
+    @Column(name = "screen_time")
     public Time screenTime;
 
 }
