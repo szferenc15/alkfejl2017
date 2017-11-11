@@ -3,7 +3,6 @@ package ca.irvine.cinema_world.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -22,13 +21,12 @@ public class TicketInformation {
     public long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reservation_id")
-    public Reservation reservationId;
+    @JoinColumn(name = "booking_id")
+    public Booking bookingId;
 
     @OneToOne(fetch = FetchType.LAZY)
     @MapsId
-    @Column(name = "ticket_type")
-    public Ticket ticketType;
+    public Ticket ticket;
     
     public int row;
     public int chair;

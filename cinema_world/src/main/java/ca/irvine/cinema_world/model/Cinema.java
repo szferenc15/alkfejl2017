@@ -26,13 +26,10 @@ public class Cinema {
     public String country;
     public String city;
     public String district;
-    @Column(name = "house_number_from")
     public String houseNumberFrom;
-    @Column(name = "house_number_to")
     public String houseNumberTo;
     @Column(unique = true)
     public String name;
-    @Column(name = "amenities_charge")
     public int amenitiesCharge;
 
     @OneToMany(
@@ -48,4 +45,11 @@ public class Cinema {
         orphanRemoval = true
     )
     public List<Film> films = new ArrayList<>();
+
+    @OneToMany(
+        mappedBy = "cinemaName",
+        cascade = CascadeType.ALL, 
+        orphanRemoval = true
+    )
+    public List<Film> screenings = new ArrayList<>();
 }

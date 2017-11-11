@@ -3,7 +3,6 @@ package ca.irvine.cinema_world.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,10 +25,8 @@ public class RoomStructure {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_name")
-    @Column(name = "room_name")
     public Room roomName;
 
     public int row;
-    @Column(name = "seat_number")
     public int seatNumber;
 }

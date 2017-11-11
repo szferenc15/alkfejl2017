@@ -8,9 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import java.util.ArrayList;
@@ -30,7 +28,7 @@ public class Room {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cinema_name")
-    public Cinema cinameName;
+    public Cinema cinemaName;
 
     @Column(unique = true)
     public String name;
@@ -43,18 +41,15 @@ public class Room {
     public List<Screening> screenings = new ArrayList<>();
 
     @OneToMany(
-        mappedBy = "roomId",
+        mappedBy = "roomName",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
     public List<RoomStructure> structure = new ArrayList<>();
 
     public boolean vip;
-    @Column(name = "bed_room")
     public boolean bedRoom;
     public boolean imax;
-    @Column(name = "three_dimensional")
     public boolean threeDimensional;
-    @Column(name = "four_dimensional")
     public boolean fourDimensional;
 }

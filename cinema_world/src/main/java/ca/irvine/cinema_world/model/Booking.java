@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,12 +23,12 @@ import javax.persistence.OneToMany;
 @AllArgsConstructor
 @Entity
 
-public class Reservation {
+public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public long id;
 
-    @ManyToMany(mappedBy = "reservations")
+    @ManyToMany(mappedBy = "bookings")
     public Set<User> userIds = new HashSet<>();
     
     @ManyToOne(fetch = FetchType.LAZY)
@@ -37,7 +36,7 @@ public class Reservation {
     public Screening screeningId;
 
     @OneToMany(
-        mappedBy = "reservationId",
+        mappedBy = "bookingId",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
