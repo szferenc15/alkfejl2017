@@ -2,7 +2,6 @@ package ca.irvine.cinema_world.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import ca.irvine.cinema_world.repository.UserRepository;
 import ca.irvine.cinema_world.model.User;
 
@@ -15,7 +14,6 @@ public class UserService{
     private UserRepository userRepository;
 
     public Optional<User> login(String username,String password){
-
         Optional<User> optionalUser = userRepository.findByUsername(username);
         return optionalUser.filter(user -> user.getPassword().equals(password));
     }
@@ -34,5 +32,4 @@ public class UserService{
         }
         return Optional.empty();
     }
-
 }

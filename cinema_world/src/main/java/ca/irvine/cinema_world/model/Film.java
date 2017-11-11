@@ -4,15 +4,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Data
 @NoArgsConstructor
@@ -22,6 +28,10 @@ public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cinema_name")
+    public Cinema cinameName;
 
     @OneToMany(
         mappedBy = "filmId",
@@ -38,8 +48,14 @@ public class Film {
     public List<Screening> screenings = new ArrayList<>();
     
     public String title;
+    public String language;
+    public boolean synchron;
+    public boolean inscriptive;
+    public boolean imax;
     @Column(name = "three_dimensional")
     public boolean threeDimensional;
+    @Column(name = "four_dimensional")
+    public boolean fourDimensional;
     @Column(name = "play_time")
     public int playTime;
     public Date premiere;
@@ -51,5 +67,6 @@ public class Film {
     public String directorLastName;
     public String country;
     public int year;
+    public BigDecimal rate;
     public String description;
 }

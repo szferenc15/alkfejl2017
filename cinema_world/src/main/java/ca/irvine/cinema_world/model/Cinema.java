@@ -4,19 +4,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Data
@@ -24,22 +18,34 @@ import javax.persistence.OneToMany;
 @AllArgsConstructor
 @Entity
 
-public class Reservation {
+public class Cinema {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public long id;
 
-    @ManyToMany(mappedBy = "reservations")
-    public Set<User> userIds = new HashSet<>();
-    
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "screening_id")
-    public Screening screeningId;
+    public String country;
+    public String city;
+    public String district;
+    @Column(name = "house_number_from")
+    public String houseNumberFrom;
+    @Column(name = "house_number_to")
+    public String houseNumberTo;
+    @Column(unique = true)
+    public String name;
+    @Column(name = "amenities_charge")
+    public int amenitiesCharge;
 
     @OneToMany(
-        mappedBy = "reservationId",
+        mappedBy = "cinemaName",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    public List<TicketInformation> tickets = new ArrayList<>();
+    public List<Room> rooms = new ArrayList<>();
+
+    @OneToMany(
+        mappedBy = "cinemaName",
+        cascade = CascadeType.ALL, 
+        orphanRemoval = true
+    )
+    public List<Film> films = new ArrayList<>();
 }
