@@ -76,7 +76,7 @@ INSERT INTO room(id, cinema_name, name, vip, bed_room, imax, three_dimensional, 
          VALUES (2, 'CW Pyat'' Zvozd', 'IMAX-ODIN', true, false, true, true, false);
 
 -- RoomStructure data:
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
+INSERT INTO room_structure(id, cinema_name, room_name, structure) 
          VALUES (1, 'CW Arena', 'IMAX-ONE', 1, 32);
 INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
          VALUES (2, 'CW Arena', 'IMAX-ONE', 2, 32);

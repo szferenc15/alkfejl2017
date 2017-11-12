@@ -47,11 +47,11 @@ public class Screening {
     @Column(columnDefinition = "VARCHAR2(30) NOT NULL")
     private String language;
 
-    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
-    private boolean inscriptive;
-
     @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT TRUE")
     private boolean synchron;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean inscriptive;
 
     @Future
     private Date screenDay;
@@ -62,8 +62,8 @@ public class Screening {
     // END OF DEFAULT COLUMNS
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
-    private Cinema cinemaName;
+    @JoinColumn(name = "cinema_id")
+    private Cinema cinemaId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id")

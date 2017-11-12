@@ -46,5 +46,5 @@ public class TicketInformation {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_type", referencedColumnName = "type")
-    private Ticket ticket;
+    private Ticket ticket_type;
 }
