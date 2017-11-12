@@ -13,12 +13,15 @@ public class UserService{
     @Autowired
     private UserRepository userRepository;
 
-    public Optional<User> login(String username,String password){
-        Optional<User> optionalUser = userRepository.findByUsername(username);
+    public Optional<User> login(String identifier, String password){
+        Optional<User> optionalUser = userRepository.findByUsername(identifier);
+        if (!optionalUser.isPresent()){
+            optionalUser = userRepository.findByEmail(identifier);
+        }
         return optionalUser.filter(user -> user.getPassword().equals(password));
     }
 
-    public Optional<User> register(String username, String password){
+    public Optional<User> register(String username, String password, String email, String phoneNumber){
         Optional<User> optionalUser = userRepository.findByUsername(username);
 
         if(!optionalUser.isPresent()){
@@ -26,6 +29,8 @@ public class UserService{
 
             user.setUsername(username);
             user.setPassword(password);
+            user.setEmail(email);
+            user.setPhoneNumber(phoneNumber);
             userRepository.save(user);
 
             return Optional.of(user);

@@ -22,34 +22,47 @@ import javax.persistence.Column;
 @Entity
 
 public class Room {
+    // START OF DEFAULT COLUMNS
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public long id;
+    private long id;
+
+    @Column(columnDefinition = "VARCHAR2(20)", unique = true)
+    private String name;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean vip;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean bedRoom;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean imax;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean threeDimensional;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean fourDimensional;
+    
+    // END OF DEFAULT COLUMNS
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cinema_name", referencedColumnName = "name")
-    public Cinema cinemaName;
-
-    @Column(unique = true)
-    public String name;
+    private Cinema cinemaName;
 
     @OneToMany(
         mappedBy = "roomId",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    public List<Screening> screenings = new ArrayList<>();
+    private List<Screening> screenings = new ArrayList<>();
 
     @OneToMany(
         mappedBy = "roomName",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    public List<RoomStructure> structure = new ArrayList<>();
-
-    public boolean vip;
-    public boolean bedRoom;
-    public boolean imax;
-    public boolean threeDimensional;
-    public boolean fourDimensional;
+    private List<RoomStructure> structure = new ArrayList<>();
 }

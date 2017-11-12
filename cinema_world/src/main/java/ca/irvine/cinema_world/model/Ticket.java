@@ -2,9 +2,11 @@ package ca.irvine.cinema_world.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
@@ -12,15 +14,38 @@ import javax.persistence.Id;
 @Entity
 
 public class Ticket {
+    // START OF DEFAULT COLUMNS
+
     @Id
-    public String type;
-    public int basicPrice;
-    public int imaxPrice;
-    public int imaxGlassPrice;
-    public int threeDimensionalPrice;
-    public int threeDimensionalGlassPrice;
-    public int fourDimensionalPrice;
-    public int fourDimensionalGlassPrice;
-    public int bedRoomPrice;
-    public int bedRoomGlassPrice;
+    @Size(min = 1, max = 30)
+    private String type;
+
+    @Range(min = 0)
+    private short basicPrice;
+
+    @Range(min = 0)
+    private short imaxPrice;
+
+    @Range(min = 0)
+    private short imaxGlassPrice;
+
+    @Range(min = 0)
+    private short threeDimensionalPrice;
+
+    @Range(min = 0)
+    private short threeDimensionalGlassPrice;
+
+    @Range(min = 0)
+    private short fourDimensionalPrice;
+
+    @Range(min = 0)
+    private short fourDimensionalGlassPrice;
+
+    @Range(min = 0)
+    private short bedRoomPrice;
+
+    @Range(min = 0)
+    private short bedRoomGlassPrice;
+
+    // END OF DEFAULT COLUMNS
 }

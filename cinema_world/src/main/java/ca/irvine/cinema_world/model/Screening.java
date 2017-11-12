@@ -13,9 +13,12 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
@@ -23,37 +26,64 @@ import javax.persistence.OneToMany;
 @Entity
 
 public class Screening {
+    // START OF DEFAULT COLUMNS
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public long id;
+    private long id;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT TRUE")
+    private boolean twoDimensional;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean threeDimensional;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean fourDimensional;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean imax;
+
+    @Column(columnDefinition = "VARCHAR2(30) NOT NULL")
+    private String language;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
+    private boolean inscriptive;
+
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT TRUE")
+    private boolean synchron;
+
+    @Future
+    private Date screenDay;
+
+    @NotNull()
+    private Time screenTime;
+
+    // END OF DEFAULT COLUMNS
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cinema_name", referencedColumnName = "name")
-    public Cinema cinemaName;
+    private Cinema cinemaName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id")
-    public Room roomId;
+    private Room roomId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "film_title")
-    public Film filmTitle;
+    private Film filmTitle;
 
     @OneToMany(
         mappedBy = "screeningId",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    public List<Booking> bookings = new ArrayList<>();
+    private List<Booking> bookings = new ArrayList<>();
 
-    public boolean twoDimensional;
-    public boolean threeDimensional;
-    public boolean fourDimensional;
-    public boolean imax;
-    public String language;
-    public boolean inscriptive;
-    public boolean synchron;
-
-    public Date screenDay;
-    public Time screenTime;
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
 }

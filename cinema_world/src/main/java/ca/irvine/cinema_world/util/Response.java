@@ -12,6 +12,7 @@ public class Response<T>{
         this.error = error;
         this.data = data;
     }
+    
     public static <T> Response<T> ok(T data){
         return new Response<T>(null, data);
     }

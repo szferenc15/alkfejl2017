@@ -26,19 +26,26 @@ import javax.persistence.OneToMany;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public long id;
+    private long id;
 
-    @ManyToMany(mappedBy = "bookings")
-    public Set<User> users = new HashSet<>();
+    @ManyToMany(mappedBy = "bookings", fetch = FetchType.LAZY)
+    private Set<User> users = new HashSet<>();
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "screening_id")
-    public Screening screeningId;
+    private Screening screeningId;
 
     @OneToMany(
         mappedBy = "bookingId",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    public List<TicketInformation> tickets = new ArrayList<>();
+    private List<TicketInformation> tickets = new ArrayList<>();
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
 }

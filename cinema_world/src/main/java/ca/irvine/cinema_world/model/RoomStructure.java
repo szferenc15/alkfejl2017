@@ -2,6 +2,7 @@ package ca.irvine.cinema_world.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,18 +21,25 @@ import javax.persistence.Table;
 
 @Table(name = "room_structure")
 public class RoomStructure {
+    // START OF DEFAULT COLUMNS
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public long id;
+    private long id;
+
+    @Range(min = 1, max = 20)
+    private byte row;
+
+    @Range(min = 1, max = 50)
+    private byte seatNumber;
+
+    // END OF DEFAULT COLUMNS
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cinema_name", referencedColumnName = "name")
-    public Cinema cinemaName;
+    private Cinema cinemaName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_name", referencedColumnName = "name")
-    public Room roomName;
-
-    public int row;
-    public int seatNumber;
+    private Room roomName;
 }

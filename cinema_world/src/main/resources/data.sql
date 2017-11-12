@@ -1,9 +1,9 @@
 -- Cinema data:
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
-         VALUES (1, 'Magyarorszag', 'Budapest', 'VIII', 'Kerepesi', '9', 'CW Arena', 40);
+         VALUES (1, 'Magyarorszag', 'Budapest', 'VIII', 'Kerepesi', 9, 'CW Arena', 40);
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
-         VALUES (2, 'Oroszorszag', 'Moszkva', 'XVI', 'Bol''shoy Ovchinnikovskiy Pereulok', '16', 'CW Pyat'' Zvozd', 100);
-
+         VALUES (2, 'Oroszorszag', 'Moszkva', 'XVI', 'Bol''shoy Ovchinnikovskiy Pereulok', 16, 'CW Pyat'' Zvozd', 100);
+         
 -- User data:
 INSERT INTO user(username, password, email, phone_number, admin_right) 
          VALUES ('barackfa', 'barackfa', 'barackfa@almafa.fa', '06302003000', false);

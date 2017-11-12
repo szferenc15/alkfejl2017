@@ -8,44 +8,49 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.irvine.cinema_world.service.UserService;
 import ca.irvine.cinema_world.model.User;
-import ca.irvine.cinema_world.repository.UserRepository;
 import java.util.Optional;
 
 import ca.irvine.cinema_world.util.Response;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class UserController{
 
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserRepository userRepository;
 /*
     @RequestMapping("/user")
     public User user(@RequestParam(value="username") String username){
         return userRepository.findByUsername(username).get();
     }
 */  
-    @RequestMapping("/login")
-    public Response<User> login(@RequestParam(value="username") String username, @RequestParam(value="password") String password){
-        Optional<User> optionalUser = userService.login(username, password);
+    @RequestMapping(value= "login", method=RequestMethod.POST )
+    public Response<User> login(
+                                @RequestParam(value="identifier") String identifier, 
+                                @RequestParam(value="password") String password
+                                )
+    {
+        Optional<User> optionalUser = userService.login(identifier, password);
 
         if(optionalUser.isPresent()){
             User user = optionalUser.get();
 
-            //create new token
-            
             return Response.ok(user); 
         }
 
-        return Response.error("Wrong username-password pair");
+        return Response.error("Wrong username or password!");
     }
 
-    @RequestMapping(value= "/register", method=RequestMethod.POST )
-    public Response<User> register(@RequestParam(value="username") String username, @RequestParam(value="password") String password){
-        Optional<User> optionalUser = userService.register(username, password);
+    @RequestMapping(value= "register", method=RequestMethod.POST )
+    public Response<User> register(
+                                    @RequestParam(value="username") String username, 
+                                    @RequestParam(value="password") String password,
+                                    @RequestParam(value="email") String email,
+                                    @RequestParam(value="phoneNumber") String phoneNumber
+                                    )
+    {
+        Optional<User> optionalUser = userService.register(username, password, email, phoneNumber);
 
         if(optionalUser.isPresent()){
             User user = optionalUser.get();

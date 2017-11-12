@@ -19,13 +19,13 @@ import javax.persistence.GeneratedValue;
 public class CategoryInformation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public long id;
+    private long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "film_title")
-    public Film filmTitle;
+    private Film filmTitle;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category", referencedColumnName = "category")
-    public Category category;
+    private Category category;
 }

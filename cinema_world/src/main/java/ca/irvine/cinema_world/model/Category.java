@@ -13,6 +13,6 @@ import javax.persistence.Id;
 @Entity
 public class Category {
     @Id
-    @Column(length = 30, columnDefinition = "varchar2(30)")
-    public String category;
+    @Column(columnDefinition = "VARCHAR2(20)")
+    private String category;
 }
