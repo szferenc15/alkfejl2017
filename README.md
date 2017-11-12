@@ -63,10 +63,65 @@ TODO:
 ```
 
 ## Adatbázis séma:
-<table border="0" rules="none" frame="void" bgcolor="white" align="center" width="99%">
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
+
+<table align="justify" width="100%">
+    <th colspan="3">BOOKING</th>
+    <tr align="center">
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">ID</td>
+        <td align="center" width="33%">BIGINT</td>
+        <td align="justify" width="33%">foglalás azonosítója (PK)</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">SCREENING_ID</td>
+        <td align="center" width="33%">BIGINT</td>
+        <td align="justify" width="33%">vetítés azonosítója (FK)</td>
+    </tr>
+</table>
+
+<table align="justify" width="100%">
+    <th colspan="3">CATEGORY</th>
+    <tr align="center">
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">CATEGORY</td>
+        <td align="center" width="33%">VARCHAR2(20)</td>
+        <td align="justify" width="33%">kategória neve (PK)</td>
+    </tr>
+</table>
+
+<table align="justify" width="100%">
+    <th colspan="3">CATEGORY_INFORMATION</th>
+    <tr align="center">
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">ID</td>
+        <td align="center" width="33%">BIGINT</td>
+        <td align="justify" width="33%">kategória információ azonosítója (PK)</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">FILM_TITLE</td>
+        <td align="center" width="33%">VARCHAR2(50)</td>
+        <td align="justify" width="33%">film neve (FK)</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">CATEGORY</td>
+        <td align="center" width="33%">VARCHAR2(20)</td>
+        <td align="justify" width="33%">kategória neve (FK)</td>
+    </tr>
+</table>
+
+<table align="justify" width="100%">
     <th colspan="3">CINEMA</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -113,81 +168,8 @@ TODO:
         <td align="justify" width="33%">kényelmi díj értéke</td>
     </tr>
 </table>
-</td>
-</tr>
 
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
-    <th colspan="3">BOOKING</th>
-    <tr align="center">
-        <th width="33%">ATTRIBÚTUM</th>
-        <th width="33%">TÍPUS</th>
-        <th width="33%">LEÍRÁS</th>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">ID</td>
-        <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">foglalás azonosítója (PK)</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">SCREENING_ID</td>
-        <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">vetítés azonosítója (FK)</td>
-    </tr>
-</table>
-</td>
-</tr>
-
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
-    <th colspan="3">CATEGORY</th>
-    <tr align="center">
-        <th width="33%">ATTRIBÚTUM</th>
-        <th width="33%">TÍPUS</th>
-        <th width="33%">LEÍRÁS</th>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">CATEGORY</td>
-        <td align="center" width="33%">VARCHAR2(20)</td>
-        <td align="justify" width="33%">kategória neve (PK)</td>
-    </tr>
-</table>
-</td>
-</tr>
-
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
-    <th colspan="3">CATEGORY_INFORMATION</th>
-    <tr align="center">
-        <th width="33%">ATTRIBÚTUM</th>
-        <th width="33%">TÍPUS</th>
-        <th width="33%">LEÍRÁS</th>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">ID</td>
-        <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">kategória információ azonosítója (PK)</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">FILM_TITLE</td>
-        <td align="center" width="33%">VARCHAR2(50)</td>
-        <td align="justify" width="33%">film neve (FK)</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">CATEGORY</td>
-        <td align="center" width="33%">VARCHAR2(20)</td>
-        <td align="justify" width="33%">kategória neve (FK)</td>
-    </tr>
-</table>
-</td>
-</tr>
-
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
+<table align="justify" width="100%">
     <th colspan="3">FILM</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -280,12 +262,8 @@ TODO:
         <td align="justify" width="33%">mozi azonosító, melyben vetítik a filmet (FK)</td>
     </tr>
 </table>
-</td>
-</tr>
 
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
+<table align="justify" width="100%">
     <th colspan="3">ROOM</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -333,12 +311,8 @@ TODO:
         <td align="justify" width="33%">mozi azonosító, melyben megtalálható a terem (FK)</td>
     </tr>
 </table>
-</td>
-</tr>
 
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
+<table align="justify" width="100%">
     <th colspan="3">ROOM_STRUCTURE</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -371,12 +345,8 @@ TODO:
         <td align="justify" width="33%">terem azonosító, melyben megtalálható a struktúra (FK)</td>
     </tr>
 </table>
-</td>
-</tr>
 
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
+<table align="justify" width="100%">
     <th colspan="3">SCREENING</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -449,12 +419,8 @@ TODO:
         <td align="justify" width="33%">film cím, melyet vetítenek (FK)</td>
     </tr>
 </table>
-</td>
-</tr>
 
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
+<table align="justify" width="100%">
     <th colspan="3">TICKET</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -512,12 +478,8 @@ TODO:
         <td align="justify" width="33%">ráfizetés ágyas szoba + szemüveg esetén</td>
     </tr>
 </table>
-</td>
-</tr>
 
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
+<table align="justify" width="100%">
     <th colspan="3">TICKET_INFORMATION</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -555,12 +517,8 @@ TODO:
         <td align="justify" width="33%">jegy típusa (FK)</td>
     </tr>
 </table>
-</td>
-</tr>
 
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
+<table align="justify" width="100%">
     <th colspan="3">USER</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -592,9 +550,6 @@ TODO:
         <td align="center" width="33%">BOOLEAN</td>
         <td align="justify" width="33%">adminisztrátori jogosultság (FK)</td>
     </tr>
-</table>
-</td>
-</tr>
 </table>
 
 ## Egyed-kapcsolat diagram:
