@@ -64,6 +64,59 @@ TODO:
 
 ## Adatbázis séma:
 <table align="center" width="100%">
+
+<tr align="center" width="100%">
+<td align="center" width="100%">
+<table align="center" width="100%">
+    <th colspan="3">CINEMA</th>
+    <tr align="center">
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">ID</td>
+        <td align="center" width="33%">BIGINT</td>
+        <td align="justify" width="33%">mozi azonosítója (PK)</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">COUNTRY</td>
+        <td align="center" width="33%">VARCHAR2(50)</td>
+        <td align="justify" width="33%">ország neve</td>
+    </tr>
+        <td align="center" width="33%">CITY</td>
+        <td align="center" width="33%">VARCHAR2(30)</td>
+        <td align="justify" width="33%">város neve</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">DISTRICT</td>
+        <td align="center" width="33%">VARCHAR2(8)</td>
+        <td align="justify" width="33%">kerület neve</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">STREET</td>
+        <td align="center" width="33%">VARCHAR(50)</td>
+        <td align="justify" width="33%">utca neve</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">HOUSE_NUMBER</td>
+        <td align="center" width="33%">TINYINT</td>
+        <td align="justify" width="33%">házszám</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">NAME</td>
+        <td align="center" width="33%">VARCHAR2(20)</td>
+        <td align="justify" width="33%">mozi neve</td>
+    </tr>
+    <tr align="center">
+        <td align="center" width="33%">AMENITIES_CHARGE</td>
+        <td align="center" width="33%">SMALLINT</td>
+        <td align="justify" width="33%">kényelmi díj értéke</td>
+    </tr>
+</table>
+</td>
+</tr>
+
 <tr align="center" width="100%">
 <td align="center" width="100%">
 <table align="center" width="100%">
@@ -128,58 +181,6 @@ TODO:
         <td align="center" width="33%">CATEGORY</td>
         <td align="center" width="33%">VARCHAR2(20)</td>
         <td align="justify" width="33%">kategória neve (FK)</td>
-    </tr>
-</table>
-</td>
-</tr>
-
-<tr align="center" width="100%">
-<td align="center" width="100%">
-<table align="center" width="100%">
-    <th colspan="3">CINEMA</th>
-    <tr align="center">
-        <th width="33%">ATTRIBÚTUM</th>
-        <th width="33%">TÍPUS</th>
-        <th width="33%">LEÍRÁS</th>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">ID</td>
-        <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">mozi azonosítója (PK)</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">COUNTRY</td>
-        <td align="center" width="33%">VARCHAR2(50)</td>
-        <td align="justify" width="33%">ország neve</td>
-    </tr>
-        <td align="center" width="33%">CITY</td>
-        <td align="center" width="33%">VARCHAR2(30)</td>
-        <td align="justify" width="33%">város neve</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">DISTRICT</td>
-        <td align="center" width="33%">VARCHAR2(8)</td>
-        <td align="justify" width="33%">kerület neve</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">STREET</td>
-        <td align="center" width="33%">VARCHAR(50)</td>
-        <td align="justify" width="33%">utca neve</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">HOUSE_NUMBER</td>
-        <td align="center" width="33%">TINYINT</td>
-        <td align="justify" width="33%">házszám</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">NAME</td>
-        <td align="center" width="33%">VARCHAR2(20)</td>
-        <td align="justify" width="33%">mozi neve</td>
-    </tr>
-    <tr align="center">
-        <td align="center" width="33%">AMENITIES_CHARGE</td>
-        <td align="center" width="33%">SMALLINT</td>
-        <td align="justify" width="33%">kényelmi díj értéke</td>
     </tr>
 </table>
 </td>
