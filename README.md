@@ -66,28 +66,28 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">BOOKING</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="34%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="left" width="33%">foglalás azonosítója (PK)</td>
+        <td align="left" width="34%">foglalás azonosítója (PK)</td>
     </tr>
     <tr>
         <td align="center" width="33%">SCREENING_ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="left" width="33%">vetítés azonosítója (FK)</td>
+        <td align="left" width="34%">vetítés azonosítója (FK)</td>
     </tr>
 </table>
 
 <table align="center" width="100%">
     <th colspan="3">CATEGORY</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">CATEGORY</td>
@@ -99,9 +99,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">CATEGORY_INFORMATION</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">ID</td>
@@ -123,9 +123,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">CINEMA</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">ID</td>
@@ -171,9 +171,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">FILM</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">TITLE</td>
@@ -265,9 +265,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">ROOM</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">ID</td>
@@ -314,9 +314,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">ROOM_STRUCTURE</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">ID</td>
@@ -348,9 +348,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">SCREENING</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">ID</td>
@@ -422,9 +422,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">TICKET</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">TYPE</td>
@@ -481,9 +481,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">TICKET_INFORMATION</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">ID</td>
@@ -520,9 +520,9 @@ TODO:
 <table align="center" width="100%">
     <th colspan="3">USER</th>
     <tr>
-        <th align="center" width="33%">ATTRIBÚTUM</th>
-        <th align="center" width="33%">TÍPUS</th>
-        <th align="center" width="33%">LEÍRÁS</th>
+        <th width="33%">ATTRIBÚTUM</th>
+        <th width="33%">TÍPUS</th>
+        <th width="33%">LEÍRÁS</th>
     </tr>
     <tr>
         <td align="center" width="33%">USERNAME</td>
