@@ -63,8 +63,7 @@ TODO:
 ```
 
 ## Adatbázis séma:
-<table align="center" width="100%">
-
+<table border="0" bgcolor="white" align="center" width="100%">
 <tr align="center" width="100%">
 <td align="center" width="100%">
 <table align="center" width="100%">
