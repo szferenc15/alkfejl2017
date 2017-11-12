@@ -64,9 +64,9 @@ TODO:
 
 ## Adatbázis séma:
 
-<table align="center" width="493px">
-    <th colspan="3">BOOKING</th>
-    <tr align="center"></tr>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">BOOKING</th>
+    <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
         <th width="33%">LEÍRÁS</th>
@@ -83,8 +83,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">CATEGORY</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">CATEGORY</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -97,8 +97,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">CATEGORY_INFORMATION</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">CATEGORY_INFORMATION</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -121,8 +121,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">CINEMA</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">CINEMA</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -169,8 +169,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">FILM</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">FILM</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -263,8 +263,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">ROOM</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">ROOM</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -312,8 +312,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">ROOM_STRUCTURE</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">ROOM_STRUCTURE</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -346,8 +346,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">SCREENING</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">SCREENING</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -420,8 +420,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">TICKET</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">TICKET</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -479,8 +479,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">TICKET_INFORMATION</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">TICKET_INFORMATION</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -518,8 +518,8 @@ TODO:
     </tr>
 </table>
 
-<table align="center" width="493px">
-    <th colspan="3">USER</th>
+<table align="center" width="100%">
+    <th colspan="3" width="100%">USER</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
