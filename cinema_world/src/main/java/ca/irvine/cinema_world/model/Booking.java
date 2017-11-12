@@ -29,7 +29,7 @@ public class Booking {
     public long id;
 
     @ManyToMany(mappedBy = "bookings")
-    public Set<User> userIds = new HashSet<>();
+    public Set<User> users = new HashSet<>();
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "screening_id")

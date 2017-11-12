@@ -12,8 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.GenerationType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 
@@ -22,28 +20,25 @@ import javax.persistence.OneToMany;
 @AllArgsConstructor
 @Entity
 public class Film {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public long id;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_name")
+    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
     public Cinema cinemaName;
 
     @OneToMany(
-        mappedBy = "filmId",
+        mappedBy = "filmTitle",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    public List<Category> categories = new ArrayList<>();
+    public List<CategoryInformation> categories = new ArrayList<>();
     
     @OneToMany(
-        mappedBy = "filmId",
+        mappedBy = "filmTitle",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
     public List<Screening> screenings = new ArrayList<>();
-    
+
+    @Id
     public String title;
     public String language;
     public boolean synchron;

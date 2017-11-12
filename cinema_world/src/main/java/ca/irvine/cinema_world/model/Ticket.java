@@ -14,5 +14,13 @@ import javax.persistence.Id;
 public class Ticket {
     @Id
     public String type;
-    public int price;
+    public int basicPrice;
+    public int imaxPrice;
+    public int imaxGlassPrice;
+    public int threeDimensionalPrice;
+    public int threeDimensionalGlassPrice;
+    public int fourDimensionalPrice;
+    public int fourDimensionalGlassPrice;
+    public int bedRoomPrice;
+    public int bedRoomGlassPrice;
 }

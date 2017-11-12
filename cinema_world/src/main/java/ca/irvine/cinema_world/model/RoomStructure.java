@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Data
@@ -23,8 +24,12 @@ public class RoomStructure {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public long id;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
+    public Cinema cinemaName;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "room_name")
+    @JoinColumn(name = "room_name", referencedColumnName = "name")
     public Room roomName;
 
     public int row;

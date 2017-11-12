@@ -8,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.GenerationType;
-import javax.persistence.GeneratedValue;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -20,17 +18,14 @@ import javax.persistence.CascadeType;
 @Entity
 
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public long id;
-    
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_booking",
-        joinColumns = @JoinColumn(name = "booking_id"),
-        inverseJoinColumns = @JoinColumn(name = "user_id")
+        joinColumns = @JoinColumn(name = "username", referencedColumnName = "username"),
+        inverseJoinColumns = @JoinColumn(name = "booking_id")
     )
     public Set<Booking> bookings = new HashSet<>();
 
+    @Id
     public String username;
     public String password;
     public String email;
@@ -38,17 +33,17 @@ public class User {
     public boolean adminRight;
 
     /**
-     * @param username the username to set
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
      * @return the password
      */
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**

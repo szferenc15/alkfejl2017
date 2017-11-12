@@ -28,7 +28,7 @@ public class Screening {
     public long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_name")
+    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
     public Cinema cinemaName;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -36,8 +36,8 @@ public class Screening {
     public Room roomId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "film_id")
-    public Film filmId;
+    @JoinColumn(name = "film_title")
+    public Film filmTitle;
 
     @OneToMany(
         mappedBy = "screeningId",
@@ -46,7 +46,14 @@ public class Screening {
     )
     public List<Booking> bookings = new ArrayList<>();
 
+    public boolean twoDimensional;
+    public boolean threeDimensional;
+    public boolean fourDimensional;
+    public boolean imax;
+    public String language;
+    public boolean inscriptive;
+    public boolean synchron;
+
     public Date screenDay;
     public Time screenTime;
-
 }

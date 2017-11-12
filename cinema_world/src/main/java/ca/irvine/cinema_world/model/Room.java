@@ -27,7 +27,7 @@ public class Room {
     public long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_name")
+    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
     public Cinema cinemaName;
 
     @Column(unique = true)

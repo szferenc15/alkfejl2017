@@ -26,8 +26,8 @@ public class Cinema {
     public String country;
     public String city;
     public String district;
-    public String houseNumberFrom;
-    public String houseNumberTo;
+    public String street;
+    public String houseNumber;
     @Column(unique = true)
     public String name;
     public int amenitiesCharge;
@@ -51,5 +51,5 @@ public class Cinema {
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    public List<Film> screenings = new ArrayList<>();
+    public List<Screening> screenings = new ArrayList<>();
 }
