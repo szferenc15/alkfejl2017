@@ -74,7 +74,7 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">foglalás azonosítója (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+        <td align="justify" width="33%">foglalás azonosítója (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
     <tr align="center">
         <td align="center" width="33%">SCREENING_ID</td>
@@ -93,7 +93,7 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">CATEGORY</td>
         <td align="center" width="33%">VARCHAR2(20)</td>
-        <td align="justify" width="33%">kategória neve (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+        <td align="justify" width="33%">kategória neve (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
 </table>
 
@@ -107,7 +107,7 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">kategória információ azonosítója (PK)</td>
+        <td align="justify" width="33%">kategória információ azonosítója (PK) &nbsp</td>
     </tr>
     <tr align="center">
         <td align="center" width="33%">FILM_TITLE</td>
@@ -489,7 +489,7 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">jegy információ azonosítója (PK)</td>
+        <td align="justify" width="33%">jegy információ azonosítója (PK) &nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
     <tr align="center">
         <td align="center" width="33%">PAYMENT</td>
@@ -528,7 +528,7 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">USERNAME</td>
         <td align="center" width="33%">VARCHAR2(15)</td>
-        <td align="justify" width="33%">felhasználónév (PK)</td>
+        <td align="justify" width="33%">felhasználónév (PK) &nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
     <tr align="center">
         <td align="center" width="33%">PASSWORD</td>
