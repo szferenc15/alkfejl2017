@@ -64,7 +64,7 @@ TODO:
 
 ## Adatbázis séma:
 
-<table align="center" width="493px"></table>
+<table align="center" width="493px">
     <th colspan="3">BOOKING</th>
     <tr align="center"></tr>
         <th width="33%">ATTRIBÚTUM</th>
