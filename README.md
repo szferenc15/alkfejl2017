@@ -74,7 +74,7 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">foglalás azonosítója (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+        <td align="justify" width="33%">foglalás azonosítója (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
     <tr align="center">
         <td align="center" width="33%">SCREENING_ID</td>
@@ -93,7 +93,7 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">CATEGORY</td>
         <td align="center" width="33%">VARCHAR2(20)</td>
-        <td align="justify" width="33%">kategória neve (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+        <td align="justify" width="33%">kategória neve (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
 </table>
 
@@ -131,7 +131,7 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">mozi azonosítója (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+        <td align="justify" width="33%">mozi azonosítója (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
     <tr align="center">
         <td align="center" width="33%">COUNTRY</td>
