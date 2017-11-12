@@ -64,7 +64,7 @@ TODO:
 
 ## Adatbázis séma:
 <table>
-    <th colspan="2">BOOKING</th>
+    <th colspan="3">BOOKING</th>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -78,7 +78,7 @@ TODO:
 </table>
 
 <table>
-    <th>CATEGORY</th>
+    <th colspan="3">CATEGORY</th>
     <tr>
         <td>CATEGORY</td>
         <td>VARCHAR2(20)</td>
@@ -87,7 +87,7 @@ TODO:
 </table>
 
 <table>
-    <th colspan="2">CATEGORY_INFORMATION</th>
+    <th colspan="3">CATEGORY_INFORMATION</th>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -106,7 +106,7 @@ TODO:
 </table>
 
 <table>
-    <th colspan="2">CINEMA</th>
+    <th colspan="3">CINEMA</th>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -148,8 +148,8 @@ TODO:
     </tr>
 </table>
 
-<table colspan="2">
-    <th>FILM</th>
+<table>
+    <th colspan="3">FILM</th>
     <tr>
         <td>TITLE</td>
         <td>VARCHAR2(50)</td>
@@ -237,8 +237,8 @@ TODO:
     </tr>
 </table>
 
-<table colspan="2">
-    <th>ROOM</th>
+<table>
+    <th colspan="3">ROOM</th>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -281,8 +281,8 @@ TODO:
     </tr>
 </table>
 
-<table colspan="2">
-    <th>ROOM_STRUCTURE</th>
+<table>
+    <th colspan="3">ROOM_STRUCTURE</th>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -311,7 +311,7 @@ TODO:
 </table>
 
 <table>
-    <th colspan="2">SCREENING</th>
+    <th colspan="3">SCREENING</th>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -380,7 +380,7 @@ TODO:
 </table>
 
 <table>
-    <th colspan="2">TICKET</th>
+    <th colspan="3">TICKET</th>
     <tr>
         <td>TYPE</td>
         <td>VARCHAR(30)</td>
@@ -434,7 +434,7 @@ TODO:
 </table>
 
 <table>
-    <th colspan="2">TICKET_INFORMATION</th>
+    <th colspan="3">TICKET_INFORMATION</th>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -468,7 +468,7 @@ TODO:
 </table>
 
 <table>
-    <th colspan="2">USER</th>
+    <th colspan="3">USER</th>
     <tr>
         <td>USERNAME</td>
         <td>VARCHAR2(15)</td>
