@@ -64,8 +64,8 @@ TODO:
 
 ## Adatbázis séma:
 <table align="center" width="100%">
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">BOOKING</th>
     <tr align="center">
@@ -87,8 +87,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">CATEGORY</th>
     <tr align="center">
@@ -105,8 +105,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">CATEGORY_INFORMATION</th>
     <tr align="center">
@@ -133,8 +133,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">CINEMA</th>
     <tr align="center">
@@ -185,8 +185,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">FILM</th>
     <tr align="center">
@@ -283,8 +283,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">ROOM</th>
     <tr align="center">
@@ -336,8 +336,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">ROOM_STRUCTURE</th>
     <tr align="center">
@@ -374,8 +374,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">SCREENING</th>
     <tr align="center">
@@ -452,8 +452,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">TICKET</th>
     <tr align="center">
@@ -515,8 +515,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">TICKET_INFORMATION</th>
     <tr align="center">
@@ -558,8 +558,8 @@ TODO:
 </td>
 </tr>
 
-<tr>
-<td>
+<tr align="center" width="100%">
+<td align="center" width="100%">
 <table align="center" width="100%">
     <th colspan="3">USER</th>
     <tr align="center">
