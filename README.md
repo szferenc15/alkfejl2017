@@ -64,7 +64,7 @@ TODO:
 
 ## Adatbázis séma:
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">BOOKING</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -83,7 +83,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">CATEGORY</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -97,7 +97,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">CATEGORY_INFORMATION</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -121,7 +121,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">CINEMA</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -169,7 +169,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">FILM</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -263,7 +263,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">ROOM</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -312,7 +312,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">ROOM_STRUCTURE</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -346,7 +346,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">SCREENING</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -420,7 +420,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">TICKET</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -479,7 +479,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">TICKET_INFORMATION</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -518,7 +518,7 @@ TODO:
     </tr>
 </table>
 
-<table align="justify" width="100%">
+<table align="center" width="889px">
     <th colspan="3">USER</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
