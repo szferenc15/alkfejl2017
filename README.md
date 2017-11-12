@@ -66,6 +66,11 @@ TODO:
 <table>
     <th colspan="3">BOOKING</th>
     <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
+    <tr>
         <td>ID</td>
         <td>BIGINT</td>
         <td>foglalás azonosítója (PK)</td>
@@ -80,6 +85,11 @@ TODO:
 <table>
     <th colspan="3">CATEGORY</th>
     <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
+    <tr>
         <td>CATEGORY</td>
         <td>VARCHAR2(20)</td>
         <td>kategória neve (PK)</td>
@@ -88,6 +98,11 @@ TODO:
 
 <table>
     <th colspan="3">CATEGORY_INFORMATION</th>
+    <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -107,6 +122,11 @@ TODO:
 
 <table>
     <th colspan="3">CINEMA</th>
+    <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -150,6 +170,11 @@ TODO:
 
 <table>
     <th colspan="3">FILM</th>
+    <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
     <tr>
         <td>TITLE</td>
         <td>VARCHAR2(50)</td>
@@ -240,6 +265,11 @@ TODO:
 <table>
     <th colspan="3">ROOM</th>
     <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
+    <tr>
         <td>ID</td>
         <td>BIGINT</td>
         <td>terem azonosítója (PK)</td>
@@ -284,6 +314,11 @@ TODO:
 <table>
     <th colspan="3">ROOM_STRUCTURE</th>
     <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
+    <tr>
         <td>ID</td>
         <td>BIGINT</td>
         <td>szoba struktúra azonósítója (PK)</td>
@@ -312,6 +347,11 @@ TODO:
 
 <table>
     <th colspan="3">SCREENING</th>
+    <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
     <tr>
         <td>ID</td>
         <td>BIGINT</td>
@@ -382,6 +422,11 @@ TODO:
 <table>
     <th colspan="3">TICKET</th>
     <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
+    <tr>
         <td>TYPE</td>
         <td>VARCHAR(30)</td>
         <td>jegy típusa (PK)</td>
@@ -436,6 +481,11 @@ TODO:
 <table>
     <th colspan="3">TICKET_INFORMATION</th>
     <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
+    <tr>
         <td>ID</td>
         <td>BIGINT</td>
         <td>jegy információ azonosítója (PK)</td>
@@ -469,6 +519,11 @@ TODO:
 
 <table>
     <th colspan="3">USER</th>
+    <tr>
+        <th>ATTRIBÚTUM</th>
+        <th>TÍPUS</th>
+        <th>LEÍRÁS</th>
+    </tr>
     <tr>
         <td>USERNAME</td>
         <td>VARCHAR2(15)</td>
