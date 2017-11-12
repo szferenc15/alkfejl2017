@@ -1,6 +1,5 @@
 package ca.irvine.cinema_world.model;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
@@ -12,11 +11,11 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
+@lombok.Data
 public class User {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_booking",
@@ -31,25 +30,4 @@ public class User {
     public String email;
     public String phoneNumber;
     public boolean adminRight;
-
-    /**
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * @param username the username to set
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

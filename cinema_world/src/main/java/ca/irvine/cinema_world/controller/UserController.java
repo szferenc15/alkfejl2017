@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.irvine.cinema_world.service.UserService;
 import ca.irvine.cinema_world.model.User;
-
+import ca.irvine.cinema_world.repository.UserRepository;
 import java.util.Optional;
 
 import ca.irvine.cinema_world.util.Response;
@@ -19,6 +19,9 @@ public class UserController{
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
 /*
     @RequestMapping("/user")
     public User user(@RequestParam(value="username") String username){
