@@ -64,17 +64,15 @@ TODO:
 
 ## Adatbázis séma:
 <table>
-    <th>BOOKING</th>
+    <th colspan="2">BOOKING</th>
     <tr>
         <td>ID</td>
-        <td>SCREENING_ID</td>
-    </tr>
-    <tr>
         <td>BIGINT</td>
-        <td>BIGINT</td>
-    </tr>
-    <tr>
         <td>foglalás azonosítója (PK)</td>
+    </tr>
+    <tr>
+        <td>SCREENING_ID</td>
+        <td>BIGINT</td>
         <td>vetítés azonosítója (FK)</td>
     </tr>
 </table>
@@ -83,326 +81,417 @@ TODO:
     <th>CATEGORY</th>
     <tr>
         <td>CATEGORY</td>
-    </tr>
-    <tr>
         <td>VARCHAR2(20)</td>
-    </tr>
-    <tr>
         <td>kategória neve (PK)</td>
     </tr>
 </table>
 
 <table>
-    <th>CATEGORY_INFORMATION</th>
+    <th colspan="2">CATEGORY_INFORMATION</th>
     <tr>
         <td>ID</td>
-        <td>FILM_TITLE</td>
-        <td>CATEGORY</td>
-    </tr>
-    <tr>
         <td>BIGINT</td>
-        <td>VARCHAR2(50)</td>
-        <td>VARCHAR2(20)</td>
+        <td>kategória információ azonosítója (PK)</td>
     </tr>
     <tr>
-        <td>kategória információ azonosítója (PK)</td>
+        <td>FILM_TITLE</td>
+        <td>VARCHAR2(50)</td>
         <td>film neve (FK)</td>
+    </tr>
+    <tr>
+        <td>CATEGORY</td>
+        <td>VARCHAR2(20)</td>
         <td>kategória neve (FK)</td>
     </tr>
 </table>
 
 <table>
-    <th>CINEMA</th>
+    <th colspan="2">CINEMA</th>
     <tr>
         <td>ID</td>
-        <td>COUNTRY</td>
-        <td>CITY</td>
-        <td>DISTRICT</td>
-        <td>STREET</td>
-        <td>HOUSE_NUMBER</td>
-        <td>NAME</td>
-        <td>AMENITIES_CHARGE</td>
-    </tr>
-    <tr>
         <td>BIGINT</td>
-        <td>VARCHAR2(50)</td>
-        <td>VARCHAR2(30)</td>
-        <td>VARCHAR2(8)</td>
-        <td>VARCHAR(50)</td>
-        <td>TINYINT</td>
-        <td>VARCHAR2(20)</td>
-        <td>SMALLINT</td>
+        <td>mozi azonosítója (PK)</td>
     </tr>
     <tr>
-        <td>mozi azonosítója (PK)</td>
+        <td>COUNTRY</td>
+        <td>VARCHAR2(50)</td>
         <td>ország neve</td>
+    </tr>
+        <td>CITY</td>
+        <td>VARCHAR2(30)</td>
         <td>város neve</td>
+    </tr>
+    <tr>
+        <td>DISTRICT</td>
+        <td>VARCHAR2(8)</td>
         <td>kerület neve</td>
+    </tr>
+    <tr>
+        <td>STREET</td>
+        <td>VARCHAR(50)</td>
         <td>utca neve</td>
-        <td>mozi neve</td>
+    </tr>
+    <tr>
+        <td>HOUSE_NUMBER</td>
+        <td>TINYINT</td>
         <td>házszám</td>
+    </tr>
+    <tr>
+        <td>NAME</td>
+        <td>VARCHAR2(20)</td>
+        <td>mozi neve</td>
+    </tr>
+    <tr>
+        <td>AMENITIES_CHARGE</td>
+        <td>SMALLINT</td>
         <td>kényelmi díj értéke</td>
     </tr>
 </table>
 
-<table>
+<table colspan="2">
     <th>FILM</th>
     <tr>
         <td>TITLE</td>
-        <td>LANGUAGE</td>
-        <td>SYNCHRON</td>
-        <td>INSCRIPTIVE</td>
-        <td>IMAX</td>
-        <td>THREE_DIMENSIONAL</td>
-        <td>FOUR_DIMENSIONAL</td>
-        <td>PLAY_TIME</td>
-        <td>PREMIERE</td>
-        <td>AGE_LIMIT</td>
-        <td>DIRECTOR_FIRST_NAME</td>
-        <td>DIRECTOR_LAST_NAME</td>
-        <td>COUNTRY</td>
-        <td>YEAR</td>
-        <td>RATE</td>
-        <td>DESCRIPTION</td>
-        <td>CINEMA_ID</td>
-    </tr>
-    <tr>
         <td>VARCHAR2(50)</td>
-        <td>VARCHAR2(30)</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>SMALLINT</td>
-        <td>DATE</td>
-        <td>TINYINT</td>
-        <td>VARCHAR2(30)</td>
-        <td>VARCHAR2(30)</td>
-        <td>VARCHAR2(50)</td>
-        <td>SMALLINT</td>
-        <td>DECIMAL</td>
-        <td>VARCHAR2(500)</td>
-        <td>BIGINT</td>
-    </tr>
-    <tr>
         <td>film címe (PK)</td>
+    </tr>
+    <tr>
+        <td>LANGUAGE</td>
+        <td>VARCHAR2(30)</td>
         <td>nyelvezete</td>
+    </tr>
+    <tr>
+        <td>SYNCHRON</td>
+        <td>BOOLEAN</td>
         <td>elérhető-e szinkronos verzió</td>
+    </tr>
+    <tr>
+        <td>INSCRIPTIVE</td>
+        <td>BOOLEAN</td>
         <td>elérhető-e feliratos verzió</td>
+    </tr>
+    <tr>
+        <td>IMAX</td>
+        <td>BOOLEAN</td>
         <td>elérhető-e IMAX verzió</td>
+    </tr>
+    <tr>
+        <td>THREE_DIMENSIONAL</td>
+        <td>BOOLEAN</td>
         <td>elérhető-e három dimenziós verzió</td>
+    </tr>
+    <tr>
+        <td>FOUR_DIMENSIONAL</td>
+        <td>BOOLEAN</td>
         <td>elérhető-e négy dimenziós verzió</td>
+    </tr>
+    <tr>
+        <td>PLAY_TIME</td>
+        <td>SMALLINT</td>
         <td>játékideje</td>
+    </tr>
+    <tr>
+        <td>PREMIERE</td>
+        <td>DATE</td>
         <td>premier dátuma</td>
+    </tr>
+    <tr>
+        <td>AGE_LIMIT</td>
+        <td>TINYINT</td>
         <td>korhatár</td>
+    </tr>
+    <tr>
+        <td>DIRECTOR_FIRST_NAME</td>
+        <td>VARCHAR2(30)</td>
         <td>rendező keresztneve</td>
+    </tr>
+    <tr>
+        <td>DIRECTOR_LAST_NAME</td>
+        <td>VARCHAR2(30)</td>
         <td>rendező vezetékneve</td>
+    </tr>
+    <tr>
+        <td>COUNTRY</td>
+        <td>VARCHAR2(50)</td>
         <td>országa</td>
+    </tr>
+    <tr>
+        <td>YEAR</td>
+        <td>SMALLINT</td>
         <td>gyártási éve</td>
+    </tr>
+    <tr>
+        <td>RATE</td>
+        <td>DECIMAL</td>
         <td>értékelése</td>
+    </tr>
+    <tr>
+        <td>DESCRIPTION</td>
+        <td>VARCHAR2(500)</td>
         <td>leírása</td>
+    </tr>
+    <tr>
+        <td>CINEMA_ID</td>
+        <td>BIGINT</td>
         <td>mozi azonosító, melyben vetítik a filmet (FK)</td>
     </tr>
 </table>
 
-<table>
+<table colspan="2">
     <th>ROOM</th>
     <tr>
         <td>ID</td>
-        <td>NAME</td>
-        <td>VIP</td>
-        <td>BED_ROOM</td>
-        <td>IMAX</td>
-        <td>THREE_DIMENSIONAL</td>
-        <td>FOUR_DIMENSIONAL</td>
-        <td>CINEMA_ID</td>
-    </tr>
-    <tr>
         <td>BIGINT</td>
-        <td>VARCHAR2(20)</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN)</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>BIGINT</td>
-    </tr>
-    <tr>
         <td>terem azonosítója (PK)</td>
+    </tr>
+    <tr>
+        <td>NAME</td>
+        <td>VARCHAR2(20)</td>
         <td>terem neve</td>
+    </tr>
+    <tr>
+        <td>VIP</td>
+        <td>BOOLEAN</td>
         <td>vip szoba-e</td>
+    </tr>
+    <tr>
+        <td>BED_ROOM</td>
+        <td>BOOLEAN</td>
         <td>ágyas szoba-e</td>
+    </tr>
+    <tr>
+        <td>IMAX</td>
+        <td>BOOLEAN</td>
         <td>ismeri-e az IMAX technológiát</td>
+    </tr>
+    <tr>
+        <td>THREE_DIMENSIONAL</td>
+        <td>BOOLEAN</td>
         <td>ismeri-e a három dimenziós technológiát</td>
+    </tr>
+    <tr>
+        <td>FOUR_DIMENSIONAL</td>
+        <td>BOOLEAN</td>
         <td>ismeri-e a négy dimenziós technológiát</td>
+    </tr>
+    <tr>
+        <td>CINEMA_ID</td>
+        <td>BIGINT</td>
         <td>mozi azonosító, melyben megtalálható a terem (FK)</td>
     </tr>
 </table>
 
-<table>
+<table colspan="2">
     <th>ROOM_STRUCTURE</th>
     <tr>
         <td>ID</td>
-        <td>ROW</td>
-        <td>SEAT_NUMBER</td>
-        <td>CINEMA_ID</td>
-        <td>ROOM_NAME</td>
-    </tr>
-    <tr>
         <td>BIGINT</td>
-        <td>TINYINT</td>
-        <td>TINYINT</td>
-        <td>BIGINT</td>
-        <td>BIGINT</td>
-    </tr>
-    <tr>
         <td>szoba struktúra azonósítója (PK)</td>
+    </tr>
+    <tr>
+        <td>ROW</td>
+        <td>TINYINT</td>
         <td>sor száma</td>
+    </tr>
+    <tr>
+        <td>SEAT_NUMBER</td>
+        <td>TINYINT</td>
         <td>sorban lévő ülése száma</td>
+    </tr>
+    <tr>
+        <td>CINEMA_ID</td>
+        <td>BIGINT</td>
         <td>mozi azonosító, melyben megtalálható a struktúra (FK)</td>
+    </tr>
+    <tr>
+        <td>ROOM_NAME</td>
+        <td>BIGINT</td>
         <td>terem azonosító, melyben megtalálható a struktúra (FK)</td>
     </tr>
 </table>
 
 <table>
-    <th>SCREENING</th>
+    <th colspan="2">SCREENING</th>
     <tr>
         <td>ID</td>
-        <td>TWO_DIMENSIONAL</td>
-        <td>THREE_DIMENSIONAL</td>
-        <td>FOUR_DIMENSIONAL</td>
-        <td>IMAX</td>
-        <td>LANGUAGE</td>
-        <td>INSCRIPTIVE</td>
-        <td>SYNCHRON</td>
-        <td>SCREEN_DAY</td>
-        <td>SCREEN_TIME</td>
-        <td>CINEMA_ID</td>
-        <td>ROOM_ID</td>
-        <td>FILM_TITLE</td>
-    </tr>
-    <tr>
         <td>BIGINT</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>VARCHAR2(30)</td>
-        <td>BOOLEAN</td>
-        <td>BOOLEAN</td>
-        <td>DATE</td>
-        <td>TIME</td>
-        <td>BIGINT</td>
-        <td>BIGINT</td>
-        <td>VARCHAR2(50)</td>
-    </tr>
-    <tr>
         <td>vetítés azonosítója (PK)</td>
+    </tr>
+    <tr>
+        <td>TWO_DIMENSIONAL</td>
+        <td>BOOLEAN</td>
         <td>két dimenziós vetítés-e</td>
+    </tr>
+    <tr>
+        <td>THREE_DIMENSIONAL</td>
+        <td>BOOLEAN</td>
         <td>három dimenziós vetítés-e</td>
+    </tr>
+    <tr>
+        <td>FOUR_DIMENSIONAL</td>
+        <td>BOOLEAN</td>
         <td>négy dimenziós vetítés-e</td>
+    </tr>
+    <tr>
+        <td>IMAX</td>
+        <td>BOOLEAN</td>
         <td>IMAX vetítés-e</td>
+    </tr>
+    <tr>
+        <td>LANGUAGE</td>
+        <td>VARCHAR2(30)</td>
         <td>nyelvezete</td>
+    </tr>
+    <tr>
+        <td>INSCRIPTIVE</td>
+        <td>BOOLEAN</td>
         <td>szinkronos vetítés-e</td>
+    </tr>
+    <tr>
+        <td>SYNCHRON</td>
+        <td>BOOLEAN</td>
         <td>feliratos vetítés-e</td>
+    </tr>
+    <tr>
+        <td>SCREEN_DAY</td>
+        <td>DATE</td>
         <td>vetítési dátum</td>
+    </tr>
+    <tr>
+        <td>SCREEN_TIME</td>
+        <td>TIME</td>
         <td>vetítési időpont</td>
+    </tr>
+    <tr>
+        <td>CINEMA_ID</td>
+        <td>BIGINT</td>
         <td>mozi azonosító, melyben aktuális a vetítés (FK)</td>
+    </tr>
+    <tr>
+        <td>ROOM_ID</td>
+        <td>BIGINT</td>
         <td>terem azonosító, melyben aktuális a vetítés (FK)</td>
+    </tr>
+    <tr>
+        <td>FILM_TITLE</td>
+        <td>VARCHAR2(50)</td>
         <td>film cím, melyet vetítenek (FK)</td>
     </tr>
 </table>
 
 <table>
-    <th>TICKET</th>
+    <th colspan="2">TICKET</th>
     <tr>
         <td>TYPE</td>
-        <td>BASIC_PRICE</td>
-        <td>IMAX_PRICE</td>
-        <td>IMAX_GLASS_PRICE</td>
-        <td>THREE_DIMENSIONAL_PRICE</td>
-        <td>THREE_DIMENSIONAL_GLASS_PRICE</td>
-        <td>FOUR_DIMENSIONAL_PRICE</td>
-        <td>FOUR_DIMENSIONAL_GLASS_PRICE</td>
-        <td>BED_ROOM_PRICE</td>
-        <td>BED_ROOM_GLASS_PRICE</td>
-    </tr>
-    <tr>
         <td>VARCHAR(30)</td>
-        <td>SMALLINT</td>
-        <td>SMALLINT</td>
-        <td>SMALLINT</td>
-        <td>SMALLINT</td>
-        <td>SMALLINT</td>
-        <td>SMALLINT</td>
-        <td>SMALLINT</td>
-        <td>SMALLINT</td>
-        <td>SMALLINT</td>
+        <td>jegy típusa (PK)</td>
     </tr>
     <tr>
-        <td>jegy típusa (PK)</td>
+        <td>BASIC_PRICE</td>
+        <td>SMALLINT</td>
         <td>alapár</td>
+    </tr>
+    <tr>
+        <td>IMAX_PRICE</td>
+        <td>SMALLINT</td>
         <td>ráfizetés IMAX esetén</td>
+    </tr>
+    <tr>
+        <td>IMAX_GLASS_PRICE</td>
+        <td>SMALLINT</td>
         <td>ráfizetés IMAX + szemüveg esetén</td>
+    </tr>
+    <tr>
+        <td>THREE_DIMENSIONAL_PRICE</td>
+        <td>SMALLINT</td>
         <td>ráfizetés három dimenzió esetén</td>
+    </tr>
+    <tr>
+        <td>THREE_DIMENSIONAL_GLASS_PRICE</td>
+        <td>SMALLINT</td>
         <td>ráfizetés három dimenzió + szemüveg esetén</td>
+    </tr>
+    <tr>
+        <td>FOUR_DIMENSIONAL_PRICE</td>
+        <td>SMALLINT</td>
         <td>ráfizetés négy dimenzió esetén</td>
+    </tr>
+    <tr>
+        <td>FOUR_DIMENSIONAL_GLASS_PRICE</td>
+        <td>SMALLINT</td>
         <td>ráfizetés négy dimenzió + szemüveg esetén</td>
+    </tr>
+    <tr>
+        <td>BED_ROOM_PRICE</td>
+        <td>SMALLINT</td>
         <td>ráfizetés ágyas szoba esetén</td>
+    </tr>
+    <tr>
+        <td>BED_ROOM_GLASS_PRICE</td>
+        <td>SMALLINT</td>
         <td>ráfizetés ágyas szoba + szemüveg esetén</td>
     </tr>
 </table>
 
 <table>
-    <th>TICKET_INFORMATION</th>
+    <th colspan="2">TICKET_INFORMATION</th>
     <tr>
         <td>ID</td>
-        <td>PAYMENT</td>
-        <td>ROW</td>
-        <td>CHAIR</td>
-        <td>BOOKING_ID</td>
-        <td>TICKET_TYPE</td>
-    </tr>
-    <tr>
         <td>BIGINT</td>
-        <td>VARCHAR2(20)</td>
-        <td>TINYINT</td>
-        <td>TINYINT</td>
-        <td>BIGINT</td>
-        <td>VARCHAR2(30)</td>
-    </tr>
-    <tr>
         <td>jegy információ azonosítója (PK)</td>
+    </tr>
+    <tr>
+        <td>PAYMENT</td>
+        <td>VARCHAR2(20)</td>
         <td>fizetési mód</td>
+    </tr>
+    <tr>
+        <td>ROW</td>
+        <td>TINYINT</td>
         <td>sor</td>
+    </tr>
+    <tr>
+        <td>CHAIR</td>
+        <td>TINYINT</td>
         <td>szék</td>
+    </tr>
+    <tr>
+        <td>BOOKING_ID</td>
+        <td>BIGINT</td>
         <td>foglalás azonosítója (FK)</td>
+    </tr>
+    <tr>
+        <td>TICKET_TYPE</td>
+        <td>VARCHAR2(30)</td>
         <td>jegy típusa (FK)</td>
     </tr>
 </table>
 
 <table>
-    <th>USER</th>
+    <th colspan="2">USER</th>
     <tr>
         <td>USERNAME</td>
-        <td>PASSWORD</td>
-        <td>EMAIL</td>
-        <td>PHONE_NUMBER</td>
-        <td>ADMIN_RIGHT</td>
-    </tr>
-    <tr>
         <td>VARCHAR2(15)</td>
-        <td>VARCHAR2(42)</td>
-        <td>VARCHAR2(50)</td>
-        <td>VARCHAR2(14)</td>
-        <td>BOOLEAN</td>
+        <td>felhasználónév (PK)</td>
     </tr>
     <tr>
-        <td>felhasználónév (PK)</td>
+        <td>PASSWORD</td>
+        <td>VARCHAR2(42)</td>
         <td>jelszó</td>
+    </tr>
+    <tr>
+        <td>EMAIL</td>
+        <td>VARCHAR2(50)</td>
         <td>email cím</td>
+    </tr>
+    <tr>
+        <td>PHONE_NUMBER</td>
+        <td>VARCHAR2(14)</td>
         <td>telefonszám</td>
+    </tr>
+    <tr>
+        <td>ADMIN_RIGHT</td>
+        <td>BOOLEAN</td>
         <td>adminisztrátori jogosultság (FK)</td>
     </tr>
 </table>
