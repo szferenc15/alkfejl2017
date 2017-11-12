@@ -61,7 +61,7 @@ TODO:
     1. Lombok @Data bug
     2. @Pattern validation for the first insertion
     3. EK diagram
-    4. Table styling
+    4. Table styling (bug)
 ```
 
 ## Adatbázis séma:
