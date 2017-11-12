@@ -74,12 +74,12 @@ TODO:
     <tr align="center">
         <td align="center" width="33%">ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">foglalás azonosítója (PK)        </td>
+        <td align="justify" width="33%">foglalás azonosítója (PK) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
     <tr align="center">
         <td align="center" width="33%">SCREENING_ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">vetítés azonosítója (FK)          </td>
+        <td align="justify" width="33%">vetítés azonosítója (FK)  &nbsp&nbsp&nbsp&nbsp</td>
     </tr>
 </table>
 
