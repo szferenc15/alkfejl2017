@@ -63,7 +63,7 @@ TODO:
 ```
 
 ## Adatbázis séma:
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">BOOKING</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -82,7 +82,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">CATEGORY</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -96,7 +96,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">CATEGORY_INFORMATION</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -120,7 +120,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">CINEMA</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -168,7 +168,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">FILM</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -262,7 +262,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">ROOM</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -311,7 +311,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">ROOM_STRUCTURE</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -345,7 +345,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">SCREENING</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -419,7 +419,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">TICKET</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -478,7 +478,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">TICKET_INFORMATION</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
@@ -517,7 +517,7 @@ TODO:
     </tr>
 </table>
 
-<table align="center">
+<table align="center" width="100%">
     <th colspan="3">USER</th>
     <tr>
         <th align="center" width="33%">ATTRIBÚTUM</th>
