@@ -64,6 +64,9 @@ TODO:
 
 ## Adatbázis séma:
 <table align="center" width="100%">
+<tr>
+<td>
+<table align="center" width="100%">
     <th colspan="3">BOOKING</th>
     <tr align="center">
         <th width="33%">ATTRIBÚTUM</th>
@@ -81,7 +84,11 @@ TODO:
         <td align="justify" width="33%">vetítés azonosítója (FK)</td>
     </tr>
 </table>
-<br>
+</td>
+</tr>
+
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">CATEGORY</th>
     <tr align="center">
@@ -95,7 +102,11 @@ TODO:
         <td align="justify" width="33%">kategória neve (PK)</td>
     </tr>
 </table>
-<br>
+</td>
+</tr>
+
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">CATEGORY_INFORMATION</th>
     <tr align="center">
@@ -119,7 +130,11 @@ TODO:
         <td align="justify" width="33%">kategória neve (FK)</td>
     </tr>
 </table>
+</td>
+</tr>
 
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">CINEMA</th>
     <tr align="center">
@@ -167,7 +182,11 @@ TODO:
         <td align="justify" width="33%">kényelmi díj értéke</td>
     </tr>
 </table>
+</td>
+</tr>
 
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">FILM</th>
     <tr align="center">
@@ -261,7 +280,11 @@ TODO:
         <td align="justify" width="33%">mozi azonosító, melyben vetítik a filmet (FK)</td>
     </tr>
 </table>
+</td>
+</tr>
 
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">ROOM</th>
     <tr align="center">
@@ -310,7 +333,11 @@ TODO:
         <td align="justify" width="33%">mozi azonosító, melyben megtalálható a terem (FK)</td>
     </tr>
 </table>
+</td>
+</tr>
 
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">ROOM_STRUCTURE</th>
     <tr align="center">
@@ -344,7 +371,11 @@ TODO:
         <td align="justify" width="33%">terem azonosító, melyben megtalálható a struktúra (FK)</td>
     </tr>
 </table>
+</td>
+</tr>
 
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">SCREENING</th>
     <tr align="center">
@@ -418,7 +449,11 @@ TODO:
         <td align="justify" width="33%">film cím, melyet vetítenek (FK)</td>
     </tr>
 </table>
+</td>
+</tr>
 
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">TICKET</th>
     <tr align="center">
@@ -477,7 +512,11 @@ TODO:
         <td align="justify" width="33%">ráfizetés ágyas szoba + szemüveg esetén</td>
     </tr>
 </table>
+</td>
+</tr>
 
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">TICKET_INFORMATION</th>
     <tr align="center">
@@ -516,7 +555,11 @@ TODO:
         <td align="justify" width="33%">jegy típusa (FK)</td>
     </tr>
 </table>
+</td>
+</tr>
 
+<tr>
+<td>
 <table align="center" width="100%">
     <th colspan="3">USER</th>
     <tr align="center">
@@ -549,6 +592,9 @@ TODO:
         <td align="center" width="33%">BOOLEAN</td>
         <td align="justify" width="33%">adminisztrátori jogosultság (FK)</td>
     </tr>
+</table>
+</td>
+</tr>
 </table>
 
 ## Egyed-kapcsolat diagram:
