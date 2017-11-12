@@ -62,492 +62,496 @@ TODO:
     2. @Pattern validation for the first insertion
 ```
 
+table {
+    width: 100%;
+}
+
 ## Adatbázis séma:
-<table>
+<table style="width: 100%;">
     <th colspan="3">BOOKING</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>ID</td>
-        <td>BIGINT</td>
-        <td>foglalás azonosítója (PK)</td>
+        <td style="width: 33%; text-align: center">ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">foglalás azonosítója (PK)</td>
     </tr>
     <tr>
-        <td>SCREENING_ID</td>
-        <td>BIGINT</td>
-        <td>vetítés azonosítója (FK)</td>
+        <td style="width: 33%; text-align: center">SCREENING_ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">vetítés azonosítója (FK)</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">CATEGORY</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>CATEGORY</td>
-        <td>VARCHAR2(20)</td>
-        <td>kategória neve (PK)</td>
+        <td style="width: 33%; text-align: center">CATEGORY</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(20)</td>
+        <td style="width: 33%; text-align: center">kategória neve (PK)</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">CATEGORY_INFORMATION</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>ID</td>
-        <td>BIGINT</td>
-        <td>kategória információ azonosítója (PK)</td>
+        <td style="width: 33%; text-align: center">ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">kategória információ azonosítója (PK)</td>
     </tr>
     <tr>
-        <td>FILM_TITLE</td>
-        <td>VARCHAR2(50)</td>
-        <td>film neve (FK)</td>
+        <td style="width: 33%; text-align: center">FILM_TITLE</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(50)</td>
+        <td style="width: 33%; text-align: center">film neve (FK)</td>
     </tr>
     <tr>
-        <td>CATEGORY</td>
-        <td>VARCHAR2(20)</td>
-        <td>kategória neve (FK)</td>
+        <td style="width: 33%; text-align: center">CATEGORY</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(20)</td>
+        <td style="width: 33%; text-align: center">kategória neve (FK)</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">CINEMA</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>ID</td>
-        <td>BIGINT</td>
-        <td>mozi azonosítója (PK)</td>
+        <td style="width: 33%; text-align: center">ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">mozi azonosítója (PK)</td>
     </tr>
     <tr>
-        <td>COUNTRY</td>
-        <td>VARCHAR2(50)</td>
-        <td>ország neve</td>
+        <td style="width: 33%; text-align: center">COUNTRY</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(50)</td>
+        <td style="width: 33%; text-align: center">ország neve</td>
     </tr>
-        <td>CITY</td>
-        <td>VARCHAR2(30)</td>
-        <td>város neve</td>
-    </tr>
-    <tr>
-        <td>DISTRICT</td>
-        <td>VARCHAR2(8)</td>
-        <td>kerület neve</td>
+        <td style="width: 33%; text-align: center">CITY</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(30)</td>
+        <td style="width: 33%; text-align: center">város neve</td>
     </tr>
     <tr>
-        <td>STREET</td>
-        <td>VARCHAR(50)</td>
-        <td>utca neve</td>
+        <td style="width: 33%; text-align: center">DISTRICT</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(8)</td>
+        <td style="width: 33%; text-align: center">kerület neve</td>
     </tr>
     <tr>
-        <td>HOUSE_NUMBER</td>
-        <td>TINYINT</td>
-        <td>házszám</td>
+        <td style="width: 33%; text-align: center">STREET</td>
+        <td style="width: 33%; text-align: center">VARCHAR(50)</td>
+        <td style="width: 33%; text-align: center">utca neve</td>
     </tr>
     <tr>
-        <td>NAME</td>
-        <td>VARCHAR2(20)</td>
-        <td>mozi neve</td>
+        <td style="width: 33%; text-align: center">HOUSE_NUMBER</td>
+        <td style="width: 33%; text-align: center">TINYINT</td>
+        <td style="width: 33%; text-align: center">házszám</td>
     </tr>
     <tr>
-        <td>AMENITIES_CHARGE</td>
-        <td>SMALLINT</td>
-        <td>kényelmi díj értéke</td>
+        <td style="width: 33%; text-align: center">NAME</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(20)</td>
+        <td style="width: 33%; text-align: center">mozi neve</td>
+    </tr>
+    <tr>
+        <td style="width: 33%; text-align: center">AMENITIES_CHARGE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">kényelmi díj értéke</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">FILM</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>TITLE</td>
-        <td>VARCHAR2(50)</td>
-        <td>film címe (PK)</td>
+        <td style="width: 33%; text-align: center">TITLE</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(50)</td>
+        <td style="width: 33%; text-align: center">film címe (PK)</td>
     </tr>
     <tr>
-        <td>LANGUAGE</td>
-        <td>VARCHAR2(30)</td>
-        <td>nyelvezete</td>
+        <td style="width: 33%; text-align: center">LANGUAGE</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(30)</td>
+        <td style="width: 33%; text-align: center">nyelvezete</td>
     </tr>
     <tr>
-        <td>SYNCHRON</td>
-        <td>BOOLEAN</td>
-        <td>elérhető-e szinkronos verzió</td>
+        <td style="width: 33%; text-align: center">SYNCHRON</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">elérhető-e szinkronos verzió</td>
     </tr>
     <tr>
-        <td>INSCRIPTIVE</td>
-        <td>BOOLEAN</td>
-        <td>elérhető-e feliratos verzió</td>
+        <td style="width: 33%; text-align: center">INSCRIPTIVE</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">elérhető-e feliratos verzió</td>
     </tr>
     <tr>
-        <td>IMAX</td>
-        <td>BOOLEAN</td>
-        <td>elérhető-e IMAX verzió</td>
+        <td style="width: 33%; text-align: center">IMAX</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">elérhető-e IMAX verzió</td>
     </tr>
     <tr>
-        <td>THREE_DIMENSIONAL</td>
-        <td>BOOLEAN</td>
-        <td>elérhető-e három dimenziós verzió</td>
+        <td style="width: 33%; text-align: center">THREE_DIMENSIONAL</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">elérhető-e három dimenziós verzió</td>
     </tr>
     <tr>
-        <td>FOUR_DIMENSIONAL</td>
-        <td>BOOLEAN</td>
-        <td>elérhető-e négy dimenziós verzió</td>
+        <td style="width: 33%; text-align: center">FOUR_DIMENSIONAL</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">elérhető-e négy dimenziós verzió</td>
     </tr>
     <tr>
-        <td>PLAY_TIME</td>
-        <td>SMALLINT</td>
-        <td>játékideje</td>
+        <td style="width: 33%; text-align: center">PLAY_TIME</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">játékideje</td>
     </tr>
     <tr>
-        <td>PREMIERE</td>
-        <td>DATE</td>
-        <td>premier dátuma</td>
+        <td style="width: 33%; text-align: center">PREMIERE</td>
+        <td style="width: 33%; text-align: center">DATE</td>
+        <td style="width: 33%; text-align: center">premier dátuma</td>
     </tr>
     <tr>
-        <td>AGE_LIMIT</td>
-        <td>TINYINT</td>
-        <td>korhatár</td>
+        <td style="width: 33%; text-align: center">AGE_LIMIT</td>
+        <td style="width: 33%; text-align: center">TINYINT</td>
+        <td style="width: 33%; text-align: center">korhatár</td>
     </tr>
     <tr>
-        <td>DIRECTOR_FIRST_NAME</td>
-        <td>VARCHAR2(30)</td>
-        <td>rendező keresztneve</td>
+        <td style="width: 33%; text-align: center">DIRECTOR_FIRST_NAME</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(30)</td>
+        <td style="width: 33%; text-align: center">rendező keresztneve</td>
     </tr>
     <tr>
-        <td>DIRECTOR_LAST_NAME</td>
-        <td>VARCHAR2(30)</td>
-        <td>rendező vezetékneve</td>
+        <td style="width: 33%; text-align: center">DIRECTOR_LAST_NAME</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(30)</td>
+        <td style="width: 33%; text-align: center">rendező vezetékneve</td>
     </tr>
     <tr>
-        <td>COUNTRY</td>
-        <td>VARCHAR2(50)</td>
-        <td>országa</td>
+        <td style="width: 33%; text-align: center">COUNTRY</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(50)</td>
+        <td style="width: 33%; text-align: center">országa</td>
     </tr>
     <tr>
-        <td>YEAR</td>
-        <td>SMALLINT</td>
-        <td>gyártási éve</td>
+        <td style="width: 33%; text-align: center">YEAR</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">gyártási éve</td>
     </tr>
     <tr>
-        <td>RATE</td>
-        <td>DECIMAL</td>
-        <td>értékelése</td>
+        <td style="width: 33%; text-align: center">RATE</td>
+        <td style="width: 33%; text-align: center">DECIMAL</td>
+        <td style="width: 33%; text-align: center">értékelése</td>
     </tr>
     <tr>
-        <td>DESCRIPTION</td>
-        <td>VARCHAR2(500)</td>
-        <td>leírása</td>
+        <td style="width: 33%; text-align: center">DESCRIPTION</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(500)</td>
+        <td style="width: 33%; text-align: center">leírása</td>
     </tr>
     <tr>
-        <td>CINEMA_ID</td>
-        <td>BIGINT</td>
-        <td>mozi azonosító, melyben vetítik a filmet (FK)</td>
+        <td style="width: 33%; text-align: center">CINEMA_ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">mozi azonosító, melyben vetítik a filmet (FK)</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">ROOM</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>ID</td>
-        <td>BIGINT</td>
-        <td>terem azonosítója (PK)</td>
+        <td style="width: 33%; text-align: center">ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">terem azonosítója (PK)</td>
     </tr>
     <tr>
-        <td>NAME</td>
-        <td>VARCHAR2(20)</td>
-        <td>terem neve</td>
+        <td style="width: 33%; text-align: center">NAME</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(20)</td>
+        <td style="width: 33%; text-align: center">terem neve</td>
     </tr>
     <tr>
-        <td>VIP</td>
-        <td>BOOLEAN</td>
-        <td>vip szoba-e</td>
+        <td style="width: 33%; text-align: center">VIP</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">vip szoba-e</td>
     </tr>
     <tr>
-        <td>BED_ROOM</td>
-        <td>BOOLEAN</td>
-        <td>ágyas szoba-e</td>
+        <td style="width: 33%; text-align: center">BED_ROOM</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">ágyas szoba-e</td>
     </tr>
     <tr>
-        <td>IMAX</td>
-        <td>BOOLEAN</td>
-        <td>ismeri-e az IMAX technológiát</td>
+        <td style="width: 33%; text-align: center">IMAX</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">ismeri-e az IMAX technológiát</td>
     </tr>
     <tr>
-        <td>THREE_DIMENSIONAL</td>
-        <td>BOOLEAN</td>
-        <td>ismeri-e a három dimenziós technológiát</td>
+        <td style="width: 33%; text-align: center">THREE_DIMENSIONAL</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">ismeri-e a három dimenziós technológiát</td>
     </tr>
     <tr>
-        <td>FOUR_DIMENSIONAL</td>
-        <td>BOOLEAN</td>
-        <td>ismeri-e a négy dimenziós technológiát</td>
+        <td style="width: 33%; text-align: center">FOUR_DIMENSIONAL</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">ismeri-e a négy dimenziós technológiát</td>
     </tr>
     <tr>
-        <td>CINEMA_ID</td>
-        <td>BIGINT</td>
-        <td>mozi azonosító, melyben megtalálható a terem (FK)</td>
+        <td style="width: 33%; text-align: center">CINEMA_ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">mozi azonosító, melyben megtalálható a terem (FK)</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">ROOM_STRUCTURE</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>ID</td>
-        <td>BIGINT</td>
-        <td>szoba struktúra azonósítója (PK)</td>
+        <td style="width: 33%; text-align: center">ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">szoba struktúra azonósítója (PK)</td>
     </tr>
     <tr>
-        <td>ROW</td>
-        <td>TINYINT</td>
-        <td>sor száma</td>
+        <td style="width: 33%; text-align: center">ROW</td>
+        <td style="width: 33%; text-align: center">TINYINT</td>
+        <td style="width: 33%; text-align: center">sor száma</td>
     </tr>
     <tr>
-        <td>SEAT_NUMBER</td>
-        <td>TINYINT</td>
-        <td>sorban lévő ülése száma</td>
+        <td style="width: 33%; text-align: center">SEAT_NUMBER</td>
+        <td style="width: 33%; text-align: center">TINYINT</td>
+        <td style="width: 33%; text-align: center">sorban lévő ülése száma</td>
     </tr>
     <tr>
-        <td>CINEMA_ID</td>
-        <td>BIGINT</td>
-        <td>mozi azonosító, melyben megtalálható a struktúra (FK)</td>
+        <td style="width: 33%; text-align: center">CINEMA_ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">mozi azonosító, melyben megtalálható a struktúra (FK)</td>
     </tr>
     <tr>
-        <td>ROOM_NAME</td>
-        <td>BIGINT</td>
-        <td>terem azonosító, melyben megtalálható a struktúra (FK)</td>
+        <td style="width: 33%; text-align: center">ROOM_NAME</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">terem azonosító, melyben megtalálható a struktúra (FK)</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">SCREENING</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>ID</td>
-        <td>BIGINT</td>
-        <td>vetítés azonosítója (PK)</td>
+        <td style="width: 33%; text-align: center">ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">vetítés azonosítója (PK)</td>
     </tr>
     <tr>
-        <td>TWO_DIMENSIONAL</td>
-        <td>BOOLEAN</td>
-        <td>két dimenziós vetítés-e</td>
+        <td style="width: 33%; text-align: center">TWO_DIMENSIONAL</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">két dimenziós vetítés-e</td>
     </tr>
     <tr>
-        <td>THREE_DIMENSIONAL</td>
-        <td>BOOLEAN</td>
-        <td>három dimenziós vetítés-e</td>
+        <td style="width: 33%; text-align: center">THREE_DIMENSIONAL</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">három dimenziós vetítés-e</td>
     </tr>
     <tr>
-        <td>FOUR_DIMENSIONAL</td>
-        <td>BOOLEAN</td>
-        <td>négy dimenziós vetítés-e</td>
+        <td style="width: 33%; text-align: center">FOUR_DIMENSIONAL</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">négy dimenziós vetítés-e</td>
     </tr>
     <tr>
-        <td>IMAX</td>
-        <td>BOOLEAN</td>
-        <td>IMAX vetítés-e</td>
+        <td style="width: 33%; text-align: center">IMAX</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">IMAX vetítés-e</td>
     </tr>
     <tr>
-        <td>LANGUAGE</td>
-        <td>VARCHAR2(30)</td>
-        <td>nyelvezete</td>
+        <td style="width: 33%; text-align: center">LANGUAGE</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(30)</td>
+        <td style="width: 33%; text-align: center">nyelvezete</td>
     </tr>
     <tr>
-        <td>INSCRIPTIVE</td>
-        <td>BOOLEAN</td>
-        <td>szinkronos vetítés-e</td>
+        <td style="width: 33%; text-align: center">INSCRIPTIVE</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">szinkronos vetítés-e</td>
     </tr>
     <tr>
-        <td>SYNCHRON</td>
-        <td>BOOLEAN</td>
-        <td>feliratos vetítés-e</td>
+        <td style="width: 33%; text-align: center">SYNCHRON</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">feliratos vetítés-e</td>
     </tr>
     <tr>
-        <td>SCREEN_DAY</td>
-        <td>DATE</td>
-        <td>vetítési dátum</td>
+        <td style="width: 33%; text-align: center">SCREEN_DAY</td>
+        <td style="width: 33%; text-align: center">DATE</td>
+        <td style="width: 33%; text-align: center">vetítési dátum</td>
     </tr>
     <tr>
-        <td>SCREEN_TIME</td>
-        <td>TIME</td>
-        <td>vetítési időpont</td>
+        <td style="width: 33%; text-align: center">SCREEN_TIME</td>
+        <td style="width: 33%; text-align: center">TIME</td>
+        <td style="width: 33%; text-align: center">vetítési időpont</td>
     </tr>
     <tr>
-        <td>CINEMA_ID</td>
-        <td>BIGINT</td>
-        <td>mozi azonosító, melyben aktuális a vetítés (FK)</td>
+        <td style="width: 33%; text-align: center">CINEMA_ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">mozi azonosító, melyben aktuális a vetítés (FK)</td>
     </tr>
     <tr>
-        <td>ROOM_ID</td>
-        <td>BIGINT</td>
-        <td>terem azonosító, melyben aktuális a vetítés (FK)</td>
+        <td style="width: 33%; text-align: center">ROOM_ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">terem azonosító, melyben aktuális a vetítés (FK)</td>
     </tr>
     <tr>
-        <td>FILM_TITLE</td>
-        <td>VARCHAR2(50)</td>
-        <td>film cím, melyet vetítenek (FK)</td>
+        <td style="width: 33%; text-align: center">FILM_TITLE</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(50)</td>
+        <td style="width: 33%; text-align: center">film cím, melyet vetítenek (FK)</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">TICKET</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>TYPE</td>
-        <td>VARCHAR(30)</td>
-        <td>jegy típusa (PK)</td>
+        <td style="width: 33%; text-align: center">TYPE</td>
+        <td style="width: 33%; text-align: center">VARCHAR(30)</td>
+        <td style="width: 33%; text-align: center">jegy típusa (PK)</td>
     </tr>
     <tr>
-        <td>BASIC_PRICE</td>
-        <td>SMALLINT</td>
-        <td>alapár</td>
+        <td style="width: 33%; text-align: center">BASIC_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">alapár</td>
     </tr>
     <tr>
-        <td>IMAX_PRICE</td>
-        <td>SMALLINT</td>
-        <td>ráfizetés IMAX esetén</td>
+        <td style="width: 33%; text-align: center">IMAX_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">ráfizetés IMAX esetén</td>
     </tr>
     <tr>
-        <td>IMAX_GLASS_PRICE</td>
-        <td>SMALLINT</td>
-        <td>ráfizetés IMAX + szemüveg esetén</td>
+        <td style="width: 33%; text-align: center">IMAX_GLASS_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">ráfizetés IMAX + szemüveg esetén</td>
     </tr>
     <tr>
-        <td>THREE_DIMENSIONAL_PRICE</td>
-        <td>SMALLINT</td>
-        <td>ráfizetés három dimenzió esetén</td>
+        <td style="width: 33%; text-align: center">THREE_DIMENSIONAL_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">ráfizetés három dimenzió esetén</td>
     </tr>
     <tr>
-        <td>THREE_DIMENSIONAL_GLASS_PRICE</td>
-        <td>SMALLINT</td>
-        <td>ráfizetés három dimenzió + szemüveg esetén</td>
+        <td style="width: 33%; text-align: center">THREE_DIMENSIONAL_GLASS_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">ráfizetés három dimenzió + szemüveg esetén</td>
     </tr>
     <tr>
-        <td>FOUR_DIMENSIONAL_PRICE</td>
-        <td>SMALLINT</td>
-        <td>ráfizetés négy dimenzió esetén</td>
+        <td style="width: 33%; text-align: center">FOUR_DIMENSIONAL_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">ráfizetés négy dimenzió esetén</td>
     </tr>
     <tr>
-        <td>FOUR_DIMENSIONAL_GLASS_PRICE</td>
-        <td>SMALLINT</td>
-        <td>ráfizetés négy dimenzió + szemüveg esetén</td>
+        <td style="width: 33%; text-align: center">FOUR_DIMENSIONAL_GLASS_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">ráfizetés négy dimenzió + szemüveg esetén</td>
     </tr>
     <tr>
-        <td>BED_ROOM_PRICE</td>
-        <td>SMALLINT</td>
-        <td>ráfizetés ágyas szoba esetén</td>
+        <td style="width: 33%; text-align: center">BED_ROOM_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">ráfizetés ágyas szoba esetén</td>
     </tr>
     <tr>
-        <td>BED_ROOM_GLASS_PRICE</td>
-        <td>SMALLINT</td>
-        <td>ráfizetés ágyas szoba + szemüveg esetén</td>
+        <td style="width: 33%; text-align: center">BED_ROOM_GLASS_PRICE</td>
+        <td style="width: 33%; text-align: center">SMALLINT</td>
+        <td style="width: 33%; text-align: center">ráfizetés ágyas szoba + szemüveg esetén</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">TICKET_INFORMATION</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>ID</td>
-        <td>BIGINT</td>
-        <td>jegy információ azonosítója (PK)</td>
+        <td style="width: 33%; text-align: center">ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">jegy információ azonosítója (PK)</td>
     </tr>
     <tr>
-        <td>PAYMENT</td>
-        <td>VARCHAR2(20)</td>
-        <td>fizetési mód</td>
+        <td style="width: 33%; text-align: center">PAYMENT</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(20)</td>
+        <td style="width: 33%; text-align: center">fizetési mód</td>
     </tr>
     <tr>
-        <td>ROW</td>
-        <td>TINYINT</td>
-        <td>sor</td>
+        <td style="width: 33%; text-align: center">ROW</td>
+        <td style="width: 33%; text-align: center">TINYINT</td>
+        <td style="width: 33%; text-align: center">sor</td>
     </tr>
     <tr>
-        <td>CHAIR</td>
-        <td>TINYINT</td>
-        <td>szék</td>
+        <td style="width: 33%; text-align: center">CHAIR</td>
+        <td style="width: 33%; text-align: center">TINYINT</td>
+        <td style="width: 33%; text-align: center">szék</td>
     </tr>
     <tr>
-        <td>BOOKING_ID</td>
-        <td>BIGINT</td>
-        <td>foglalás azonosítója (FK)</td>
+        <td style="width: 33%; text-align: center">BOOKING_ID</td>
+        <td style="width: 33%; text-align: center">BIGINT</td>
+        <td style="width: 33%; text-align: center">foglalás azonosítója (FK)</td>
     </tr>
     <tr>
-        <td>TICKET_TYPE</td>
-        <td>VARCHAR2(30)</td>
-        <td>jegy típusa (FK)</td>
+        <td style="width: 33%; text-align: center">TICKET_TYPE</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(30)</td>
+        <td style="width: 33%; text-align: center">jegy típusa (FK)</td>
     </tr>
 </table>
 
-<table>
+<table style="width: 100%;">
     <th colspan="3">USER</th>
     <tr>
-        <th>ATTRIBÚTUM</th>
-        <th>TÍPUS</th>
-        <th>LEÍRÁS</th>
+        <th style="width: 33%; text-align: center">ATTRIBÚTUM</th>
+        <th style="width: 33%; text-align: center">TÍPUS</th>
+        <th style="width: 33%; text-align: center">LEÍRÁS</th>
     </tr>
     <tr>
-        <td>USERNAME</td>
-        <td>VARCHAR2(15)</td>
-        <td>felhasználónév (PK)</td>
+        <td style="width: 33%; text-align: center">USERNAME</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(15)</td>
+        <td style="width: 33%; text-align: center">felhasználónév (PK)</td>
     </tr>
     <tr>
-        <td>PASSWORD</td>
-        <td>VARCHAR2(42)</td>
-        <td>jelszó</td>
+        <td style="width: 33%; text-align: center">PASSWORD</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(42)</td>
+        <td style="width: 33%; text-align: center">jelszó</td>
     </tr>
     <tr>
-        <td>EMAIL</td>
-        <td>VARCHAR2(50)</td>
-        <td>email cím</td>
+        <td style="width: 33%; text-align: center">EMAIL</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(50)</td>
+        <td style="width: 33%; text-align: center">email cím</td>
     </tr>
     <tr>
-        <td>PHONE_NUMBER</td>
-        <td>VARCHAR2(14)</td>
-        <td>telefonszám</td>
+        <td style="width: 33%; text-align: center">PHONE_NUMBER</td>
+        <td style="width: 33%; text-align: center">VARCHAR2(14)</td>
+        <td style="width: 33%; text-align: center">telefonszám</td>
     </tr>
     <tr>
-        <td>ADMIN_RIGHT</td>
-        <td>BOOLEAN</td>
-        <td>adminisztrátori jogosultság (FK)</td>
+        <td style="width: 33%; text-align: center">ADMIN_RIGHT</td>
+        <td style="width: 33%; text-align: center">BOOLEAN</td>
+        <td style="width: 33%; text-align: center">adminisztrátori jogosultság (FK)</td>
     </tr>
 </table>
 
