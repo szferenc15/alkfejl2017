@@ -55,21 +55,21 @@ public class Cinema {
     // END OF DEFAULT COLUMNS
 
     @OneToMany(
-        mappedBy = "cinemaId",
+        mappedBy = "cinemaName",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
     private List<Room> rooms = new ArrayList<>();
 
     @OneToMany(
-        mappedBy = "cinemaId",
+        mappedBy = "cinemaName",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
     private List<Film> films = new ArrayList<>();
 
     @OneToMany(
-        mappedBy = "cinemaId",
+        mappedBy = "cinemaName",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )

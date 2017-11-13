@@ -19,12 +19,6 @@ public class UserController{
     @Autowired
     private UserService userService;
 
-/*
-    @RequestMapping("/user")
-    public User user(@RequestParam(value="username") String username){
-        return userRepository.findByUsername(username).get();
-    }
-*/  
     @RequestMapping(value= "login", method=RequestMethod.POST )
     public Response<User> login(
                                 @RequestParam(value="identifier") String identifier, 

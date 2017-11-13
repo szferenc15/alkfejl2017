@@ -55,18 +55,18 @@ INSERT INTO category(category)
 INSERT INTO category(category) 
          VALUES ('Tortenelmi');
 
--- CategoryInformation data:
-INSERT INTO category_information(id, film_title, category) 
+-- FilmCategory data:
+INSERT INTO film_category(id, film_title, category) 
          VALUES (1, 'Thor: Ragnarok', 'Akcio');
-INSERT INTO category_information(id, film_title, category) 
+INSERT INTO film_category(id, film_title, category) 
          VALUES (2, 'Thor: Ragnarok', 'Kaland');
-INSERT INTO category_information(id, film_title, category) 
+INSERT INTO film_category(id, film_title, category) 
          VALUES (3, 'Thor: Ragnarok', 'Fantasy');
-INSERT INTO category_information(id, film_title, category) 
+INSERT INTO film_category(id, film_title, category) 
          VALUES (4, 'Star Wars: The Last Jedi', 'Kaland');
-INSERT INTO category_information(id, film_title, category) 
+INSERT INTO film_category(id, film_title, category) 
          VALUES (5, 'Star Wars: The Last Jedi', 'Fantasy');
-INSERT INTO category_information(id, film_title, category)
+INSERT INTO film_category(id, film_title, category)
          VALUES (6, 'Star Wars: The Last Jedi', 'Sci-Fi');
 
 -- Room data:
@@ -76,7 +76,7 @@ INSERT INTO room(id, cinema_name, name, vip, bed_room, imax, three_dimensional, 
          VALUES (2, 'CW Pyat'' Zvozd', 'IMAX-ODIN', true, false, true, true, false);
 
 -- RoomStructure data:
-INSERT INTO room_structure(id, cinema_name, room_name, structure) 
+INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
          VALUES (1, 'CW Arena', 'IMAX-ONE', 1, 32);
 INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
          VALUES (2, 'CW Arena', 'IMAX-ONE', 2, 32);
@@ -164,11 +164,11 @@ INSERT INTO ticket(type, basic_price, imax_price, imax_glass_price,
                          bed_room_price, bed_room_glass_price) 
         VALUES ('Fogy', 1320, 420, 720, 170, 410, 1170, 1410, 1770, 2490);
         
--- TicketInformation data:
-INSERT INTO ticket_information(id, payment, ticket_type, booking_id, row, chair) 
+-- BookingTicket data:
+INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
          VALUES (1, 'Booking', 'Diak', 1, 6, 21);
-INSERT INTO ticket_information(id, payment, ticket_type, booking_id, row, chair) 
+INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
          VALUES (2, 'Booking', 'Diak', 1, 6, 22);
-INSERT INTO ticket_information(id, payment, ticket_type, booking_id, row, chair) 
+INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
          VALUES (3, 'PayPal', 'Normal', 2, 8, 15);
 

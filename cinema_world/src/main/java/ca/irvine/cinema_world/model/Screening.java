@@ -62,8 +62,8 @@ public class Screening {
     // END OF DEFAULT COLUMNS
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_id")
-    private Cinema cinemaId;
+    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
+    private Cinema cinemaName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id")

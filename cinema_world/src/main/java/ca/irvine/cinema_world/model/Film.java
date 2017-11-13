@@ -82,15 +82,15 @@ public class Film {
     // END OF DEFAULT COLUMNS
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_id")
-    private Cinema cinemaId;
+    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
+    private Cinema cinemaName;
 
     @OneToMany(
         mappedBy = "filmTitle",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    private List<CategoryInformation> categories = new ArrayList<>();
+    private List<FilmCategory> categories = new ArrayList<>();
     
     @OneToMany(
         mappedBy = "filmTitle",

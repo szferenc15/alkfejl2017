@@ -22,7 +22,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 
 @Table(uniqueConstraints={@UniqueConstraint(columnNames = {"booking_id", "row", "chair"})})
-public class TicketInformation {
+public class BookingTicket {
     // START OF DEFAULT COLUMNS
 
     @Id
@@ -46,5 +46,5 @@ public class TicketInformation {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_type", referencedColumnName = "type")
-    private Ticket ticket_type;
+    private Ticket ticketType;
 }

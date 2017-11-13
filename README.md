@@ -21,8 +21,8 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 
 ## Szerepkörök:
 + **Vendég**: Filmek adatlapját, illetve előzeteseit tudja megtekinteni.
-+ **Felhasználó**: Tud foglalni, venni jegyet, illetve filmet értékelni.
-+ **Adminisztrátor**: Új filmeket tud felvenni az adatbázisba, illetve azokat törölni is tudja (ha például egy filmet már nem vetítenek).
++ **Felhasználó**: Tud foglalni, jegyet venni, filmet értékelni.
++ **Adminisztrátor**: Új filmeket tud felvenni az adatbázisba, illetve tud törölni is onnan (ha például egy filmet már nem vetítenek).
 
 ## Funkcionális követelmények:
 + **Vendégként** szeretnék a filmek között szabadon böngészni.
@@ -100,7 +100,7 @@ TODO:
 </table>
 
 <table align="center" width="100%">
-    <th colspan="3" width="100%">CATEGORY_INFORMATION</th>
+    <th colspan="3" width="100%">FILM_CATEGORY</th>
     <tr align="center" width="100%">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -186,7 +186,7 @@ TODO:
     <tr align="center" width="100%">
         <td align="center" width="33%">LANGUAGE</td>
         <td align="center" width="33%">VARCHAR2(30)</td>
-        <td align="justify" width="33%">nyelvezete</td>
+        <td align="justify" width="33%">nyelvezet</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">SYNCHRON</td>
@@ -216,7 +216,7 @@ TODO:
     <tr align="center" width="100%">
         <td align="center" width="33%">PLAY_TIME</td>
         <td align="center" width="33%">SMALLINT</td>
-        <td align="justify" width="33%">játékideje</td>
+        <td align="justify" width="33%">játékidő</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">PREMIERE</td>
@@ -241,27 +241,27 @@ TODO:
     <tr align="center" width="100%">
         <td align="center" width="33%">COUNTRY</td>
         <td align="center" width="33%">VARCHAR2(50)</td>
-        <td align="justify" width="33%">országa</td>
+        <td align="justify" width="33%">ország</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">YEAR</td>
         <td align="center" width="33%">SMALLINT</td>
-        <td align="justify" width="33%">gyártási éve</td>
+        <td align="justify" width="33%">gyártási év</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">RATE</td>
         <td align="center" width="33%">DECIMAL</td>
-        <td align="justify" width="33%">értékelése</td>
+        <td align="justify" width="33%">értékelés</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">DESCRIPTION</td>
         <td align="center" width="33%">VARCHAR2(500)</td>
-        <td align="justify" width="33%">leírása</td>
+        <td align="justify" width="33%">leírás</td>
     </tr>
     <tr align="center" width="100%">
-        <td align="center" width="33%">CINEMA_ID</td>
+        <td align="center" width="33%">CINEMA_NAME</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">mozi azonosító, melyben vetítik a filmet (FK)</td>
+        <td align="justify" width="33%">mozi neve, melyben vetítik a filmet (FK)</td>
     </tr>
 </table>
 
@@ -308,9 +308,9 @@ TODO:
         <td align="justify" width="33%">ismeri-e a négy dimenziós technológiát</td>
     </tr>
     <tr align="center" width="100%">
-        <td align="center" width="33%">CINEMA_ID</td>
+        <td align="center" width="33%">CINEMA_NAME</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">mozi azonosító, melyben megtalálható a terem (FK)</td>
+        <td align="justify" width="33%">mozi neve, melyben megtalálható a terem (FK)</td>
     </tr>
 </table>
 
@@ -324,7 +324,7 @@ TODO:
     <tr align="center" width="100%">
         <td align="center" width="33%">ID</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">szoba struktúra azonósítója (PK)</td>
+        <td align="justify" width="33%">terem struktúra azonósítója (PK)</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">ROW</td>
@@ -337,9 +337,9 @@ TODO:
         <td align="justify" width="33%">sorban lévő ülése száma</td>
     </tr>
     <tr align="center" width="100%">
-        <td align="center" width="33%">CINEMA_ID</td>
+        <td align="center" width="33%">CINEMA_NAME</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">mozi azonosító, melyben megtalálható a struktúra (FK)</td>
+        <td align="justify" width="33%">mozi neve, melyben megtalálható a struktúra (FK)</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">ROOM_NAME</td>
@@ -383,7 +383,7 @@ TODO:
     <tr align="center" width="100%">
         <td align="center" width="33%">LANGUAGE</td>
         <td align="center" width="33%">VARCHAR2(30)</td>
-        <td align="justify" width="33%">nyelvezete</td>
+        <td align="justify" width="33%">nyelvezet</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">INSCRIPTIVE</td>
@@ -406,9 +406,9 @@ TODO:
         <td align="justify" width="33%">vetítési időpont</td>
     </tr>
     <tr align="center" width="100%">
-        <td align="center" width="33%">CINEMA_ID</td>
+        <td align="center" width="33%">CINEMA_NAME</td>
         <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">mozi azonosító, melyben aktuális a vetítés (FK)</td>
+        <td align="justify" width="33%">mozi neve, melyben aktuális a vetítés (FK)</td>
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">ROOM_ID</td>
@@ -482,7 +482,7 @@ TODO:
 </table>
 
 <table align="center" width="100%">
-    <th colspan="3" width="100%">TICKET_INFORMATION</th>
+    <th colspan="3" width="100%">BOOKING_TICKET</th>
     <tr align="center" width="100%">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -550,12 +550,20 @@ TODO:
     <tr align="center" width="100%">
         <td align="center" width="33%">ADMIN_RIGHT</td>
         <td align="center" width="33%">BOOLEAN</td>
-        <td align="justify" width="33%">adminisztrátori jogosultság (FK)</td>
+        <td align="justify" width="33%">adminisztrátori jogosultság</td>
     </tr>
 </table>
 
 ## Egyed-kapcsolat diagram:
 ![alt text][ER]
+
+## Használat (Backend):
+1. CMD: **mvnw spring-boot:run** parancs futtatása a ***./cinema_inner_world*** útvonal alatt
+2. Az alkalmazás gyökere a **localhost:8080** socketen érhető el böngészőből
+3. Adatbázis elérése és létrehozása: **localhost:8080/h2** címen a következő konfigurálással -> ***JDBC URL***: **jdbc:h2:mem:testdb** (minden más maradhat alapméretezetten)
+
+## Használat (Frontend):
+...TBD...
 
 ## Szerzők:
 + **Kapás Dorina Anita H5BG9F**

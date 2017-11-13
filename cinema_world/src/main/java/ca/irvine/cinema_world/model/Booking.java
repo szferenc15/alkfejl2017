@@ -40,7 +40,7 @@ public class Booking {
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
-    private List<TicketInformation> tickets = new ArrayList<>();
+    private List<BookingTicket> tickets = new ArrayList<>();
 
     /**
      * @return the id

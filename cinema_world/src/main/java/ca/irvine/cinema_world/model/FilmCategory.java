@@ -16,7 +16,7 @@ import javax.persistence.GeneratedValue;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class CategoryInformation {
+public class FilmCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
