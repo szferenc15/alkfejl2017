@@ -11,10 +11,13 @@
 [Eötvös Loránd Tudományegyetem Informatikai Kar]: http://inf.elte.hu
 
 [ER]: ./img/Entity_Relationship_diagram.png "Egyed-kapcsolat diagram"
+[MVC_architecture]: ./img/MVC_architecture.png "MVC architektúra"
 
 # Alkalmazások fejlesztése - Cinema World
 
-A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC] (Model-View-Controller) architektúrában épül fel.
+A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC] (Model-View-Controller) architektúrában épül fel:
+
+![alt text][MVC_architecture]
 
 ## Célközönség:
 Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, hanem az élményekről, a kényelemről és a prémium minőségű finomságokról.
@@ -560,10 +563,31 @@ TODO:
 ## Használat (Backend):
 1. CMD: **mvnw spring-boot:run** parancs futtatása a ***./cinema_inner_world*** útvonal alatt
 2. Az alkalmazás gyökere a **localhost:8080** socketen érhető el böngészőből
-3. Adatbázis elérése és létrehozása: **localhost:8080/h2** címen a következő konfigurálással -> ***JDBC URL***: **jdbc:h2:mem:testdb** (minden más maradhat alapméretezetten)
+3. Adatbázis elérése és létrehozása: **localhost:8080/h2** címen a következő konfigurálással 
+-> ***JDBC URL***: **jdbc:h2:mem:testdb** (minden más maradhat alapméretezetten)
 
 ## Használat (Frontend):
 ...TBD...
+
+## Az alkalmazás végpontjai:
+<table align="center" width="100%">
+    <th colspan="3" width="100%">USER</th>
+    <tr align="center" width="100%">
+        <th width="33%">ÚTVONAL</th>
+        <th width="33%">LEÍRÁS</th>
+        <th width="33%">BEVITEL</th>
+    </tr>
+    <tr align="center" width="100%">
+        <td align="center" width="33%"><b>localhost:8080/register</b></td>
+        <td align="center" width="33%">új felhasználó regisztrálása az adatbázisba</td>
+        <td align="center" width="33%">egyedi felhasználónév, jelszó, egyedi email cím, telefonszám</td>
+    </tr>
+    <tr align="center" width="100%">
+    <td align="center" width="33%"><b>localhost:8080/login</b></td>
+    <td align="center" width="33%">bejelentkezés</td>
+    <td align="center" width="33%">felhasználónév vagy email cím, jelszó</td>
+    </tr>
+</table>
 
 ## Szerzők:
 + **Kapás Dorina Anita H5BG9F**
