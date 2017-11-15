@@ -49,8 +49,8 @@ public class Room {
     // END OF DEFAULT COLUMNS
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
-    private Cinema cinemaName;
+    @JoinColumn(name = "cinema_id")
+    private Cinema cinemaId;
 
     @OneToMany(
         mappedBy = "roomId",
@@ -60,7 +60,7 @@ public class Room {
     private List<Screening> screenings = new ArrayList<>();
 
     @OneToMany(
-        mappedBy = "roomName",
+        mappedBy = "roomId",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )

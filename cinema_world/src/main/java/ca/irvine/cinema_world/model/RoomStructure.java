@@ -11,15 +11,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 
-@Table(name = "room_structure")
 public class RoomStructure {
     // START OF DEFAULT COLUMNS
 
@@ -35,11 +32,7 @@ public class RoomStructure {
 
     // END OF DEFAULT COLUMNS
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_name", referencedColumnName = "name")
-    private Cinema cinemaName;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "room_name", referencedColumnName = "name")
-    private Room roomName;
+    @JoinColumn(name = "room_id")
+    private Room roomId;
 }
