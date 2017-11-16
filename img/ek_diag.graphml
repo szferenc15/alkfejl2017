@@ -124,7 +124,7 @@ FK_SC_FI_TI=SK_FI_TI<y:LabelModel>
     <node id="n4">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="125.0" width="191.25" x="-31.366896272285203" y="61.84602917341979"/>
+          <y:Geometry height="125.0" width="191.25" x="-47.6168962722852" y="61.84602917341979"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="105.349609375" x="42.9501953125" y="4.000000000000007">FILM_CATEGORY</y:NodeLabel>
