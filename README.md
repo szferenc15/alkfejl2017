@@ -97,7 +97,7 @@ TODO:
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">STREET</td>
-        <td align="center" width="33%">VARCHAR(50)</td>
+        <td align="center" width="33%">VARCHAR2(50)</td>
         <td align="justify" width="33%">utca neve</td>
     </tr>
     <tr align="center" width="100%">
@@ -434,7 +434,7 @@ TODO:
     </tr>
     <tr align="center" width="100%">
         <td align="center" width="33%">TYPE</td>
-        <td align="center" width="33%">VARCHAR(30)</td>
+        <td align="center" width="33%">VARCHAR2(30)</td>
         <td align="justify" width="33%">jegy típusa (PK)</td>
     </tr>
     <tr align="center" width="100%">

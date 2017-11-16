@@ -48,7 +48,7 @@ public class User {
 
     // END OF DEFAULT COLUMNS
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "user_booking",
         joinColumns = @JoinColumn(name = "username", referencedColumnName = "username"),
         inverseJoinColumns = @JoinColumn(name = "booking_id")
