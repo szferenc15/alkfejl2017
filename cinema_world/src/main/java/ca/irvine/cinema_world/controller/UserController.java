@@ -13,13 +13,13 @@ import java.util.Optional;
 import ca.irvine.cinema_world.util.Response;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController{
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value= "login", method=RequestMethod.POST )
+    @RequestMapping(value= "/login", method=RequestMethod.POST )
     public Response<User> login(
                                 @RequestParam(value="identifier") String identifier, 
                                 @RequestParam(value="password") String password
@@ -36,7 +36,7 @@ public class UserController{
         return Response.error("Wrong username or password!");
     }
 
-    @RequestMapping(value= "register", method=RequestMethod.POST )
+    @RequestMapping(value= "/register", method=RequestMethod.POST )
     public Response<User> register(
                                     @RequestParam(value="username") String username, 
                                     @RequestParam(value="password") String password,
