@@ -11,14 +11,14 @@ INSERT INTO user(username, password, email, phone_number, admin_right)
          VALUES ('almafa', 'almafa', 'almafa@barackfa.fa', '06302003005', false);
 
 -- Film data:
-INSERT INTO film(cinema_name, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+INSERT INTO film(cinema_id, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('CW Arena', 'Thor: Ragnarok', 'magyar', true, false, true, true, false, 131, '2017-11-01', 12, 'Taika', 'Waititi', 'USA', 2017, 10,
+         VALUES (1, 'Thor: Ragnarok', 'magyar', true, false, true, true, false, 131, '2017-11-01', 12, 'Taika', 'Waititi', 'USA', 2017, 10,
                  'A Marvel Studios uj filmjeben Thort porolyetol megfosztva bebortonzik az univerzum tulso felen.');
 
-INSERT INTO film(cinema_name, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+INSERT INTO film(cinema_id, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('CW Pyat'' Zvozd', 'Star Wars: The Last Jedi', 'orosz', true, false, true, true, false, 150, '2017-12-14', 12, 'Rian', 'Johnson', 'USA', 2017, 10,
+         VALUES (2, 'Star Wars: The Last Jedi', 'orosz', true, false, true, true, false, 150, '2017-12-14', 12, 'Rian', 'Johnson', 'USA', 2017, 10,
                  'A Star Wars: Az utolso Jedikben a Skywalker saga folytatodik.');
 
 -- Category data:
@@ -70,58 +70,58 @@ INSERT INTO film_category(id, film_title, category)
          VALUES (6, 'Star Wars: The Last Jedi', 'Sci-Fi');
 
 -- Room data:
-INSERT INTO room(id, cinema_name, name, vip, bed_room, imax, three_dimensional, four_dimensional) 
-         VALUES (1, 'CW Arena', 'IMAX-ONE', true, false, true, true, false);
-INSERT INTO room(id, cinema_name, name, vip, bed_room, imax, three_dimensional, four_dimensional) 
-         VALUES (2, 'CW Pyat'' Zvozd', 'IMAX-ODIN', true, false, true, true, false);
+INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional) 
+         VALUES (1, 1, 'IMAX-ONE', true, false, true, true, false);
+INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional) 
+         VALUES (2, 2, 'IMAX-ODIN', true, false, true, true, false);
 
 -- RoomStructure data:
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (1, 'CW Arena', 'IMAX-ONE', 1, 32);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (2, 'CW Arena', 'IMAX-ONE', 2, 32);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (3, 'CW Arena', 'IMAX-ONE', 3, 33);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (4, 'CW Arena', 'IMAX-ONE', 4, 33);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (5, 'CW Arena', 'IMAX-ONE', 5, 33);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (6, 'CW Arena', 'IMAX-ONE', 6, 34);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (7, 'CW Arena', 'IMAX-ONE', 7, 34);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (8, 'CW Arena', 'IMAX-ONE', 8, 34);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (9, 'CW Arena', 'IMAX-ONE', 9, 34);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (10, 'CW Arena', 'IMAX-ONE', 10, 36);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (11, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 1, 32);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (12, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 2, 32);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (13, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 3, 33);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (14, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 4, 33);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (15, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 5, 33);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (16, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 6, 34);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (17, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 7, 34);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (18, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 8, 34);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (19, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 9, 34);
-INSERT INTO room_structure(id, cinema_name, room_name, row, seat_number) 
-         VALUES (20, 'CW Pyat'' Zvozd', 'IMAX-ODIN', 10, 36);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (1, 1, 1, 1, 32);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (2, 1, 1, 2, 32);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (3, 1, 1, 3, 33);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (4, 1, 1, 4, 33);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (5, 1, 1, 5, 33);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (6, 1, 1, 6, 34);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (7, 1, 1, 7, 34);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (8, 1, 1, 8, 34);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (9, 1, 1, 9, 34);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (10, 1, 1, 10, 36);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (11, 2, 2, 1, 32);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (12, 2, 2, 2, 32);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (13, 2, 2, 3, 33);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (14, 2, 2, 4, 33);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (15, 2, 2, 5, 33);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (16, 2, 2, 6, 34);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (17, 2, 2, 7, 34);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (18, 2, 2, 8, 34);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (19, 2, 2, 9, 34);
+INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
+         VALUES (20, 2, 2, 10, 36);
 
 -- Screening data:
-INSERT INTO screening(id, cinema_name, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
-         VALUES (1, 'CW Arena', 'Thor: Ragnarok', 1, false, true, false, true, 'magyar', false, true, '2017-11-20', '21:00:00');
-INSERT INTO screening(id, cinema_name, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
-         VALUES (2, 'CW Pyat'' Zvozd', 'Star Wars: The Last Jedi', 2, false, true, false, true, 'orosz', false, true, '2017-12-14', '23:30:00');
+INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
+         VALUES (1, 1, 'Thor: Ragnarok', 1, false, true, false, true, 'magyar', false, true, '2017-11-20', '21:00:00');
+INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
+         VALUES (2, 2, 'Star Wars: The Last Jedi', 2, false, true, false, true, 'orosz', false, true, '2017-12-14', '23:30:00');
 
 -- Booking data:
 INSERT INTO booking(id, screening_id) 

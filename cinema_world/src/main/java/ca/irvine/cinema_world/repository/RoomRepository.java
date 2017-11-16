@@ -12,7 +12,7 @@ public interface RoomRepository extends CrudRepository<Room,Integer>{
     Optional<Room> findByVip(boolean isVip);
     Optional<Room> findByBedRoom(boolean isBedRoom);
     Optional<Room> findByImax(boolean isImax);
-    Optional<Room> findByThreeDimensonal(boolean isThreeDimensonal);
-    Optional<Room> findByFourDimensonal(boolean isFourDimensonal);
+    Optional<Room> findByThreeDimensional(boolean isThreeDimensional);
+    Optional<Room> findByFourDimensional(boolean isFourDimensional);
     Iterable<Room> findAll();
 }
