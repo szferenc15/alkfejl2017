@@ -10,8 +10,8 @@
 [JAVA 7/8]: https://en.wikipedia.org/wiki/Java_(programming_language)
 [Eötvös Loránd Tudományegyetem Informatikai Kar]: http://inf.elte.hu
 
-[ER]: ./img/Entity_Relationship_diagram.png "Egyed-kapcsolat diagram"
-[MVC_architecture]: ./img/MVC_architecture.png "MVC architektúra"
+[ER]: ./resources/img/Entity_Relationship_diagram.png "Egyed-kapcsolat diagram"
+[MVC_architecture]: ./resources/img/MVC_architecture.png "MVC architektúra"
 
 # Alkalmazások fejlesztése - Cinema World
 
@@ -561,13 +561,14 @@ TODO:
 ![alt text][ER]
 
 ## Használat (Backend):
-1. CMD: **mvnw spring-boot:run** parancs futtatása a ***./cinema_inner_world*** útvonal alatt
+1. CMD: **mvnw spring-boot:run** parancs futtatása a ***./cinema_world/cinema_inner_world*** útvonal alatt
 2. Az alkalmazás gyökere a **localhost:8080** socketen érhető el böngészőből
-3. Adatbázis elérése és létrehozása: **localhost:8080/h2** címen a következő konfigurálással 
+3. Adatbázis elérése és létrehozása: **localhost:8080/h2** címen a következő konfigurálással <br />
 -> ***JDBC URL***: **jdbc:h2:mem:testdb** (minden más maradhat alapméretezetten)
 
 ## Használat (Frontend):
-...TBD...
+1. CMD: **ng serve** parancs futtatása a ***./cinema_world/cinema_outer_world*** útvonal alatt
+2. Az alkalmazás gyökere a **localhost:4200** socketen érhető el böngészőből
 
 ## Az alkalmazás végpontjai:
 <table align="center" width="100%">
