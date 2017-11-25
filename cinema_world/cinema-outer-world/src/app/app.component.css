@@ -15,6 +15,10 @@ a:focus {
   outline: none;
 }
 
+img:focus {
+  outline: none;
+}
+
 a:hover {
   color: #777777;
 }

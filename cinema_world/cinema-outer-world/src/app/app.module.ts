@@ -10,10 +10,11 @@ import { SweepstakesComponent } from './sweepstakes/sweepstakes.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes: Routes = [
-  { path: 'home', component: AppComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'cinema-ticket-info', component: CinemaTicketInfoComponent },
   { path: 'films', component: FilmComponent },
   { path: 'sweepstakes', component: SweepstakesComponent },
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     AwardsComponent,
     LoginComponent,
     RegisterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
