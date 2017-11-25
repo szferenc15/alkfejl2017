@@ -1,0 +1,63 @@
+div#application {
+  min-width: 1200px;
+}
+
+a {
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:hover {
+  color: #777777;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.hightlighted a {
+  cursor: default;
+  color: #dd000f;
+}
+
+.merianda {
+  font-family: 'merianda', sans;
+}
+
+.small-caps {
+  font-variant: small-caps;
+}
+
+.blur-effect:before {
+  content: "";
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+
+  background: url('../assets/bg.jpg') no-repeat fixed center;
+  background-size: cover;
+
+  height: 60px;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.blur-effect {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgb(88, 84, 84);
+}
+
+
