@@ -1,5 +1,5 @@
 div#application {
-  min-width: 1200px;
+  min-width: 1250px;
 }
 
 a {
@@ -34,6 +34,7 @@ a:hover {
 
 .merianda {
   font-family: 'merianda', sans;
+  font-size: 20px;
 }
 
 .small-caps {
