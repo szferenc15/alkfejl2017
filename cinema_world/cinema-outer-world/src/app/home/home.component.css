@@ -3,11 +3,7 @@ div#information td {
   padding-bottom: 5px;
   text-align: center;
   color: white;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
+  text-shadow: 2px 2px 5px black;
 }
 
 td {
@@ -22,6 +18,18 @@ button, button[mat-fab] {
   border: 1px solid #777777;
   background-color: rgb(0, 0, 0, 0.9);
   color: #dd000f;
+}
+
+iframe {
+  box-shadow: 3px 5px 5px black;
+}
+
+img {
+  border: 2px solid black;
+}
+
+.min-width {
+  min-width: 1470px;
 }
 
 .container {
@@ -57,7 +65,7 @@ button, button[mat-fab] {
 }
 
 .film-picture {
-  padding-left: 40px;
+  padding-left: 30px;
   padding-right: 25px;
 }
 
@@ -66,9 +74,7 @@ button, button[mat-fab] {
 }
 
 .film-name {
-  cursor: pointer;
-  padding-right: 30px;
-  text-align: left;
+  padding-right: 10px;
 }
 
 .film-tr {
@@ -78,8 +84,12 @@ button, button[mat-fab] {
   background-size: cover;
 }
 
-.film-tr:hover .film-name {
+div#information .film-tr:hover .film-name {
   color: #c1c41a;
+}
+
+.medium {
+  font-size: 17.5px;
 }
 
 .big {
@@ -90,4 +100,11 @@ button, button[mat-fab] {
   color: #c1c41a;
 }
 
+.information {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.title {
+  color: #dd000f;
+}
 

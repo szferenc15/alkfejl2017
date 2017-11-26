@@ -61,10 +61,8 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 
 ```
 TODO: 
-    1. Lombok @Data bug
+    1. Lombok @Data bug (?)
     2. @Pattern validation for the first insertion
-    3. EK diagram
-    4. Table styling (bug)
 ```
 
 ## Adatbázis séma:

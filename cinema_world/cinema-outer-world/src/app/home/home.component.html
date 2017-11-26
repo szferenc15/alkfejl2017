@@ -1,28 +1,28 @@
-<div id="information" class="row padding-left-20 container">
+<div id="information" class="row padding-left-20 container min-width">
 
-  <div class="col-lg-4 padding-top-20">
+  <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 padding-top-20">
     <table>
       <tr>
         <td colspan="2">
-          <button class="navigation-btn" mat-raised-button>
+          <button class="navigation-btn" mat-raised-button (click)="goUp()">
             <i class="material-icons">arrow_upward</i>
           </button>
         </td>
       </tr>
-      <tr class="film-tr" *ngFor="let film of films">
+      <tr class="film-tr" *ngFor="let film of activeFilms; let i = index;" (click)="changeActiveElement(i)">
         <td class="film-td film-picture">
           <img src="{{ film.link }}"
               alt="{{ film.name }}"
               height="125"
               width="90" />
         </td>
-        <td class="film-td film-name">
+        <td class="film-td film-name medium" width="300px;">
             {{ film.name }}
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <button class="navigation-btn" mat-raised-button>
+          <button class="navigation-btn" mat-raised-button (click)="goDown()">
             <i class="material-icons">arrow_downward</i>
           </button>
         </td>
@@ -30,24 +30,24 @@
     </table>
   </div>
 
-  <div class="col-lg-8 padding-top-20">
+  <div class="col-lg-8 col-xs-8 col-md-8 col-sm-8 padding-top-20">
     <table>
       <tr>
         <td class="padding-right-20">
-          <button class="nagivation-bg" mat-fab>
+          <button class="nagivation-bg" mat-fab (click)="previousTrailer()">
             <i class="material-icons">arrow_back</i>
           </button>
         </td>
         <td class="padding-right-20">
             <iframe width="865"
                     height="440"
-                    src="https://www.youtube.com/embed/v7MGUNV8MxU"
+                    [src]="url"
                     frameborder="0"
                     allowfullscreen>
             </iframe>
         </td>
         <td>
-          <button class="nagivation-bg" mat-fab>
+          <button class="nagivation-bg" mat-fab (click)="nextTrailer()">
             <i class="material-icons">arrow_forward</i>
           </button>
         </td>
@@ -62,12 +62,12 @@
 
   </div>
 </div>
-<!--
-<div class="row padding-left-20 container">
-  <div class="col-lg-4">
+
+<div class="row padding-left-20 information container min-width">
+  <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4">
     <table>
-      <th>
-        <h1>Thor: Ragnarök</h1>
+      <th class="title">
+        <h1>{{ films[activeElement].name }}</h1>
       </th>
       <tr>
         <td>Műfaj:</td>
@@ -100,21 +100,28 @@
     </table>
   </div>
 
-  <div class="col-lg-8 padding-top-10">
+  <div class="col-lg-8 col-xs-8 col-md-8 col-sm-8 padding-top-10">
     <table>
-      <th><h2>Leírás</h2></th>
+      <th>
+        <h2 class="title">Leírás</h2>
+      </th>
       <tr>
-        <td>A Marvel Studios új filmjében Thort pörölyétől megfosztva bebörtönzik az univerzum túlsó felén.
-          Az idővel versenyt futva próbál visszajutni Asgardba, és megállítani a Ragnarököt;
-          egy háborút, ami otthonának pusztulásával és az asgardi civilizáció eltűnésével járhat,
-          és amit egy mindenható új ellenség, a könyörtelen Hela idézett elő.
-          Először azonban túl kell élnie egy halálos gladiátorviadalt,
-          amelyben ellenfele korábbi szövetségese és szintén a Bosszúállók tagja: a hihetetlen Hulk!</td>
+        <td>{{ films[activeElement].description }}</td>
       </tr>
     </table>
   </div>
 
 </div>
--->
 
+<div class="row padding-top-20 padding-left-20 information container min-width">
+  <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 ">
+    <table align="center">
+      <tr>
+        <td>
+          <h3>A jegyfoglaláshoz kérlek jelentkezz be!</h3>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
 
