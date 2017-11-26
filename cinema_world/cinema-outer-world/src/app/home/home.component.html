@@ -1,3 +1,120 @@
-<p>
-  home works!
-</p>
+<div id="information" class="row padding-left-20 container">
+
+  <div class="col-lg-4 padding-top-20">
+    <table>
+      <tr>
+        <td colspan="2">
+          <button class="navigation-btn" mat-raised-button>
+            <i class="material-icons">arrow_upward</i>
+          </button>
+        </td>
+      </tr>
+      <tr class="film-tr" *ngFor="let film of films">
+        <td class="film-td film-picture">
+          <img src="{{ film.link }}"
+              alt="{{ film.name }}"
+              height="125"
+              width="90" />
+        </td>
+        <td class="film-td film-name">
+            {{ film.name }}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button class="navigation-btn" mat-raised-button>
+            <i class="material-icons">arrow_downward</i>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-lg-8 padding-top-20">
+    <table>
+      <tr>
+        <td class="padding-right-20">
+          <button class="nagivation-bg" mat-fab>
+            <i class="material-icons">arrow_back</i>
+          </button>
+        </td>
+        <td class="padding-right-20">
+            <iframe width="865"
+                    height="440"
+                    src="https://www.youtube.com/embed/v7MGUNV8MxU"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </td>
+        <td>
+          <button class="nagivation-bg" mat-fab>
+            <i class="material-icons">arrow_forward</i>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <span class="fa fa-star checked big"></span>
+          <span *ngFor="let star of rate" class="fa fa-star checked big padding-left-10"></span>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+<!--
+<div class="row padding-left-20 container">
+  <div class="col-lg-4">
+    <table>
+      <th>
+        <h1>Thor: Ragnarök</h1>
+      </th>
+      <tr>
+        <td>Műfaj:</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>Játékidő (perc):</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>Premier:</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>Korhatár:</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>Rendező:</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>Ország:</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>Év:</td>
+        <td>?</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-lg-8 padding-top-10">
+    <table>
+      <th><h2>Leírás</h2></th>
+      <tr>
+        <td>A Marvel Studios új filmjében Thort pörölyétől megfosztva bebörtönzik az univerzum túlsó felén.
+          Az idővel versenyt futva próbál visszajutni Asgardba, és megállítani a Ragnarököt;
+          egy háborút, ami otthonának pusztulásával és az asgardi civilizáció eltűnésével járhat,
+          és amit egy mindenható új ellenség, a könyörtelen Hela idézett elő.
+          Először azonban túl kell élnie egy halálos gladiátorviadalt,
+          amelyben ellenfele korábbi szövetségese és szintén a Bosszúállók tagja: a hihetetlen Hulk!</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+-->
+
+
