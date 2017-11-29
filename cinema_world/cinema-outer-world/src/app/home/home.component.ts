@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   activeFilmIndex = 0;
   activeTrailer = 0;
   url: SafeResourceUrl;
+  position = window.pageYOffset;
 
   films = [
     {
@@ -115,7 +116,6 @@ export class HomeComponent implements OnInit {
       this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[--this.activeTrailer]);
     }
   }
-
 }
 
 /*

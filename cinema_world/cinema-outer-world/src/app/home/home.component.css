@@ -20,8 +20,10 @@ button, button[mat-fab] {
   color: #dd000f;
 }
 
-iframe {
-  box-shadow: 3px 5px 5px black;
+button:disabled:disabled, button[mat-fab]:disabled:disabled {
+  background-color: rgb(30, 30, 30, 0.8);
+  color: #999999;
+  border: 1px solid black;
 }
 
 img {
@@ -106,5 +108,11 @@ div#information .film-tr:hover .film-name {
 
 .title {
   color: #dd000f;
+}
+
+.box-shadow {
+  -moz-box-shadow: 0 0 25px 5px black;
+  -webkit-box-shadow: 0 0 25px 5px black;
+  box-shadow: 0 0 25px 5px black;
 }
 

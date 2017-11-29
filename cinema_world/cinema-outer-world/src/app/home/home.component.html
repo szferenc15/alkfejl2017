@@ -4,7 +4,7 @@
     <table>
       <tr>
         <td colspan="2">
-          <button class="navigation-btn" mat-raised-button (click)="goUp()">
+          <button class="navigation-btn" mat-raised-button (click)="goUp()" [disabled]="activeFilmIndex == 0">
             <i class="material-icons">arrow_upward</i>
           </button>
         </td>
@@ -22,7 +22,7 @@
       </tr>
       <tr>
         <td colspan="2">
-          <button class="navigation-btn" mat-raised-button (click)="goDown()">
+          <button class="navigation-btn" mat-raised-button (click)="goDown()" [disabled]="activeFilmIndex == films.length - 3">
             <i class="material-icons">arrow_downward</i>
           </button>
         </td>
@@ -34,12 +34,13 @@
     <table>
       <tr>
         <td class="padding-right-20">
-          <button class="nagivation-bg" mat-fab (click)="previousTrailer()">
+          <button class="nagivation-bg" mat-fab (click)="previousTrailer()" [disabled]="activeTrailer == 0">
             <i class="material-icons">arrow_back</i>
           </button>
         </td>
         <td class="padding-right-20">
-            <iframe width="865"
+            <iframe class="box-shadow"
+                    width="865"
                     height="440"
                     [src]="url"
                     frameborder="0"
@@ -47,7 +48,7 @@
             </iframe>
         </td>
         <td>
-          <button class="nagivation-bg" mat-fab (click)="nextTrailer()">
+          <button class="nagivation-bg" mat-fab (click)="nextTrailer()" [disabled]="activeTrailer == this.films[this.activeElement].trailers.length - 1">
             <i class="material-icons">arrow_forward</i>
           </button>
         </td>
