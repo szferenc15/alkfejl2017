@@ -1,0 +1,28 @@
+.page-not-found {
+  text-align: center;
+  padding-top: 4%;
+}
+
+.blur-effect:before {
+  content: "";
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+
+  background: url('../../assets/bg.jpg') no-repeat fixed center;
+  background-size: cover;
+
+  height: 68px;
+
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.blur-effect {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgb(88, 84, 84);
+}
