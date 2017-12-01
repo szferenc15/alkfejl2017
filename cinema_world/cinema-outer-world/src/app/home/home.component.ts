@@ -1,5 +1,5 @@
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +11,16 @@ export class HomeComponent implements OnInit {
   activeElement = 0;
   activeFilmIndex = 0;
   activeTrailer = 0;
+  activeFilm = 0;
+  previousActiveElement = 0;
   url: SafeResourceUrl;
-  position = window.pageYOffset;
 
   films = [
     {
+      id: 0,
       link: '../../assets/thor_ragnarok.jpg',
       name: 'Thor: Ragnarök',
-      rate: 8,
+      rate: 4,
       trailers: [
         'https://www.youtube.com/embed/v7MGUNV8MxU',
         'https://www.youtube.com/embed/ue80QwXMRHg'
@@ -26,9 +28,10 @@ export class HomeComponent implements OnInit {
       description: `Thor leírás.`
     },
     {
+      id: 1,
       link: '../../assets/star_wars_the_last_jedi.jpg',
       name: 'Star Wars: Az utolsó Jedik',
-      rate: 10,
+      rate: 5,
       trailers: [
         'https://www.youtube.com/embed/zB4I68XVPzQ',
         'https://www.youtube.com/embed/Q0CbN8sfihY'
@@ -36,9 +39,10 @@ export class HomeComponent implements OnInit {
       description: `Star Wars leírás.`
     },
     {
+      id: 2,
       link: '../../assets/jungle.jpg',
       name: 'Dzsungel',
-      rate: 9,
+      rate: 4,
       trailers: [
         'https://www.youtube.com/embed/RI_Iz3-88Fw',
         'https://www.youtube.com/embed/CJIYns1aqzY'
@@ -46,9 +50,10 @@ export class HomeComponent implements OnInit {
       description: `Dzsungel leírás.`
     },
     {
+      id: 3,
       link: '../../assets/a_viszkis.jpg',
       name: 'A viszkis',
-      rate: 9,
+      rate: 3,
       trailers: [
         'https://www.youtube.com/embed/ia_RojiPK50',
         'https://www.youtube.com/embed/YYQa4lj8THM'
@@ -56,9 +61,10 @@ export class HomeComponent implements OnInit {
       description: `A viszkis leírás.`
     },
     {
+      id: 4,
       link: '../../assets/justice_league.jpg',
       name: 'Az igazság ligája',
-      rate: 7,
+      rate: 2,
       trailers: [
         'https://www.youtube.com/embed/r9-DM9uBtVI',
         'https://www.youtube.com/embed/h-Nzxn9qiSg',
@@ -83,10 +89,15 @@ export class HomeComponent implements OnInit {
   }
 
   changeActiveElement(index: number) {
+    if (index + this.activeFilmIndex != this.previousActiveElement) {
+      this.throughClick = true;
       this.activeElement = index + this.activeFilmIndex;
+      this.activeFilm = index;
       this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
       this.activeTrailer = 0;
+      this.previousActiveElement = this.activeElement;
       this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0]);
+    }
   }
 
   goUp() {
@@ -94,14 +105,16 @@ export class HomeComponent implements OnInit {
       this.activeFilmIndex--;
       this.activeFilms.splice(this.activeFilms.length - 1, 1);
       this.activeFilms.unshift(this.films[this.activeFilmIndex]);
+      this.activeFilm++;
     }
   }
 
   goDown() {
-    if (this.activeFilmIndex + 2 < this.films.length - 1) {
+    if (this.activeFilmIndex < this.films.length - 3) {
       this.activeFilmIndex++;
       this.activeFilms.splice(0, 1);
       this.activeFilms.push(this.films[this.activeFilmIndex + 2]);
+      this.activeFilm--;
     }
   }
 
@@ -114,6 +127,39 @@ export class HomeComponent implements OnInit {
   previousTrailer() {
     if (this.activeTrailer > 0) {
       this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[--this.activeTrailer]);
+    }
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  goUpOrDown(event: Event) {
+    switch (event.key) {
+      case "s":
+        if (this.activeFilm >= 2) {
+          this.goDown();
+        }
+        if (this.activeFilm < this.films.length - 3) {
+          this.activeFilm++;
+        }
+        return false;
+      case "w":
+        if (this.activeFilm < this.films.length - 4) {
+          this.goUp();
+        }
+        if (this.activeFilm > 0) {
+          this.activeFilm--;
+        }
+        return false;
+      case "a":
+        this.previousTrailer();
+        return false;
+      case "d":
+        this.nextTrailer();
+        return false;
+      case "Enter":
+        this.changeActiveElement(this.activeFilm);
+        return false;
+      default:
+        break;
     }
   }
 }

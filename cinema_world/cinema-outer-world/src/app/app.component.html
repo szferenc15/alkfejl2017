@@ -1,22 +1,27 @@
-<div id="application" class="merianda blur-effect">
-  <nav class="navbar navbar-expand">
-    <img class="navbar-brand logo" src="../assets/logo.png" routerLink="/home" />
+<div class="application-min-width">
+  <div class="merianda blur-effect">
+    <nav class="navbar navbar-expand">
+      <img class="navbar-brand logo" src="../assets/logo.png" routerLink="/home" />
 
-      <ul class="navbar-nav mr-auto small-caps">
-        <li class="nav-item" routerLinkActive="hightlighted" *ngFor="let menuPoint of leftMenu">
-          <a class="nav-link stroke-double stroke-single" [ngClass]="{'nice': active}" routerLink="{{ menuPoint.path }}">{{ menuPoint.name }}</a>
-        </li>
-      </ul>
+        <ul class="navbar-nav mr-auto small-caps">
+          <li class="nav-item" routerLinkActive="hightlighted" *ngFor="let menuPoint of leftMenu">
+            <a class="nav-link stroke-double stroke-single" [ngClass]="{'nice': active}" routerLink="{{ menuPoint.path }}">{{ menuPoint.name }}</a>
+          </li>
+        </ul>
 
-      <ul class="navbar-nav small-caps">
-        <li class="nav-item" routerLinkActive="hightlighted" *ngFor="let menuPoint of rightMenu">
-          <a class="nav-link stroke-single stroke-double" routerLink="{{ menuPoint.path }}">{{ menuPoint.name }}</a>
-        </li>
-      </ul>
+        <ul class="navbar-nav small-caps">
+          <li class="nav-item" routerLinkActive="hightlighted" *ngFor="let menuPoint of rightMenu">
+            <a class="nav-link stroke-single stroke-double" routerLink="{{ menuPoint.path }}">{{ menuPoint.name }}</a>
+          </li>
+        </ul>
 
-  </nav>
+    </nav>
+  </div>
+
+
+  <div class="font router-outlet-width">
+      <router-outlet></router-outlet>
+  </div>
 </div>
-
-<router-outlet></router-outlet>
 
 
