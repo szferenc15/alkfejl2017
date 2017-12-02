@@ -1,3 +1,179 @@
-<p>
-  film works!
-</p>
+<div class="container pt-3">
+  <div class="row information padding-left-20">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4" align="center">
+      <div class="cinema-search-field pb-5">
+        <h2 class="title pb-3">Mozi információ</h2>
+        <form [formGroup]="cinemaSearchForm" (ngSubmit)="cinemaSearchSubmit()">
+          <mat-form-field (click)="setFormToDefault()">
+            <mat-select formControlName="country" placeholder="Ország">
+              <mat-option *ngFor="let cinema of cinemaInfos"
+                          value="{{ cinema.country }}"
+                          (click)="setFilteredCinemaCities(cinema.country)">
+                  {{ cinema.country }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="pl-4">
+            <mat-select formControlName="city" placeholder="Város">
+              <mat-option *ngFor="let cinema of filteredCinemaCities"
+                          value="{{ cinema.city }}"
+                          (click)="setFilteredCinemaDistricts(cinema.city)">
+                  {{ cinema.city }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="pl-4">
+            <mat-select formControlName="district" placeholder="Kerület">
+              <mat-option *ngFor="let cinema of filteredCinemaDistricts"
+                          value="{{ cinema.district }}"
+                          (click)="setFilteredCinemaNames(cinema.district)">
+                  {{ cinema.district }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="pl-4">
+            <mat-select formControlName="name" placeholder="Mozi neve">
+              <mat-option *ngFor="let cinema of filteredCinemaNames"
+                          value="{{ cinema.name }}"
+                          (click)="cinemaSelected = true;">
+                {{ cinema.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <div class="pt-3">
+          <button class="cinema-search-button btn btn-dark"
+                  mat-raised-button
+                  type="submit">
+                  Keresés
+          </button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="showCinemas == true">
+  <div class="row padding-left-20 information">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
+      <div class="pb-3" *ngFor="let cinema of lastFilteredCinemaInfo">
+        <mat-card class="cinema-info-card">
+          <table class="cinema-info-table">
+            <tr>
+              <td class="cinema-picture-td" rowspan="7">
+                <img src="../../assets/star_wars_the_last_jedi.jpg"
+                    alt="Cinema"
+                    height="150"
+                    width="100"/>
+              </td>
+              <td class="cinema-info-fst-td"><b>Név</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.name }} </td>
+              <td rowspan="7">
+                <button class="btn btn-dark"
+                        mat-raised-button
+                        (click)="getActualFilmsOfCinema(cinema.name)">
+                        Aktuális filmek
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Ország</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.country }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Város</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.city }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Kerület</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.district }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Utca</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.street }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Házszám</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.houseNumber }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Kényelmi díj</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.amenitiesCharge }}</td>
+            </tr>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="showFilms == true">
+  <div class="row padding-left-20 information">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-3" align="center">
+      <h2 class="title pb-3"><b>{{ selectedCinema }}</b> mozi aktuális filmjei</h2>
+
+      <mat-table [dataSource]="filmInfoDataSource" matSort>
+        <ng-container matColumnDef="title">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 14.5%;">Cím</mat-header-cell>
+          <mat-cell *matCellDef="let row"  style="flex: 0 0 14.5%;"> {{row.title}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="language">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Nyelv</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.language}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="playTime">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 7%;">Játékidő (perc)</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 7%;"> {{row.playTime}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="premiere">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Premier</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.premiere | date:'yyyy.MM.dd'}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="ageLimit">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 7.5%;">Korhatár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 7.5%;"> {{row.ageLimit}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="directorFirstName">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Rendező keresztneve</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.directorFirstName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="directorLastName">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Rendező vezetékneve</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.directorLastName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 7.5%;">Ország</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 7.5%;"> {{row.country}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="year">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 5%;">Év</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 5%;"> {{row.year}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="rate">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 8%;">Értékelés</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 8%;"> {{row.rate}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="booking">
+            <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Foglalás</mat-header-cell>
+            <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"><button class="btn btn-dark" mat-raised-button>Foglalás</button></mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="filmInfoColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: filmInfoColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+</div>

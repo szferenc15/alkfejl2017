@@ -1,0 +1,100 @@
+::ng-deep .mat-input-container,
+::ng-deep .mat-input-placeholder,
+::ng-deep .mat-select-value-text,
+::ng-deep .mat-select-arrow {
+  color: white;
+}
+
+::ng-deep .mat-input-underline {
+  border-bottom: 1px solid white;
+}
+
+::ng-deep .mat-form-field-disabled .mat-input-underline {
+  border-bottom: 1px solid #222222;
+}
+
+::ng-deep .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+  color: #222222;
+}
+
+mat-form-field {
+  color: white;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.information {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.cinema-search-field {
+  width: 80%;
+}
+
+.cinema-search-button {
+  display: block;
+}
+
+.title {
+  color: #dd000f;
+}
+
+.cinema-info-table {
+  width: 100%;
+}
+
+.cinema-info-card {
+  width: 50%;
+  background-color: #555555;
+}
+
+.cinema-picture-td {
+  width: 30%;
+  text-align: center;
+}
+
+.cinema-info-fst-td {
+  width: 20%;
+}
+
+.cinema-info-snd-td {
+  width: 50%;
+}
+
+
+mat-table {
+  width: 90%;
+  border: 2px solid #555555;
+}
+
+::ng-deep .mat-sort-header-container {
+  justify-content: center;
+}
+
+::ng-deep .mat-sort-header-button {
+  text-transform: uppercase;
+}
+
+mat-header-cell {
+  color: #dd000f;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+mat-header-row {
+  background-color: #111111;
+}
+
+mat-cell:not(:last-child) {
+  color: white;
+}
+
+mat-row {
+  background-color: #222222;
+}
+
+.mat-header-row, .mat-row {
+  border-bottom-color: #444444;
+}

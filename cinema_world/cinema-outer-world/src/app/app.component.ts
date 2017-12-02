@@ -1,4 +1,3 @@
-import { Menu } from './menu.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,8 +8,8 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   leftMenu: Menu[] = [
-    { name: "Mozi és jegyinformáció", path: "/cinema-ticket-info"},
     { name: "Aktuális filmek", path: "/films"},
+    { name: "Büfé és jegyinformáció", path: "/cinema-ticket-info"},
     { name: "Nyereményjáték", path: "/sweepstakes"},
     { name: "Díjak", path: "/awards"}
   ];
@@ -19,4 +18,9 @@ export class AppComponent {
     { name: "Bejelentkezés", path: "/login"},
     { name: "Regisztráció", path: "/register"}
   ];
+}
+
+export interface Menu {
+  name: string;
+  path: string;
 }
