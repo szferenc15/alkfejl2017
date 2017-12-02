@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pt-3">
   <div class="row padding-left-20 information">
     <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
       <div class="space"></div>
@@ -65,66 +65,62 @@
 <div class="container">
   <div class="row information padding-left-20">
     <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4" align="center">
-      <div class="cinema-search-field pt-5 pb-5">
-        <h2 class="title">Mozi információ</h2>
+      <div class="cinema-search-field pb-5" [ngClass]="{'pt-5': toggle.checked}">
+        <h2 class="title pb-3">Mozi információ</h2>
+        <form [formGroup]="cinemaSearchForm" (ngSubmit)="showCinemas = true;">
+          <mat-form-field (click)="setFormToDefault()">
+            <mat-select formControlName="country" placeholder="Ország">
+              <mat-option *ngFor="let cinema of cinemaInfos"
+                          value="{{ cinema.country }}"
+                          (click)="setFilteredCinemaCities(cinema.country)">
+                  {{ cinema.country }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
-        <mat-form-field>
-          <input matInput placeholder="Ország" [matAutocomplete]="country">
-          <mat-autocomplete #country="matAutocomplete">
-            <mat-option value="Oroszország">
-              Oroszország
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
+          <mat-form-field class="pl-4">
+            <mat-select formControlName="city" placeholder="Város">
+              <mat-option *ngFor="let cinema of filteredCinemaCities"
+                          value="{{ cinema.city }}"
+                          (click)="setFilteredCinemaDistricts(cinema.city)">
+                  {{ cinema.city }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
-        <mat-form-field class="pl-4">
-          <input matInput placeholder="Város" [matAutocomplete]="city">
-          <mat-autocomplete #city="matAutocomplete">
-            <mat-option value="Moszkva">
-              Moszkva
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
+          <mat-form-field class="pl-4">
+            <mat-select formControlName="district" placeholder="Kerület">
+              <mat-option *ngFor="let cinema of filteredCinemaDistricts"
+                          value="{{ cinema.district }}"
+                          (click)="setFilteredCinemaNames(cinema.district)">
+                  {{ cinema.district }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
-        <mat-form-field class="pl-4">
-          <input matInput placeholder="Kerület" [matAutocomplete]="district">
-          <mat-autocomplete #district="matAutocomplete">
-            <mat-option value="X.">
-              X.
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
-        <mat-form-field class="pl-4">
-          <input matInput placeholder="Utca" [matAutocomplete]="street">
-          <mat-autocomplete #street="matAutocomplete">
-            <mat-option value="Piev">
-              Piev
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
-        <mat-form-field class="pl-4">
-          <input matInput placeholder="Mozi neve" [matAutocomplete]="name">
-          <mat-autocomplete #name="matAutocomplete">
-            <mat-option value="CW Piev">
-              CW Piev
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-
+          <mat-form-field class="pl-4">
+            <mat-select formControlName="name" placeholder="Mozi neve">
+              <mat-option *ngFor="let cinema of filteredCinemaNames"
+                          value="{{ cinema.name }}"
+                          (click)="cinemaSelected = true;">
+                {{ cinema.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         <div class="pt-3">
-          <button class="cinema-search-button btn btn-dark" (click)="showCinemas = true;">Keresés</button>
+          <button class="cinema-search-button btn btn-dark"
+                  type="submit">Keresés</button>
         </div>
+      </form>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container" *ngIf="showCinemas == true">
   <div class="row padding-left-20 information">
     <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
-      <div class="pb-3" *ngFor="let cinema of cinemaInfos">
+      <div class="pb-3" *ngFor="let cinema of lastFilteredCinemaInfo">
         <mat-card class="cinema-info-card">
           <table class="cinema-info-table">
             <tr>

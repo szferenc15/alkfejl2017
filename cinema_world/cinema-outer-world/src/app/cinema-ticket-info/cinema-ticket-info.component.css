@@ -34,7 +34,9 @@ mat-form-field {
 }
 
 ::ng-deep .mat-input-container,
-::ng-deep .mat-input-placeholder {
+::ng-deep .mat-input-placeholder,
+::ng-deep .mat-select-value-text,
+::ng-deep .mat-select-arrow {
   color: white;
 }
 
@@ -42,6 +44,13 @@ mat-form-field {
   border-bottom: 1px solid white;
 }
 
+::ng-deep .mat-form-field-disabled .mat-input-underline {
+  border-bottom: 1px solid #222222;
+}
+
+::ng-deep .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+  color: #222222;
+}
 
 .mat-header-row, .mat-row {
   border-bottom-color: #444444;
@@ -118,6 +127,7 @@ mat-slide-toggle {
 
 .cinema-picture-td {
   width: 30%;
+  text-align: center;
 }
 
 .cinema-info-fst-td {
