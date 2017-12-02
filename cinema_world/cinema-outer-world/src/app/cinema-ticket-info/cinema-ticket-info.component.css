@@ -1,0 +1,129 @@
+mat-table {
+  width: 90%;
+  border: 2px solid #555555;
+}
+
+::ng-deep .mat-sort-header-container {
+  justify-content: center;
+}
+
+::ng-deep .mat-sort-header-button {
+  text-transform: uppercase;
+}
+
+mat-header-cell {
+  color: #dd000f;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+mat-header-row {
+  background-color: #111111;
+}
+
+mat-cell {
+  color: white;
+}
+
+mat-row {
+  background-color: #222222;
+}
+
+mat-form-field {
+  color: white;
+}
+
+::ng-deep .mat-input-container,
+::ng-deep .mat-input-placeholder {
+  color: white;
+}
+
+::ng-deep .mat-input-underline {
+  border-bottom: 1px solid white;
+}
+
+
+.mat-header-row, .mat-row {
+  border-bottom-color: #444444;
+}
+
+mat-slide-toggle {
+  color: #777777;
+  text-shadow: 2px 2px 5px black;
+}
+
+.ticket-info-container {
+  width: 20%;
+  background-color: #222222;
+  border: 1px solid #555555;
+}
+
+::ng-deep .mat-slide-toggle-content {
+  font-size: 18px;
+}
+
+.space {
+  padding-bottom: 20px;
+}
+
+.information {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #dd000f;
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba(221,0,15,0.5);
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #dd000f;
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba(221,0,15,0.5);
+}
+
+.container {
+  max-width: 100%;
+}
+
+.cinema-search-field {
+  color: white;
+  width: 80%;
+}
+
+.cinema-search-button {
+  display: block;
+}
+
+.title {
+  color: #dd000f;
+}
+
+.mat-list .mat-list-item, .mat-nav-list .mat-list-item, .mat-selection-list .mat-list-item {
+  height: 25px;
+}
+
+.cinema-info-table {
+  width: 100%;
+}
+
+.cinema-info-card {
+  width: 50%;
+  background-color: #555555;
+}
+
+.cinema-picture-td {
+  width: 30%;
+}
+
+.cinema-info-fst-td {
+  width: 20%;
+}
+
+.cinema-info-snd-td {
+  width: 50%;
+}

@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -12,7 +13,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 
-import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatButtonModule, MatSortModule,
+         MatTableModule, MatSlideToggleModule,
+         MatAutocompleteModule, MatFormFieldModule,
+         MatInputModule, MatCardModule,
+         MatListModule } from '@angular/material';
+import { CdkTableModule } from '@angular/cdk/table';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -41,6 +49,18 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     MatButtonModule,
+    MatTableModule,
+    MatSortModule,
+    CdkTableModule,
+    MatSlideToggleModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatListModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

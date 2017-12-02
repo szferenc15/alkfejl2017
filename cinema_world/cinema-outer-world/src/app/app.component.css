@@ -15,8 +15,21 @@ img:focus {
   outline: none;
 }
 
-a:hover {
-  color: #555555;
+a:hover  {
+  color: #777777;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+ul.horizontal {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  display: inline-block;
 }
 
 .logo {
@@ -26,6 +39,8 @@ a:hover {
 .hightlighted a {
   cursor: default;
   color: #dd000f;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid white;
 }
 
 .merianda {
@@ -57,7 +72,7 @@ a:hover {
 }
 
 .blur-effect {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgb(88, 84, 84);
 }
 
@@ -65,5 +80,42 @@ a:hover {
   font-family: "Times New Roman", Georgia, Serif;
 }
 
+.container {
+  max-width: 100%;
+}
 
+.information {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
+.social-logo {
+  font-size: 25px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.footer-font {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: white;
+}
+
+.space {
+  padding-left: 10px;
+}
+
+.facebook {
+  color: #3B5998;
+}
+
+.twitter {
+  color: #1DA1F2;
+}
+
+.google {
+  color: #DB4437;
+}

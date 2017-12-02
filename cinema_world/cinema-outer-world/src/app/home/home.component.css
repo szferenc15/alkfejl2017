@@ -76,10 +76,6 @@ img {
   text-align: center;
 }
 
-.row {
-  width: 100%;
-}
-
 div#information .film-tr:hover:not(.highlighted) .film-name,
 div#information .film-tr:hover:not(.highlighted) .film-picture{
   color: #dd000f;
@@ -97,7 +93,6 @@ div#information .film-tr:hover:not(.highlighted) .film-picture{
 
 .information {
   background-color: rgba(0, 0, 0, 0.9);
-  align-self: flex-end;
 }
 
 .title {
@@ -129,4 +124,12 @@ div#information .film-tr:hover:not(.highlighted) .film-picture{
 .big-picture {
   text-align: center;
   margin: auto;
+}
+
+.reservation-font {
+  font-size: 18px;
+  font-variant: small-caps;
+  text-align: center;
+  color: #dd000f;
+  font-weight: bold;
 }

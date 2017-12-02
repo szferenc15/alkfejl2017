@@ -90,7 +90,6 @@ export class HomeComponent implements OnInit {
 
   changeActiveElement(index: number) {
     if (index + this.activeFilmIndex != this.previousActiveElement) {
-      this.throughClick = true;
       this.activeElement = index + this.activeFilmIndex;
       this.activeFilm = index;
       this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
@@ -130,23 +129,32 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  @HostListener('window:keydown', ['$event'])
-  goUpOrDown(event: Event) {
-    switch (event.key) {
+  @HostListener('window:keydown', ['$event.key'])
+  goUpOrDown(event_key: string) {
+    switch (event_key) {
       case "s":
         if (this.activeFilm >= 2) {
           this.goDown();
         }
         if (this.activeFilm < this.films.length - 3) {
           this.activeFilm++;
+          if (this.activeFilm < 0) {
+            this.activeFilm = 0;
+          }
+          this.changeActiveElement(this.activeFilm);
         }
         return false;
       case "w":
+
         if (this.activeFilm < this.films.length - 4) {
           this.goUp();
         }
         if (this.activeFilm > 0) {
           this.activeFilm--;
+          if (this.activeFilm > 2) {
+            this.activeFilm = 2;
+          }
+          this.changeActiveElement(this.activeFilm);
         }
         return false;
       case "a":
@@ -154,9 +162,6 @@ export class HomeComponent implements OnInit {
         return false;
       case "d":
         this.nextTrailer();
-        return false;
-      case "Enter":
-        this.changeActiveElement(this.activeFilm);
         return false;
       default:
         break;

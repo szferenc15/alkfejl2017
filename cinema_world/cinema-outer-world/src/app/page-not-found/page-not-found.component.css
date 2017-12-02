@@ -1,6 +1,6 @@
 .page-not-found {
-  text-align: center;
-  padding-top: 4%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .blur-effect:before {
@@ -24,5 +24,4 @@
 
 .blur-effect {
   background-color: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgb(88, 84, 84);
 }

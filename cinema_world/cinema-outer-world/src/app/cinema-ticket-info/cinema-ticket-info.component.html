@@ -1,3 +1,169 @@
-<p>
-  cinema-ticket-info works!
-</p>
+<div class="container">
+  <div class="row padding-left-20 information">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
+      <div class="space"></div>
+      <mat-slide-toggle class="mat-warn" #toggle [checked]="true">Mutasd a jegyárakat</mat-slide-toggle>
+      <div class="space"></div>
+      <mat-table *ngIf="toggle.checked" [dataSource]="ticketInfoDataSource" matSort>
+        <ng-container matColumnDef="type">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Jegy típus</mat-header-cell>
+          <mat-cell *matCellDef="let row"  style="flex: 0 0 10%;"> {{row.type}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="twoDimensionalPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">2D ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.twoDimensionalPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="imaxPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">IMAX ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.imaxPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="imaxGlassPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">IMAX + szemüveg ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.imaxGlassPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="threeDimensionalPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">3D ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.threeDimensionalPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="threeDimensionalGlassPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">3D + szemüveg ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.threeDimensionalGlassPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fourDimensionalPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">4D ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.fourDimensionalPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fourDimensionalGlassPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">4D + szemüveg ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.fourDimensionalGlassPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="bedRoomPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Ágyszoba ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.bedRoomPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="bedRoomGlassPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Ágyszoba + szemüveg ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.bedRoomGlassPrice}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="ticketInfoColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ticketInfoColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row information padding-left-20">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4" align="center">
+      <div class="cinema-search-field pt-5 pb-5">
+        <h2 class="title">Mozi információ</h2>
+
+        <mat-form-field>
+          <input matInput placeholder="Ország" [matAutocomplete]="country">
+          <mat-autocomplete #country="matAutocomplete">
+            <mat-option value="Oroszország">
+              Oroszország
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field class="pl-4">
+          <input matInput placeholder="Város" [matAutocomplete]="city">
+          <mat-autocomplete #city="matAutocomplete">
+            <mat-option value="Moszkva">
+              Moszkva
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field class="pl-4">
+          <input matInput placeholder="Kerület" [matAutocomplete]="district">
+          <mat-autocomplete #district="matAutocomplete">
+            <mat-option value="X.">
+              X.
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field class="pl-4">
+          <input matInput placeholder="Utca" [matAutocomplete]="street">
+          <mat-autocomplete #street="matAutocomplete">
+            <mat-option value="Piev">
+              Piev
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field class="pl-4">
+          <input matInput placeholder="Mozi neve" [matAutocomplete]="name">
+          <mat-autocomplete #name="matAutocomplete">
+            <mat-option value="CW Piev">
+              CW Piev
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <div class="pt-3">
+          <button class="cinema-search-button btn btn-dark" (click)="showCinemas = true;">Keresés</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row padding-left-20 information">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
+      <div class="pb-3" *ngFor="let cinema of cinemaInfos">
+        <mat-card class="cinema-info-card">
+          <table class="cinema-info-table">
+            <tr>
+              <td class="cinema-picture-td" rowspan="7">
+                <img src="../../assets/star_wars_the_last_jedi.jpg"
+                    alt="Cinema"
+                    height="150"
+                    width="100"/>
+              </td>
+              <td class="cinema-info-fst-td"><b>Név</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.name }} </td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Ország</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.country }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Város</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.city }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Kerület</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.district }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Utca</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.street }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Házszám</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.houseNumber }}</td>
+            </tr>
+            <tr>
+              <td class="cinema-info-fst-td"><b>Kényelmi díj</b>:</td>
+              <td class="cinema-info-snd-td">{{ cinema.amenitiesCharge }}</td>
+            </tr>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

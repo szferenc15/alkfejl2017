@@ -1,6 +1,7 @@
-<div id="information" class="row padding-left-20">
+<div class="container">
+<div id="information" class="row">
 
-  <div class="col-lg-3 col-md-3 col-xs-3 col-sm-3 padding-top-20">
+  <div class="col-lg-3 col-md-3 col-xs-3 col-sm-3">
     <table class="film-panel">
       <tr>
         <td colspan="2">
@@ -33,7 +34,7 @@
     </table>
   </div>
 
-  <div class="col-lg-9 col-xs-9 col-md-9 col-sm-9 padding-top-20" align="center">
+  <div class="col-lg-9 col-xs-9 col-md-9 col-sm-9" align="center">
     <table>
       <tr>
         <td class="padding-right-10">
@@ -60,83 +61,86 @@
 
   </div>
 </div>
+</div>
 
-<div class="row padding-left-20 information flex-end">
+<div class="container">
+  <div class="row padding-left-20 information">
 
-  <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10" align="center">
-    <table>
-      <tr>
-        <td class="big-picture">
-          <img src="{{ films[activeElement].link }}"
-          alt="{{ films[activeElement].name }}"
-          height="190"
-          width="140" />
-        </td>
-      </tr>
-      <tr>
-        <td class="padding-top-10 text-center">
-            <span class="fa fa-star checked big"></span>
-            <span *ngFor="let star of rate" class="fa fa-star checked big padding-left-10"></span>
-        </td>
-      </tr>
-    </table>
+    <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10" align="center">
+      <table>
+        <tr>
+          <td class="big-picture">
+            <img src="{{ films[activeElement].link }}"
+            alt="{{ films[activeElement].name }}"
+            height="190"
+            width="140" />
+          </td>
+        </tr>
+        <tr>
+          <td class="padding-top-10 text-center">
+              <span class="fa fa-star checked big"></span>
+              <span *ngFor="let star of rate" class="fa fa-star checked big padding-left-10"></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
+      <table class="full-width">
+        <th class="title" colspan="2">
+          <h2>{{ films[activeElement].name }}</h2>
+        </th>
+        <tr>
+          <td>Műfaj:</td>
+          <td>?</td>
+        </tr>
+        <tr>
+          <td>Játékidő (perc):</td>
+          <td>?</td>
+        </tr>
+        <tr>
+          <td>Premier:</td>
+          <td>?</td>
+        </tr>
+        <tr>
+          <td>Korhatár:</td>
+          <td>?</td>
+        </tr>
+        <tr>
+          <td>Rendező:</td>
+          <td>?</td>
+        </tr>
+        <tr>
+          <td>Ország:</td>
+          <td>?</td>
+        </tr>
+        <tr>
+          <td>Év:</td>
+          <td>?</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
+      <table>
+        <th>
+          <h3 class="title">Leírás</h3>
+        </th>
+        <tr>
+          <td>{{ films[activeElement].description }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
+      <table>
+        <tr>
+          <td class="reservation-font">
+            A jegyfoglaláshoz kérlek jelentkezz be!
+          </td>
+        </tr>
+      </table>
+    </div>
+
   </div>
-
-  <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
-    <table class="full-width">
-      <th class="title" colspan="2">
-        <h2>{{ films[activeElement].name }}</h2>
-      </th>
-      <tr>
-        <td>Műfaj:</td>
-        <td>?</td>
-      </tr>
-      <tr>
-        <td>Játékidő (perc):</td>
-        <td>?</td>
-      </tr>
-      <tr>
-        <td>Premier:</td>
-        <td>?</td>
-      </tr>
-      <tr>
-        <td>Korhatár:</td>
-        <td>?</td>
-      </tr>
-      <tr>
-        <td>Rendező:</td>
-        <td>?</td>
-      </tr>
-      <tr>
-        <td>Ország:</td>
-        <td>?</td>
-      </tr>
-      <tr>
-        <td>Év:</td>
-        <td>?</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
-    <table>
-      <th>
-        <h3 class="title">Leírás</h3>
-      </th>
-      <tr>
-        <td>{{ films[activeElement].description }}</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
-    <table align="center">
-      <tr>
-        <td>
-          <h4>A jegyfoglaláshoz kérlek jelentkezz be!</h4>
-        </td>
-      </tr>
-    </table>
-  </div>
-
 </div>
