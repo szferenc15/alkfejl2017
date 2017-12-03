@@ -1,0 +1,48 @@
+::ng-deep .mat-input-container,
+::ng-deep .mat-input-placeholder,
+::ng-deep .mat-select-value-text {
+  color: white;
+}
+
+::ng-deep .mat-input-underline {
+  border-bottom: 1px solid white;
+}
+
+::ng-deep .mat-form-field-disabled .mat-input-underline {
+  border-bottom: 1px solid #222222;
+}
+
+::ng-deep .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+  color: #222222;
+}
+
+mat-form-field {
+  color: white;
+}
+
+td {
+  width: 250px;
+}
+
+.display-block {
+  display: block;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 40%;
+  border-radius: 10px;
+}
+
+.mat-form-field-margin {
+  margin-right: 50px;
+}
+
+.register-btn {
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}

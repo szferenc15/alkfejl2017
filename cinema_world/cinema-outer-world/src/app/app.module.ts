@@ -19,7 +19,8 @@ import { MatButtonModule, MatSortModule,
          MatTableModule, MatSlideToggleModule,
          MatAutocompleteModule, MatFormFieldModule,
          MatInputModule, MatCardModule,
-         MatListModule, MatSelectModule } from '@angular/material';
+         MatListModule, MatSelectModule,
+         MatDialogModule, MatCheckboxModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
 const appRoutes: Routes = [
@@ -59,6 +60,8 @@ const appRoutes: Routes = [
     MatCardModule,
     MatListModule,
     MatSelectModule,
+    MatDialogModule,
+    MatCheckboxModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,

@@ -1,3 +1,61 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <div class="pt-4" align="center">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <table>
+        <tr>
+          <td>
+            <mat-checkbox #emailCheckbox class="mat-warn">Email cím használata belépésre</mat-checkbox>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="display-block" *ngIf="emailCheckbox.checked">
+              <input matInput formControlName="email" placeholder="Email cím">
+            </mat-form-field>
+            <p class="error"
+                  *ngIf="emailCheckbox.checked &&
+                        loginForm.get('email').touched &&
+                        loginForm.get('email').hasError('required')">*Az email cím megadása kötelező</p>
+            <p class="error"
+                  *ngIf="emailCheckbox.checked &&
+                        loginForm.get('email').touched &&
+                        loginForm.get('email').hasError('pattern')">*Az email cím formátuma nem megfelelő</p>
+            <mat-form-field class="display-block" *ngIf="!emailCheckbox.checked">
+              <input matInput formControlName="username" placeholder="Felhasználónév">
+            </mat-form-field>
+            <p class="error"
+                  *ngIf="!emailCheckbox.checked &&
+                        loginForm.get('username').touched &&
+                        loginForm.get('username').hasError('required')">*Az felhasználónév megadása kötelező</p>
+            <p class="error"
+                  *ngIf="!emailCheckbox.checked &&
+                        loginForm.get('username').touched &&
+                        loginForm.get('username').hasError('pattern')">*Az felhasználónév formátuma nem megfelelő</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="display-block">
+              <input matInput type="password" formControlName="password" placeholder="Jelszó">
+            </mat-form-field>
+            <p class="error"
+                  *ngIf="loginForm.get('password').touched &&
+                        loginForm.get('password').hasError('required')">*Az jelszó megadása kötelező</p>
+            <p class="error"
+                  *ngIf="loginForm.get('password').touched &&
+                        loginForm.get('password').hasError('pattern')">*Az jelszó formátuma nem megfelelő</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button class="display-block login-btn btn btn-dark"
+                    mat-raised-button
+                    type="submit">
+                    Bejelentkezés
+             </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

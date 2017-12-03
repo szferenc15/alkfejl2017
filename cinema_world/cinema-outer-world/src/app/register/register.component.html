@@ -1,3 +1,81 @@
-<p>
-  register works!
-</p>
+<div class="container">
+  <div class="pt-4" align="center">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <table>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput formControlName="username" placeholder="Felhasználónév">
+            </mat-form-field>
+            <p class="error"
+                  *ngIf="registerForm.get('username').touched &&
+                         registerForm.get('username').hasError('required')">*A felhasználónév megadása kötelező</p>
+            <p class="error"
+                  *ngIf="registerForm.get('username').touched &&
+                         registerForm.get('username').hasError('pattern')">*Az felhasználónév formátuma nem megfelelő</p>
+          </td>
+          <td>
+            <mat-form-field>
+              <input matInput formControlName="email" placeholder="Email cím">
+            </mat-form-field>
+            <p class="error"
+                  *ngIf="registerForm.get('email').touched &&
+                         registerForm.get('email').hasError('required')">*Az email cím megadása kötelező</p>
+            <p class="error"
+                  *ngIf="registerForm.get('email').touched &&
+                         registerForm.get('email').hasError('pattern')">*Az email cím formátuma nem megfelelő</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput type="password" formControlName="password" placeholder="Jelszó">
+            </mat-form-field>
+            <p class="error"
+                  *ngIf="registerForm.get('password').touched &&
+                         registerForm.get('password').hasError('required')">*A jelszó megadása kötelező</p>
+            <p class="error"
+                  *ngIf="registerForm.get('password').touched &&
+                         registerForm.get('password').hasError('pattern')">*A jelszó formátuma nem megfelelő</p>
+          </td>
+          <td>
+            <mat-form-field >
+              <input matInput formControlName="phoneNumber" placeholder="Telefonszám">
+            </mat-form-field>
+            <p class="error"
+                  *ngIf="registerForm.get('phoneNumber').touched &&
+                         registerForm.get('phoneNumber').hasError('required')">*A telefonszám megadása kötelező</p>
+            <p class="error"
+                  *ngIf="registerForm.get('phoneNumber').touched &&
+                         registerForm.get('phoneNumber').hasError('pattern')">*A telefonszám formátuma nem megfelelő</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput type="password" formControlName="passwordConfirmation" placeholder="Jelszó újra">
+            </mat-form-field>
+            <p class="error"
+               *ngIf="registerForm.get('password').touched &&
+                      registerForm.get('password').hasError('required')">*A jelszó megadása kötelező</p>
+            <p class="error"
+               *ngIf="registerForm.get('password').touched &&
+                      registerForm.get('password').hasError('pattern')">*A jelszó formátuma nem megfelelő</p>
+            <p class="error"
+                  *ngIf="registerForm.get('passwordConfirmation').touched &&
+                         registerForm.get('passwordConfirmation').hasError('matchOther')">*A jelszavak nem egyeznek</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+              <button class="register-btn btn btn-dark"
+                      mat-raised-button
+                      type="submit">
+                      Regisztráció
+              </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  </div>

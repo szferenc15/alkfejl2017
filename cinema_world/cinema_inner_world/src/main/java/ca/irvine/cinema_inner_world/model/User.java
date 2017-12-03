@@ -31,8 +31,8 @@ public class User {
     @Column(columnDefinition = "VARCHAR2(15)")
     private String username;
 
-    @Pattern(regexp="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,42}$", message = "Password validation failed")
-    @Column(columnDefinition = "VARCHAR2(42)")
+    @Pattern(regexp="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,25}$", message = "Password validation failed")
+    @Column(columnDefinition = "VARCHAR2(25)")
     private String password;
 
     @Pattern(regexp="^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$", message = "Email validation failed")

@@ -119,3 +119,15 @@ nav li {
 .google {
   color: #DB4437;
 }
+
+::ng-deep .mat-dialog-container button.register-bg {
+  border-radius: 5px ;
+  background: url('../assets/register_bg.jpg');
+  background-size: cover;
+}
+
+::ng-deep .mat-dialog-container button.login-bg {
+  border-radius: 5px ;
+  background: url('../assets/login_bg.jpg');
+  background-size: cover;
+}

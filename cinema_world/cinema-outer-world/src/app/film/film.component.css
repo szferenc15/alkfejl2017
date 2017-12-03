@@ -39,6 +39,7 @@ mat-form-field {
 
 .title {
   color: #dd000f;
+  font-variant: small-caps;
 }
 
 .cinema-info-table {
