@@ -1,0 +1,19 @@
+<mat-horizontal-stepper linear>
+
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>Válaszd ki a mozit</ng-template>
+      <app-film [inStepper]="true"></app-film>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>Válaszd ki az időpontot</ng-template>
+      <app-screening></app-screening>
+    </form>
+  </mat-step>
+
+
+
+</mat-horizontal-stepper>

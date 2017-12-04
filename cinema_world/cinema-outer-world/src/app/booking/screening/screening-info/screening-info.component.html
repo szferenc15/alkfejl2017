@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
+    <mat-table [dataSource]="screeningInfoDataSource" matSort>
+      <ng-container matColumnDef="synchron">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Szinkron</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.synchron | logicalTransform}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="inscriptive">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Feliratos</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.inscriptive | logicalTransform}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="twoDimensional">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">2D vetítés</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.twoDimensional | logicalTransform}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="threeDimensional">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">3D vetítés</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.threeDimensional | logicalTransform}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="fourDimensional">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">4D vetítés</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.fourDimensional | logicalTransform}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="imax">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">IMAX vetítés</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.imax | logicalTransform}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="screenDay">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Vetítési nap</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.screenDay | date:'yyyy.MM.dd'}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="screenTime">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Vetítési idő</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.screenTime}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="booking">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Foglalás</mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"><button class="btn btn-dark" mat-raised-button>Foglalás</button></mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="screeningInfoColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: screeningInfoColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
+

@@ -1,4 +1,9 @@
+import { ScreeningComponent } from './booking/screening/screening.component';
+import { ScreeningInfoComponent } from './booking/screening/screening-info/screening-info.component';
+import { UniqueFilter } from './pipes/unique-filter.pipe';
+import { LogicalTransform } from './pipes/logical-transform.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -12,15 +17,17 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { BookingComponent } from './booking/booking.component';
+import { FilmInfoComponent } from './film/film-info/film-info.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule, MatSortModule,
          MatTableModule, MatSlideToggleModule,
          MatAutocompleteModule, MatFormFieldModule,
          MatInputModule, MatCardModule,
          MatListModule, MatSelectModule,
-         MatDialogModule, MatCheckboxModule } from '@angular/material';
+         MatDialogModule, MatCheckboxModule,
+         MatStepperModule, MatDatepickerModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
 const appRoutes: Routes = [
@@ -31,6 +38,7 @@ const appRoutes: Routes = [
   { path: 'awards', component: AwardsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'booking', component: BookingComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -45,7 +53,13 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    BookingComponent,
+    FilmInfoComponent,
+    LogicalTransform,
+    UniqueFilter,
+    ScreeningComponent,
+    ScreeningInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +76,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatStepperModule,
+    MatDatepickerModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,

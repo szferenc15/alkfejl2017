@@ -29,37 +29,15 @@ mat-form-field {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.cinema-search-field {
+.type-date-field {
   width: 80%;
 }
 
-.cinema-search-button {
+.screening-search-button {
   display: block;
 }
 
 .title {
   color: #dd000f;
   font-variant: small-caps;
-}
-
-.cinema-info-table {
-  width: 100%;
-}
-
-.cinema-info-card {
-  width: 50%;
-  background-color: #555555;
-}
-
-.cinema-picture-td {
-  width: 30%;
-  text-align: center;
-}
-
-.cinema-info-fst-td {
-  width: 20%;
-}
-
-.cinema-info-snd-td {
-  width: 50%;
 }

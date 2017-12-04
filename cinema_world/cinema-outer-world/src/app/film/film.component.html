@@ -6,40 +6,47 @@
         <form [formGroup]="cinemaSearchForm" (ngSubmit)="cinemaSearchSubmit()">
           <mat-form-field (click)="setFormToDefault()">
             <mat-select formControlName="country" placeholder="Ország">
-              <mat-option *ngFor="let cinema of cinemaInfos"
+              <mat-option *ngFor="let cinema of cinemas | uniqueFilter"
                           value="{{ cinema.country }}"
-                          (click)="setFilteredCinemaCities(cinema.country)">
-                  {{ cinema.country }}
+                          (click)="setCinemasFilteredOfCountry(cinema.country)">
+                          {{ cinema.country }}
               </mat-option>
             </mat-select>
           </mat-form-field>
 
           <mat-form-field class="pl-4">
             <mat-select formControlName="city" placeholder="Város">
-              <mat-option *ngFor="let cinema of filteredCinemaCities"
+              <mat-option *ngFor="let cinema of cinemasFilteredOfCountry | uniqueFilter"
                           value="{{ cinema.city }}"
-                          (click)="setFilteredCinemaDistricts(cinema.city)">
-                  {{ cinema.city }}
+                          (click)="setCinemasFilteredOfCity(cinema.city)">
+                          {{ cinema.city }}
               </mat-option>
             </mat-select>
           </mat-form-field>
 
           <mat-form-field class="pl-4">
             <mat-select formControlName="district" placeholder="Kerület">
-              <mat-option *ngFor="let cinema of filteredCinemaDistricts"
+              <mat-option *ngFor="let cinema of cinemasFilteredOfCity | uniqueFilter"
                           value="{{ cinema.district }}"
-                          (click)="setFilteredCinemaNames(cinema.district)">
-                  {{ cinema.district }}
+                          (click)="setCinemasFilteredOfDistrict(cinema.district)">
+                          {{ cinema.district }}
               </mat-option>
             </mat-select>
           </mat-form-field>
 
           <mat-form-field class="pl-4">
-            <mat-select formControlName="name" placeholder="Mozi neve">
-              <mat-option *ngFor="let cinema of filteredCinemaNames"
+            <mat-select *ngIf="hasDistrict" formControlName="name" placeholder="Mozi neve">
+              <mat-option *ngFor="let cinema of cinemasFilteredOfDistrict"
                           value="{{ cinema.name }}"
-                          (click)="cinemaSelected = true;">
-                {{ cinema.name }}
+                          (click)="setCinemasFilteredOfName(cinema.name)">
+                          {{ cinema.name }}
+              </mat-option>
+            </mat-select>
+            <mat-select *ngIf="!hasDistrict" formControlName="name" placeholder="Mozi neve">
+              <mat-option *ngFor="let cinema of cinemasFilteredOfCity"
+                          value="{{ cinema.name }}"
+                          (click)="setCinemasFilteredOfName(cinema.name)">
+                          {{ cinema.name }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -59,7 +66,7 @@
 <div class="container" *ngIf="showCinemas == true">
   <div class="row padding-left-20 information">
     <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
-      <div class="pb-3" *ngFor="let cinema of lastFilteredCinemaInfo">
+      <div class="pb-3" *ngFor="let cinema of filteredCinemas">
         <mat-card class="cinema-info-card">
           <table class="cinema-info-table">
             <tr>
@@ -73,9 +80,16 @@
               <td class="cinema-info-snd-td">{{ cinema.name }} </td>
               <td rowspan="7">
                 <button class="btn btn-dark"
+                        *ngIf="!inStepper"
                         mat-raised-button
                         (click)="getActualFilmsOfCinema(cinema.name)">
                         Aktuális filmek
+                </button>
+                <button class="btn btn-dark"
+                        *ngIf="inStepper"
+                        mat-raised-button
+                        (click)="getActualFilmsOfCinema(cinema.name)">
+                        Tovább
                 </button>
               </td>
             </tr>
@@ -110,70 +124,4 @@
   </div>
 </div>
 
-<div class="container" *ngIf="showFilms == true">
-  <div class="row padding-left-20 information">
-    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-3" align="center">
-      <h2 class="title pb-3"><b>{{ selectedCinema }}</b> mozi aktuális filmjei</h2>
-
-      <mat-table [dataSource]="filmInfoDataSource" matSort>
-        <ng-container matColumnDef="title">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 14.5%;">Cím</mat-header-cell>
-          <mat-cell *matCellDef="let row"  style="flex: 0 0 14.5%;"> {{row.title}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="language">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Nyelv</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.language}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="playTime">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 7%;">Játékidő (perc)</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 7%;"> {{row.playTime}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="premiere">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Premier</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.premiere | date:'yyyy.MM.dd'}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="ageLimit">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 7.5%;">Korhatár</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 7.5%;"> {{row.ageLimit}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="directorFirstName">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Rendező keresztneve</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.directorFirstName}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="directorLastName">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Rendező vezetékneve</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.directorLastName}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="country">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 7.5%;">Ország</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 7.5%;"> {{row.country}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="year">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 5%;">Év</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 5%;"> {{row.year}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="rate">
-          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 8%;">Értékelés</mat-header-cell>
-          <mat-cell *matCellDef="let row" style="flex: 0 0 8%;"> {{row.rate}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="booking">
-            <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Foglalás</mat-header-cell>
-            <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"><button class="btn btn-dark" mat-raised-button>Foglalás</button></mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="filmInfoColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: filmInfoColumns;"></mat-row>
-      </mat-table>
-    </div>
-  </div>
-</div>
+<app-film-info *ngIf="inStepper" [showFilms]="showFilms" [selectedCinema]="selectedCinema"></app-film-info>

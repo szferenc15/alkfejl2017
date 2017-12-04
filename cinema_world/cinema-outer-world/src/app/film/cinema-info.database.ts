@@ -15,7 +15,7 @@ export class CinemaInfoDatabase {
       id: 0,
       country: "Magyarorszag",
       city: "Budapest",
-      district: "VIII",
+      district: null,
       street: "Kerepesi",
       houseNumber: 9,
       name: "CW Arena",
@@ -34,7 +34,7 @@ export class CinemaInfoDatabase {
   ];
 
   getData(): CinemaInfo[] {
-    return this.cinemaInfoData;
+    return this.cinemaInfoData.slice();
   }
 }
 

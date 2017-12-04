@@ -2,7 +2,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material';
 import { CinemaInfoDatabase, CinemaInfo } from './cinema-info.database';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { FilmInfoDatabase, FilmInfo } from './film-info.database';
 
 @Component({
@@ -11,30 +11,24 @@ import { FilmInfoDatabase, FilmInfo } from './film-info.database';
   styleUrls: ['./film.component.css']
 })
 export class FilmComponent implements OnInit {
-  filmInfoColumns = [
-    'title', 'language', 'playTime', 'premiere',
-    'ageLimit', 'directorFirstName', 'directorLastName',
-    'country', 'year', 'rate', 'booking'
-  ];
 
-  filmInfoDataSource: MatTableDataSource<FilmInfo> | null;
-  filmInfoDatabase: FilmInfoDatabase = new FilmInfoDatabase();
-
-  @ViewChild(MatSort) ticketInfoSort: MatSort;
+  @Input() inStepper = false;
 
   cinemaInfoDatabase: CinemaInfoDatabase = new CinemaInfoDatabase();
-  cinemaInfos: CinemaInfo[] = [];
 
   showCinemas = false;
   showFilms = false;
 
   selectedCinema = '';
 
-  filteredCinemaCities = [];
-  filteredCinemaDistricts = [];
-  filteredCinemaNames = [];
+  cinemas = [];
+  cinemasFilteredOfCountry = [];
+  cinemasFilteredOfCity = [];
+  cinemasFilteredOfDistrict = [];
+  cinemasFilteredOfName = [];
+  hasDistrict = true;
 
-  lastFilteredCinemaInfo = [];
+  filteredCinemas: CinemaInfo[] = [];
 
   cinemaSearchForm = new FormGroup({
     country: new FormControl(),
@@ -46,53 +40,89 @@ export class FilmComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.filmInfoDataSource = new MatTableDataSource<FilmInfo>(this.filmInfoDatabase.getData());
-
-    this.cinemaInfos = this.cinemaInfoDatabase.getData();
-    this.lastFilteredCinemaInfo = this.cinemaInfos;
+    this.cinemas = this.cinemaInfoDatabase.getData();
   }
 
-  ngAfterViewInit() {
-    this.filmInfoDataSource.sort = this.ticketInfoSort;
+  setFormToDefault(setDefaultUntil: number) {
+    switch (setDefaultUntil) {
+      case 3:
+        this.cinemaSearchForm.get('city').disable();
+        this.cinemaSearchForm.get('city').reset();
+        this.cinemaSearchForm.get('district').disable();
+        this.cinemaSearchForm.get('district').reset();
+        this.cinemaSearchForm.get('name').disable();
+        this.cinemaSearchForm.get('name').reset();
+        this.filteredCinemas = this.cinemaInfoDatabase.getData();
+        this.showCinemas = false;
+        this.showFilms = false;
+        break;
+      case 2:
+        this.cinemaSearchForm.get('district').disable();
+        this.cinemaSearchForm.get('district').reset();
+        this.cinemaSearchForm.get('name').disable();
+        this.cinemaSearchForm.get('name').reset();
+        this.filteredCinemas = this.cinemasFilteredOfCountry;
+        this.showCinemas = false;
+        this.showFilms = false;
+        break;
+      case 1:
+        this.cinemaSearchForm.get('name').disable();
+        this.cinemaSearchForm.get('name').reset();
+        this.filteredCinemas = this.cinemasFilteredOfDistrict;
+        this.showCinemas = false;
+        this.showFilms = false;
+        break;
+    }
   }
 
-  setFormToDefault() {
-    this.showCinemas = false;
-    this.showFilms = false;
-    this.cinemaSearchForm.reset();
-    this.cinemaSearchForm.get('city').disable();
-    this.cinemaSearchForm.get('district').disable();
-    this.cinemaSearchForm.get('name').disable();
-    this.lastFilteredCinemaInfo = this.cinemaInfos;
-  }
-
-  setFilteredCinemaCities(cinemaCountry: string) {
-    this.filteredCinemaCities = this.cinemaInfos.filter((cinema) => {
+  setCinemasFilteredOfCountry(cinemaCountry: string) {
+    this.setFormToDefault(3);
+    this.cinemasFilteredOfCountry = this.cinemas.filter((cinema) => {
       if (cinemaCountry === cinema.country) {return cinema}
     });
     this.cinemaSearchForm.get('city').enable();
-    this.lastFilteredCinemaInfo = this.filteredCinemaCities;
+    this.filteredCinemas = this.cinemasFilteredOfCountry;
   }
 
-  setFilteredCinemaDistricts(cinemaCity: string) {
-    this.filteredCinemaDistricts = this.filteredCinemaCities.filter((cinema) => {
+  setCinemasFilteredOfCity(cinemaCity: string) {
+    this.setFormToDefault(2);
+    this.cinemasFilteredOfCity = this.cinemasFilteredOfCountry.filter((cinema) => {
       if (cinemaCity === cinema.city) {return cinema}
     });
-    this.cinemaSearchForm.get('district').enable();
-    this.lastFilteredCinemaInfo = this.filteredCinemaDistricts;
+
+    this.hasDistrict = this.cinemasFilteredOfCity[0].district;
+    if (this.hasDistrict) {
+      this.cinemaSearchForm.get('district').enable();
+    } else {
+      this.cinemaSearchForm.get('name').enable();
+    }
+    this.filteredCinemas = this.cinemasFilteredOfCity;
   }
 
-  setFilteredCinemaNames(cinemaDistricts: string) {
-    this.filteredCinemaNames = this.filteredCinemaDistricts.filter((cinema) => {
-      if (cinemaDistricts === cinema.district) {return cinema}
+  setCinemasFilteredOfDistrict(cinemaDistrict: string) {
+    this.setFormToDefault(1);
+    this.cinemasFilteredOfDistrict = this.cinemasFilteredOfCity.filter((cinema) => {
+      if (cinemaDistrict === cinema.district) {return cinema}
     });
     this.cinemaSearchForm.get('name').enable();
-    this.lastFilteredCinemaInfo = this.filteredCinemaNames;
+    this.filteredCinemas = this.cinemasFilteredOfDistrict;
+  }
+
+  setCinemasFilteredOfName(cinemaName: string) {
+    if (this.hasDistrict) {
+      this.cinemasFilteredOfName = this.cinemasFilteredOfDistrict.filter((cinema) => {
+        if (cinemaName === cinema.name) {return cinema}
+      });
+    } else {
+      this.cinemasFilteredOfName = this.cinemasFilteredOfCity.filter((cinema) => {
+        if (cinemaName === cinema.name) {return cinema}
+      });
+    }
+    this.filteredCinemas = this.cinemasFilteredOfName;
   }
 
   cinemaSearchSubmit() {
     this.showCinemas = true;
-    this.showFilms = false;
   }
 
   getActualFilmsOfCinema(cinemaName: string) {

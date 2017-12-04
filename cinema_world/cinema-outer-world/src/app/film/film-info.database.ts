@@ -19,7 +19,7 @@ export interface FilmInfo {
 }
 
 export class FilmInfoDatabase {
-  private cinemaInfoData: FilmInfo[] = [
+  private filmInfoData: FilmInfo[] = [
     {
       id: 0,
       title: 'Thor: Ragnarok',
@@ -61,7 +61,7 @@ export class FilmInfoDatabase {
   ];
 
   getData(): FilmInfo[] {
-    return this.cinemaInfoData;
+    return this.filmInfoData;
   }
 }
 
