@@ -1,3 +1,4 @@
+import { TicketPaymentInfoComponent } from './booking/ticket-payment-info/ticket-payment-info.component';
 import { ScreeningComponent } from './booking/screening/screening.component';
 import { ScreeningInfoComponent } from './booking/screening/screening-info/screening-info.component';
 import { UniqueFilter } from './pipes/unique-filter.pipe';
@@ -29,6 +30,8 @@ import { MatButtonModule, MatSortModule,
          MatDialogModule, MatCheckboxModule,
          MatStepperModule, MatDatepickerModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
+import { RoomStructureComponent } from './booking/room-structure/room-structure.component';
+import { SummaryComponent } from './booking/summary/summary.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -59,7 +62,10 @@ const appRoutes: Routes = [
     LogicalTransform,
     UniqueFilter,
     ScreeningComponent,
-    ScreeningInfoComponent
+    ScreeningInfoComponent,
+    TicketPaymentInfoComponent,
+    RoomStructureComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

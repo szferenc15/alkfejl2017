@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row information">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="center">
+      <div class="ticket-payment-info-div">
+        <h2 class="title pb-3">Ülésrend</h2>
+        <table>
+          <tr *ngFor="let row of rows">
+            <td class="pl-1 pr-1 pt-1 pb-1" *ngFor="let column of columns">
+              <button class="btn btn-success chair-btn"
+                      mat-raised-button
+                      (click)="selectChair(row, column, $event)"
+                      [ngClass]="{'large-chair-btn': roomDimension.columns <= 20,
+                                  'medium-chair-btn': roomDimension.columns > 20 && roomDimension.columns < 50,
+                                  'small-chair-btn': roomDimension.columns >= 50}">
+                      {{ (row - 1)*(roomDimension.rows) + column }}
+              </button>
+            </td>
+          </tr>
+        </table>
+
+        <div class="pt-5">
+            <button class="btn btn-dark"
+                    mat-raised-button
+                    matStepperNext>
+                    Következő
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -41,6 +41,7 @@ export class FilmComponent implements OnInit {
 
   ngOnInit() {
     this.cinemas = this.cinemaInfoDatabase.getData();
+    this.filteredCinemas = this.cinemas;
   }
 
   setFormToDefault(setDefaultUntil: number) {

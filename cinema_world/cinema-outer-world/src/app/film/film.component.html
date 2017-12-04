@@ -86,10 +86,10 @@
                         Aktuális filmek
                 </button>
                 <button class="btn btn-dark"
-                        *ngIf="inStepper"
                         mat-raised-button
-                        (click)="getActualFilmsOfCinema(cinema.name)">
-                        Tovább
+                        *ngIf="inStepper"
+                        matStepperNext>
+                        Következő
                 </button>
               </td>
             </tr>

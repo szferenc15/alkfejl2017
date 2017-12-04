@@ -43,7 +43,13 @@
 
       <ng-container matColumnDef="booking">
         <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Foglalás</mat-header-cell>
-        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"><button class="btn btn-dark" mat-raised-button>Foglalás</button></mat-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;">
+            <button class="btn btn-dark"
+                    mat-raised-button
+                    matStepperNext>
+                    Foglalás
+            </button>
+        </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="screeningInfoColumns"></mat-header-row>

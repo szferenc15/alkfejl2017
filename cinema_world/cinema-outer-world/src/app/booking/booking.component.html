@@ -1,19 +1,33 @@
 <mat-horizontal-stepper linear>
 
-  <mat-step>
+  <mat-step editable="false" label="Válaszd ki a mozit">
     <form>
-      <ng-template matStepLabel>Válaszd ki a mozit</ng-template>
       <app-film [inStepper]="true"></app-film>
     </form>
   </mat-step>
 
-  <mat-step>
+  <mat-step editable="false" label="Válaszd ki az időpontot">
     <form>
-      <ng-template matStepLabel>Válaszd ki az időpontot</ng-template>
       <app-screening></app-screening>
     </form>
   </mat-step>
 
+  <mat-step editable="false" label="Válaszd ki a jegyeket és a fizetőeszközt">
+    <form>
+      <app-ticket-payment-info></app-ticket-payment-info>
+    </form>
+  </mat-step>
 
+  <mat-step editable="false" label="Válaszd ki a székeket">
+    <form>
+      <app-room-structure></app-room-structure>
+    </form>
+  </mat-step>
+
+  <mat-step editable="false" label="Foglalás megtörtént">
+    <form>
+      <app-summary></app-summary>
+    </form>
+  </mat-step>
 
 </mat-horizontal-stepper>

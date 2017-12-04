@@ -162,7 +162,7 @@ INSERT INTO ticket(type, basic_price, imax_price, imax_glass_price,
                          three_dimensional_price, three_dimensional_glass_price, 
                          four_dimensional_price, four_dimensional_glass_price,
                          bed_room_price, bed_room_glass_price) 
-        VALUES ('Fogy', 1320, 420, 720, 170, 410, 1170, 1410, 1770, 2490);
+        VALUES ('Fogy elo', 1320, 420, 720, 170, 410, 1170, 1410, 1770, 2490);
         
 -- BookingTicket data:
 INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
