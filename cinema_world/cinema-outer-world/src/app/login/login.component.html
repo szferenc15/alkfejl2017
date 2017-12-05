@@ -1,6 +1,8 @@
 <div class="container">
   <div class="pt-4" align="center">
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.get('email').value, 
+                                                    loginForm.get('username').value, 
+                                                    loginForm.get('password').value)">
       <table>
         <tr>
           <td>
@@ -50,7 +52,9 @@
           <td>
             <button class="display-block login-btn btn btn-dark"
                     mat-raised-button
-                    type="submit">
+                    type="submit"
+                    [disabled]="(loginForm.get('email').invalid || loginForm.get('username').invalid) && 
+                                 loginForm.get('password').invalid">
                     Bejelentkezés
              </button>
           </td>

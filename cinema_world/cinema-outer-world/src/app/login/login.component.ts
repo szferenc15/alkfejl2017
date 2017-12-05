@@ -1,5 +1,7 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from "../services/authentication.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -17,9 +19,20 @@ export class LoginComponent implements OnInit {
                                      Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,25}$')]),
   });
 
-  constructor() { }
+  constructor(private authService: AuthenticationService,
+              private router: Router) { }
 
   ngOnInit() {
+  }
+
+  login(email: string, username: string, password: string) {
+    if (username == null) {
+      this.authService.login(email, password);
+    } else {
+      this.authService.login(username, password);
+    }
+
+    this.router.navigateByUrl('/booking');
   }
 
 }

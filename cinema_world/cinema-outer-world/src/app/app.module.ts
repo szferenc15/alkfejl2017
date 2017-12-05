@@ -20,7 +20,9 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { BookingComponent } from './booking/booking.component';
 import { FilmInfoComponent } from './film/film-info/film-info.component';
-
+import { RoomStructureComponent } from './booking/room-structure/room-structure.component';
+import { SummaryComponent } from './booking/summary/summary.component';
+import { AuthenticationService } from "./services/authentication.service";
 
 import { MatButtonModule, MatSortModule,
          MatTableModule, MatSlideToggleModule,
@@ -30,8 +32,7 @@ import { MatButtonModule, MatSortModule,
          MatDialogModule, MatCheckboxModule,
          MatStepperModule, MatDatepickerModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
-import { RoomStructureComponent } from './booking/room-structure/room-structure.component';
-import { SummaryComponent } from './booking/summary/summary.component';
+import { CanActivateViaAuthGuard } from "./route-guards/authentication.guard";
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
   { path: 'awards', component: AwardsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'booking', component: BookingComponent},
+  { path: 'booking', component: BookingComponent, canActivate: [CanActivateViaAuthGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -89,7 +90,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AuthenticationService, CanActivateViaAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
