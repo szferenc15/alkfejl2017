@@ -62,7 +62,16 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 ```
 TODO: 
     1. Lombok @Data bug (?)
-    2. @Pattern validation for the first insertion
+    2. töltés
+    3. authorizált végpontok
+    4. a szerverrel AJAX kérésekkel történjen a kommunikáció/adatbázis összekötetés
+    5. profil
+    6. admin jogok
+    7. büfé
+    8. nyereményjáték
+    9. díjak
+    10. foglaláshoz vissza gomb/booking
+    11. 
 ```
 
 ## Adatbázis séma:
