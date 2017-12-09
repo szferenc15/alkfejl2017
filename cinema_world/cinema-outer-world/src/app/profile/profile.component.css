@@ -1,0 +1,18 @@
+.container {
+  max-width: 100%;
+}
+
+.information {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 20px;
+}
+
+.title {
+  color: #dd000f;
+  font-variant: small-caps;
+}
+
+.profile-table {
+  width: 40%;
+}

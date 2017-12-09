@@ -15,6 +15,7 @@ export class AppComponent {
   ];
 
   rightMenu: Menu[] = [
+    { name: "Profil", path: "/profile"},
     { name: "Bejelentkezés", path: "/login"},
     { name: "Regisztráció", path: "/register"}
   ];
