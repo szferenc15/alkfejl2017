@@ -1,3 +1,4 @@
+import { ScreeningService } from './services/screening.service';
 import { CinemaService } from './services/cinema.service';
 import { HttpModule } from '@angular/http';
 import { TicketPaymentInfoComponent } from './booking/ticket-payment-info/ticket-payment-info.component';
@@ -103,7 +104,8 @@ const appRoutes: Routes = [
   providers: [AuthenticationService,
               CanActivateViaAuthGuard,
               FilmService,
-              CinemaService],
+              CinemaService,
+              ScreeningService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
