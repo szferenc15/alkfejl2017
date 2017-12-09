@@ -3,6 +3,9 @@ package ca.irvine.cinema_inner_world.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +57,7 @@ public class Cinema {
 
     // END OF DEFAULT COLUMNS
 
+    @JsonManagedReference()
     @OneToMany(
         mappedBy = "cinemaId",
         cascade = CascadeType.ALL, 
@@ -61,6 +65,7 @@ public class Cinema {
     )
     private List<Room> rooms = new ArrayList<>();
 
+    @JsonManagedReference()
     @OneToMany(
         mappedBy = "cinemaId",
         cascade = CascadeType.ALL, 
@@ -68,10 +73,88 @@ public class Cinema {
     )
     private List<Film> films = new ArrayList<>();
 
+    @JsonManagedReference()
     @OneToMany(
         mappedBy = "cinemaId",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
     private List<Screening> screenings = new ArrayList<>();
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @return the country
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * @return the city
+     */
+    public String getCity() {
+        return city;
+    }
+
+    /**
+     * @return the district
+     */
+    public String getDistrict() {
+        return district;
+    }
+
+    /**
+     * @return the street
+     */
+    public String getStreet() {
+        return street;
+    }
+
+    /**
+     * @return the houseNumber
+     */
+    public byte getHouseNumber() {
+        return houseNumber;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @return the amenitiesCharge
+     */
+    public short getAmenitiesCharge() {
+        return amenitiesCharge;
+    }
+
+    /**
+     * @return the films
+     */
+    public List<Film> getFilms() {
+        return films;
+    }
+
+    /**
+     * @return the rooms
+     */
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    /**
+     * @return the screenings
+     */
+    public List<Screening> getScreenings() {
+        return screenings;
+    }
 }

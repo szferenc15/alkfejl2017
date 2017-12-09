@@ -1,9 +1,11 @@
+import { CinemaService } from '../services/cinema.service';
+import { Cinema } from './../interfaces/cinema.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material';
-import { CinemaInfoDatabase, CinemaInfo } from './cinema-info.database';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { FilmInfoDatabase, FilmInfo } from './film-info.database';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-film',
@@ -14,21 +16,21 @@ export class FilmComponent implements OnInit {
 
   @Input() inStepper = false;
 
-  cinemaInfoDatabase: CinemaInfoDatabase = new CinemaInfoDatabase();
+  showCinemas: boolean = false;
+  showFilms: boolean = false;
+  hasDistrict: boolean = true;
+  loaded: boolean = false;
 
-  showCinemas = false;
-  showFilms = false;
+  selectedCinema: string = '';
 
-  selectedCinema = '';
+  cinemas: Cinema[] = [];
+  cinemasFilteredOfCountry: Cinema[] = [];
+  cinemasFilteredOfCity: Cinema[] = [];
+  cinemasFilteredOfDistrict: Cinema[] = [];
+  cinemasFilteredOfName: Cinema[] = [];
+  filteredCinemas: Cinema[] = [];
 
-  cinemas = [];
-  cinemasFilteredOfCountry = [];
-  cinemasFilteredOfCity = [];
-  cinemasFilteredOfDistrict = [];
-  cinemasFilteredOfName = [];
-  hasDistrict = true;
-
-  filteredCinemas: CinemaInfo[] = [];
+  cinemaSubscription: Subscription;
 
   cinemaSearchForm = new FormGroup({
     country: new FormControl(),
@@ -37,11 +39,18 @@ export class FilmComponent implements OnInit {
     name: new FormControl({value: '', disabled: true})
   });
 
-  constructor() { }
+  constructor(private cinemaService: CinemaService) { }
 
   ngOnInit() {
-    this.cinemas = this.cinemaInfoDatabase.getData();
-    this.filteredCinemas = this.cinemas;
+    this.cinemaSubscription = this.cinemaService.getCinemas().subscribe((cinema: Cinema[]) => {
+      this.cinemas = cinema;
+      this.filteredCinemas = this.cinemas;
+      this.loaded = true;
+    })
+  }
+
+  ngOnDestroy() {
+    this.cinemaSubscription.unsubscribe();
   }
 
   setFormToDefault(setDefaultUntil: number) {
@@ -53,7 +62,7 @@ export class FilmComponent implements OnInit {
         this.cinemaSearchForm.get('district').reset();
         this.cinemaSearchForm.get('name').disable();
         this.cinemaSearchForm.get('name').reset();
-        this.filteredCinemas = this.cinemaInfoDatabase.getData();
+        this.filteredCinemas = this.cinemas;
         this.showCinemas = false;
         this.showFilms = false;
         break;
@@ -78,7 +87,7 @@ export class FilmComponent implements OnInit {
 
   setCinemasFilteredOfCountry(cinemaCountry: string) {
     this.setFormToDefault(3);
-    this.cinemasFilteredOfCountry = this.cinemas.filter((cinema) => {
+    this.cinemasFilteredOfCountry = this.cinemas.slice().filter((cinema: Cinema) => {
       if (cinemaCountry === cinema.country) {return cinema}
     });
     this.cinemaSearchForm.get('city').enable();
@@ -87,11 +96,11 @@ export class FilmComponent implements OnInit {
 
   setCinemasFilteredOfCity(cinemaCity: string) {
     this.setFormToDefault(2);
-    this.cinemasFilteredOfCity = this.cinemasFilteredOfCountry.filter((cinema) => {
+    this.cinemasFilteredOfCity = this.cinemasFilteredOfCountry.filter((cinema: Cinema) => {
       if (cinemaCity === cinema.city) {return cinema}
     });
 
-    this.hasDistrict = this.cinemasFilteredOfCity[0].district;
+    this.hasDistrict = this.cinemasFilteredOfCity[0].district != null && this.cinemasFilteredOfCity[0].district != '';
     if (this.hasDistrict) {
       this.cinemaSearchForm.get('district').enable();
     } else {
@@ -102,7 +111,7 @@ export class FilmComponent implements OnInit {
 
   setCinemasFilteredOfDistrict(cinemaDistrict: string) {
     this.setFormToDefault(1);
-    this.cinemasFilteredOfDistrict = this.cinemasFilteredOfCity.filter((cinema) => {
+    this.cinemasFilteredOfDistrict = this.cinemasFilteredOfCity.filter((cinema: Cinema) => {
       if (cinemaDistrict === cinema.district) {return cinema}
     });
     this.cinemaSearchForm.get('name').enable();
@@ -111,11 +120,11 @@ export class FilmComponent implements OnInit {
 
   setCinemasFilteredOfName(cinemaName: string) {
     if (this.hasDistrict) {
-      this.cinemasFilteredOfName = this.cinemasFilteredOfDistrict.filter((cinema) => {
+      this.cinemasFilteredOfName = this.cinemasFilteredOfDistrict.filter((cinema: Cinema) => {
         if (cinemaName === cinema.name) {return cinema}
       });
     } else {
-      this.cinemasFilteredOfName = this.cinemasFilteredOfCity.filter((cinema) => {
+      this.cinemasFilteredOfName = this.cinemasFilteredOfCity.filter((cinema: Cinema) => {
         if (cinemaName === cinema.name) {return cinema}
       });
     }

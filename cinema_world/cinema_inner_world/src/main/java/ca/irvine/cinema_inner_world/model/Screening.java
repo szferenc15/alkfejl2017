@@ -20,6 +20,9 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -61,18 +64,22 @@ public class Screening {
 
     // END OF DEFAULT COLUMNS
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cinema_id")
     private Cinema cinemaId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "room_id")
     private Room roomId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "film_title")
     private Film filmTitle;
 
+    @JsonManagedReference()
     @OneToMany(
         mappedBy = "screeningId",
         cascade = CascadeType.ALL, 
@@ -85,5 +92,96 @@ public class Screening {
      */
     public long getId() {
         return id;
+    }
+    
+    /**
+     * @return the bookings
+     */
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    /**
+     * @return the cinemaId
+     */
+    public Cinema getCinemaId() {
+        return cinemaId;
+    }
+
+    /**
+     * @return the filmTitle
+     */
+    public Film getFilmTitle() {
+        return filmTitle;
+    }
+
+    /**
+     * @return the roomId
+     */
+    public Room getRoomId() {
+        return roomId;
+    }
+
+    /**
+     * @return the twoDimensional
+     */
+    public boolean isTwoDimensional() {
+        return twoDimensional;
+    }
+
+    /**
+     * @return the threeDimensional
+     */
+    public boolean isThreeDimensional() {
+        return threeDimensional;
+    }
+
+    /**
+     * @return the fourDimensional
+     */
+    public boolean isFourDimensional() {
+        return fourDimensional;
+    }
+
+    /**
+     * @return the imax
+     */
+    public boolean isImax() {
+        return imax;
+    }
+
+    /**
+     * @return the language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    /**
+     * @return the synchron
+     */
+    public boolean isSynchron() {
+        return synchron;
+    }
+
+    /**
+     * @return the inscriptive
+     */
+    public boolean isInscriptive() {
+        return inscriptive;
+    }
+
+    /**
+     * @return the screenDay
+     */
+    public Date getScreenDay() {
+        return screenDay;
+    }
+
+    /**
+     * @return the screenTime
+     */
+    public Time getScreenTime() {
+        return screenTime;
     }
 }

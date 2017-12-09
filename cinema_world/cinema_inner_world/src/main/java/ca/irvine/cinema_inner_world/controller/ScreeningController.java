@@ -16,7 +16,7 @@ public class ScreeningController{
     @Autowired
     private ScreeningRepository screeningRepository;
 
-    @RequestMapping(value= "/screenings", method=RequestMethod.POST )
+    @RequestMapping(value= "/screenings", method=RequestMethod.GET )
     public Response<Iterable<Screening>> getScreenings()
     {
         Iterable<Screening> optionalScreenings = screeningRepository.findAll();

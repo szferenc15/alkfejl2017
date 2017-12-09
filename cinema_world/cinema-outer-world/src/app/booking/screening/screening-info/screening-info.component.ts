@@ -1,4 +1,4 @@
-import { ScreeningInfo, ScreeningInfoDatabase } from './screening-info.database';
+import { Screening } from './../../../interfaces/screening.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material';
 import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
@@ -11,32 +11,32 @@ import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/cor
 export class ScreeningInfoComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) screeningInfoSort: MatSort;
 
-  private _filteredScreenings = [];
+  private _filteredScreenings: Screening[] = [];
 
-  screeningInfoColumns = [
+  screeningColumns = [
     'synchron', 'inscriptive','twoDimensional',
     'threeDimensional', 'fourDimensional',
     'imax', 'screenDay', 'screenTime', 'booking'
   ];
 
-  screeningInfoDataSource: MatTableDataSource<ScreeningInfo> | null;
+  screeningDataSource: MatTableDataSource<Screening> = null;
 
   constructor() { }
 
   ngOnInit() {
-    this.screeningInfoDataSource = new MatTableDataSource<ScreeningInfo>(this._filteredScreenings);
+    this.screeningDataSource = new MatTableDataSource<Screening>(this._filteredScreenings);
   }
 
   ngAfterViewInit() {
-    this.screeningInfoDataSource.sort = this.screeningInfoSort;
+    this.screeningDataSource.sort = this.screeningInfoSort;
   }
 
-  get filteredScreenings(): ScreeningInfo[] {
+  get filteredScreenings(): Screening[] {
     return this._filteredScreenings;
   }
 
   @Input()
-  set filteredScreenings(newFilteredScreenings: ScreeningInfo[]) {
+  set filteredScreenings(newFilteredScreenings: Screening[]) {
     this._filteredScreenings = newFilteredScreenings;
   }
 }

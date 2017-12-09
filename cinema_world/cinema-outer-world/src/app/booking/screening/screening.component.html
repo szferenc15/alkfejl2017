@@ -1,61 +1,63 @@
-<div class="container">
-  <div class="row information padding-left-20">
-    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="center">
-      <div class="type-date-search-field">
-        <h2 class="title pb-3">Típus és időpont információ</h2>
-        <form [formGroup]="screeningSearchForm" (ngSubmit)="screeningSearchSubmit()">
+<div *ngIf="loaded">
+  <div class="container">
+    <div class="row information padding-left-20">
+      <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="center">
+        <div class="type-date-search-field">
+          <h2 class="title pb-3">Típus és időpont információ</h2>
+          <form [formGroup]="screeningSearchForm" (ngSubmit)="screeningSearchSubmit()">
 
-          <mat-form-field>
-            <mat-select formControlName="isSynchron" placeholder="Szinkron">
-                <mat-option *ngFor="let synchron of synchrons"
-                            value="{{ synchron }}"
-                            (click)="setScreeningsFilteredOfLanguageType(synchron)">
-                            {{ synchron }}
+            <mat-form-field>
+              <mat-select formControlName="isSynchron" placeholder="Szinkron">
+                  <mat-option *ngFor="let synchron of synchrons"
+                              value="{{ synchron }}"
+                              (click)="setScreeningsFilteredOfLanguageType(synchron)">
+                              {{ synchron }}
+                  </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="pl-4">
+              <mat-select formControlName="dimension" placeholder="Dimenzió">
+                <mat-option *ngFor="let dimension of dimensions"
+                            value="{{ dimension }}"
+                            (click)="setScreeningsFilteredOfDimension(dimension)">
+                            {{ dimension }}
                 </mat-option>
-            </mat-select>
-          </mat-form-field>
+              </mat-select>
+            </mat-form-field>
 
-          <mat-form-field class="pl-4">
-            <mat-select formControlName="dimension" placeholder="Dimenzió">
-              <mat-option *ngFor="let dimension of dimensions"
-                          value="{{ dimension }}"
-                          (click)="setScreeningsFilteredOfDimension(dimension)">
-                          {{ dimension }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+            <mat-form-field class="pl-4">
+              <mat-select formControlName="screeningDay" placeholder="Vetítés napja">
+                <mat-option *ngFor="let screening of screeningsFilteredOfDimension | uniqueFilter"
+                            value="{{ screening.screenDay | date:'yyyy.MM.dd' }}"
+                            (click)="setScreeningsFilteredOfScreenDay(screening.screenDay)">
+                            {{ screening.screenDay | date:'yyyy.MM.dd' }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
-          <mat-form-field class="pl-4">
-            <mat-select formControlName="screeningDay" placeholder="Vetítés napja">
-              <mat-option *ngFor="let screening of screeningsFilteredOfDimension | uniqueFilter"
-                          value="{{ screening.screenDay | date:'yyyy.MM.dd' }}"
-                          (click)="setScreeningsFilteredOfScreenDay(screening.screenDay)">
-                          {{ screening.screenDay | date:'yyyy.MM.dd' }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+            <mat-form-field class="pl-4">
+              <mat-select formControlName="screeningTime" placeholder="Vetítés időpontja">
+                <mat-option *ngFor="let screening of screeningsFilteredOfScreenDay | uniqueFilter"
+                            value="{{ screening.screenTime }}"
+                            (click)="setScreeningsFilteredOfScreenTime(screening.screenTime)">
+                            {{ screening.screenTime }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
-          <mat-form-field class="pl-4">
-            <mat-select formControlName="screeningTime" placeholder="Vetítés időpontja">
-              <mat-option *ngFor="let screening of screeningsFilteredOfScreenDay | uniqueFilter"
-                          value="{{ screening.screenTime }}"
-                          (click)="setScreeningsFilteredOfScreenTime(screening.screenTime)">
-                          {{ screening.screenTime }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-
-        <div class="pt-3">
-          <button class="screening-search-button btn btn-dark"
-                  mat-raised-button
-                  type="submit">
-                  Keresés
-          </button>
+          <div class="pt-3">
+            <button class="screening-search-button btn btn-dark"
+                    mat-raised-button
+                    type="submit">
+                    Keresés
+            </button>
+          </div>
+        </form>
         </div>
-      </form>
       </div>
     </div>
   </div>
-</div>
 
-<app-screening-info [filteredScreenings]="filteredScreenings" *ngIf="showScreeningTable"></app-screening-info>
+  <app-screening-info [filteredScreenings]="filteredScreenings" *ngIf="showScreeningTable"></app-screening-info>
+</div>

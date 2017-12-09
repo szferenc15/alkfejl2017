@@ -1,4 +1,7 @@
-import { ScreeningInfoDatabase, ScreeningInfo } from './screening-info/screening-info.database';
+import { Time } from '@angular/common/src/i18n/locale_data_api';
+import { Subscription } from 'rxjs/Subscription';
+import { ScreeningService } from './../../services/screening.service';
+import { Screening } from './../../interfaces/screening.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -11,19 +14,22 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 })
 export class ScreeningComponent implements OnInit {
 
-  showScreeningTable = false;
+  showScreeningTable: boolean = false;
+  loaded: boolean = false;
 
   selectedCinema = '';
 
   synchrons = [];
   dimensions = [];
 
-  screeningsFilteredOfLanguageType = [];
-  screeningsFilteredOfDimension = [];
-  screeningsFilteredOfScreenDay = [];
-  screeningsFilteredOfScreenTime = [];
+  screeningsFilteredOfLanguageType: Screening[] = [];
+  screeningsFilteredOfDimension: Screening[] = [];
+  screeningsFilteredOfScreenDay: Screening[] = [];
+  screeningsFilteredOfScreenTime: Screening[] = [];
+  filteredScreenings: Screening[] = [];
+  screenings: Screening[] = [];
 
-  filteredScreenings: ScreeningInfo[] = [];
+  screeningSubscription: Subscription;
 
   screeningSearchForm = new FormGroup({
     isSynchron: new FormControl(),
@@ -32,22 +38,24 @@ export class ScreeningComponent implements OnInit {
     screeningTime: new FormControl({value: '', disabled: true})
   });
 
-  screeningInfoDatabase: ScreeningInfoDatabase = new ScreeningInfoDatabase();
-
-  constructor() { }
+  constructor(private screeningService: ScreeningService) { }
 
   ngOnInit() {
-    this.filteredScreenings = this.screeningInfoDatabase.getData();
+    this.screeningSubscription = this.screeningService.getScreenings().subscribe((screening: Screening[]) => {
+      this.screenings = screening;
 
-    this.filteredScreenings.forEach((screening) => {
-      if (!this.synchrons.includes('Szinkronos') && screening.synchron) {
-        this.synchrons.push('Szinkronos');
-      } else if (!this.synchrons.includes('Feliratos') && screening.inscriptive) {
-        this.synchrons.push('Feliratos');
-      } else if (this.synchrons.includes('Szinkronos') &&
-                 this.synchrons.includes('Feliratos')) {
-        return;
-      }
+      this.filteredScreenings.forEach((screening) => {
+        if (!this.synchrons.includes('Szinkronos') && screening.synchron) {
+          this.synchrons.push('Szinkronos');
+        } else if (!this.synchrons.includes('Feliratos') && screening.inscriptive) {
+          this.synchrons.push('Feliratos');
+        } else if (this.synchrons.includes('Szinkronos') &&
+                   this.synchrons.includes('Feliratos')) {
+          return;
+        }
+      })
+
+      this.loaded = true;
     })
   }
 
@@ -60,7 +68,7 @@ export class ScreeningComponent implements OnInit {
         this.screeningSearchForm.get('screeningDay').reset();
         this.screeningSearchForm.get('screeningTime').disable();
         this.screeningSearchForm.get('screeningTime').reset();
-        this.filteredScreenings = this.screeningInfoDatabase.getData();
+        this.filteredScreenings = this.screenings;
         this.showScreeningTable = false;
         this.dimensions = [];
         break;
@@ -83,7 +91,7 @@ export class ScreeningComponent implements OnInit {
 
   setScreeningsFilteredOfLanguageType(languageType: string) {
     this.setFormToDefault(3);
-    this.screeningsFilteredOfLanguageType = this.filteredScreenings.filter((screening) => {
+    this.screeningsFilteredOfLanguageType = this.screenings.slice().filter((screening) => {
       if (languageType === 'Szinkronos') {
         if (screening.synchron) {return screening}
       } else if (languageType === 'Feliratos') {
@@ -138,7 +146,7 @@ export class ScreeningComponent implements OnInit {
     this.filteredScreenings = this.screeningsFilteredOfScreenDay;
   }
 
-  setScreeningsFilteredOfScreenTime(screenTime: string) {
+  setScreeningsFilteredOfScreenTime(screenTime: Time) {
     this.screeningsFilteredOfScreenTime = this.screeningsFilteredOfScreenDay.filter((screening) => {
       if (screenTime === screening.screenTime) {return screening}
     });

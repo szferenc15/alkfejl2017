@@ -15,4 +15,11 @@ public class Category {
     @Id
     @Column(columnDefinition = "VARCHAR2(20)")
     private String category;
+
+    /**
+     * @return the category
+     */
+    public String getCategory() {
+        return category;
+    }
 }

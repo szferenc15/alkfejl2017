@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.Pattern;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -48,7 +51,8 @@ public class User {
 
     // END OF DEFAULT COLUMNS
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference()
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_booking",
         joinColumns = @JoinColumn(name = "username", referencedColumnName = "username"),
         inverseJoinColumns = @JoinColumn(name = "booking_id")

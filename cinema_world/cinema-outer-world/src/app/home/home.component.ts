@@ -1,12 +1,15 @@
+import { Film } from './../interfaces/film.interface';
+import { FilmService } from './../services/film.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   rate = [];
   activeElement = 0;
   activeFilmIndex = 0;
@@ -15,77 +18,34 @@ export class HomeComponent implements OnInit {
   previousActiveElement = 0;
   url: SafeResourceUrl;
 
-  films = [
-    {
-      id: 0,
-      link: '../../assets/thor_ragnarok.jpg',
-      name: 'Thor: Ragnarök',
-      rate: 4,
-      trailers: [
-        'https://www.youtube.com/embed/v7MGUNV8MxU',
-        'https://www.youtube.com/embed/ue80QwXMRHg'
-      ],
-      description: `Thor leírás.`
-    },
-    {
-      id: 1,
-      link: '../../assets/star_wars_the_last_jedi.jpg',
-      name: 'Star Wars: Az utolsó Jedik',
-      rate: 5,
-      trailers: [
-        'https://www.youtube.com/embed/zB4I68XVPzQ',
-        'https://www.youtube.com/embed/Q0CbN8sfihY'
-      ],
-      description: `Star Wars leírás.`
-    },
-    {
-      id: 2,
-      link: '../../assets/jungle.jpg',
-      name: 'Dzsungel',
-      rate: 4,
-      trailers: [
-        'https://www.youtube.com/embed/RI_Iz3-88Fw',
-        'https://www.youtube.com/embed/CJIYns1aqzY'
-      ],
-      description: `Dzsungel leírás.`
-    },
-    {
-      id: 3,
-      link: '../../assets/a_viszkis.jpg',
-      name: 'A viszkis',
-      rate: 3,
-      trailers: [
-        'https://www.youtube.com/embed/ia_RojiPK50',
-        'https://www.youtube.com/embed/YYQa4lj8THM'
-      ],
-      description: `A viszkis leírás.`
-    },
-    {
-      id: 4,
-      link: '../../assets/justice_league.jpg',
-      name: 'Az igazság ligája',
-      rate: 2,
-      trailers: [
-        'https://www.youtube.com/embed/r9-DM9uBtVI',
-        'https://www.youtube.com/embed/h-Nzxn9qiSg',
-        'https://www.youtube.com/embed/JWTLdrIK4FI'
-      ],
-      description: `Az igazság ligája leírás.`
-    },
-  ];
+  films: Film[] = null;
+  activeFilms: Film[] = null;
 
-  activeFilms = [
-    this.films[this.activeFilmIndex],
-    this.films[this.activeFilmIndex + 1],
-    this.films[this.activeFilmIndex + 2]
-  ];
+  loaded: boolean = false;
 
-  constructor(private sanitizer: DomSanitizer) {
-    this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0]);
+  filmSubscription: Subscription;
+
+  constructor( private filmService: FilmService,
+               private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
+    this.filmSubscription = this.filmService.getFilms().subscribe((films: Film[]) => {
+      this.films = films;
+      console.log(this.films);
+      this.activeFilms = [
+        this.films[this.activeFilmIndex],
+        this.films[this.activeFilmIndex + 1],
+        this.films[this.activeFilmIndex + 2],
+      ];
+      this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0].url);
+      this.loaded = true;
+    })
+  }
+
+  ngOnDestroy() {
+    this.filmSubscription.unsubscribe();
   }
 
   changeActiveElement(index: number) {
@@ -95,7 +55,7 @@ export class HomeComponent implements OnInit {
       this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
       this.activeTrailer = 0;
       this.previousActiveElement = this.activeElement;
-      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0]);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0].url);
     }
   }
 
@@ -119,13 +79,13 @@ export class HomeComponent implements OnInit {
 
   nextTrailer() {
     if (this.activeTrailer < this.films[this.activeElement].trailers.length - 1) {
-      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[++this.activeTrailer]);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[++this.activeTrailer].url);
     }
   }
 
   previousTrailer() {
     if (this.activeTrailer > 0) {
-      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[--this.activeTrailer]);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[--this.activeTrailer].url);
     }
   }
 
@@ -133,10 +93,11 @@ export class HomeComponent implements OnInit {
   goUpOrDown(event_key: string) {
     switch (event_key) {
       case "s":
+        console.log(this.activeFilm);
         if (this.activeFilm >= 2) {
           this.goDown();
         }
-        if (this.activeFilm < this.films.length - 3) {
+        if (this.activeFilm < 2) {
           this.activeFilm++;
           if (this.activeFilm < 0) {
             this.activeFilm = 0;
@@ -145,7 +106,6 @@ export class HomeComponent implements OnInit {
         }
         return false;
       case "w":
-
         if (this.activeFilm < this.films.length - 4) {
           this.goUp();
         }

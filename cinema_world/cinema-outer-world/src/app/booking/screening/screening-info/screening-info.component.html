@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
-    <mat-table [dataSource]="screeningInfoDataSource" matSort>
+    <mat-table [dataSource]="screeningDataSource" matSort>
       <ng-container matColumnDef="synchron">
         <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Szinkron</mat-header-cell>
         <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.synchron | logicalTransform}} </mat-cell>
@@ -52,8 +52,8 @@
         </mat-cell>
       </ng-container>
 
-      <mat-header-row *matHeaderRowDef="screeningInfoColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: screeningInfoColumns;"></mat-row>
+      <mat-header-row *matHeaderRowDef="screeningColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: screeningColumns;"></mat-row>
     </mat-table>
   </div>
 </div>

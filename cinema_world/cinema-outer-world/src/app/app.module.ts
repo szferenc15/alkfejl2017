@@ -1,3 +1,5 @@
+import { CinemaService } from './services/cinema.service';
+import { HttpModule } from '@angular/http';
 import { TicketPaymentInfoComponent } from './booking/ticket-payment-info/ticket-payment-info.component';
 import { ScreeningComponent } from './booking/screening/screening.component';
 import { ScreeningInfoComponent } from './booking/screening/screening-info/screening-info.component';
@@ -8,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+
+import { FilmService } from './services/film.service';
 
 import { RouterModule, Routes } from '@angular/router';
 import { CinemaTicketInfoComponent } from './cinema-ticket-info/cinema-ticket-info.component';
@@ -93,9 +97,13 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthenticationService, CanActivateViaAuthGuard],
+  providers: [AuthenticationService,
+              CanActivateViaAuthGuard,
+              FilmService,
+              CinemaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

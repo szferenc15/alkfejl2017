@@ -14,14 +14,14 @@ button:focus {
   outline: none;
 }
 
-button, button[mat-fab] {
+button.navigation-btn.mat-raised-button, button.mat-fab.mat-accent {
   border: 1px solid #777777;
-  background-color: rgb(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   color: #dd000f;
 }
 
-button:disabled:disabled, button[mat-fab]:disabled:disabled {
-  background-color: rgb(30, 30, 30, 0.8);
+button.navigation-btn.mat-raised-button:disabled, button.mat-fab.mat-accent:disabled {
+  background-color: rgba(30, 30, 30, 0.8);
   color: #999999;
   border: 1px solid black;
 }

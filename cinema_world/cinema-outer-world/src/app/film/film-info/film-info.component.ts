@@ -1,6 +1,9 @@
+import { Film } from './../../interfaces/film.interface';
+import { FilmService } from './../../services/film.service';
+import { Subscription } from 'rxjs/Subscription';
 import { FilmInfo, FilmInfoDatabase } from './../film-info.database';
 import { MatTableDataSource } from '@angular/material/table';
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material';
 
 @Component({
@@ -8,29 +11,32 @@ import { MatSort } from '@angular/material';
   templateUrl: './film-info.component.html',
   styleUrls: ['./film-info.component.css']
 })
-export class FilmInfoComponent implements OnInit, AfterViewInit {
+export class FilmInfoComponent implements OnInit {
   @Input() selectedCinema = '';
   @Input() showFilms = false;
 
-  @ViewChild(MatSort) ticketInfoSort: MatSort;
+  @ViewChild(MatSort) filmSort: MatSort;
 
-  filmInfoColumns = [
+  filmColumns = [
     'title', 'language', 'playTime', 'premiere',
     'ageLimit', 'directorFirstName', 'directorLastName',
     'country', 'year', 'rate', 'booking'
   ];
 
-  filmInfoDataSource: MatTableDataSource<FilmInfo> | null;
-  filmInfoDatabase: FilmInfoDatabase = new FilmInfoDatabase();
+  filmDataSource: MatTableDataSource<Film> = null;
+  films: Film[] = null;
 
-  constructor() { }
+  loaded: boolean = false;
+
+  filmSubscription: Subscription;
+
+  constructor(private filmService: FilmService) { }
 
   ngOnInit() {
-    this.filmInfoDataSource = new MatTableDataSource<FilmInfo>(this.filmInfoDatabase.getData());
+    this.filmSubscription = this.filmService.getFilms().subscribe((films: Film[]) => {
+      this.filmDataSource = new MatTableDataSource<Film>(films);
+      this.filmDataSource.sort = this.filmSort;
+      this.loaded = true;
+    })
   }
-
-  ngAfterViewInit() {
-    this.filmInfoDataSource.sort = this.ticketInfoSort;
-  }
-
 }

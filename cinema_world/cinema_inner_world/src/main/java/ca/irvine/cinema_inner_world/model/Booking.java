@@ -17,6 +17,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Data
 @NoArgsConstructor
@@ -28,13 +30,16 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
-    @ManyToMany(mappedBy = "bookings", fetch = FetchType.LAZY)
+    @JsonBackReference()
+    @ManyToMany(mappedBy = "bookings", fetch = FetchType.EAGER)
     private Set<User> users = new HashSet<>();
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "screening_id")
     private Screening screeningId;
 
+    @JsonManagedReference()
     @OneToMany(
         mappedBy = "bookingId",
         cascade = CascadeType.ALL, 
@@ -47,5 +52,19 @@ public class Booking {
      */
     public long getId() {
         return id;
+    }
+
+    /**
+     * @return the screeningId
+     */
+    public Screening getScreeningId() {
+        return screeningId;
+    }
+
+    /**
+     * @return the tickets
+     */
+    public List<BookingTicket> getTickets() {
+        return tickets;
     }
 }

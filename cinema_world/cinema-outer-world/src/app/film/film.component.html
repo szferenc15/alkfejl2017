@@ -1,127 +1,129 @@
-<div class="container">
-  <div class="row information padding-left-20">
-    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="center">
-      <div class="cinema-search-field">
-        <h2 class="title pb-3">Mozi információ</h2>
-        <form [formGroup]="cinemaSearchForm" (ngSubmit)="cinemaSearchSubmit()">
-          <mat-form-field (click)="setFormToDefault()">
-            <mat-select formControlName="country" placeholder="Ország">
-              <mat-option *ngFor="let cinema of cinemas | uniqueFilter"
-                          value="{{ cinema.country }}"
-                          (click)="setCinemasFilteredOfCountry(cinema.country)">
-                          {{ cinema.country }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+<div *ngIf="loaded">
+  <div class="container">
+    <div class="row information padding-left-20">
+      <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="center">
+        <div class="cinema-search-field">
+          <h2 class="title pb-3">Mozi információ</h2>
+          <form [formGroup]="cinemaSearchForm" (ngSubmit)="cinemaSearchSubmit()">
+            <mat-form-field (click)="setFormToDefault()">
+              <mat-select formControlName="country" placeholder="Ország">
+                <mat-option *ngFor="let cinema of cinemas | uniqueFilter"
+                            value="{{ cinema.country }}"
+                            (click)="setCinemasFilteredOfCountry(cinema.country)">
+                            {{ cinema.country }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
-          <mat-form-field class="pl-4">
-            <mat-select formControlName="city" placeholder="Város">
-              <mat-option *ngFor="let cinema of cinemasFilteredOfCountry | uniqueFilter"
-                          value="{{ cinema.city }}"
-                          (click)="setCinemasFilteredOfCity(cinema.city)">
-                          {{ cinema.city }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+            <mat-form-field class="pl-4">
+              <mat-select formControlName="city" placeholder="Város">
+                <mat-option *ngFor="let cinema of cinemasFilteredOfCountry | uniqueFilter"
+                            value="{{ cinema.city }}"
+                            (click)="setCinemasFilteredOfCity(cinema.city)">
+                            {{ cinema.city }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
-          <mat-form-field class="pl-4">
-            <mat-select formControlName="district" placeholder="Kerület">
-              <mat-option *ngFor="let cinema of cinemasFilteredOfCity | uniqueFilter"
-                          value="{{ cinema.district }}"
-                          (click)="setCinemasFilteredOfDistrict(cinema.district)">
-                          {{ cinema.district }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+            <mat-form-field class="pl-4">
+              <mat-select formControlName="district" placeholder="Kerület">
+                <mat-option *ngFor="let cinema of cinemasFilteredOfCity | uniqueFilter"
+                            value="{{ cinema.district }}"
+                            (click)="setCinemasFilteredOfDistrict(cinema.district)">
+                            {{ cinema.district }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
-          <mat-form-field class="pl-4">
-            <mat-select *ngIf="hasDistrict" formControlName="name" placeholder="Mozi neve">
-              <mat-option *ngFor="let cinema of cinemasFilteredOfDistrict"
-                          value="{{ cinema.name }}"
-                          (click)="setCinemasFilteredOfName(cinema.name)">
-                          {{ cinema.name }}
-              </mat-option>
-            </mat-select>
-            <mat-select *ngIf="!hasDistrict" formControlName="name" placeholder="Mozi neve">
-              <mat-option *ngFor="let cinema of cinemasFilteredOfCity"
-                          value="{{ cinema.name }}"
-                          (click)="setCinemasFilteredOfName(cinema.name)">
-                          {{ cinema.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        <div class="pt-3">
-          <button class="cinema-search-button btn btn-dark"
-                  mat-raised-button
-                  type="submit">
-                  Keresés
-          </button>
+            <mat-form-field class="pl-4">
+              <mat-select *ngIf="hasDistrict" formControlName="name" placeholder="Mozi neve">
+                <mat-option *ngFor="let cinema of cinemasFilteredOfDistrict"
+                            value="{{ cinema.name }}"
+                            (click)="setCinemasFilteredOfName(cinema.name)">
+                            {{ cinema.name }}
+                </mat-option>
+              </mat-select>
+              <mat-select *ngIf="!hasDistrict" formControlName="name" placeholder="Mozi neve">
+                <mat-option *ngFor="let cinema of cinemasFilteredOfCity"
+                            value="{{ cinema.name }}"
+                            (click)="setCinemasFilteredOfName(cinema.name)">
+                            {{ cinema.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          <div class="pt-3">
+            <button class="cinema-search-button btn btn-dark"
+                    mat-raised-button
+                    type="submit">
+                    Keresés
+            </button>
+          </div>
+        </form>
         </div>
-      </form>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container" *ngIf="showCinemas == true">
-  <div class="row padding-left-20 information">
-    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
-      <div class="pb-3" *ngFor="let cinema of filteredCinemas">
-        <mat-card class="cinema-info-card">
-          <table class="cinema-info-table">
-            <tr>
-              <td class="cinema-picture-td" rowspan="7">
-                <img src="../../assets/star_wars_the_last_jedi.jpg"
-                    alt="Cinema"
-                    height="150"
-                    width="100"/>
-              </td>
-              <td class="cinema-info-fst-td"><b>Név</b>:</td>
-              <td class="cinema-info-snd-td">{{ cinema.name }} </td>
-              <td rowspan="7">
-                <button class="btn btn-dark"
-                        *ngIf="!inStepper"
-                        mat-raised-button
-                        (click)="getActualFilmsOfCinema(cinema.name)">
-                        Aktuális filmek
-                </button>
-                <button class="btn btn-dark"
-                        mat-raised-button
-                        *ngIf="inStepper"
-                        matStepperNext>
-                        Következő
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td class="cinema-info-fst-td"><b>Ország</b>:</td>
-              <td class="cinema-info-snd-td">{{ cinema.country }}</td>
-            </tr>
-            <tr>
-              <td class="cinema-info-fst-td"><b>Város</b>:</td>
-              <td class="cinema-info-snd-td">{{ cinema.city }}</td>
-            </tr>
-            <tr>
-              <td class="cinema-info-fst-td"><b>Kerület</b>:</td>
-              <td class="cinema-info-snd-td">{{ cinema.district }}</td>
-            </tr>
-            <tr>
-              <td class="cinema-info-fst-td"><b>Utca</b>:</td>
-              <td class="cinema-info-snd-td">{{ cinema.street }}</td>
-            </tr>
-            <tr>
-              <td class="cinema-info-fst-td"><b>Házszám</b>:</td>
-              <td class="cinema-info-snd-td">{{ cinema.houseNumber }}</td>
-            </tr>
-            <tr>
-              <td class="cinema-info-fst-td"><b>Kényelmi díj</b>:</td>
-              <td class="cinema-info-snd-td">{{ cinema.amenitiesCharge }}</td>
-            </tr>
-          </table>
-        </mat-card>
+  <div class="container" *ngIf="showCinemas == true">
+    <div class="row padding-left-20 information">
+      <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
+        <div class="pb-3" *ngFor="let cinema of filteredCinemas">
+          <mat-card class="cinema-info-card">
+            <table class="cinema-info-table">
+              <tr>
+                <td class="cinema-picture-td" rowspan="7">
+                  <img src="../../assets/star_wars_the_last_jedi.jpg"
+                      alt="Cinema"
+                      height="150"
+                      width="100"/>
+                </td>
+                <td class="cinema-info-fst-td"><b>Név</b>:</td>
+                <td class="cinema-info-snd-td">{{ cinema.name }} </td>
+                <td rowspan="7">
+                  <button class="btn btn-dark"
+                          *ngIf="!inStepper"
+                          mat-raised-button
+                          (click)="getActualFilmsOfCinema(cinema.name)">
+                          Aktuális filmek
+                  </button>
+                  <button class="btn btn-dark"
+                          mat-raised-button
+                          *ngIf="inStepper"
+                          matStepperNext>
+                          Következő
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="cinema-info-fst-td"><b>Ország</b>:</td>
+                <td class="cinema-info-snd-td">{{ cinema.country }}</td>
+              </tr>
+              <tr>
+                <td class="cinema-info-fst-td"><b>Város</b>:</td>
+                <td class="cinema-info-snd-td">{{ cinema.city }}</td>
+              </tr>
+              <tr>
+                <td class="cinema-info-fst-td"><b>Kerület</b>:</td>
+                <td class="cinema-info-snd-td">{{ cinema.district }}</td>
+              </tr>
+              <tr>
+                <td class="cinema-info-fst-td"><b>Utca</b>:</td>
+                <td class="cinema-info-snd-td">{{ cinema.street }}</td>
+              </tr>
+              <tr>
+                <td class="cinema-info-fst-td"><b>Házszám</b>:</td>
+                <td class="cinema-info-snd-td">{{ cinema.houseNumber }}</td>
+              </tr>
+              <tr>
+                <td class="cinema-info-fst-td"><b>Kényelmi díj</b>:</td>
+                <td class="cinema-info-snd-td">{{ cinema.amenitiesCharge }}</td>
+              </tr>
+            </table>
+          </mat-card>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<app-film-info *ngIf="inStepper" [showFilms]="showFilms" [selectedCinema]="selectedCinema"></app-film-info>
+  <app-film-info [showFilms]="showFilms" [selectedCinema]="selectedCinema"></app-film-info>
+</div>

@@ -48,4 +48,74 @@ public class Ticket {
     private short bedRoomGlassPrice;
 
     // END OF DEFAULT COLUMNS
+
+    /**
+     * @return the type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * @return the basicPrice
+     */
+    public short getBasicPrice() {
+        return basicPrice;
+    }
+
+    /**
+     * @return the imaxPrice
+     */
+    public short getImaxPrice() {
+        return imaxPrice;
+    }
+
+    /**
+     * @return the imaxGlassPrice
+     */
+    public short getImaxGlassPrice() {
+        return imaxGlassPrice;
+    }
+
+    /**
+     * @return the threeDimensionalPrice
+     */
+    public short getThreeDimensionalPrice() {
+        return threeDimensionalPrice;
+    }
+
+    /**
+     * @return the threeDimensionalGlassPrice
+     */
+    public short getThreeDimensionalGlassPrice() {
+        return threeDimensionalGlassPrice;
+    }
+
+    /**
+     * @return the fourDimensionalPrice
+     */
+    public short getFourDimensionalPrice() {
+        return fourDimensionalPrice;
+    }
+
+    /**
+     * @return the fourDimensionalGlassPrice
+     */
+    public short getFourDimensionalGlassPrice() {
+        return fourDimensionalGlassPrice;
+    }
+
+    /**
+     * @return the bedRoomPrice
+     */
+    public short getBedRoomPrice() {
+        return bedRoomPrice;
+    }
+
+    /**
+     * @return the bedRoomGlassPrice
+     */
+    public short getBedRoomGlassPrice() {
+        return bedRoomGlassPrice;
+    }
 }

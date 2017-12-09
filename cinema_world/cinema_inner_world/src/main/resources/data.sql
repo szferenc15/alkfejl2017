@@ -11,15 +11,34 @@ INSERT INTO user(username, password, email, phone_number, admin_right)
          VALUES ('almafa', 'almafa', 'almafa@barackfa.fa', '06302003005', false);
 
 -- Film data:
-INSERT INTO film(cinema_id, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+INSERT INTO film(cinema_id, picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES (1, 'Thor: Ragnarok', 'magyar', true, false, true, true, false, 131, '2017-11-01', 12, 'Taika', 'Waititi', 'USA', 2017, 10,
+         VALUES (1, '../../assets/thor_ragnarok.jpg', 'Thor: Ragnarok', 'magyar', true, false, true, true, false, 131, '2017-11-01', 12, 'Taika', 'Waititi', 'USA', 2017, 4,
                  'A Marvel Studios uj filmjeben Thort porolyetol megfosztva bebortonzik az univerzum tulso felen.');
 
-INSERT INTO film(cinema_id, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+INSERT INTO film(cinema_id, picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES (2, 'Star Wars: The Last Jedi', 'orosz', true, false, true, true, false, 150, '2017-12-14', 12, 'Rian', 'Johnson', 'USA', 2017, 10,
+         VALUES (2, '../../assets/star_wars_the_last_jedi.jpg', 'Star Wars: The Last Jedi', 'orosz', true, false, true, true, false, 150, '2017-12-14', 12, 'Rian', 'Johnson', 'USA', 2017, 5,
                  'A Star Wars: Az utolso Jedikben a Skywalker saga folytatodik.');
+
+INSERT INTO film(cinema_id, picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+            play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
+         VALUES (2, '../../assets/jungle.jpg', 'Dzsungel', 'angol', true, false, true, true, false, 125, '2017-12-30', 12, 'Rian', 'Johnson', 'USA', 2017, 4,
+                 'A Dzsungel.');
+
+-- Trailer data:
+INSERT INTO trailer(url, film_title) 
+        VALUES ('https://www.youtube.com/embed/v7MGUNV8MxU', 'Thor: Ragnarok');
+INSERT INTO trailer(url, film_title) 
+        VALUES ('https://www.youtube.com/embed/ue80QwXMRHg', 'Thor: Ragnarok');
+INSERT INTO trailer(url, film_title) 
+        VALUES ('https://www.youtube.com/embed/zB4I68XVPzQ', 'Star Wars: The Last Jedi');
+INSERT INTO trailer(url, film_title) 
+        VALUES ('https://www.youtube.com/embed/Q0CbN8sfihY', 'Star Wars: The Last Jedi');
+INSERT INTO trailer(url, film_title) 
+        VALUES ('https://www.youtube.com/embed/RI_Iz3-88Fw', 'Dzsungel');
+INSERT INTO trailer(url, film_title) 
+        VALUES ('https://www.youtube.com/embed/CJIYns1aqzY', 'Dzsungel');
 
 -- Category data:
 INSERT INTO category(category) 
@@ -68,6 +87,10 @@ INSERT INTO film_category(id, film_title, category)
          VALUES (5, 'Star Wars: The Last Jedi', 'Fantasy');
 INSERT INTO film_category(id, film_title, category)
          VALUES (6, 'Star Wars: The Last Jedi', 'Sci-Fi');
+INSERT INTO film_category(id, film_title, category)
+         VALUES (7, 'Dzsungel', 'Akcio');
+INSERT INTO film_category(id, film_title, category)
+         VALUES (8, 'Dzsungel', 'Kaland');
 
 -- Room data:
 INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional) 

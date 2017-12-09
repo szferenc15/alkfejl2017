@@ -4,6 +4,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -40,11 +43,55 @@ public class BookingTicket {
 
     // END OF DEFAULT COLUMNS
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "booking_id")
     private Booking bookingId;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @JsonManagedReference()
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ticket_type", referencedColumnName = "type")
     private Ticket ticketType;
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @return the payment
+     */
+    public String getPayment() {
+        return payment;
+    }
+
+    /**
+     * @return the row
+     */
+    public byte getRow() {
+        return row;
+    }
+
+    /**
+     * @return the chair
+     */
+    public byte getChair() {
+        return chair;
+    }
+
+    /**
+     * @return the bookingId
+     */
+    public Booking getBookingId() {
+        return bookingId;
+    }
+
+    /**
+     * @return the ticketType
+     */
+    public Ticket getTicketType() {
+        return ticketType;
+    }
 }
