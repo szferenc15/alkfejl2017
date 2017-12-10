@@ -41,6 +41,7 @@ import { MatButtonModule, MatSortModule,
          MatDialogModule, MatCheckboxModule,
          MatStepperModule, MatDatepickerModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
+import { BookingInfoComponent } from './booking/booking-info/booking-info.component';
 
 
 const appRoutes: Routes = [
@@ -79,7 +80,8 @@ const appRoutes: Routes = [
     TicketPaymentInfoComponent,
     RoomStructureComponent,
     SummaryComponent,
-    ProfileComponent
+    ProfileComponent,
+    BookingInfoComponent
   ],
   imports: [
     BrowserModule,

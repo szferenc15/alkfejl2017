@@ -1,21 +1,19 @@
 package ca.irvine.cinema_inner_world.model;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
 import java.util.ArrayList;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.util.HashSet;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.OneToMany;
@@ -23,7 +21,6 @@ import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Future;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -87,10 +84,9 @@ public class Film {
 
     // END OF DEFAULT COLUMNS
 
-    @JsonBackReference()
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "cinema_id")
-    private Cinema cinemaId;
+    @JsonManagedReference()
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "films", fetch = FetchType.LAZY)
+    private Set<Cinema> cinemas = new HashSet<>();
 
     @JsonManagedReference
     @OneToMany(
@@ -215,10 +211,10 @@ public class Film {
     }
 
     /**
-     * @return the cinemaId
+     * @return the cinemas
      */
-    public Cinema getCinemaId() {
-        return cinemaId;
+    public Set<Cinema> getCinemas() {
+        return cinemas;
     }
 
     /**
@@ -226,5 +222,12 @@ public class Film {
      */
     public List<Screening> getScreenings() {
         return screenings;
+    }
+
+    /**
+     * @param cinemas the cinemas to set
+     */
+    public void setCinemas(Set<Cinema> cinemas) {
+        this.cinemas = cinemas;
     }
 }

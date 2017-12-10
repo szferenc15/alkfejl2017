@@ -1,30 +1,34 @@
 package ca.irvine.cinema_inner_world.model;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Size;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
 @Table(uniqueConstraints={@UniqueConstraint(columnNames = {"country", "city", "street", "houseNumber"})})
 public class Cinema {
     // START OF DEFAULT COLUMNS
@@ -57,21 +61,21 @@ public class Cinema {
 
     // END OF DEFAULT COLUMNS
 
-    @JsonManagedReference()
+    @JsonBackReference()
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "cinema_film",
+        joinColumns = @JoinColumn(name = "cinema_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "film_title")
+    )
+    private Set<Film> films = new HashSet<>();
+
+    @JsonBackReference()
     @OneToMany(
         mappedBy = "cinemaId",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
     private List<Room> rooms = new ArrayList<>();
-
-    @JsonManagedReference()
-    @OneToMany(
-        mappedBy = "cinemaId",
-        cascade = CascadeType.ALL, 
-        orphanRemoval = true
-    )
-    private List<Film> films = new ArrayList<>();
 
     @JsonManagedReference()
     @OneToMany(
@@ -138,13 +142,6 @@ public class Cinema {
     }
 
     /**
-     * @return the films
-     */
-    public List<Film> getFilms() {
-        return films;
-    }
-
-    /**
      * @return the rooms
      */
     public List<Room> getRooms() {
@@ -156,5 +153,19 @@ public class Cinema {
      */
     public List<Screening> getScreenings() {
         return screenings;
+    }
+
+    /**
+     * @return the films
+     */
+    public Set<Film> getFilms() {
+        return films;
+    }
+
+    /**
+     * @param films the films to set
+     */
+    public void setFilms(Set<Film> films) {
+        this.films = films;
     }
 }

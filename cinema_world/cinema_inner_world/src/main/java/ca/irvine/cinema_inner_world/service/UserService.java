@@ -8,7 +8,7 @@ import ca.irvine.cinema_inner_world.model.User;
 import java.util.Optional;
 
 @Service
-public class UserService{
+public class UserService {
 
     @Autowired
     private UserRepository userRepository;

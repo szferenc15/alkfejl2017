@@ -8,9 +8,11 @@ export interface Ticket {
 }
 
 export interface Screening {
+  id?: number;
   twoDimensional?: boolean;
   threeDimensional?: boolean;
   fourDimensional?: boolean;
+  imax?: boolean;
   language?: string;
   synchron?: boolean;
   inscriptive?: boolean;

@@ -22,7 +22,7 @@
             <td>{{ amenitiesCharge }}</td>
             <td>
               <mat-form-field>
-                <mat-select placeholder="Darab">
+                <mat-select #tickets placeholder="Darab">
                     <mat-option *ngFor="let index of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
                                 value="{{ index }}">
                                 {{ index }}
@@ -45,7 +45,7 @@
                       <mat-option *ngFor="let paymentMethod of paymentMethods"
                                   value="{{ paymentMethod.name }}"
                                   (click)="setSelectedPaymentMethod(paymentMethod)">
-                                  <img src="{{ paymentMethod.pictureUrl }}"
+                                  <img src="{{ paymentMethod.picture }}"
                                        alt="{{ paymentMethod.name }}"
                                        height="40px"
                                        width="80px" />
@@ -55,8 +55,8 @@
               </mat-form-field>
               </td>
               <td>
-                <img src="{{ selectedPaymentMethod.pictureUrl }}"
-                  alt="{{ selectedPaymentMethod.pictureUrl }}"
+                <img src="{{ selectedPaymentMethod.picture }}"
+                  alt="{{ selectedPaymentMethod.picture }}"
                   height="60px"
                   width="120px" />
               </td>
@@ -67,7 +67,8 @@
         <div class="pt-3">
           <button class="btn btn-dark"
                   mat-raised-button
-                  matStepperNext>
+                  matStepperNext
+                  (click)="setThirdStageInfoOfBooking()">
                   Következő
           </button>
         </div>

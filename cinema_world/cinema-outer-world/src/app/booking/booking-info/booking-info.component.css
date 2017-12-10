@@ -1,0 +1,36 @@
+.title {
+    color: #dd000f;
+    font-variant: small-caps;
+}
+
+table {
+  width: 100%;
+}
+
+film-width {
+  width: 22.5%;
+}
+
+cinema-width {
+  width: 22.5%;
+}
+
+screening-width {
+  width: 35%;
+}
+
+age-limit-width {
+  width: 12.5%;
+}
+
+ticket-width {
+  width: 10%;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: rgb(28, 209, 28);
+}

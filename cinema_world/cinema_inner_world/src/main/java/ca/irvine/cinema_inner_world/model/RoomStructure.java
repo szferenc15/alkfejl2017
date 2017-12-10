@@ -1,12 +1,9 @@
 package ca.irvine.cinema_inner_world.model;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,11 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
 public class RoomStructure {
     // START OF DEFAULT COLUMNS
 

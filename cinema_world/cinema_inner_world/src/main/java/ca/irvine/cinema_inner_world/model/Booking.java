@@ -1,6 +1,5 @@
 package ca.irvine.cinema_inner_world.model;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.util.ArrayList;
@@ -20,11 +19,9 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -66,5 +63,12 @@ public class Booking {
      */
     public List<BookingTicket> getTickets() {
         return tickets;
+    }
+
+    /**
+     * @return the users
+     */
+    public Set<User> getUsers() {
+        return users;
     }
 }

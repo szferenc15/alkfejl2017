@@ -1,6 +1,5 @@
 package ca.irvine.cinema_inner_world.model;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
@@ -10,14 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.sql.Date;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Future;
@@ -26,11 +22,9 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
 public class Screening {
     // START OF DEFAULT COLUMNS
 
@@ -194,5 +188,12 @@ public class Screening {
      */
     public Time getScreenTime() {
         return screenTime;
+    }
+
+    /**
+     * @return the availableTickets
+     */
+    public List<ScreeningTicket> getAvailableTickets() {
+        return availableTickets;
     }
 }

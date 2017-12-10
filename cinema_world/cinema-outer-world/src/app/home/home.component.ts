@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { BookingService } from '../services/booking.service';
+import { AuthenticationService } from './../services/authentication.service';
 import { Film } from './../interfaces/film.interface';
 import { FilmService } from './../services/film.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
@@ -21,11 +24,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   films: Film[] = null;
   activeFilms: Film[] = null;
 
+  isLoggedIn: boolean = false;
   loaded: boolean = false;
 
   filmSubscription: Subscription;
 
   constructor( private filmService: FilmService,
+               private bookingService: BookingService,
+               private authService: AuthenticationService,
+               private router: Router,
                private sanitizer: DomSanitizer) {
   }
 
@@ -40,6 +47,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       ];
       this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
       this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0].url);
+      this.isLoggedIn = this.authService.isLoggedIn();
       this.loaded = true;
     })
   }
@@ -126,6 +134,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       default:
         break;
     }
+  }
+
+  setZeroStageInfoOfBooking(film: Film) {
+    this.router.navigateByUrl('/booking');
+    setTimeout(() => {this.bookingService.setZeroStageInfoOfBooking(film)}, 0);
   }
 }
 

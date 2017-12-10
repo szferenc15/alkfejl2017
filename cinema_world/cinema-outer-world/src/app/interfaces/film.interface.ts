@@ -1,3 +1,4 @@
+import { Cinema } from './cinema.interface';
 export interface Category {
   category: string;
 }
@@ -21,4 +22,5 @@ export interface Film {
   description?: string;
   categories?: Category[];
   trailers?: Trailer[];
+  cinemas?: Cinema[];
 }

@@ -1,6 +1,5 @@
 package ca.irvine.cinema_inner_world.model;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
@@ -19,11 +18,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
 @Table(uniqueConstraints={@UniqueConstraint(columnNames = {"booking_id", "row", "chair"})})
 public class BookingTicket {
     // START OF DEFAULT COLUMNS
@@ -52,6 +49,11 @@ public class BookingTicket {
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ticket_type", referencedColumnName = "type")
     private Ticket ticketType;
+
+    @JsonBackReference()
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "username", referencedColumnName = "username")
+    private User username;
 
     /**
      * @return the id
@@ -93,5 +95,12 @@ public class BookingTicket {
      */
     public Ticket getTicketType() {
         return ticketType;
+    }
+
+    /**
+     * @return the username
+     */
+    public User getUsername() {
+        return username;
     }
 }

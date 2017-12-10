@@ -1,3 +1,5 @@
+import { Chair } from './../interfaces/booking-ticket.interface';
+import { Http, Response } from '@angular/http';
 import { Subject, Observable } from 'rxjs/Rx';
 import { Screening, Ticket } from './../interfaces/screening.interface';
 import { Cinema } from './../interfaces/cinema.interface';
@@ -6,26 +8,39 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BookingService {
-  selectedFilm: Film = null;
-  selectedCinema: Cinema = null;
   screeningsOfSelectedCinema: Subject<Screening[]> = new Subject<Screening[]>();
+  cinemasOfSelectedFilm: Subject<Cinema[]> = new Subject<Cinema[]>();
   ticketsOfSelectedScreening: Subject<Ticket[]> = new Subject<Ticket[]>();
-  selectedScreening: Screening = null;
+  selectedFilmName: Subject<string> = new Subject<string>();
+  selectedCinemaName: Subject<string> = new Subject<string>();
+  selectedScreening: Subject<Screening> = new Subject<Screening>();
+  selectedTicketsCount: Subject<number> = new Subject<number>();
+  selectedScreeningId: Subject<number> = new Subject<number>();
   selectedTickets: Ticket[] = [];
-  amenitiesChargeOfSelectedCinema = 0;
+  selectedPaymentMethodName: string = '';
+  ageLimit: number = null;
+  amenitiesChargeOfSelectedCinema: number = 0;
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  getSelectedFilm() {
-    return this.selectedFilm;
+  getAgeLimit() {
+    return 12;
   }
 
   getAmenitiesChargeOfSelectedCinema() {
     return this.amenitiesChargeOfSelectedCinema;
   }
 
-  getSelectedCinema() {
-    return this.selectedCinema;
+  getSelectedFilmName() {
+    return this.selectedFilmName;
+  }
+
+  getSelectedCinemaName() {
+    return this.selectedCinemaName;
+  }
+
+  getCinemasOfSelectedFilm() {
+    return this.cinemasOfSelectedFilm;
   }
 
   getScreeningsOfSelectedCinema() {
@@ -36,6 +51,10 @@ export class BookingService {
     return this.ticketsOfSelectedScreening;
   }
 
+  getSelectedScreeningId() {
+    return this.selectedScreeningId;
+  }
+
   getSelectedScreening() {
     return this.selectedScreening;
   }
@@ -44,18 +63,39 @@ export class BookingService {
     return this.selectedTickets.slice();
   }
 
+  getSelectedTicketsCount() {
+    return this.selectedTicketsCount;
+  }
+
+  setZeroStageInfoOfBooking(film: Film) {
+    this.selectedFilmName.next(film.title);
+    this.cinemasOfSelectedFilm.next(film.cinemas);
+  }
+
   setFirstStageInfoOfBooking(cinema: Cinema) {
-    this.selectedCinema = cinema;
+    this.selectedCinemaName.next(cinema.name);
     this.amenitiesChargeOfSelectedCinema = cinema.amenitiesCharge;
-    this.screeningsOfSelectedCinema.next(this.selectedCinema.screenings);
+    this.screeningsOfSelectedCinema.next(cinema.screenings);
   }
 
   setSecondStageInfoOfBooking(screening: Screening) {
-    this.selectedScreening = screening;
-    this.ticketsOfSelectedScreening.next(this.selectedScreening.availableTickets);
+    this.selectedScreening.next(screening);
+    this.selectedScreeningId.next(screening.id);
+    this.ticketsOfSelectedScreening.next(screening.availableTickets);
   }
 
-  setSelectedFilm(film: Film) {
-    this.selectedFilm = film;
+  setThirdStageInfoOfBooking(selectedTickets: Ticket[], paymentMethodName: string) {
+    this.selectedTickets = selectedTickets;
+    this.selectedTicketsCount.next(this.selectedTickets.length);
+    this.selectedPaymentMethodName = paymentMethodName;
+  }
+
+  getOccupiedChairs(screeningId: string): Observable<Chair[]> {
+    console.log(screeningId)
+    return this.http.get('http://localhost:8080/booking/tickets?screeningId=' + screeningId).map((response: Response) => response.json().data[0].tickets);
+  }
+
+  saveBookingInDatabase(selectedChairs: Chair[]) {
+
   }
 }

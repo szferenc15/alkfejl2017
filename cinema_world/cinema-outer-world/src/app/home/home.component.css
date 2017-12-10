@@ -6,10 +6,6 @@ div#information td {
   text-shadow: 2px 2px 5px black;
 }
 
-td {
-  color: white;
-}
-
 button:focus {
   outline: none;
 }
@@ -132,4 +128,12 @@ div#information .film-tr:hover:not(.highlighted) .film-picture{
   text-align: center;
   color: #dd000f;
   font-weight: bold;
+}
+
+.white {
+  color: white;
+}
+
+.reservation-table {
+  width: 100%;
 }

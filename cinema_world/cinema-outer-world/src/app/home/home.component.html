@@ -91,7 +91,7 @@
           <th class="title" colspan="2">
             <h2>{{ films[activeElement].title }}</h2>
           </th>
-          <tr>
+          <tr class="white">
             <td>Eredeti nyelv:</td>
             <td class="float-right">
                 <span>
@@ -99,7 +99,7 @@
                 </span>
             </td>
           </tr>
-          <tr>
+          <tr class="white">
             <td>Műfaj:</td>
             <td class="float-right">
               <span *ngFor="let category of films[activeElement].categories; let i = index;">
@@ -110,7 +110,7 @@
               </span>
             </td>
           </tr>
-          <tr>
+          <tr class="white">
             <td>Játékidő (perc):</td>
             <td class="float-right">
                 <span>
@@ -118,7 +118,7 @@
                 </span>
             </td>
           </tr>
-          <tr>
+          <tr class="white">
             <td>Premier:</td>
             <td class="float-right">
                 <span>
@@ -126,7 +126,7 @@
                 </span>
             </td>
           </tr>
-          <tr>
+          <tr class="white">
             <td>Korhatár:</td>
             <td class="float-right">
                 <span>
@@ -134,7 +134,7 @@
                 </span>
             </td>
           </tr>
-          <tr>
+          <tr class="white">
             <td>Rendező:</td>
             <td class="float-right">
                 <span>
@@ -145,7 +145,7 @@
                 </span>
             </td>
           </tr>
-          <tr>
+          <tr class="white">
             <td>Ország és év:</td>
             <td class="float-right">
                 <span>
@@ -164,17 +164,25 @@
           <th>
             <h3 class="title">Leírás</h3>
           </th>
-          <tr>
+          <tr class="white">
             <td class="text-justify">{{ films[activeElement].description }}</td>
           </tr>
         </table>
       </div>
 
       <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
-        <table>
+        <table class="reservation-table">
+          <th>
+            <h3 class="title">Jegyfoglalás</h3>
+          </th>
           <tr>
-            <td class="reservation-font">
-              A jegyfoglaláshoz kérlek jelentkezz be!
+            <td class="reservation-font pt-2" *ngIf="!isLoggedIn">A jegyfoglaláshoz kérlek jelentkezz be!</td>
+            <td class="pt-2" *ngIf="isLoggedIn">
+              <button class="btn btn-dark"
+                      mat-raised-button
+                      (click)="setZeroStageInfoOfBooking(films[activeElement])">
+                      Jegyfoglalás
+              </button>
             </td>
           </tr>
         </table>

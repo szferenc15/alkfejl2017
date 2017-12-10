@@ -20,13 +20,15 @@
               {{ row }}
             </td>
             <td class="pl-1 pr-1 pt-1 pb-1" *ngFor="let column of columns">
-              <button class="btn btn-success chair-btn"
+              <button class="btn chair-btn"
                       #charBtn
                       mat-raised-button
                       (click)="selectChair(row, column, charBtn)"
                       [ngClass]="{'large-chair-btn': roomDimension.columns <= 20,
                                   'medium-chair-btn': roomDimension.columns > 20 && roomDimension.columns < 50,
-                                  'small-chair-btn': roomDimension.columns >= 50}">
+                                  'small-chair-btn': roomDimension.columns >= 50,
+                                  'free-chair': isFree(row, column),
+                                  'occupied-char': !isFree(row, column)}">
                       {{ (row - 1)*(roomDimension.columns) + column }}
               </button>
             </td>
@@ -39,7 +41,8 @@
         <div class="pt-5">
             <button class="btn btn-dark"
                     mat-raised-button
-                    matStepperNext>
+                    matStepperNext
+                    (click)="saveBookingInDatabase()">
                     Következő
             </button>
           </div>

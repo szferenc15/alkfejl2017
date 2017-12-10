@@ -1,24 +1,33 @@
 <mat-horizontal-stepper linear>
 
   <mat-step editable="false" label="Válaszd ki a mozit">
+    <app-booking-info></app-booking-info>
     <form>
       <app-film [inStepper]="true"></app-film>
     </form>
   </mat-step>
 
   <mat-step editable="false" label="Válaszd ki az időpontot">
+    <app-booking-info [cinema]="true"></app-booking-info>
     <form>
       <app-screening></app-screening>
     </form>
   </mat-step>
 
   <mat-step editable="false" label="Válaszd ki a jegyeket és a fizetőeszközt">
+    <app-booking-info [cinema]="true"
+                      [screening]="true">
+    </app-booking-info>
     <form>
       <app-ticket-payment-info></app-ticket-payment-info>
     </form>
   </mat-step>
 
   <mat-step editable="false" label="Válaszd ki a székeket">
+    <app-booking-info [cinema]="true"
+                      [screening]="true"
+                      [tickets]="true">
+    </app-booking-info>
     <form>
       <app-room-structure></app-room-structure>
     </form>

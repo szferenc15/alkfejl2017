@@ -2,7 +2,6 @@ package ca.irvine.cinema_inner_world.model;
 
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -22,8 +21,6 @@ import javax.persistence.Column;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Data
-
 public class User {
     // START OF DEFAULT COLUMNS
 

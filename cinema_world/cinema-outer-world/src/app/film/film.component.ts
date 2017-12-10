@@ -44,11 +44,21 @@ export class FilmComponent implements OnInit {
               private bookingService: BookingService) { }
 
   ngOnInit() {
-    this.cinemaSubscription = this.cinemaService.getCinemas().subscribe((cinema: Cinema[]) => {
-      this.cinemas = cinema;
-      this.filteredCinemas = this.cinemas;
-      this.loaded = true;
-    })
+    if (this.inStepper) {
+      console.log("?")
+      this.cinemaSubscription = this.bookingService.getCinemasOfSelectedFilm().subscribe((cinemas: Cinema[]) => {
+        console.log(cinemas)
+        this.cinemas = cinemas;
+        this.filteredCinemas = this.cinemas;
+        this.loaded = true;
+      })
+    } else {
+      this.cinemaSubscription = this.cinemaService.getCinemas().subscribe((cinema: Cinema[]) => {
+        this.cinemas = cinema;
+        this.filteredCinemas = this.cinemas;
+        this.loaded = true;
+      })
+    }
   }
 
   ngOnDestroy() {

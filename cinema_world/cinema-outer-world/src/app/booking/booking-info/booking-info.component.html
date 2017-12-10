@@ -1,0 +1,26 @@
+<div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="left">
+  <h2 class="title">Foglalási információ</h2>
+  <table>
+    <tr>
+      <td class="film-width"><b>Kiválasztott film</b>: {{ selectedFilm }}</td>
+      <td class="cinema-width" *ngIf="cinema"><span><b>Kiválasztott mozi</b>: {{ selectedCinema }}</span></td>
+      <td class="screening-width" *ngIf="screening && selectedScreening">
+          <b>Kiválasztott vetítés</b>:
+          {{ selectedScreening.inscriptive ? "Feliratos " : "" }}
+          {{ selectedScreening.synchron ? "Szinkronos " : "" }}
+          {{ selectedScreening.imax ? "IMAX " : "" }}
+          {{ selectedScreening.twoDimensional ? "2D " : "" }}
+          {{ selectedScreening.threeDimensional ? "3D " : "" }}
+          {{ selectedScreening.fourDimensional ? "4D " : "" }}
+          {{ selectedScreening.screenDay + " " }}
+          {{ selectedScreening.screenTime }}
+      </td>
+      <td class="age-limit-width" *ngIf="screening"><b>Korhatár</b>: {{ ageLimit }}</td>
+      <td class="ticket-width"
+          [ngClass]="{'red': selectedTicketsCount == 0}"
+          *ngIf="tickets"><b>Fennmaradó jegyek száma</b>:
+            <span [ngClass]="{'green': selectedTicketsCount > 0}">{{ selectedTicketsCount }}</span>
+      </td>
+    </tr>
+  </table>
+</div>

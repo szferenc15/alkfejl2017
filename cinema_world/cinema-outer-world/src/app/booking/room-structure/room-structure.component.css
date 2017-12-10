@@ -43,16 +43,24 @@
   text-align: center;
 }
 
+.free-chair {
+  background-color: rgb(28, 209, 28);
+}
+
+.occupied-char {
+  background-color: red;
+  pointer-events: none;
+}
+
 .chair-btn {
   display:inline-block;
   padding: 0px;
-  background-color: rgb(28, 209, 28);
   border-radius: 5px;
   font-weight: bold;
   box-sizing: border-box;
 }
 
-.chair-btn:hover {
+.chair-btn.free-chair:hover {
   background-color: rgb(27, 104, 27);
 }
 

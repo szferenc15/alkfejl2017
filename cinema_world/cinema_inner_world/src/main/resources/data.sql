@@ -11,20 +11,28 @@ INSERT INTO user(username, password, email, phone_number, admin_right)
          VALUES ('almafa', 'almafa', 'almafa@barackfa.fa', '06302003005', false);
 
 -- Film data:
-INSERT INTO film(cinema_id, picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES (1, '../../assets/thor_ragnarok.jpg', 'Thor: Ragnarok', 'magyar', true, false, true, true, false, 131, '2017-11-01', 12, 'Taika', 'Waititi', 'USA', 2017, 4,
+         VALUES ('../../assets/thor_ragnarok.jpg', 'Thor: Ragnarok', 'magyar', true, false, true, true, false, 131, '2017-11-01', 12, 'Taika', 'Waititi', 'USA', 2017, 4,
                  'A Marvel Studios uj filmjeben Thort porolyetol megfosztva bebortonzik az univerzum tulso felen.');
 
-INSERT INTO film(cinema_id, picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES (2, '../../assets/star_wars_the_last_jedi.jpg', 'Star Wars: The Last Jedi', 'orosz', true, false, true, true, false, 150, '2017-12-14', 12, 'Rian', 'Johnson', 'USA', 2017, 5,
+         VALUES ('../../assets/star_wars_the_last_jedi.jpg', 'Star Wars: The Last Jedi', 'orosz', true, false, true, true, false, 150, '2017-12-14', 12, 'Rian', 'Johnson', 'USA', 2017, 5,
                  'A Star Wars: Az utolso Jedikben a Skywalker saga folytatodik.');
 
-INSERT INTO film(cinema_id, picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES (2, '../../assets/jungle.jpg', 'Dzsungel', 'angol', true, false, true, true, false, 125, '2017-12-30', 12, 'Rian', 'Johnson', 'USA', 2017, 4,
+         VALUES ('../../assets/jungle.jpg', 'Dzsungel', 'angol', true, false, true, true, false, 125, '2017-12-30', 12, 'Rian', 'Johnson', 'USA', 2017, 4,
                  'A Dzsungel.');
+
+-- Cinema-film join table:
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Thor: Ragnarok', 1);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: The Last Jedi', 1);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: The Last Jedi', 2);
 
 -- Trailer data:
 INSERT INTO trailer(url, film_title) 
@@ -145,20 +153,8 @@ INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three
          VALUES (1, 1, 'Thor: Ragnarok', 1, false, true, false, true, 'magyar', false, true, '2017-11-20', '21:00:00');
 INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
          VALUES (2, 2, 'Star Wars: The Last Jedi', 2, false, true, false, true, 'orosz', false, true, '2017-12-14', '23:30:00');
-
--- Booking data:
-INSERT INTO booking(id, screening_id) 
-         VALUES (1, 1);
-INSERT INTO booking(id, screening_id)
-         VALUES (2, 1);
-
--- User-Booking join table data:
-INSERT INTO user_booking(username, booking_id)
-        VALUES ('barackfa', 1);
-INSERT INTO user_booking(username, booking_id)
-        VALUES ('almafa', 1);
-INSERT INTO user_booking(username, booking_id)
-        VALUES ('barackfa', 2);
+INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
+         VALUES (3, 2, 'Star Wars: The Last Jedi', 2, false, false, true, true, 'angol', false, true, '2018-01-05', '14:30:00');
 
 -- Ticket data:
 INSERT INTO ticket(type, price) 
@@ -224,97 +220,97 @@ INSERT INTO ticket(type, price)
         VALUES ('Agyas 4D Diak + SZ', 3310);
 
 INSERT INTO ticket(type, price) 
-        VALUES ('2D Junior', 1760);
+        VALUES ('2D Junior', 1420);
 INSERT INTO ticket(type, price) 
-        VALUES ('3D Junior', 1960);
+        VALUES ('3D Junior', 1640);
 INSERT INTO ticket(type, price) 
-        VALUES ('3D Junior + SZ', 2320);
+        VALUES ('3D Junior + SZ', 2010);
 INSERT INTO ticket(type, price) 
-        VALUES ('4D Junior', 2260);
+        VALUES ('4D Junior', 2100);
 INSERT INTO ticket(type, price) 
-        VALUES ('4D Junior + SZ', 2520);
+        VALUES ('4D Junior + SZ', 2240);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 2D Junior', 2100);
+        VALUES ('IMAX 2D Junior', 1820);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 3D Junior', 2260);
+        VALUES ('IMAX 3D Junior', 2020);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 3D Junior + SZ', 2520);
+        VALUES ('IMAX 3D Junior + SZ', 2350);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 4D Junior', 2450);
+        VALUES ('IMAX 4D Junior', 2200);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 4D Junior + SZ', 2860);
+        VALUES ('IMAX 4D Junior + SZ', 2510);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 2D Junior', 2350);
+        VALUES ('Agyas 2D Junior', 2110);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 3D Junior', 2670);
+        VALUES ('Agyas 3D Junior', 2380);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 3D Junior + SZ', 3100);
+        VALUES ('Agyas 3D Junior + SZ', 2710);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 4D Junior', 2950);
+        VALUES ('Agyas 4D Junior', 2830);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 4D Junior + SZ', 3520);
+        VALUES ('Agyas 4D Junior + SZ', 3310);
 
 INSERT INTO ticket(type, price) 
-        VALUES ('2D Szenior', 1760);
+        VALUES ('2D Szenior', 1420);
 INSERT INTO ticket(type, price) 
-        VALUES ('3D Szenior', 1960);
+        VALUES ('3D Szenior', 1640);
 INSERT INTO ticket(type, price) 
-        VALUES ('3D Szenior + SZ', 2320);
+        VALUES ('3D Szenior + SZ', 2010);
 INSERT INTO ticket(type, price) 
-        VALUES ('4D Szenior', 2260);
+        VALUES ('4D Szenior', 2100);
 INSERT INTO ticket(type, price) 
-        VALUES ('4D Szenior + SZ', 2520);
+        VALUES ('4D Szenior + SZ', 2240);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 2D Szenior', 2100);
+        VALUES ('IMAX 2D Szenior', 1820);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 3D Szenior', 2260);
+        VALUES ('IMAX 3D Szenior', 2020);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 3D Szenior + SZ', 2520);
+        VALUES ('IMAX 3D Szenior + SZ', 2350);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 4D Szenior', 2450);
+        VALUES ('IMAX 4D Szenior', 2200);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 4D Szenior + SZ', 2860);
+        VALUES ('IMAX 4D Szenior + SZ', 2510);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 2D Szenior', 2350);
+        VALUES ('Agyas 2D Szenior', 2110);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 3D Szenior', 2670);
+        VALUES ('Agyas 3D Szenior', 2380);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 3D Szenior + SZ', 3100);
+        VALUES ('Agyas 3D Szenior + SZ', 2710);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 4D Szenior', 2950);
+        VALUES ('Agyas 4D Szenior', 2830);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 4D Szenior + SZ', 3520);
+        VALUES ('Agyas 4D Szenior + SZ', 3310);
 
 INSERT INTO ticket(type, price) 
-        VALUES ('2D Fogy.elo', 1760);
+        VALUES ('2D Fogy.elo', 1420);
 INSERT INTO ticket(type, price) 
-        VALUES ('3D Fogy.elo', 1960);
+        VALUES ('3D Fogy.elo', 1640);
 INSERT INTO ticket(type, price) 
-        VALUES ('3D Fogy.elo + SZ', 2320);
+        VALUES ('3D Fogy.elo + SZ', 2010);
 INSERT INTO ticket(type, price) 
-        VALUES ('4D Fogy.elo', 2260);
+        VALUES ('4D Fogy.elo', 2100);
 INSERT INTO ticket(type, price) 
-        VALUES ('4D Fogy.elo + SZ', 2520);
+        VALUES ('4D Fogy.elo + SZ', 2240);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 2D Fogy.elo', 2100);
+        VALUES ('IMAX 2D Fogy.elo', 1820);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 3D Fogy.elo', 2260);
+        VALUES ('IMAX 3D Fogy.elo', 2020);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 3D Fogy.elo + SZ', 2520);
+        VALUES ('IMAX 3D Fogy.elo + SZ', 2350);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 4D Fogy.elo', 2450);
+        VALUES ('IMAX 4D Fogy.elo', 2200);
 INSERT INTO ticket(type, price) 
-        VALUES ('IMAX 4D Fogy.elo + SZ', 2860);
+        VALUES ('IMAX 4D Fogy.elo + SZ', 2510);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 2D Fogy.elo', 2350);
+        VALUES ('Agyas 2D Fogy.elo', 2110);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 3D Fogy.elo', 2670);
+        VALUES ('Agyas 3D Fogy.elo', 2380);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 3D Fogy.elo + SZ', 3100);
+        VALUES ('Agyas 3D Fogy.elo + SZ', 2710);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 4D Fogy.elo', 2950);
+        VALUES ('Agyas 4D Fogy.elo', 2830);
 INSERT INTO ticket(type, price) 
-        VALUES ('Agyas 4D Fogy.elo + SZ', 3520);
+        VALUES ('Agyas 4D Fogy.elo + SZ', 3310);
 
 -- ScreeningTicket data:
 INSERT INTO screening_ticket(id, screening_id, ticket_type)
@@ -338,11 +334,25 @@ INSERT INTO screening_ticket(id, screening_id, ticket_type)
 INSERT INTO screening_ticket(id, screening_id, ticket_type)
         VALUES (10, 2, 'IMAX 3D Fogy.elo');
 
+-- Booking data:
+INSERT INTO booking(id, screening_id) 
+         VALUES (1, 1);
+INSERT INTO booking(id, screening_id)
+         VALUES (2, 1);
+
+-- User-Booking join table data:
+INSERT INTO user_booking(username, booking_id)
+        VALUES ('barackfa', 1);
+INSERT INTO user_booking(username, booking_id)
+        VALUES ('almafa', 1);
+INSERT INTO user_booking(username, booking_id)
+        VALUES ('barackfa', 2);
+
 -- BookingTicket data:
-INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
-         VALUES (1, 'Booking', 'IMAX 3D Diak', 1, 6, 21);
-INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
-         VALUES (2, 'Booking', 'IMAX 3D Diak', 1, 6, 22);
-INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
-         VALUES (3, 'PayPal', 'IMAX 3D Normal', 2, 8, 15);
+INSERT INTO booking_ticket(id, username, payment, ticket_type, booking_id, row, chair) 
+         VALUES (1, 'almafa', 'Booking', 'IMAX 3D Diak', 1, 6, 21);
+INSERT INTO booking_ticket(id, username, payment, ticket_type, booking_id, row, chair) 
+         VALUES (2, 'barackfa', 'Booking', 'IMAX 3D Diak', 1, 6, 22);
+INSERT INTO booking_ticket(id, username, payment, ticket_type, booking_id, row, chair) 
+         VALUES (3, 'barackfa', 'PayPal', 'IMAX 3D Normal', 2, 8, 15);
 

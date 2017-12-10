@@ -1,6 +1,5 @@
 package ca.irvine.cinema_inner_world.model;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.Entity;
@@ -15,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
