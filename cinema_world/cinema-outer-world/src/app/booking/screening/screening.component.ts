@@ -1,21 +1,20 @@
-import { Time } from '@angular/common/src/i18n/locale_data_api';
 import { Subscription } from 'rxjs/Subscription';
-import { ScreeningService } from './../../services/screening.service';
+import { BookingService } from './../../services/booking.service';
+import { Time } from '@angular/common/src/i18n/locale_data_api';
 import { Screening } from './../../interfaces/screening.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, Input } from '@angular/core';
 
 @Component({
   selector: 'app-screening',
   templateUrl: './screening.component.html',
   styleUrls: ['./screening.component.css']
 })
-export class ScreeningComponent implements OnInit {
+export class ScreeningComponent implements OnInit, OnDestroy {
 
   showScreeningTable: boolean = false;
-  loaded: boolean = false;
 
   selectedCinema = '';
 
@@ -38,25 +37,27 @@ export class ScreeningComponent implements OnInit {
     screeningTime: new FormControl({value: '', disabled: true})
   });
 
-  constructor(private screeningService: ScreeningService) { }
+  constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
-    this.screeningSubscription = this.screeningService.getScreenings().subscribe((screening: Screening[]) => {
-      this.screenings = screening;
-
-      this.filteredScreenings.forEach((screening) => {
+    this.screeningSubscription = this.bookingService.getScreeningsOfSelectedCinema().subscribe((screenings: Screening[]) => {
+      this.screenings = screenings;
+      this.filteredScreenings = this.screenings;
+      this.screenings.forEach((screening: Screening) => {
         if (!this.synchrons.includes('Szinkronos') && screening.synchron) {
           this.synchrons.push('Szinkronos');
         } else if (!this.synchrons.includes('Feliratos') && screening.inscriptive) {
           this.synchrons.push('Feliratos');
         } else if (this.synchrons.includes('Szinkronos') &&
-                   this.synchrons.includes('Feliratos')) {
+                    this.synchrons.includes('Feliratos')) {
           return;
         }
       })
+    });
+  }
 
-      this.loaded = true;
-    })
+  ngOnDestroy() {
+    this.screeningSubscription.unsubscribe();
   }
 
   setFormToDefault(setDefaultUntil: number) {
@@ -91,7 +92,7 @@ export class ScreeningComponent implements OnInit {
 
   setScreeningsFilteredOfLanguageType(languageType: string) {
     this.setFormToDefault(3);
-    this.screeningsFilteredOfLanguageType = this.screenings.slice().filter((screening) => {
+    this.screeningsFilteredOfLanguageType = this.filteredScreenings.filter((screening: Screening) => {
       if (languageType === 'Szinkronos') {
         if (screening.synchron) {return screening}
       } else if (languageType === 'Feliratos') {
@@ -99,7 +100,7 @@ export class ScreeningComponent implements OnInit {
       }
     });
 
-    this.screeningsFilteredOfLanguageType.forEach((screening) => {
+    this.screeningsFilteredOfLanguageType.forEach((screening: Screening) => {
       if (!this.dimensions.includes('2D') && screening.twoDimensional) {
         this.dimensions.push('2D');
       } else if (!this.dimensions.includes('3D') && screening.threeDimensional) {
@@ -119,7 +120,7 @@ export class ScreeningComponent implements OnInit {
 
   setScreeningsFilteredOfDimension(dimension: string) {
     this.setFormToDefault(2);
-    this.screeningsFilteredOfDimension = this.screeningsFilteredOfLanguageType.filter((screening) => {
+    this.screeningsFilteredOfDimension = this.screeningsFilteredOfLanguageType.filter((screening: Screening) => {
       switch (dimension){
         case '2D':
           if (screening.twoDimensional) {return screening}
@@ -139,15 +140,15 @@ export class ScreeningComponent implements OnInit {
 
   setScreeningsFilteredOfScreenDay(screenDay: Date) {
     this.setFormToDefault(1);
-    this.screeningsFilteredOfScreenDay = this.screeningsFilteredOfDimension.filter((screening) => {
-      if (screenDay.toDateString() === screening.screenDay.toDateString()) {return screening}
+    this.screeningsFilteredOfScreenDay = this.screeningsFilteredOfDimension.filter((screening: Screening) => {
+      if (screenDay === screening.screenDay) {return screening}
     });
     this.screeningSearchForm.get('screeningTime').enable();
     this.filteredScreenings = this.screeningsFilteredOfScreenDay;
   }
 
   setScreeningsFilteredOfScreenTime(screenTime: Time) {
-    this.screeningsFilteredOfScreenTime = this.screeningsFilteredOfScreenDay.filter((screening) => {
+    this.screeningsFilteredOfScreenTime = this.screeningsFilteredOfScreenDay.filter((screening: Screening) => {
       if (screenTime === screening.screenTime) {return screening}
     });
     this.filteredScreenings = this.screeningsFilteredOfScreenTime;

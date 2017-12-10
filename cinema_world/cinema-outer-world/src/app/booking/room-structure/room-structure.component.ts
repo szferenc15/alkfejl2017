@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-room-structure',
@@ -7,7 +7,7 @@ import { Component, OnInit, Renderer } from '@angular/core';
 })
 export class RoomStructureComponent implements OnInit {
 
-  roomDimension = {rows: 5, columns: 20};
+  roomDimension = {rows: 5, columns: 19};
   rows = [];
   columns = [];
   selectedChairs = []
@@ -19,14 +19,14 @@ export class RoomStructureComponent implements OnInit {
     this.columns = Array(this.roomDimension.columns).fill(0).map((x,i)=>i + 1);
   }
 
-  selectChair(row: number, column: number, event: Event) {
+  selectChair(row: number, column: number, charBtn: ElementRef) {
     let index = this.getSelectedChairIndex(row, column);
     if (index === -1) {
       this.selectedChairs.push({row: row, column: column});
-      this.renderer.setElementClass(event.target,"selected-chair",true);
+      this.renderer.setElementClass(charBtn['_elementRef'].nativeElement,"selected-chair",true);
     } else {
       this.selectedChairs.splice(index, 1);
-      this.renderer.setElementClass(event.target,"selected-chair",false);
+      this.renderer.setElementClass(charBtn['_elementRef'].nativeElement,"selected-chair",false);
     }
   }
 

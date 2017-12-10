@@ -7,9 +7,40 @@
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.color-white {
+  color: white;
+}
+
 .title {
   color: #dd000f;
   font-variant: small-caps;
+}
+
+.screen {
+  display: inline-block;
+  background-color: #555555;
+  font-variant: small-caps;
+  border: 3px solid #777777;
+  border-radius: 5px;
+}
+
+.small-canvas {
+  height: 30px;
+  width: 95%;
+}
+
+.medium-canvas {
+  width: 95%;
+  height: 37px;
+}
+
+.large-canvas {
+  width: 100%;
+  height: 45px;
+}
+
+.center {
+  text-align: center;
 }
 
 .chair-btn {
@@ -17,7 +48,6 @@
   padding: 0px;
   background-color: rgb(28, 209, 28);
   border-radius: 5px;
-  color: white;
   font-weight: bold;
   box-sizing: border-box;
 }
@@ -27,25 +57,29 @@
 }
 
 .selected-chair {
-  background-color: orangered;
+  background-color: rgb(255, 153, 0);
+}
+
+.selected-chair:hover {
+  background-color: rgb(167, 82, 13);
 }
 
 .small-chair-btn {
-  min-width: 14.7px;
-  min-height: 14.7px;
-  width: 14.7px;
-  height: 14.7px;
-  font-size: 11px;
-  line-height: 14.7px;
+  min-width: 19px;
+  min-height: 19px;
+  width: 19px;
+  height: 19px;
+  font-size: 10px;
+  line-height: 19px;
 }
 
 .medium-chair-btn {
-  min-width: 20px;
-  min-height: 20px;
-  width: 20px;
-  height: 20px;
+  min-width: 24px;
+  min-height: 24px;
+  width: 24px;
+  height: 24px;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 24px;
 }
 
 .large-chair-btn {

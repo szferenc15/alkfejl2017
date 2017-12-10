@@ -1,16 +1,19 @@
-import { Ticket, TicketDatabase } from './ticket-payment.database';
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+import { BookingService } from './../../services/booking.service';
+import { Ticket } from './../../interfaces/screening.interface';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-ticket-payment-info',
   templateUrl: './ticket-payment-info.component.html',
   styleUrls: ['./ticket-payment-info.component.css']
 })
-export class TicketPaymentInfoComponent implements OnInit {
+export class TicketPaymentInfoComponent implements OnInit, OnDestroy {
 
   availableTickets: Ticket[] = [];
-  ticketInfoDatabase: TicketDatabase = new TicketDatabase();
-  amenitiesCharge = 40;
+  amenitiesCharge: number = null;
+
+  ticketSubscription: Subscription;
 
   paymentMethods = [
     {name: 'PayPal', pictureUrl: '../../../assets/paypal.png'},
@@ -25,10 +28,17 @@ export class TicketPaymentInfoComponent implements OnInit {
 
   selectedPaymentMethod = {};
 
-  constructor() { }
+  constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
-    this.availableTickets = this.ticketInfoDatabase.getData();
+    this.ticketSubscription = this.bookingService.getTicketsOfSelectedScreening().subscribe((availableTickets: Ticket[]) => {
+      this.availableTickets = availableTickets;
+      this.amenitiesCharge = this.bookingService.getAmenitiesChargeOfSelectedCinema();
+    })
+  }
+
+  ngOnDestroy() {
+    this.ticketSubscription.unsubscribe();
   }
 
   setSelectedPaymentMethod(paymentMethod) {

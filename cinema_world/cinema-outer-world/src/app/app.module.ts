@@ -1,3 +1,5 @@
+import { BookingService } from './services/booking.service';
+import { TimePipe } from './pipes/time.pipe';
 import { ScreeningService } from './services/screening.service';
 import { CinemaService } from './services/cinema.service';
 import { HttpModule } from '@angular/http';
@@ -71,6 +73,7 @@ const appRoutes: Routes = [
     FilmInfoComponent,
     LogicalTransform,
     UniqueFilter,
+    TimePipe,
     ScreeningComponent,
     ScreeningInfoComponent,
     TicketPaymentInfoComponent,
@@ -105,7 +108,8 @@ const appRoutes: Routes = [
               CanActivateViaAuthGuard,
               FilmService,
               CinemaService,
-              ScreeningService],
+              ScreeningService,
+              BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

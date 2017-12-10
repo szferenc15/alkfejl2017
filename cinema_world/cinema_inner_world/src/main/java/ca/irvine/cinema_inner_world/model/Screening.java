@@ -10,11 +10,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Future;
@@ -86,6 +89,14 @@ public class Screening {
         orphanRemoval = true
     )
     private List<Booking> bookings = new ArrayList<>();
+
+    @JsonManagedReference()
+    @OneToMany(
+        mappedBy = "screeningId",
+        cascade = CascadeType.ALL, 
+        orphanRemoval = true
+    )
+    private List<ScreeningTicket> availableTickets = new ArrayList<>();
 
     /**
      * @return the id

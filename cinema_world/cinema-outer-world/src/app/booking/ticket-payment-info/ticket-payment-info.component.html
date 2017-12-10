@@ -17,8 +17,8 @@
             Darab
           </th>
           <tr class="border-bottom" *ngFor="let ticket of availableTickets">
-            <td>{{ ticket.type }}</td>
-            <td>{{ ticket.price }}</td>
+            <td>{{ ticket.ticket.type }}</td>
+            <td>{{ ticket.ticket.price }}</td>
             <td>{{ amenitiesCharge }}</td>
             <td>
               <mat-form-field>

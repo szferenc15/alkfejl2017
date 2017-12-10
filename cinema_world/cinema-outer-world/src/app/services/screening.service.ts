@@ -1,4 +1,5 @@
-import { Screening } from './../interfaces/screening.interface';
+
+import { Screening, Ticket } from './../interfaces/screening.interface';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Film } from './../interfaces/film.interface';

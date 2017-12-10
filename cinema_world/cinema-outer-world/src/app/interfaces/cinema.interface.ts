@@ -1,3 +1,4 @@
+import { Screening } from './screening.interface';
 import { Film } from './film.interface';
 
 export interface Cinema {
@@ -9,4 +10,5 @@ export interface Cinema {
   name?: string;
   amenitiesCharge?: number;
   films?: Film[];
+  screenings?: Screening[];
 }

@@ -1,3 +1,4 @@
+import { BookingService } from './../../../services/booking.service';
 import { Screening } from './../../../interfaces/screening.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material';
@@ -21,7 +22,7 @@ export class ScreeningInfoComponent implements OnInit, AfterViewInit {
 
   screeningDataSource: MatTableDataSource<Screening> = null;
 
-  constructor() { }
+  constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
     this.screeningDataSource = new MatTableDataSource<Screening>(this._filteredScreenings);
@@ -38,5 +39,9 @@ export class ScreeningInfoComponent implements OnInit, AfterViewInit {
   @Input()
   set filteredScreenings(newFilteredScreenings: Screening[]) {
     this._filteredScreenings = newFilteredScreenings;
+  }
+
+  setSecondStageInfoOfBooking(screening: Screening) {
+    this.bookingService.setSecondStageInfoOfBooking(screening);
   }
 }

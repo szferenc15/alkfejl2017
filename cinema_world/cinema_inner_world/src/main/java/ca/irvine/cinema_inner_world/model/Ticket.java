@@ -4,8 +4,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
 @Data
@@ -21,31 +25,7 @@ public class Ticket {
     private String type;
 
     @Range(min = 0)
-    private short basicPrice;
-
-    @Range(min = 0)
-    private short imaxPrice;
-
-    @Range(min = 0)
-    private short imaxGlassPrice;
-
-    @Range(min = 0)
-    private short threeDimensionalPrice;
-
-    @Range(min = 0)
-    private short threeDimensionalGlassPrice;
-
-    @Range(min = 0)
-    private short fourDimensionalPrice;
-
-    @Range(min = 0)
-    private short fourDimensionalGlassPrice;
-
-    @Range(min = 0)
-    private short bedRoomPrice;
-
-    @Range(min = 0)
-    private short bedRoomGlassPrice;
+    private short price;
 
     // END OF DEFAULT COLUMNS
 
@@ -57,65 +37,9 @@ public class Ticket {
     }
 
     /**
-     * @return the basicPrice
+     * @return the price
      */
-    public short getBasicPrice() {
-        return basicPrice;
-    }
-
-    /**
-     * @return the imaxPrice
-     */
-    public short getImaxPrice() {
-        return imaxPrice;
-    }
-
-    /**
-     * @return the imaxGlassPrice
-     */
-    public short getImaxGlassPrice() {
-        return imaxGlassPrice;
-    }
-
-    /**
-     * @return the threeDimensionalPrice
-     */
-    public short getThreeDimensionalPrice() {
-        return threeDimensionalPrice;
-    }
-
-    /**
-     * @return the threeDimensionalGlassPrice
-     */
-    public short getThreeDimensionalGlassPrice() {
-        return threeDimensionalGlassPrice;
-    }
-
-    /**
-     * @return the fourDimensionalPrice
-     */
-    public short getFourDimensionalPrice() {
-        return fourDimensionalPrice;
-    }
-
-    /**
-     * @return the fourDimensionalGlassPrice
-     */
-    public short getFourDimensionalGlassPrice() {
-        return fourDimensionalGlassPrice;
-    }
-
-    /**
-     * @return the bedRoomPrice
-     */
-    public short getBedRoomPrice() {
-        return bedRoomPrice;
-    }
-
-    /**
-     * @return the bedRoomGlassPrice
-     */
-    public short getBedRoomGlassPrice() {
-        return bedRoomGlassPrice;
+    public short getPrice() {
+        return price;
     }
 }

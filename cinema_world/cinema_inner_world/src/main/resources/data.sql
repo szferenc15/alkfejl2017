@@ -161,37 +161,188 @@ INSERT INTO user_booking(username, booking_id)
         VALUES ('barackfa', 2);
 
 -- Ticket data:
-INSERT INTO ticket(type, basic_price, imax_price, imax_glass_price, 
-                         three_dimensional_price, three_dimensional_glass_price, 
-                         four_dimensional_price, four_dimensional_glass_price,
-                         bed_room_price, bed_room_glass_price) 
-         VALUES ('Normal', 1760, 340, 640, 160, 400, 1170, 1410, 1770, 2490);
-INSERT INTO ticket(type, basic_price, imax_price, imax_glass_price, 
-                         three_dimensional_price, three_dimensional_glass_price, 
-                         four_dimensional_price, four_dimensional_glass_price,
-                         bed_room_price, bed_room_glass_price) 
-        VALUES ('Diak', 1320, 420, 720, 170, 410, 1170, 1410, 1770, 2490);
-INSERT INTO ticket(type, basic_price, imax_price, imax_glass_price, 
-                         three_dimensional_price, three_dimensional_glass_price, 
-                         four_dimensional_price, four_dimensional_glass_price,
-                         bed_room_price, bed_room_glass_price) 
-        VALUES ('Junior', 1320, 420, 720, 170, 410, 1170, 1410, 1770, 2490);
-INSERT INTO ticket(type, basic_price, imax_price, imax_glass_price, 
-                         three_dimensional_price, three_dimensional_glass_price, 
-                         four_dimensional_price, four_dimensional_glass_price,
-                         bed_room_price, bed_room_glass_price) 
-        VALUES ('Szenior', 1320, 420, 720, 170, 410, 1170, 1410, 1770, 2490);
-INSERT INTO ticket(type, basic_price, imax_price, imax_glass_price, 
-                         three_dimensional_price, three_dimensional_glass_price, 
-                         four_dimensional_price, four_dimensional_glass_price,
-                         bed_room_price, bed_room_glass_price) 
-        VALUES ('Fogy elo', 1320, 420, 720, 170, 410, 1170, 1410, 1770, 2490);
-        
+INSERT INTO ticket(type, price) 
+        VALUES ('2D Normal', 1760);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Normal', 1960);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Normal + SZ', 2320);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Normal', 2260);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Normal + SZ', 2520);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 2D Normal', 2100);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Normal', 2260);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Normal + SZ', 2520);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Normal', 2450);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Normal + SZ', 2860);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 2D Normal', 2350);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Normal', 2670);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Normal + SZ', 3100);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Normal', 2950);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Normal + SZ', 3520);
+
+INSERT INTO ticket(type, price) 
+        VALUES ('2D Diak', 1420);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Diak', 1640);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Diak + SZ', 2010);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Diak', 2100);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Diak + SZ', 2240);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 2D Diak', 1820);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Diak', 2020);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Diak + SZ', 2350);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Diak', 2200);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Diak + SZ', 2510);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 2D Diak', 2110);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Diak', 2380);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Diak + SZ', 2710);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Diak', 2830);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Diak + SZ', 3310);
+
+INSERT INTO ticket(type, price) 
+        VALUES ('2D Junior', 1760);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Junior', 1960);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Junior + SZ', 2320);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Junior', 2260);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Junior + SZ', 2520);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 2D Junior', 2100);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Junior', 2260);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Junior + SZ', 2520);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Junior', 2450);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Junior + SZ', 2860);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 2D Junior', 2350);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Junior', 2670);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Junior + SZ', 3100);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Junior', 2950);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Junior + SZ', 3520);
+
+INSERT INTO ticket(type, price) 
+        VALUES ('2D Szenior', 1760);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Szenior', 1960);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Szenior + SZ', 2320);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Szenior', 2260);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Szenior + SZ', 2520);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 2D Szenior', 2100);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Szenior', 2260);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Szenior + SZ', 2520);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Szenior', 2450);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Szenior + SZ', 2860);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 2D Szenior', 2350);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Szenior', 2670);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Szenior + SZ', 3100);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Szenior', 2950);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Szenior + SZ', 3520);
+
+INSERT INTO ticket(type, price) 
+        VALUES ('2D Fogy.elo', 1760);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Fogy.elo', 1960);
+INSERT INTO ticket(type, price) 
+        VALUES ('3D Fogy.elo + SZ', 2320);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Fogy.elo', 2260);
+INSERT INTO ticket(type, price) 
+        VALUES ('4D Fogy.elo + SZ', 2520);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 2D Fogy.elo', 2100);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Fogy.elo', 2260);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 3D Fogy.elo + SZ', 2520);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Fogy.elo', 2450);
+INSERT INTO ticket(type, price) 
+        VALUES ('IMAX 4D Fogy.elo + SZ', 2860);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 2D Fogy.elo', 2350);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Fogy.elo', 2670);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 3D Fogy.elo + SZ', 3100);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Fogy.elo', 2950);
+INSERT INTO ticket(type, price) 
+        VALUES ('Agyas 4D Fogy.elo + SZ', 3520);
+
+-- ScreeningTicket data:
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (1, 1, 'IMAX 3D Normal');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (2, 1, 'IMAX 3D Diak');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (3, 1, 'IMAX 3D Junior');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (4, 1, 'IMAX 3D Szenior');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (5, 1, 'IMAX 3D Fogy.elo');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (6, 2, 'IMAX 3D Normal');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (7, 2, 'IMAX 3D Diak');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (8, 2, 'IMAX 3D Junior');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (9, 2, 'IMAX 3D Szenior');
+INSERT INTO screening_ticket(id, screening_id, ticket_type)
+        VALUES (10, 2, 'IMAX 3D Fogy.elo');
+
 -- BookingTicket data:
 INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
-         VALUES (1, 'Booking', 'Diak', 1, 6, 21);
+         VALUES (1, 'Booking', 'IMAX 3D Diak', 1, 6, 21);
 INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
-         VALUES (2, 'Booking', 'Diak', 1, 6, 22);
+         VALUES (2, 'Booking', 'IMAX 3D Diak', 1, 6, 22);
 INSERT INTO booking_ticket(id, payment, ticket_type, booking_id, row, chair) 
-         VALUES (3, 'PayPal', 'Normal', 2, 8, 15);
+         VALUES (3, 'PayPal', 'IMAX 3D Normal', 2, 8, 15);
 

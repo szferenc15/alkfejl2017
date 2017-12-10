@@ -1,5 +1,12 @@
 import { Time } from '@angular/common';
 
+export interface Ticket {
+  ticket: {
+    type: string;
+    price: number;
+  }
+}
+
 export interface Screening {
   twoDimensional?: boolean;
   threeDimensional?: boolean;
@@ -9,4 +16,5 @@ export interface Screening {
   inscriptive?: boolean;
   screenDay?: Date;
   screenTime?: Time;
+  availableTickets?: Ticket[];
 }

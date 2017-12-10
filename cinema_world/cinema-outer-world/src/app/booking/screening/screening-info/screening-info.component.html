@@ -38,7 +38,7 @@
 
       <ng-container matColumnDef="screenTime">
         <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Vetítési idő</mat-header-cell>
-        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.screenTime}} </mat-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"> {{row.screenTime | time}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="booking">
@@ -46,7 +46,8 @@
         <mat-cell *matCellDef="let row" style="flex: 0 0 11%;">
             <button class="btn btn-dark"
                     mat-raised-button
-                    matStepperNext>
+                    matStepperNext
+                    (click)="setSecondStageInfoOfBooking(row)">
                     Foglalás
             </button>
         </mat-cell>

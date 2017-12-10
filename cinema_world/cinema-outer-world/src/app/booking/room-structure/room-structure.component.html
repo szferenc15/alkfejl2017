@@ -3,17 +3,35 @@
     <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="center">
       <div class="ticket-payment-info-div">
         <h2 class="title pb-3">Ülésrend</h2>
-        <table>
+        <table class="color-white">
+          <tr>
+            <td></td>
+            <td class="pb-5 center" colSpan="{{ roomDimension.columns }}">
+              <div class="screen" [ngClass]="{'small-canvas': roomDimension.columns <= 20,
+                                              'medium-canvas': roomDimension.columns > 20 && roomDimension.columns < 40,
+                                              'large-canvas': roomDimension.columns >= 40}">
+                                              Vetítővászon
+              </div>
+            </td>
+            <td></td>
+          </tr>
           <tr *ngFor="let row of rows">
+            <td class="pr-3">
+              {{ row }}
+            </td>
             <td class="pl-1 pr-1 pt-1 pb-1" *ngFor="let column of columns">
               <button class="btn btn-success chair-btn"
+                      #charBtn
                       mat-raised-button
-                      (click)="selectChair(row, column, $event)"
+                      (click)="selectChair(row, column, charBtn)"
                       [ngClass]="{'large-chair-btn': roomDimension.columns <= 20,
                                   'medium-chair-btn': roomDimension.columns > 20 && roomDimension.columns < 50,
                                   'small-chair-btn': roomDimension.columns >= 50}">
-                      {{ (row - 1)*(roomDimension.rows) + column }}
+                      {{ (row - 1)*(roomDimension.columns) + column }}
               </button>
+            </td>
+            <td class="pl-3">
+                {{ row }}
             </td>
           </tr>
         </table>

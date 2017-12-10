@@ -1,3 +1,4 @@
+import { BookingService } from './../services/booking.service';
 import { CinemaService } from '../services/cinema.service';
 import { Cinema } from './../interfaces/cinema.interface';
 import { MatTableDataSource } from '@angular/material/table';
@@ -39,7 +40,8 @@ export class FilmComponent implements OnInit {
     name: new FormControl({value: '', disabled: true})
   });
 
-  constructor(private cinemaService: CinemaService) { }
+  constructor(private cinemaService: CinemaService,
+              private bookingService: BookingService) { }
 
   ngOnInit() {
     this.cinemaSubscription = this.cinemaService.getCinemas().subscribe((cinema: Cinema[]) => {
@@ -138,5 +140,9 @@ export class FilmComponent implements OnInit {
   getActualFilmsOfCinema(cinemaName: string) {
     this.selectedCinema = cinemaName;
     this.showFilms = true;
+  }
+
+  setFirstStageInfoOfBooking(cinema: Cinema) {
+    this.bookingService.setFirstStageInfoOfBooking(cinema);
   }
 }
