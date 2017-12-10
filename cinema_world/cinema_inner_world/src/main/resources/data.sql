@@ -30,8 +30,6 @@ INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_di
 INSERT INTO cinema_film(film_title, cinema_id)
         VALUES ('Thor: Ragnarok', 1);
 INSERT INTO cinema_film(film_title, cinema_id)
-        VALUES ('Star Wars: The Last Jedi', 1);
-INSERT INTO cinema_film(film_title, cinema_id)
         VALUES ('Star Wars: The Last Jedi', 2);
 
 -- Trailer data:
@@ -101,52 +99,10 @@ INSERT INTO film_category(id, film_title, category)
          VALUES (8, 'Dzsungel', 'Kaland');
 
 -- Room data:
-INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional) 
-         VALUES (1, 1, 'IMAX-ONE', true, false, true, true, false);
-INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional) 
-         VALUES (2, 2, 'IMAX-ODIN', true, false, true, true, false);
-
--- RoomStructure data:
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (1, 1, 1, 1, 32);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (2, 1, 1, 2, 32);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (3, 1, 1, 3, 33);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (4, 1, 1, 4, 33);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (5, 1, 1, 5, 33);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (6, 1, 1, 6, 34);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (7, 1, 1, 7, 34);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (8, 1, 1, 8, 34);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (9, 1, 1, 9, 34);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (10, 1, 1, 10, 36);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (11, 2, 2, 1, 32);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (12, 2, 2, 2, 32);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (13, 2, 2, 3, 33);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (14, 2, 2, 4, 33);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (15, 2, 2, 5, 33);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (16, 2, 2, 6, 34);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (17, 2, 2, 7, 34);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (18, 2, 2, 8, 34);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (19, 2, 2, 9, 34);
-INSERT INTO room_structure(id, cinema_id, room_id, row, seat_number) 
-         VALUES (20, 2, 2, 10, 36);
+INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional, row, seat_number) 
+         VALUES (1, 1, 'IMAX-ONE', true, false, true, true, false, 10, 30);
+INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional, row, seat_number) 
+         VALUES (2, 2, 'IMAX-ODIN', true, false, true, true, false, 15, 30);
 
 -- Screening data:
 INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 

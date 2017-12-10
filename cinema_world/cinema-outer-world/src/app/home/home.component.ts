@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.filmSubscription = this.filmService.getFilms().subscribe((films: Film[]) => {
       this.films = films;
-      console.log(this.films);
       this.activeFilms = [
         this.films[this.activeFilmIndex],
         this.films[this.activeFilmIndex + 1],
@@ -101,7 +100,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   goUpOrDown(event_key: string) {
     switch (event_key) {
       case "s":
-        console.log(this.activeFilm);
         if (this.activeFilm >= 2) {
           this.goDown();
         }

@@ -66,7 +66,7 @@ public class Screening {
     @JoinColumn(name = "cinema_id")
     private Cinema cinemaId;
 
-    @JsonBackReference()
+    @JsonManagedReference()
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "room_id")
     private Room roomId;

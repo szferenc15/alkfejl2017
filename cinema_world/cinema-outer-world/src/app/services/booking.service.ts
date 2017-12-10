@@ -1,3 +1,4 @@
+import { RoomDimension } from './../interfaces/room.interface';
 import { Chair } from './../interfaces/booking-ticket.interface';
 import { Http, Response } from '@angular/http';
 import { Subject, Observable } from 'rxjs/Rx';
@@ -16,6 +17,7 @@ export class BookingService {
   selectedScreening: Subject<Screening> = new Subject<Screening>();
   selectedTicketsCount: Subject<number> = new Subject<number>();
   selectedScreeningId: Subject<number> = new Subject<number>();
+  roomDimension: Subject<RoomDimension> = new Subject<RoomDimension>();
   selectedTickets: Ticket[] = [];
   selectedPaymentMethodName: string = '';
   ageLimit: number = null;
@@ -67,6 +69,10 @@ export class BookingService {
     return this.selectedTicketsCount;
   }
 
+  getRoomDimension() {
+    return this.roomDimension;
+  }
+
   setZeroStageInfoOfBooking(film: Film) {
     this.selectedFilmName.next(film.title);
     this.cinemasOfSelectedFilm.next(film.cinemas);
@@ -81,6 +87,7 @@ export class BookingService {
   setSecondStageInfoOfBooking(screening: Screening) {
     this.selectedScreening.next(screening);
     this.selectedScreeningId.next(screening.id);
+    this.roomDimension.next({row: screening.roomId.row, seatNumber: screening.roomId.seatNumber});
     this.ticketsOfSelectedScreening.next(screening.availableTickets);
   }
 
@@ -91,7 +98,6 @@ export class BookingService {
   }
 
   getOccupiedChairs(screeningId: string): Observable<Chair[]> {
-    console.log(screeningId)
     return this.http.get('http://localhost:8080/booking/tickets?screeningId=' + screeningId).map((response: Response) => response.json().data[0].tickets);
   }
 

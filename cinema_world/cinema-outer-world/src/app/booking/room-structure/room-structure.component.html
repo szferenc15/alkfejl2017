@@ -6,10 +6,11 @@
         <table class="color-white">
           <tr>
             <td></td>
-            <td class="pb-5 center" colSpan="{{ roomDimension.columns }}">
-              <div class="screen" [ngClass]="{'small-canvas': roomDimension.columns <= 20,
-                                              'medium-canvas': roomDimension.columns > 20 && roomDimension.columns < 40,
-                                              'large-canvas': roomDimension.columns >= 40}">
+            <td class="pb-5 center" colSpan="{{ roomDimension.seatNumber }}">
+              <div class="screen" [ngClass]="{'small-canvas': roomDimension.seatNumber <= 20,
+                                              'medium-canvas': roomDimension.seatNumber > 20 &&
+                                                               roomDimension.seatNumber < 40,
+                                              'large-canvas': roomDimension.seatNumber >= 40}">
                                               Vetítővászon
               </div>
             </td>
@@ -24,12 +25,13 @@
                       #charBtn
                       mat-raised-button
                       (click)="selectChair(row, column, charBtn)"
-                      [ngClass]="{'large-chair-btn': roomDimension.columns <= 20,
-                                  'medium-chair-btn': roomDimension.columns > 20 && roomDimension.columns < 50,
-                                  'small-chair-btn': roomDimension.columns >= 50,
+                      [ngClass]="{'large-chair-btn': roomDimension.seatNumber <= 20,
+                                  'medium-chair-btn': roomDimension.seatNumber > 20 &&
+                                                      roomDimension.seatNumber < 50,
+                                  'small-chair-btn': roomDimension.seatNumber >= 50,
                                   'free-chair': isFree(row, column),
                                   'occupied-char': !isFree(row, column)}">
-                      {{ (row - 1)*(roomDimension.columns) + column }}
+                      {{ (row - 1)*(roomDimension.seatNumber) + column }}
               </button>
             </td>
             <td class="pl-3">

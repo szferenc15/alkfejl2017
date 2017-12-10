@@ -1,3 +1,4 @@
+import { RoomDimension } from './../../interfaces/room.interface';
 import { Chair } from './../../interfaces/booking-ticket.interface';
 import { BookingService } from './../../services/booking.service';
 import { Component, ElementRef, OnInit, Renderer } from '@angular/core';
@@ -9,29 +10,34 @@ import { Component, ElementRef, OnInit, Renderer } from '@angular/core';
 })
 export class RoomStructureComponent implements OnInit {
 
-  roomDimension = {rows: 10, columns: 30};
+  roomDimension: RoomDimension = {row: 0, seatNumber: 0};
   rows = [];
   columns = [];
   selectedChairs: Chair[] = []
   selectedTicketsCount = null;
   occupiedChairs: Chair[] = [];
   selectedScreeningId: number = null;
+  roomId: number = null;
 
   constructor(private renderer: Renderer,
               private bookingService: BookingService) { }
 
   ngOnInit() {
-    this.rows = Array(this.roomDimension.rows).fill(0).map((x,i)=>i + 1);
-    this.columns = Array(this.roomDimension.columns).fill(0).map((x,i)=>i + 1);
-
     this.bookingService.getSelectedTicketsCount().subscribe((count: number) => {
       this.selectedTicketsCount = count;
     })
 
     this.bookingService.getSelectedScreeningId().subscribe((screeningId: number) => {
       this.selectedScreeningId = screeningId;
-      this.bookingService.getOccupiedChairs(this.selectedScreeningId.toString()).subscribe((occupiedChairs: Chair[]) => {
-        this.occupiedChairs = occupiedChairs;
+
+      this.bookingService.getRoomDimension().subscribe((roomDimension: RoomDimension) => {
+        this.roomDimension = roomDimension;
+        this.rows = Array(this.roomDimension.row).fill(0).map((x,i)=>i + 1);
+        this.columns = Array(this.roomDimension.seatNumber).fill(0).map((x,i)=>i + 1);
+
+        this.bookingService.getOccupiedChairs(this.selectedScreeningId.toString()).subscribe((occupiedChairs: Chair[]) => {
+          this.occupiedChairs = occupiedChairs;
+        })
       })
     });
   }

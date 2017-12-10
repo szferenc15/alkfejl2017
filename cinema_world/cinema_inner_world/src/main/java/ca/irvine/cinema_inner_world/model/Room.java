@@ -8,8 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
@@ -45,29 +46,27 @@ public class Room {
 
     @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
     private boolean fourDimensional;
+
+    @Size(min = 1, max = 20)
+    private byte row;
+
+    @Size(min = 1, max = 50)
+    private byte seatNumber;
     
     // END OF DEFAULT COLUMNS
 
-    @JsonManagedReference()
+    @JsonBackReference()
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cinema_id")
     private Cinema cinemaId;
 
-    @JsonManagedReference()
+    @JsonBackReference()
     @OneToMany(
         mappedBy = "roomId",
         cascade = CascadeType.ALL, 
         orphanRemoval = true
     )
     private List<Screening> screenings = new ArrayList<>();
-
-    @JsonManagedReference()
-    @OneToMany(
-        mappedBy = "roomId",
-        cascade = CascadeType.ALL, 
-        orphanRemoval = true
-    )
-    private List<RoomStructure> structure = new ArrayList<>();
 
     /**
      * @return the cinemaId
@@ -98,13 +97,6 @@ public class Room {
     }
 
     /**
-     * @return the structure
-     */
-    public List<RoomStructure> getStructure() {
-        return structure;
-    }
-
-    /**
      * @return the bedRoom
      */
     public boolean isBedRoom() {
@@ -130,5 +122,19 @@ public class Room {
      */
     public boolean isThreeDimensional() {
         return threeDimensional;
+    }
+
+    /**
+     * @return the seatNumber
+     */
+    public byte getSeatNumber() {
+        return seatNumber;
+    }
+
+    /**
+     * @return the row
+     */
+    public byte getRow() {
+        return row;
     }
 }
