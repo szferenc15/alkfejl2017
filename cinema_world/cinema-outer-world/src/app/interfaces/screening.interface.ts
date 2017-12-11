@@ -1,3 +1,4 @@
+import { Booking } from './booking.interface';
 import { Room } from './room.interface';
 import { Time } from '@angular/common';
 
@@ -21,4 +22,5 @@ export interface Screening {
   screenTime?: Time;
   roomId: Room;
   availableTickets?: Ticket[];
+  bookings?: Booking[];
 }

@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Trailer {
     @Id
-    @Column(columnDefinition = "VARCHAR2(200)")
+    @Column(columnDefinition = "VARCHAR2(200)", insertable = false, updatable = false, nullable = false)
     private String url;
     
     @JsonBackReference()

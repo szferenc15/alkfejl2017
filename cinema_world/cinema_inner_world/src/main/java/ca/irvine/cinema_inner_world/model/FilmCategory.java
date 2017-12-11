@@ -2,6 +2,7 @@ package ca.irvine.cinema_inner_world.model;
 
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -20,6 +21,7 @@ import javax.persistence.GeneratedValue;
 public class FilmCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(insertable = false, updatable = false, nullable = false) 
     private long id;
 
     @JsonBackReference()

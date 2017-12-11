@@ -1,3 +1,4 @@
+import { Booking } from './../interfaces/booking.interface';
 import { RoomDimension } from './../interfaces/room.interface';
 import { Chair } from './../interfaces/booking-ticket.interface';
 import { Http, Response } from '@angular/http';
@@ -13,20 +14,21 @@ export class BookingService {
   cinemasOfSelectedFilm: Subject<Cinema[]> = new Subject<Cinema[]>();
   ticketsOfSelectedScreening: Subject<Ticket[]> = new Subject<Ticket[]>();
   selectedFilmName: Subject<string> = new Subject<string>();
+  ageLimit: Subject<number> = new Subject<number>();
   selectedCinemaName: Subject<string> = new Subject<string>();
   selectedScreening: Subject<Screening> = new Subject<Screening>();
   selectedTicketsCount: Subject<number> = new Subject<number>();
   selectedScreeningId: Subject<number> = new Subject<number>();
   roomDimension: Subject<RoomDimension> = new Subject<RoomDimension>();
+  bookingsOnSelectedScreening: Subject<Booking[]> = new Subject<Booking[]>();
   selectedTickets: Ticket[] = [];
   selectedPaymentMethodName: string = '';
-  ageLimit: number = null;
   amenitiesChargeOfSelectedCinema: number = 0;
 
   constructor(private http: Http) { }
 
   getAgeLimit() {
-    return 12;
+    return this.ageLimit;
   }
 
   getAmenitiesChargeOfSelectedCinema() {
@@ -61,6 +63,10 @@ export class BookingService {
     return this.selectedScreening;
   }
 
+  getBookingsOnSelectedScreening() {
+    return this.bookingsOnSelectedScreening;
+  }
+
   getSelectedTickets() {
     return this.selectedTickets.slice();
   }
@@ -76,6 +82,7 @@ export class BookingService {
   setZeroStageInfoOfBooking(film: Film) {
     this.selectedFilmName.next(film.title);
     this.cinemasOfSelectedFilm.next(film.cinemas);
+    this.ageLimit.next(film.ageLimit);
   }
 
   setFirstStageInfoOfBooking(cinema: Cinema) {
@@ -89,6 +96,8 @@ export class BookingService {
     this.selectedScreeningId.next(screening.id);
     this.roomDimension.next({row: screening.roomId.row, seatNumber: screening.roomId.seatNumber});
     this.ticketsOfSelectedScreening.next(screening.availableTickets);
+    this.bookingsOnSelectedScreening.next(screening.bookings);
+    console.log(screening.bookings);
   }
 
   setThirdStageInfoOfBooking(selectedTickets: Ticket[], paymentMethodName: string) {
@@ -102,6 +111,18 @@ export class BookingService {
   }
 
   saveBookingInDatabase(selectedChairs: Chair[]) {
-
+    let params = new URLSearchParams();
+    params.append('tickets', `{
+      payment: 'Booking',
+      row: 5,
+      chair: 10,
+      bookingId: 3,
+      ticketType: 'IMAX 3D Normal',
+      username: 'almafa'
+    }`);
+    params.append('screeningId', "1");
+    return this.http.post('http://localhost:8080/booking/new_booking', params).map(
+      (response) => console.log(response)
+    )
   }
 }

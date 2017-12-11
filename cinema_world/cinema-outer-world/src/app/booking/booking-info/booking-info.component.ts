@@ -26,6 +26,10 @@ export class BookingInfoComponent implements OnInit {
       this.selectedFilm = film;
     })
 
+    this.bookingService.getAgeLimit().subscribe((ageLimit: number) => {
+      this.ageLimit = ageLimit;
+    })
+
     this.bookingService.getSelectedCinemaName().subscribe((cinemaName: string) => {
       this.selectedCinema = cinemaName;
     })
@@ -37,8 +41,6 @@ export class BookingInfoComponent implements OnInit {
     this.bookingService.getSelectedTicketsCount().subscribe((count: number) => {
       this.selectedTicketsCount = count;
     })
-
-    this.ageLimit = this.bookingService.getAgeLimit();
   }
 
   ngAfterViewInit() {

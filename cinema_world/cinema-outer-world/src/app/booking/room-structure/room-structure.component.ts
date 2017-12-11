@@ -2,6 +2,7 @@ import { RoomDimension } from './../../interfaces/room.interface';
 import { Chair } from './../../interfaces/booking-ticket.interface';
 import { BookingService } from './../../services/booking.service';
 import { Component, ElementRef, OnInit, Renderer } from '@angular/core';
+import { Booking } from '../../interfaces/booking.interface';
 
 @Component({
   selector: 'app-room-structure',
@@ -27,19 +28,21 @@ export class RoomStructureComponent implements OnInit {
       this.selectedTicketsCount = count;
     })
 
-    this.bookingService.getSelectedScreeningId().subscribe((screeningId: number) => {
-      this.selectedScreeningId = screeningId;
+    this.bookingService.getRoomDimension().subscribe((roomDimension: RoomDimension) => {
+      this.roomDimension = roomDimension;
+      this.rows = Array(this.roomDimension.row).fill(0).map((x,i)=>i + 1);
+      this.columns = Array(this.roomDimension.seatNumber).fill(0).map((x,i)=>i + 1);
 
-      this.bookingService.getRoomDimension().subscribe((roomDimension: RoomDimension) => {
-        this.roomDimension = roomDimension;
-        this.rows = Array(this.roomDimension.row).fill(0).map((x,i)=>i + 1);
-        this.columns = Array(this.roomDimension.seatNumber).fill(0).map((x,i)=>i + 1);
-
-        this.bookingService.getOccupiedChairs(this.selectedScreeningId.toString()).subscribe((occupiedChairs: Chair[]) => {
-          this.occupiedChairs = occupiedChairs;
-        })
+      this.bookingService.getBookingsOnSelectedScreening().subscribe((bookings: Booking[]) => {
+        console.log(bookings);
+        for (let i = 0; i < bookings.length; i++) {
+          for (let j = 0; j < bookings[i].tickets.length; j++) {
+            this.occupiedChairs.push({row: bookings[i].tickets[j].row, chair: bookings[i].tickets[j].chair});
+          }
+        }
+        console.log(bookings);
       })
-    });
+    })
   }
 
   selectChair(row: number, column: number, charBtn: ElementRef) {

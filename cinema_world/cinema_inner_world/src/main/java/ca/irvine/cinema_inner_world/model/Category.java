@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Entity
 public class Category {
     @Id
-    @Column(columnDefinition = "VARCHAR2(20)")
+    @Column(columnDefinition = "VARCHAR2(20)", insertable = false, updatable = false, nullable = false)
     private String category;
 
     /**

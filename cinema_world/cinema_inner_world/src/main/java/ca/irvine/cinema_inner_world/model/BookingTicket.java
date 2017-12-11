@@ -27,6 +27,7 @@ public class BookingTicket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(insertable = false, updatable = false, nullable = false) 
     private long id;
 
     @Column(columnDefinition = "VARCHAR2(20) NOT NULL DEFAULT 'BOOKING'")
@@ -102,5 +103,47 @@ public class BookingTicket {
      */
     public User getUsername() {
         return username;
+    }
+
+    /**
+     * @param bookingId the bookingId to set
+     */
+    public void setBookingId(Booking bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    /**
+     * @param row the row to set
+     */
+    public void setRow(byte row) {
+        this.row = row;
+    }
+
+    /**
+     * @param chair the chair to set
+     */
+    public void setChair(byte chair) {
+        this.chair = chair;
+    }
+
+    /**
+     * @param payment the payment to set
+     */
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
+    /**
+     * @param ticketType the ticketType to set
+     */
+    public void setTicketType(Ticket ticketType) {
+        this.ticketType = ticketType;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(User username) {
+        this.username = username;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface ScreeningRepository extends CrudRepository<Screening,Integer>{
-    Optional<Screening> findById(int id);
+    Optional<Screening> findById(long id);
     Optional<Screening> findByTwoDimensional(boolean isTwoDimensional);    
     Optional<Screening> findByThreeDimensional(boolean isThreeDimensional);
     Optional<Screening> findByFourDimensional(boolean isFourDimensional);

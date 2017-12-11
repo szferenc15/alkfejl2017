@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(insertable = false, updatable = false, nullable = false)
     private long id;
 
     @JsonBackReference()
@@ -70,5 +72,12 @@ public class Booking {
      */
     public Set<User> getUsers() {
         return users;
+    }
+
+    /**
+     * @param screeningId the screeningId to set
+     */
+    public void setScreeningId(Screening screeningId) {
+        this.screeningId = screeningId;
     }
 }

@@ -30,6 +30,7 @@ public class Screening {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(insertable = false, updatable = false, nullable = false)    
     private long id;
 
     @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT TRUE")
@@ -195,5 +196,12 @@ public class Screening {
      */
     public List<ScreeningTicket> getAvailableTickets() {
         return availableTickets;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
     }
 }

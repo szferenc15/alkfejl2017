@@ -28,7 +28,7 @@ public class User {
 
     @Id
     @Pattern(regexp="^[a-z0-9_-]{3,15}$", message = "Username validation failed")
-    @Column(columnDefinition = "VARCHAR2(15)")
+    @Column(columnDefinition = "VARCHAR2(15)", insertable = false, updatable = false, nullable = false)
     private String username;
 
     @Pattern(regexp="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,25}$", message = "Password validation failed")

@@ -28,7 +28,7 @@ public class Film {
     // START OF DEFAULT COLUMNS
 
     @Id
-    @Column(columnDefinition = "VARCHAR2(50)")
+    @Column(columnDefinition = "VARCHAR2(50)", insertable = false, updatable = false, nullable = false)
     private String title;
 
     @Column(columnDefinition = "VARCHAR2(50)")

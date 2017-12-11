@@ -27,6 +27,7 @@ public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(insertable = false, updatable = false, nullable = false) 
     private long id;
 
     @Column(columnDefinition = "VARCHAR2(20)", unique = true)
