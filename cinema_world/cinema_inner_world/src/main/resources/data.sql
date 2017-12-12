@@ -14,15 +14,19 @@ INSERT INTO cinema(id, country, city, district, street, house_number, name, amen
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
          VALUES (7, 'Macedonia', 'Szkopje', 'Old Bazaar', 'Atanas Babata', 100, 'CW Kurshumli An', 20);
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
-         VALUES (8, 'Egyesult Kiralysag', 'London', 'Notting Hill', 'Portobello Rd', 191, 'CW Electric Cinema', 60);
+         VALUES (8, 'Egyesult Kiralysag', 'London', 'Notting Hill', 'Portobello Rd', 191, 'CW Electric Cinema Porto', 60);
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
-         VALUES (9, 'Oroszorszag', 'Moszkva', 'XVI', 'Bol''shoy Ovchinnikovskiy Pereulok', 16, 'CW Pyat'' Zvozd', 100);
+         VALUES (9, 'Egyesult Kiralysag', 'London', 'Shoreditch', 'Redchurch St', 65, 'CW Electric Cinema Shore', 60);
+INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
+         VALUES (10, 'Oroszorszag', 'Moszkva', 'XVI', 'Bol''shoy Ovchinnikovskiy Pereulok', 16, 'CW Pyat'' Zvozd', 100);
          
 -- User data:
 INSERT INTO user(username, password, email, phone_number, admin_right) 
          VALUES ('barackfa', 'barackfa', 'barackfa@almafa.fa', '06302003000', false);
 INSERT INTO user(username, password, email, phone_number, admin_right) 
          VALUES ('almafa', 'almafa', 'almafa@barackfa.fa', '06302003005', false);
+INSERT INTO user(username, password, email, phone_number, admin_right) 
+         VALUES ('admin', 'admin', 'admin@barackfa.fa', '06302003010', true);
 
 -- Film data:
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
@@ -77,9 +81,70 @@ INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_di
 
 -- Cinema-film join table:
 INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Boldog halalnapot!', 7);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Boldog halalnapot!', 10);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Gyilkossag az Orient Expresszen', 8);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Gyilkossag az Orient Expresszen', 10);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Az igazsag ligaja', 4);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Az igazsag ligaja', 5);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Az igazsag ligaja', 6);
+INSERT INTO cinema_film(film_title, cinema_id)
         VALUES ('Thor: Ragnarok', 1);
 INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Thor: Ragnarok', 2);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Thor: Ragnarok', 3);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Coco', 8);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Coco', 9);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Coco', 5);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Paddington 2', 8);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Paddington 2', 9);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('A viszkis', 1);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('A viszkis', 2);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('A viszkis', 3);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('A viszkis', 4);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('A viszkis', 5);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('A viszkis', 6);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Dzsungel', 7);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 1);
+INSERT INTO cinema_film(film_title, cinema_id)
         VALUES ('Star Wars: Az utolso Jedik', 2);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 3);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 4);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 5);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 6);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 7);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 8);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 9);
+INSERT INTO cinema_film(film_title, cinema_id)
+        VALUES ('Star Wars: Az utolso Jedik', 10);
+
 
 -- Trailer data:
 
