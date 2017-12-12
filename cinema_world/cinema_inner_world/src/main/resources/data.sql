@@ -12,11 +12,11 @@ INSERT INTO cinema(id, country, city, district, street, house_number, name, amen
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
          VALUES (6, 'Magyarorszag', 'Kecskemet', 'Belvaros', 'Korona', 2, 'CW Malom', 20);
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
-         VALUES (7, 'Macedonia', 'Szkopje', 'Old Bazaar', 'Atanas Babata', 100, 'CW Kurshumli An', 20);
+         VALUES (7, 'Macedonia', 'Szkopje', 'Bazaar', 'Atanas Babata', 100, 'CW Kurshumli An', 20);
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
-         VALUES (8, 'Egyesult Kiralysag', 'London', 'Notting Hill', 'Portobello Rd', 191, 'CW Electric Cinema Porto', 60);
+         VALUES (8, 'Egyesult Kiralysag', 'London', 'No Hill', 'Portobello Rd', 104, 'CW Electric Porto', 60);
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
-         VALUES (9, 'Egyesult Kiralysag', 'London', 'Shoreditch', 'Redchurch St', 65, 'CW Electric Cinema Shore', 60);
+         VALUES (9, 'Egyesult Kiralysag', 'London', 'Sreditch', 'Redchurch St', 65, 'CW Electric Shore', 60);
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
          VALUES (10, 'Oroszorszag', 'Moszkva', 'XVI', 'Bol''shoy Ovchinnikovskiy Pereulok', 16, 'CW Pyat'' Zvozd', 100);
          
