@@ -13,43 +13,43 @@ INSERT INTO user(username, password, email, phone_number, admin_right)
 -- Film data:
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/star_wars_the_last_jedi.jpg', 'Star Wars: The Last Jedi', 'orosz', true, false, true, true, false, 150, '2017-12-14', 12, 'Rian', 'Johnson', 'USA', 2017, 5,
+         VALUES ('../../assets/star_wars_the_last_jedi.jpg', 'Star Wars: Az utolso Jedik', 'orosz', true, false, true, true, false, 150, '2017-12-14', 12, 'Rian', 'Johnson', 'USA', 2017, 5,
                  'A Star Wars: Az utolso Jedikben a Skywalker saga folytatodik.');
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
          VALUES ('../../assets/paddington2.jpg', 'Paddington 2', 'angol', true, true, false, false, false, 103, '2017-11-30', 6, 'Paul', 'King', 'UK', 2017, 4,
-                 'Mindenki kedvenc macija, a dédelgetni való Paddington boldogan éldegél a Brown családdal Windsor Gardensben.');
+                 'Mindenki kedvenc macija, a dedelgetni valo Paddington boldogan eldegel a Brown csaladdal Windsor Gardensben.');
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/a_viszkis.jpg', 'A viszkis', 'magyar', true, false, false, false, false, 126, '2017-11-23', 16, 'Nimród', 'Antal', 'Magyarország', 2017, 4,
-                 'Aki mindig egy lépéssel a rendőrség előtt járt. És aki minden bankrablása előtt megivott egy pohár viszkit.');
+         VALUES ('../../assets/a_viszkis.jpg', 'A viszkis', 'magyar', true, false, false, false, false, 126, '2017-11-23', 16, 'Nimrod', 'Antal', 'Magyarorszag', 2017, 4,
+                 'Aki mindig egy lepessel a rendorseg elott jart. Es aki minden bankrablasa elott megivott egy pohar viszkit.');
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
          VALUES ('../../assets/coco.jpg', 'Coco', 'angol', true, true, false, false, false, 109, '2017-11-23', 6, 'Lee', 'Unkrich', 'USA', 2017, 4,
-                 'Annak ellenére, hogy családja ősidők óta megveti a zenét, Miguel arról ábrándozik, hogy egyszer neves muzsikus lesz.');
+                 'Annak ellenere, hogy csaladja osidok ota megveti a zenet, Miguel arrol abrandozik, hogy egyszer neves muzsikus lesz.');
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/justice_league.jpg', 'Az igazság ligája', 'angol', true, true, false, false, false, 121, '2017-11-16', 12, 'Zack', 'Snyder', 'USA', 2017, 4,
-                 'Bruce Wayne tudja, hogy nem vonulhat vissza. A világnak szüksége van rá, és a hozzá hasonlókra.');
+         VALUES ('../../assets/justice_league.jpg', 'Az igazsag ligaja', 'angol', true, true, false, false, false, 121, '2017-11-16', 12, 'Zack', 'Snyder', 'USA', 2017, 4,
+                 'Bruce Wayne tudja, hogy nem vonulhat vissza. A vilagnak szuksege van ra, es a hozza hasonlokra.');
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/happy_death.jpg', 'Boldog halálnapot!', 'angol', true, true, false, false, false, 96, '2017-11-16', 16, 'Christopher', 'Landon', 'USA', 2017, 4,
-                 'Tree csodálatosan beképzelt teremtés, aki egyetlen embert szeret feltétel nélkül: saját magát.');
+         VALUES ('../../assets/happy_death.jpg', 'Boldog halalnapot!', 'angol', true, true, false, false, false, 96, '2017-11-16', 16, 'Christopher', 'Landon', 'USA', 2017, 4,
+                 'Tree csodalatosan bekepzelt teremtes, aki egyetlen embert szeret feltetel nelkul: sajat magat.');
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/gyilkossag.jpg', 'Gyilkosság az Orient Expresszen', 'angol', true, true, false, false, false, 114, '2017-11-09', 12, 'Kenneth', 'Branagh', 'USA', 2017, 4,
-                 'Az Isztambulból Párizsba tartó luxusvonat utasai mindig különleges emberek.');
+         VALUES ('../../assets/gyilkossag.jpg', 'Gyilkossag az Orient Expresszen', 'angol', true, true, false, false, false, 114, '2017-11-09', 12, 'Kenneth', 'Branagh', 'USA', 2017, 4,
+                 'Az Isztambulbol Parizsba tarto luxusvonat utasai mindig kulonleges emberek.');
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/badmoms_xmas.jpg', 'Rossz anyák karácsonya', 'angol', true, true, false, false, false, 104, '2017-11-09', 16, 'Scott', 'Moore', 'USA', 2017, 4,
-                 'Mikor minden pillanat csupa öröm és boldogság... na, ilyenkor köthetik csak fel igazán a gatyájukat az anyukák.');
+         VALUES ('../../assets/badmoms_xmas.jpg', 'Rossz anyak karacsonya', 'angol', true, true, false, false, false, 104, '2017-11-09', 16, 'Scott', 'Moore', 'USA', 2017, 4,
+                 'Mikor minden pillanat csupa orom es boldogsag... na, ilyenkor kothetik csak fel igazan a gatyajukat az anyukak.');
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
@@ -58,21 +58,21 @@ INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_di
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/jungle.jpg', 'Dzsungel', 'angol', true, false, true, true, false, 125, '2017-10-26', 12, 'Greg', 'McLean', 'Ausztrália', 2017, 4,
-                 'A valós eseményeken alapuló történet a civilizált életre ráunó, 22 éves Yossi útját követi');
+         VALUES ('../../assets/jungle.jpg', 'Dzsungel', 'angol', true, false, true, true, false, 125, '2017-10-26', 12, 'Greg', 'McLean', 'Ausztralia', 2017, 4,
+                 'A valas esemenyeken alapulo tortenet a civilizalt eletre raunó, 22 eves Yossi utjat koveti');
 
 -- Cinema-film join table:
 INSERT INTO cinema_film(film_title, cinema_id)
         VALUES ('Thor: Ragnarok', 1);
 INSERT INTO cinema_film(film_title, cinema_id)
-        VALUES ('Star Wars: The Last Jedi', 2);
+        VALUES ('Star Wars: Az utolso Jedik', 2);
 
 -- Trailer data:
 
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/zB4I68XVPzQ', 'Star Wars: The Last Jedi');
+        VALUES ('https://www.youtube.com/embed/8BnIfZXDAMk', 'Star Wars: Az utolso Jedik');
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/Q0CbN8sfihY', 'Star Wars: The Last Jedi');
+        VALUES ('https://www.youtube.com/embed/-cJFbqDfBhA', 'Star Wars: Az utolso Jedik');
 INSERT INTO trailer(url, film_title) 
         VALUES ('https://www.youtube.com/embed/K1HAzQotkdU', 'Paddington 2');
 INSERT INTO trailer(url, film_title) 
@@ -82,19 +82,19 @@ INSERT INTO trailer(url, film_title)
 INSERT INTO trailer(url, film_title) 
         VALUES ('https://www.youtube.com/embed/CCyZP_SdDGk', 'Coco');
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/RLXFAaAu8VA', 'Az igazság ligája');
+        VALUES ('https://www.youtube.com/embed/RLXFAaAu8VA', 'Az igazsag ligaja');
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/qCZJGxdwS4s', 'Az igazság ligája');
+        VALUES ('https://www.youtube.com/embed/qCZJGxdwS4s', 'Az igazsag ligaja');
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/QSVYATiZjF8', 'Boldog halálnapot!');
+        VALUES ('https://www.youtube.com/embed/QSVYATiZjF8', 'Boldog halalnapot!');
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/Upu7Q08kKbM', 'Gyilkosság az Orient Expresszen');
+        VALUES ('https://www.youtube.com/embed/Upu7Q08kKbM', 'Gyilkossag az Orient Expresszen');
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/iGZeY1qwjLg', 'Gyilkosság az Orient Expresszen');
+        VALUES ('https://www.youtube.com/embed/iGZeY1qwjLg', 'Gyilkossag az Orient Expresszen');
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/7Bj-YfYAtlY', 'Rossz anyák karácsonya');
+        VALUES ('https://www.youtube.com/embed/7Bj-YfYAtlY', 'Rossz anyak karacsonya');
 INSERT INTO trailer(url, film_title) 
-        VALUES ('https://www.youtube.com/embed/GBMCOpMOn8I', 'Rossz anyák karácsonya');
+        VALUES ('https://www.youtube.com/embed/GBMCOpMOn8I', 'Rossz anyak karacsonya');
 INSERT INTO trailer(url, film_title) 
         VALUES ('https://www.youtube.com/embed/v7MGUNV8MxU', 'Thor: Ragnarok');
 INSERT INTO trailer(url, film_title) 
@@ -150,19 +150,19 @@ INSERT INTO film_category(id, film_title, category)
 INSERT INTO film_category(id, film_title, category) 
          VALUES ( 5, 'Thor: Ragnarok', 'Fantasy');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES ( 6, 'Rossz anyák karácsonya', 'Vigjatek');
+         VALUES ( 6, 'Rossz anyak karacsonya', 'Vigjatek');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES ( 7, 'Gyilkosság az Orient Expresszen', 'Drama');
+         VALUES ( 7, 'Gyilkossag az Orient Expresszen', 'Drama');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES ( 8, 'Gyilkosság az Orient Expresszen', 'Bunugyi');
+         VALUES ( 8, 'Gyilkossag az Orient Expresszen', 'Bunugyi');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES ( 9, 'Boldog halálnapot!', 'Thriller');
+         VALUES ( 9, 'Boldog halalnapot!', 'Thriller');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES (10, 'Az igazság ligája', 'Akcio');
+         VALUES (10, 'Az igazsag ligaja', 'Akcio');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES (11, 'Az igazság ligája', 'Fantasy');
+         VALUES (11, 'Az igazsag ligaja', 'Fantasy');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES (12, 'Az igazság ligája', 'Kaland');
+         VALUES (12, 'Az igazsag ligaja', 'Kaland');
 INSERT INTO film_category(id, film_title, category) 
          VALUES (13, 'Coco', 'Animacios');
 INSERT INTO film_category(id, film_title, category) 
@@ -178,11 +178,11 @@ INSERT INTO film_category(id, film_title, category)
 INSERT INTO film_category(id, film_title, category) 
          VALUES (19, 'Paddington 2', 'Vigjatek');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES (20, 'Star Wars: The Last Jedi', 'Fantasy');
+         VALUES (20, 'Star Wars: Az utolso Jedik', 'Fantasy');
 INSERT INTO film_category(id, film_title, category) 
-         VALUES (21, 'Star Wars: The Last Jedi', 'Kaland');
+         VALUES (21, 'Star Wars: Az utolso Jedik', 'Kaland');
 INSERT INTO film_category(id, film_title, category)
-         VALUES (22, 'Star Wars: The Last Jedi', 'Sci-Fi');
+         VALUES (22, 'Star Wars: Az utolso Jedik', 'Sci-Fi');
 
 -- Room data:
 INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional, row, seat_number) 
@@ -194,9 +194,9 @@ INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, fo
 INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
          VALUES (1, 1, 'Thor: Ragnarok', 1, false, true, false, true, 'magyar', false, true, '2017-11-20', '21:00:00');
 INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
-         VALUES (2, 2, 'Star Wars: The Last Jedi', 2, false, true, false, true, 'orosz', false, true, '2017-12-14', '23:30:00');
+         VALUES (2, 2, 'Star Wars: Az utolso Jedik', 2, false, true, false, true, 'orosz', false, true, '2017-12-14', '23:30:00');
 INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
-         VALUES (3, 2, 'Star Wars: The Last Jedi', 2, false, false, true, true, 'angol', false, true, '2018-01-05', '14:30:00');
+         VALUES (3, 2, 'Star Wars: Az utolso Jedik', 2, false, false, true, true, 'angol', false, true, '2018-01-05', '14:30:00');
 
 -- Ticket data:
 INSERT INTO ticket(type, price) 
