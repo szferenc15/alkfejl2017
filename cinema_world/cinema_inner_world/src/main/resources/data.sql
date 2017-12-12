@@ -23,8 +23,18 @@ INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_di
 
 INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
             play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/jungle.jpg', 'Dzsungel', 'angol', true, false, true, true, false, 125, '2017-12-30', 12, 'Rian', 'Johnson', 'USA', 2017, 4,
-                 'A Dzsungel.');
+         VALUES ('../../assets/jungle.jpg', 'Dzsungel', 'angol', true, false, true, true, false, 125, '2017-10-26', 12, 'Greg', 'McLean', 'Ausztrália', 2017, 4,
+                 'A valós eseményeken alapuló történet a civilizált életre ráunó, 22 éves Yossi útját követi');
+
+INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+            play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
+         VALUES ('../../assets/a_viszkis.jpg', 'A viszkis', 'magyar', true, false, false, false, false, 126, '2017-11-23', 16, 'Nimród', 'Antal', 'Magyarország', 2017, 4,
+                 'Aki mindig egy lépéssel a rendőrség előtt járt. És aki minden bankrablása előtt megivott egy pohár viszkit.');
+
+INSERT INTO film(picture, title, language, synchron, inscriptive, imax, three_dimensional, four_dimensional, 
+            play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
+         VALUES ('../../assets/justice_league.jpg', 'Az igazság ligája', 'angol', true, true, false, false, false, 121, '2017-11-16', 12, 'Zack', 'Snyder', 'USA', 2017, 4,
+                 'Bruce Wayne tudja, hogy nem vonulhat vissza. A világnak szüksége van rá, és a hozzá hasonlókra.');
 
 -- Cinema-film join table:
 INSERT INTO cinema_film(film_title, cinema_id)
