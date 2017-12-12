@@ -268,8 +268,6 @@ INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, fo
          VALUES (1, 1, 'IMAX-ONE', true, false, true, true, false, 10, 30);
 INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional, row, seat_number) 
          VALUES (2, 10, 'IMAX-ODIN', true, false, true, true, false, 15, 30);
-INSERT INTO room(id, cinema_id, name, vip, bed_room, imax, three_dimensional, four_dimensional, row, seat_number) 
-         VALUES (1, 3, '4D-SMELL', true, true, false, true, true, 7, 15);
 
 -- Screening data:
 INSERT INTO screening(id, cinema_id, film_title, room_id, two_dimensional, three_dimensional, four_dimensional, imax, language, inscriptive, synchron, screen_day, screen_time) 
