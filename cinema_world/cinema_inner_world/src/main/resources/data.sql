@@ -2,7 +2,21 @@
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
          VALUES (1, 'Magyarorszag', 'Budapest', 'VIII', 'Kerepesi', 9, 'CW Arena', 40);
 INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
-         VALUES (2, 'Oroszorszag', 'Moszkva', 'XVI', 'Bol''shoy Ovchinnikovskiy Pereulok', 16, 'CW Pyat'' Zvozd', 100);
+         VALUES (2, 'Magyarorszag', 'Budapest', 'XI', 'Oktober huszonharmadika', 8, 'CW Allee', 40);
+INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
+         VALUES (3, 'Magyarorszag', 'Budapest', 'X', 'Vaci', 1, 'CW Westend', 40);
+INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
+         VALUES (4, 'Magyarorszag', 'Budapest', 'II', 'Lovohaz', 5, 'CW Mammut 2', 40);
+INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
+         VALUES (5, 'Magyarorszag', 'Budapest', 'III', 'Becsi', 38, 'CW Bed Cinema', 40);
+INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
+         VALUES (6, 'Magyarorszag', 'Kecskemet', 'Belvaros', 'Korona', 2, 'CW Malom', 20);
+INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
+         VALUES (7, 'Macedonia', 'Szkopje', 'Old Bazaar', 'Atanas Babata', 100, 'CW Kurshumli An', 20);
+INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
+         VALUES (8, 'Egyesult Kiralysag', 'London', 'Notting Hill', 'Portobello Rd', 191, 'CW Electric Cinema', 60);
+INSERT INTO cinema(id, country, city, district, street, house_number, name, amenities_charge) 
+         VALUES (9, 'Oroszorszag', 'Moszkva', 'XVI', 'Bol''shoy Ovchinnikovskiy Pereulok', 16, 'CW Pyat'' Zvozd', 100);
          
 -- User data:
 INSERT INTO user(username, password, email, phone_number, admin_right) 
