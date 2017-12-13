@@ -1,6 +1,9 @@
 <div class="container">
-  <div class="pt-4" align="center">
-    <form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class="pt-5 pb-5 pl-5 pr-5" align="center">
+    <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.get('username').value,
+                                                          registerForm.get('password').value,
+                                                          registerForm.get('email').value,
+                                                          registerForm.get('phoneNumber').value)">
       <table>
         <tr>
           <td>
@@ -70,6 +73,7 @@
           <td colspan="2">
               <button class="register-btn btn btn-dark"
                       mat-raised-button
+                      [disabled]="registerForm.invalid"
                       type="submit">
                       Regisztráció
               </button>

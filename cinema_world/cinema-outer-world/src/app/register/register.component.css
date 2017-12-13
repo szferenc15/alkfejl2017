@@ -21,7 +21,7 @@ mat-form-field {
 }
 
 td {
-  width: 250px;
+  width: 400px;
 }
 
 .display-block {
@@ -40,6 +40,12 @@ td {
 
 .register-btn {
   width: 100%;
+  border: 1px solid white;
+}
+
+.register-btn:disabled {
+  background: #222222;
+  color: white;
 }
 
 .error {

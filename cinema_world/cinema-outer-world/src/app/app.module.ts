@@ -1,3 +1,4 @@
+import { RegisterService } from './services/register.service';
 import { BookingService } from './services/booking.service';
 import { TimePipe } from './pipes/time.pipe';
 import { ScreeningService } from './services/screening.service';
@@ -111,7 +112,8 @@ const appRoutes: Routes = [
               FilmService,
               CinemaService,
               ScreeningService,
-              BookingService],
+              BookingService,
+              RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

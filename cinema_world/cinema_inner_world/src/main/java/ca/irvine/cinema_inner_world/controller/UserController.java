@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.irvine.cinema_inner_world.service.UserService;
@@ -32,6 +31,41 @@ class AuthUser {
     }
 }
 
+class RegUser {
+    private String username;
+    private String password;
+    private String email;
+    private String phoneNumber;
+
+    /**
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @return the phoneNumber
+     */
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+}
+
 @RestController
 @RequestMapping("/user")
 public class UserController{
@@ -43,7 +77,6 @@ public class UserController{
     @RequestMapping(value= "/login", method=RequestMethod.POST, consumes="application/json")
     public Response<User> login(@RequestBody AuthUser user)
     {
-        System.out.print(user.toString());
         Optional<User> optionalUser = userService.login(user.getIdentifier(), user.getPassword());
 
         if(optionalUser.isPresent()){
@@ -52,20 +85,16 @@ public class UserController{
             return Response.ok(loggedUser); 
         }
 
-        return Response.error("Wrong username or password!");
+        return Response.error("Helyeten felhasznalonev vagy jelszo!");
     }
 
     @CrossOrigin("http://localhost:4200")
-    @RequestMapping(value= "/register", method=RequestMethod.POST )
-    public Response<User> register(
-                                    @RequestParam(value="username") String username, 
-                                    @RequestParam(value="password") String password,
-                                    @RequestParam(value="email") String email,
-                                    @RequestParam(value="phoneNumber") String phoneNumber
-                                    )
+    @RequestMapping(value= "/register", method=RequestMethod.POST, consumes="application/json")
+    public Response<User> register(@RequestBody RegUser new_user)
     {
-        Optional<User> optionalUser = userService.register(username, password, email, phoneNumber);
-
+        System.out.print(new_user);
+        Optional<User> optionalUser = userService.register(new_user.getUsername(), new_user.getPassword(), 
+                                                           new_user.getEmail(), new_user.getPhoneNumber());
         if(optionalUser.isPresent()){
             User user = optionalUser.get();
             return Response.ok(user); 

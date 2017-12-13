@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, URLSearchParams } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { User } from './../interfaces/user.interface';
 import { Subject } from 'rxjs/Rx';
 

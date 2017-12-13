@@ -1,6 +1,8 @@
+import { RegisterService } from './../services/register.service';
 import { matchOtherValidator } from '../validators/match-other-validate.validator';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
 
 @Component({
   selector: 'app-register',
@@ -22,9 +24,16 @@ export class RegisterComponent implements OnInit {
                                         Validators.pattern('^\\+?[0-9]{7,14}$')])
   });
 
-  constructor() { }
+  constructor(private registerService: RegisterService) { }
 
   ngOnInit() {
+    this.registerService.getRegistration().subscribe((response: string) => {
+      console.log(response);
+    })
+  }
+
+  register(username: string, password: string, email: string, phoneNumber: string) {
+    this.registerService.register(username, password, email, phoneNumber);
   }
 
 }
