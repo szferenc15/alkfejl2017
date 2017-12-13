@@ -1,7 +1,8 @@
+import { AuthenticationService } from './authentication.service';
 import { Booking } from './../interfaces/booking.interface';
 import { RoomDimension } from './../interfaces/room.interface';
 import { Chair } from './../interfaces/booking-ticket.interface';
-import { Http, Response } from '@angular/http';
+import { Http, Response, URLSearchParams  } from '@angular/http';
 import { Subject, Observable } from 'rxjs/Rx';
 import { Screening, Ticket } from './../interfaces/screening.interface';
 import { Cinema } from './../interfaces/cinema.interface';
@@ -25,7 +26,8 @@ export class BookingService {
   selectedPaymentMethodName: string = '';
   amenitiesChargeOfSelectedCinema: number = 0;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,
+              private authService: AuthenticationService) { }
 
   getAgeLimit() {
     return this.ageLimit;
@@ -112,17 +114,17 @@ export class BookingService {
 
   saveBookingInDatabase(selectedChairs: Chair[]) {
     let params = new URLSearchParams();
-    params.append('tickets', `{
-      payment: 'Booking',
-      row: 5,
-      chair: 10,
-      bookingId: 3,
-      ticketType: 'IMAX 3D Normal',
-      username: 'almafa'
-    }`);
-    params.append('screeningId', "1");
-    return this.http.post('http://localhost:8080/booking/new_booking', params).map(
-      (response) => console.log(response)
-    )
+    params.append("tickets", JSON.parse(sessionStorage.getItem('user')).getUsername());
+    params.append("tickets", this.selectedPaymentMethodName);
+    for (let i = 0; i < this.selectedTickets.length; i++) {
+      params.append("tickets", this.selectedTickets[i].ticket.type);
+      params.append("tickets", selectedChairs[i].row.toString());
+      params.append("tickets", selectedChairs[i].chair.toString());
+    }
+    console.log(params);
+
+    return this.http.get('http:localhost:8080/booking/new_booking', {params: params}).map((response: Response) => {
+      response.json();
+    })
   }
 }

@@ -100,7 +100,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   goUpOrDown(event_key: string) {
     switch (event_key) {
       case "s":
-        if (this.activeFilm >= 2) {
+        if (this.activeFilm == 2) {
           this.goDown();
         }
         if (this.activeFilm < 2) {
@@ -110,9 +110,12 @@ export class HomeComponent implements OnInit, OnDestroy {
           }
           this.changeActiveElement(this.activeFilm);
         }
+        if (this.activeFilm > 2) {
+          this.activeFilm = 2;
+        }
         return false;
       case "w":
-        if (this.activeFilm < this.films.length - 4) {
+        if (this.activeFilm == 0) {
           this.goUp();
         }
         if (this.activeFilm > 0) {
@@ -121,6 +124,9 @@ export class HomeComponent implements OnInit, OnDestroy {
             this.activeFilm = 2;
           }
           this.changeActiveElement(this.activeFilm);
+        }
+        if (this.activeFilm < 0) {
+          this.activeFilm = 0;
         }
         return false;
       case "a":

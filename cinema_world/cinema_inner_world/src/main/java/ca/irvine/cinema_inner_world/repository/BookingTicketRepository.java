@@ -9,5 +9,6 @@ import ca.irvine.cinema_inner_world.model.BookingTicket;
 public interface BookingTicketRepository extends CrudRepository<BookingTicket,Integer>{
     @Query("SELECT new map(row as row, chair as chair) FROM BookingTicket")
     Iterable<BookingTicket> findOccupiedChair();
+    
     Iterable<BookingTicket> findAll();
 }

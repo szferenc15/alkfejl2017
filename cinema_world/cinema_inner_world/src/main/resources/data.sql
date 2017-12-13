@@ -22,7 +22,7 @@ INSERT INTO cinema(id, country, city, district, street, house_number, name, amen
          
 -- User data:
 INSERT INTO user(username, password, email, phone_number, admin_right) 
-         VALUES ('barackfa', 'barackfa', 'barackfa@almafa.fa', '06302003000', false);
+         VALUES ('barackfa', 'Dr123$,.-', 'barackfa@almafa.fa', '06302003000', false);
 INSERT INTO user(username, password, email, phone_number, admin_right) 
          VALUES ('almafa', 'almafa', 'almafa@barackfa.fa', '06302003005', false);
 INSERT INTO user(username, password, email, phone_number, admin_right) 

@@ -177,9 +177,10 @@
           </th>
           <tr>
             <td class="reservation-font pt-2" *ngIf="!isLoggedIn">A jegyfoglaláshoz kérlek jelentkezz be!</td>
-            <td class="pt-2" *ngIf="isLoggedIn">
+            <td class="pt-2" >
               <button class="btn btn-dark"
                       mat-raised-button
+                      *ngIf="isLoggedIn"
                       (click)="setZeroStageInfoOfBooking(films[activeElement])">
                       Jegyfoglalás
               </button>

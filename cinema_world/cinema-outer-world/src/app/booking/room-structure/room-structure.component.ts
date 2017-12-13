@@ -40,7 +40,6 @@ export class RoomStructureComponent implements OnInit {
             this.occupiedChairs.push({row: bookings[i].tickets[j].row, chair: bookings[i].tickets[j].chair});
           }
         }
-        console.log(bookings);
       })
     })
   }

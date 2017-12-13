@@ -1,3 +1,5 @@
+import { AuthenticationService } from './../services/authentication.service';
+import { User } from './../interfaces/user.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
+
+  activeUser: User = {username: '', email: '', phoneNumber: ''};
 
   ngOnInit() {
+    this.activeUser = JSON.parse(sessionStorage.getItem('user'));
   }
-
 }
