@@ -99,7 +99,6 @@ export class BookingService {
     this.roomDimension.next({row: screening.roomId.row, seatNumber: screening.roomId.seatNumber});
     this.ticketsOfSelectedScreening.next(screening.availableTickets);
     this.bookingsOnSelectedScreening.next(screening.bookings);
-    console.log(screening.bookings);
   }
 
   setThirdStageInfoOfBooking(selectedTickets: Ticket[], paymentMethodName: string) {
@@ -112,19 +111,28 @@ export class BookingService {
     return this.http.get('http://localhost:8080/booking/tickets?screeningId=' + screeningId).map((response: Response) => response.json().data[0].tickets);
   }
 
-  saveBookingInDatabase(selectedChairs: Chair[]) {
-    let params = new URLSearchParams();
-    params.append("tickets", JSON.parse(sessionStorage.getItem('user')).getUsername());
-    params.append("tickets", this.selectedPaymentMethodName);
+  saveBookingInDatabase(selectedChairs: Chair[], screeningId: number) {
+    let bookingTypes = [];
     for (let i = 0; i < this.selectedTickets.length; i++) {
-      params.append("tickets", this.selectedTickets[i].ticket.type);
-      params.append("tickets", selectedChairs[i].row.toString());
-      params.append("tickets", selectedChairs[i].chair.toString());
+      bookingTypes.push({ticketType: this.selectedTickets[i].ticket.type,
+                         row: selectedChairs[i].row.toString(),
+                         chair: selectedChairs[i].chair.toString()});
     }
-    console.log(params);
 
-    return this.http.get('http:localhost:8080/booking/new_booking', {params: params}).map((response: Response) => {
-      response.json();
+    let newBooking = {
+                      screeningId: screeningId,
+                      username: this.authService.getUsername(),
+                      paymentMethod: this.selectedPaymentMethodName,
+                      bookings: bookingTypes
+                     }
+    console.log(newBooking);
+
+    let bookingPromise = this.http.post('http://localhost:8080/booking/new_booking', newBooking).toPromise();
+
+    bookingPromise.then((response: Response) => {
+      return response.json();
+    }).then((response) => {
+      console.log(response);
     })
   }
 }

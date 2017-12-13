@@ -28,6 +28,10 @@ export class RoomStructureComponent implements OnInit {
       this.selectedTicketsCount = count;
     })
 
+    this.bookingService.getSelectedScreeningId().subscribe((selectedScreeningId: number) => {
+      this.selectedScreeningId = selectedScreeningId;
+    })
+
     this.bookingService.getRoomDimension().subscribe((roomDimension: RoomDimension) => {
       this.roomDimension = roomDimension;
       this.rows = Array(this.roomDimension.row).fill(0).map((x,i)=>i + 1);
@@ -85,6 +89,6 @@ export class RoomStructureComponent implements OnInit {
   }
 
   saveBookingInDatabase() {
-    this.bookingService.saveBookingInDatabase(this.selectedChairs);
+    this.bookingService.saveBookingInDatabase(this.selectedChairs, this.selectedScreeningId);
   }
 }
