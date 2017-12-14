@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  isAdminUser: boolean = true;
+  isAdminUser: boolean = false;
 
   constructor(private authService: AuthenticationService) { }
 
@@ -17,5 +17,10 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.activeUser = JSON.parse(sessionStorage.getItem('user'));
+    this.isAdminUser = this.activeUser.adminRight;
+    this.authService.getActiveUser().subscribe((user: User) => {
+        this.isAdminUser = user.adminRight;
+    })
+    
   }
 }

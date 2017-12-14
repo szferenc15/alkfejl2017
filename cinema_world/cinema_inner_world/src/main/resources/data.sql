@@ -26,7 +26,7 @@ INSERT INTO user(username, password, email, phone_number, admin_right)
 INSERT INTO user(username, password, email, phone_number, admin_right) 
          VALUES ('almafa', 'almafa', 'almafa@barackfa.fa', '06302003005', false);
 INSERT INTO user(username, password, email, phone_number, admin_right) 
-         VALUES ('admin', 'admin', 'admin@barackfa.fa', '06302003010', true);
+         VALUES ('admin', 'Dr123$,.-', 'admin@barackfa.fa', '06302003010', true);
 
 -- Film data:
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
@@ -34,7 +34,7 @@ INSERT INTO film(picture, title, language, play_time, premiere, age_limit, direc
                  'A Star Wars: Az utolso Jedikben a Skywalker saga folytatodik.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/paddington2.jpg', 'Paddington 2', 'angol', 103, '2017-11-30', 6, 'Paul', 'King', 'UK', 2017, 4,
+         VALUES ('../../assets/paddington2.jpg', 'Paddington 2', 'angol', 103, '2017-11-30', 6, 'Paul', 'King', 'UK', 2017, 3,
                  'Mindenki kedvenc macija, a dedelgetni valo Paddington boldogan eldegel a Brown csaladdal Windsor Gardensben.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
@@ -42,15 +42,15 @@ INSERT INTO film(picture, title, language, play_time, premiere, age_limit, direc
                  'Aki mindig egy lepessel a rendorseg elott jart. Es aki minden bankrablasa elott megivott egy pohar viszkit.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/coco.jpg', 'Coco', 'angol', 120, '2017-11-23', 6, 'Lee', 'Unkrich', 'USA', 2017, 4,
+         VALUES ('../../assets/coco.jpg', 'Coco', 'angol', 120, '2017-11-23', 6, 'Lee', 'Unkrich', 'USA', 2017, 5,
                  'Annak ellenere, hogy csaladja osidok ota megveti a zenet, Miguel arrol abrandozik, hogy egyszer neves muzsikus lesz.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/justice_league.jpg', 'Az igazsag ligaja', 'angol', 121, '2017-11-16', 12, 'Zack', 'Snyder', 'USA', 2017, 4,
+         VALUES ('../../assets/justice_league.jpg', 'Az igazsag ligaja', 'angol', 121, '2017-11-16', 12, 'Zack', 'Snyder', 'USA', 2017, 3,
                  'Bruce Wayne tudja, hogy nem vonulhat vissza. A vilagnak szuksege van ra, es a hozza hasonlokra.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/happy_death.jpg', 'Boldog halalnapot!', 'angol', 96, '2017-11-16', 16, 'Christopher', 'Landon', 'USA', 2017, 4,
+         VALUES ('../../assets/happy_death.jpg', 'Boldog halalnapot!', 'angol', 96, '2017-11-16', 16, 'Christopher', 'Landon', 'USA', 2017, 5,
                  'Tree csodalatosan bekepzelt teremtes, aki egyetlen embert szeret feltetel nelkul: sajat magat.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
@@ -58,15 +58,15 @@ INSERT INTO film(picture, title, language, play_time, premiere, age_limit, direc
                  'Az Isztambulbol Parizsba tarto luxusvonat utasai mindig kulonleges emberek.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/badmoms_xmas.jpg', 'Rossz anyak karacsonya', 'angol', 104, '2017-11-09', 16, 'Scott', 'Moore', 'USA', 2017, 4,
+         VALUES ('../../assets/badmoms_xmas.jpg', 'Rossz anyak karacsonya', 'angol', 104, '2017-11-09', 16, 'Scott', 'Moore', 'USA', 2017, 3,
                  'Mikor minden pillanat csupa orom es boldogsag... na, ilyenkor kothetik csak fel igazan a gatyajukat az anyukak.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/thor_ragnarok.jpg', 'Thor: Ragnarok', 'angol', 131, '2017-11-01', 12, 'Taika', 'Waititi', 'USA', 2017, 4,
+         VALUES ('../../assets/thor_ragnarok.jpg', 'Thor: Ragnarok', 'angol', 131, '2017-11-01', 12, 'Taika', 'Waititi', 'USA', 2017, 5,
                  'A Marvel Studios uj filmjeben Thort porolyetol megfosztva bebortonzik az univerzum tulso felen.');
 
 INSERT INTO film(picture, title, language, play_time, premiere, age_limit, director_first_name, director_last_name, country, year, rate, description) 
-         VALUES ('../../assets/jungle.jpg', 'Dzsungel', 'angol', 125, '2017-10-26', 12, 'Greg', 'McLean', 'Ausztralia', 2017, 4,
+         VALUES ('../../assets/jungle.jpg', 'Dzsungel', 'angol', 125, '2017-10-26', 12, 'Greg', 'McLean', 'Ausztralia', 2017, 5,
                  'A valas esemenyeken alapulo tortenet a civilizalt eletre raunó, 22 eves Yossi utjat koveti');
 
 -- Cinema-film join table:
