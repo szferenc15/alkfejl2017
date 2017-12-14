@@ -127,4 +127,11 @@ public class User {
     public String getUsername() {
         return username;
     }
+
+    /**
+     * @return the adminRight
+     */
+    public boolean isAdminRight() {
+        return adminRight;
+    }
 }
