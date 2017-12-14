@@ -49,8 +49,6 @@ export class FilmInfoComponent implements OnInit {
   setZeroAndFirstStageInfoOfBooking(film: Film) {
     this.bookingService.seIsFromFilmInfoConstant(true);
     this.router.navigateByUrl('/booking');
-    console.log("???")
-    console.log(film)
     setTimeout(() => {
       this.bookingService.setZeroStageInfoOfBooking(film);
       this.bookingService.setFirstStageInfoOfBooking(this.selectedCinema);

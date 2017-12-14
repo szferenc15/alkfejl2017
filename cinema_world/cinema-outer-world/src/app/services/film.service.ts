@@ -20,7 +20,6 @@ export class FilmService {
   }
 
   setActualFilmsOfCinema(cinema: Cinema) {
-    console.log(cinema)
     return this.actualFilmsOfCinema.next(cinema.films);
   }
 

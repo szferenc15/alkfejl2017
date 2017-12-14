@@ -163,7 +163,6 @@ export class BookingService {
                       paymentMethod: this.selectedPaymentMethodName,
                       bookings: bookingTypes
                      }
-    console.log(newBooking);
 
     let bookingPromise = this.http.post('http://localhost:8080/booking/new_booking', newBooking).toPromise();
 

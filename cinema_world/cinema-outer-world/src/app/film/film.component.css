@@ -63,3 +63,8 @@ mat-form-field {
 .cinema-info-snd-td {
   width: 50%;
 }
+
+.title {
+  color: #dd000f;
+  font-variant: small-caps;
+}

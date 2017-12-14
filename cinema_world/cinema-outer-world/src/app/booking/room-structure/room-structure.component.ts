@@ -38,7 +38,6 @@ export class RoomStructureComponent implements OnInit {
       this.columns = Array(this.roomDimension.seatNumber).fill(0).map((x,i)=>i + 1);
 
       this.bookingService.getBookingsOnSelectedScreening().subscribe((bookings: Booking[]) => {
-        console.log(bookings);
         for (let i = 0; i < bookings.length; i++) {
           for (let j = 0; j < bookings[i].tickets.length; j++) {
             this.occupiedChairs.push({row: bookings[i].tickets[j].row, chair: bookings[i].tickets[j].chair});

@@ -1,4 +1,8 @@
-<div *ngIf="loaded">
+
+    <div *ngIf="cinemas.length == 0" class="title" align="center">
+          Sajnos ezt a filmet nem vetítik egyik moziban sem!
+      </div>
+<div *ngIf="loaded && cinemas.length > 0">
   <div class="container">
     <div class="row information padding-left-20">
       <ng-content></ng-content>
@@ -72,11 +76,11 @@
           <mat-card class="cinema-info-card">
             <table class="cinema-info-table">
               <tr>
-                <td class="cinema-picture-td" rowspan="7">
-                  <img src="../../assets/star_wars_the_last_jedi.jpg"
+                <td class="cinema-picture-td pr-5" rowspan="7">
+                  <img src="../../assets/cinema.jpg"
                       alt="Cinema"
                       height="150"
-                      width="100"/>
+                      width="150"/>
                 </td>
                 <td class="cinema-info-fst-td"><b>Név</b>:</td>
                 <td class="cinema-info-snd-td">{{ cinema.name }} </td>

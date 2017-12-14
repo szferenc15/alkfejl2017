@@ -6,7 +6,7 @@ export class TicketService {
   constructor(private http: Http) {}
 
   updateTicket(type: string, price: number) {
-    let updatePromise = this.http.patch('http://localhost:8080/world/ticket/update?type=' + type + '&price=' + price).toPromise()
+    let updatePromise = this.http.patch('http://localhost:8080/world/ticket/update?type=' + type + '&price=' + price, null).toPromise()
 
     updatePromise.then((response: Response)=> {
       return response.json();
