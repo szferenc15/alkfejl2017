@@ -5,6 +5,8 @@ import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
 import java.util.ArrayList;
 import java.util.HashSet;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -85,7 +87,7 @@ public class Film {
     // END OF DEFAULT COLUMNS
 
     @JsonManagedReference()
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "films", fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "films", fetch = FetchType.EAGER)
     private Set<Cinema> cinemas = new HashSet<>();
 
     @JsonManagedReference
@@ -96,7 +98,7 @@ public class Film {
     )
     private List<FilmCategory> categories = new ArrayList<>();
     
-    @JsonManagedReference
+    @JsonBackReference
     @OneToMany(
         mappedBy = "filmTitle",
         cascade = CascadeType.ALL, 

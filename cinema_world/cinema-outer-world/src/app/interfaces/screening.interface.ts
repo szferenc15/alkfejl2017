@@ -20,6 +20,7 @@ export interface Screening {
   inscriptive?: boolean;
   screenDay?: Date;
   screenTime?: Time;
+  filmTitle?: string;
   roomId: Room;
   availableTickets?: Ticket[];
   bookings?: Booking[];

@@ -30,7 +30,7 @@ public class Booking {
     private long id;
 
     @JsonBackReference()
-    @ManyToMany(mappedBy = "bookings", fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "bookings", fetch = FetchType.EAGER)
     private Set<User> users = new HashSet<>();
     
     @JsonBackReference()

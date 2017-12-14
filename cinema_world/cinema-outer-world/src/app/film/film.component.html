@@ -8,7 +8,7 @@
           <form [formGroup]="cinemaSearchForm" (ngSubmit)="cinemaSearchSubmit()">
             <mat-form-field (click)="setFormToDefault()">
               <mat-select formControlName="country" placeholder="Ország">
-                <mat-option *ngFor="let cinema of cinemas | uniqueFilter"
+                <mat-option *ngFor="let cinema of cinemas | uniqueFilter:'country'"
                             value="{{ cinema.country }}"
                             (click)="setCinemasFilteredOfCountry(cinema.country)">
                             {{ cinema.country }}
@@ -18,7 +18,7 @@
 
             <mat-form-field class="pl-4">
               <mat-select formControlName="city" placeholder="Város">
-                <mat-option *ngFor="let cinema of cinemasFilteredOfCountry | uniqueFilter"
+                <mat-option *ngFor="let cinema of cinemasFilteredOfCountry | uniqueFilter:'city'"
                             value="{{ cinema.city }}"
                             (click)="setCinemasFilteredOfCity(cinema.city)">
                             {{ cinema.city }}
@@ -28,7 +28,7 @@
 
             <mat-form-field class="pl-4">
               <mat-select formControlName="district" placeholder="Kerület">
-                <mat-option *ngFor="let cinema of cinemasFilteredOfCity | uniqueFilter"
+                <mat-option *ngFor="let cinema of cinemasFilteredOfCity | uniqueFilter:'district'"
                             value="{{ cinema.district }}"
                             (click)="setCinemasFilteredOfDistrict(cinema.district)">
                             {{ cinema.district }}

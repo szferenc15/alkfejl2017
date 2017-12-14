@@ -23,6 +23,7 @@ export class BookingService {
   roomDimension: Subject<RoomDimension> = new Subject<RoomDimension>();
   bookingsOnSelectedScreening: Subject<Booking[]> = new Subject<Booking[]>();
   selectedTickets: Ticket[] = [];
+  selectedFilmTitle: string = '';
   selectedPaymentMethodName: string = '';
   amenitiesChargeOfSelectedCinema: number = 0;
 
@@ -39,6 +40,10 @@ export class BookingService {
 
   getSelectedFilmName() {
     return this.selectedFilmName;
+  }
+
+  getSelectedFilmTitle() {
+    return this.selectedFilmTitle;
   }
 
   getSelectedCinemaName() {
@@ -83,13 +88,21 @@ export class BookingService {
 
   setZeroStageInfoOfBooking(film: Film) {
     this.selectedFilmName.next(film.title);
-    this.cinemasOfSelectedFilm.next(film.cinemas);
+    this.selectedFilmTitle = film.title;
+    let nonEmptyCinemasOfFilm = film.cinemas.filter((cinema: Cinema) => {
+      for (let i = 0; i < cinema.screenings.length; i++) {
+        return cinema.screenings[i].filmTitle === film.title;
+      }
+    })
+    console.log(nonEmptyCinemasOfFilm)
+    this.cinemasOfSelectedFilm.next(nonEmptyCinemasOfFilm);
     this.ageLimit.next(film.ageLimit);
   }
 
   setFirstStageInfoOfBooking(cinema: Cinema) {
     this.selectedCinemaName.next(cinema.name);
     this.amenitiesChargeOfSelectedCinema = cinema.amenitiesCharge;
+    console.log(cinema.screenings)
     this.screeningsOfSelectedCinema.next(cinema.screenings);
   }
 
@@ -109,6 +122,11 @@ export class BookingService {
 
   getOccupiedChairs(screeningId: string): Observable<Chair[]> {
     return this.http.get('http://localhost:8080/booking/tickets?screeningId=' + screeningId).map((response: Response) => response.json().data[0].tickets);
+  }
+
+
+  getFilmsOfCinema(film: Film) {
+    return this.http.get('http://localhost:8080/world/cinema_by_film_title').map((response: Response) => console.log(response));
   }
 
   saveBookingInDatabase(selectedChairs: Chair[], screeningId: number) {

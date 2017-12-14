@@ -28,7 +28,7 @@
 
           <mat-form-field class="pl-4">
             <mat-select formControlName="screeningDay" placeholder="Vetítés napja">
-              <mat-option *ngFor="let screening of screeningsFilteredOfDimension | uniqueFilter"
+              <mat-option *ngFor="let screening of screeningsFilteredOfDimension | uniqueFilter:'screenDay'"
                           value="{{ screening.screenDay | date:'yyyy.MM.dd' }}"
                           (click)="setScreeningsFilteredOfScreenDay(screening.screenDay)">
                           {{ screening.screenDay | date:'yyyy.MM.dd' }}
@@ -38,7 +38,7 @@
 
           <mat-form-field class="pl-4">
             <mat-select formControlName="screeningTime" placeholder="Vetítés időpontja">
-              <mat-option *ngFor="let screening of screeningsFilteredOfScreenDay | uniqueFilter"
+              <mat-option *ngFor="let screening of screeningsFilteredOfScreenDay | uniqueFilter:'screenTime'"
                           value="{{ screening.screenTime | time }}"
                           (click)="setScreeningsFilteredOfScreenTime(screening.screenTime)">
                           {{ screening.screenTime | time }}

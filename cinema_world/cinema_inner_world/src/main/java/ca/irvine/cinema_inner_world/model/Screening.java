@@ -72,7 +72,7 @@ public class Screening {
     @JoinColumn(name = "room_id")
     private Room roomId;
 
-    @JsonBackReference()
+    @JsonManagedReference()
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "film_title")
     private Film filmTitle;
@@ -117,8 +117,8 @@ public class Screening {
     /**
      * @return the filmTitle
      */
-    public Film getFilmTitle() {
-        return filmTitle;
+    public String getFilmTitle() {
+        return filmTitle.getTitle();
     }
 
     /**
