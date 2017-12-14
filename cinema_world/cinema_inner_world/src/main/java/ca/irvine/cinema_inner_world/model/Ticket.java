@@ -3,7 +3,6 @@ package ca.irvine.cinema_inner_world.model;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
@@ -16,7 +15,6 @@ public class Ticket {
 
     @Id
     @Size(min = 1, max = 30)
-    @Column(insertable = false, updatable = false, nullable = false) 
     private String type;
 
     @Range(min = 0)
@@ -36,5 +34,12 @@ public class Ticket {
      */
     public short getPrice() {
         return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(short price) {
+        this.price = price;
     }
 }

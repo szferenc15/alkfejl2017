@@ -84,7 +84,7 @@
                   <button class="btn btn-dark"
                           *ngIf="!inStepper"
                           mat-raised-button
-                          (click)="getActualFilmsOfCinema(cinema.name); setFirstStageInfoOfBooking(cinema)">
+                          (click)="getActualFilmsOfCinema(cinema);">
                           Aktuális filmek
                   </button>
                   <button class="btn btn-dark"
@@ -127,5 +127,6 @@
     </div>
   </div>
 
-  <app-film-info [showFilms]="showFilms" [selectedCinema]="selectedCinema"></app-film-info>
+  <app-film-info [showFilms]="showFilms"
+                 [selectedCinema]="selectedCinema" ></app-film-info>
 </div>

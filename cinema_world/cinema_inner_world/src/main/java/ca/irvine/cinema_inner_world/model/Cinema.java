@@ -35,7 +35,6 @@ public class Cinema {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(insertable = false, updatable = false, nullable = false) 
     private long id;
 
     @Column(columnDefinition = "VARCHAR2(50) NOT NULL")
@@ -62,7 +61,7 @@ public class Cinema {
 
     // END OF DEFAULT COLUMNS
 
-    @JsonBackReference()
+    @JsonManagedReference()
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "cinema_film",
         joinColumns = @JoinColumn(name = "cinema_id", referencedColumnName = "id"),

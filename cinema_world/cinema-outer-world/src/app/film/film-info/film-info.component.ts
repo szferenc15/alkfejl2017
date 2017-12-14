@@ -1,3 +1,6 @@
+import { Cinema } from './../../interfaces/cinema.interface';
+import { BookingService } from './../../services/booking.service';
+import { Router } from '@angular/router';
 import { Film } from './../../interfaces/film.interface';
 import { FilmService } from './../../services/film.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -12,8 +15,9 @@ import { MatSort } from '@angular/material';
   styleUrls: ['./film-info.component.css']
 })
 export class FilmInfoComponent implements OnInit {
-  @Input() selectedCinema = '';
+  @Input() selectedCinemaName = '';
   @Input() showFilms = false;
+  @Input() selectedCinema: Cinema = null;
 
   @ViewChild(MatSort) filmSort: MatSort;
 
@@ -30,13 +34,27 @@ export class FilmInfoComponent implements OnInit {
 
   filmSubscription: Subscription;
 
-  constructor(private filmService: FilmService) { }
+  constructor(private filmService: FilmService,
+              private bookingService: BookingService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.filmSubscription = this.filmService.getFilms().subscribe((films: Film[]) => {
+    this.filmSubscription = this.filmService.getActualFilmsOfCinema().subscribe((films: Film[]) => {
       this.filmDataSource = new MatTableDataSource<Film>(films);
       this.filmDataSource.sort = this.filmSort;
       this.loaded = true;
     })
+  }
+
+  setZeroAndFirstStageInfoOfBooking(film: Film) {
+    this.bookingService.seIsFromFilmInfoConstant(true);
+    this.router.navigateByUrl('/booking');
+    console.log("???")
+    console.log(film)
+    setTimeout(() => {
+      this.bookingService.setZeroStageInfoOfBooking(film);
+      this.bookingService.setFirstStageInfoOfBooking(this.selectedCinema);
+      this.bookingService.setIsFromFilmInfo(true);
+    }, 0);
   }
 }

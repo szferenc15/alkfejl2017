@@ -7,6 +7,7 @@ import { Subject } from 'rxjs/Rx';
 export class AuthenticationService {
 
     activeUser: Subject<User> = new Subject<User>();
+    hasActiveUser: Subject<boolean> = new Subject<boolean>();
     activeUsername: string = null;
 
     constructor(private http: Http) { }
@@ -20,13 +21,23 @@ export class AuthenticationService {
       }).then((response) => {
         let user: User = response.data;
         this.activeUser.next(user);
+        this.hasActiveUser.next(true);
         this.activeUsername = user.username;
         sessionStorage.setItem('user', JSON.stringify(user));
       })
     }
 
+    logout() {
+      sessionStorage.clear();
+      this.hasActiveUser.next(false);
+    }
+
     isLoggedIn(): boolean {
         return sessionStorage.getItem('user') != null;
+    }
+
+    getHasActiveUser() {
+      return this.hasActiveUser;
     }
 
     getActiveUser() {

@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  isAdminUser: boolean = true;
+
   constructor(private authService: AuthenticationService) { }
 
   activeUser: User = {username: '', email: '', phoneNumber: ''};

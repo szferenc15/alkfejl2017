@@ -1,5 +1,7 @@
 
-<div class="container">
+<div class="title" *ngIf="screenings.length == 0" align="center">Sajnos nem érthető el vetítés ehhez a filmhez!</div>
+
+<div *ngIf="screenings.length > 0" class="container">
   <div class="row information padding-left-20">
     <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="center">
       <div class="type-date-search-field">

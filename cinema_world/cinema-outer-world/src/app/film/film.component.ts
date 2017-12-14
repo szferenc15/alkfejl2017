@@ -1,3 +1,4 @@
+import { FilmService } from './../services/film.service';
 import { BookingService } from './../services/booking.service';
 import { CinemaService } from '../services/cinema.service';
 import { Cinema } from './../interfaces/cinema.interface';
@@ -22,7 +23,7 @@ export class FilmComponent implements OnInit {
   hasDistrict: boolean = true;
   loaded: boolean = false;
 
-  selectedCinema: string = '';
+  selectedCinema: Cinema = null;
 
   cinemas: Cinema[] = [];
   cinemasFilteredOfCountry: Cinema[] = [];
@@ -41,7 +42,8 @@ export class FilmComponent implements OnInit {
   });
 
   constructor(private cinemaService: CinemaService,
-              private bookingService: BookingService) { }
+              private bookingService: BookingService,
+              private filmService: FilmService) { }
 
   ngOnInit() {
     if (this.inStepper) {
@@ -146,8 +148,9 @@ export class FilmComponent implements OnInit {
     this.showCinemas = true;
   }
 
-  getActualFilmsOfCinema(cinemaName: string) {
-    this.selectedCinema = cinemaName;
+  getActualFilmsOfCinema(cinema: Cinema) {
+    this.selectedCinema = cinema;
+    this.filmService.setActualFilmsOfCinema(cinema);
     this.showFilms = true;
   }
 

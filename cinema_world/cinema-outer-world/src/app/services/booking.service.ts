@@ -26,6 +26,8 @@ export class BookingService {
   selectedFilmTitle: string = '';
   selectedPaymentMethodName: string = '';
   amenitiesChargeOfSelectedCinema: number = 0;
+  isFromFilmInfoSubject: Subject<boolean> = new Subject<boolean>();
+  isFromFilmInfo: boolean = false;
 
   constructor(private http: Http,
               private authService: AuthenticationService) { }
@@ -94,7 +96,6 @@ export class BookingService {
         return cinema.screenings[i].filmTitle === film.title;
       }
     })
-    console.log(nonEmptyCinemasOfFilm)
     this.cinemasOfSelectedFilm.next(nonEmptyCinemasOfFilm);
     this.ageLimit.next(film.ageLimit);
   }
@@ -102,8 +103,10 @@ export class BookingService {
   setFirstStageInfoOfBooking(cinema: Cinema) {
     this.selectedCinemaName.next(cinema.name);
     this.amenitiesChargeOfSelectedCinema = cinema.amenitiesCharge;
-    console.log(cinema.screenings)
-    this.screeningsOfSelectedCinema.next(cinema.screenings);
+    let properScreenings = cinema.screenings.filter((screening: Screening) => {
+        return screening.filmTitle === this.selectedFilmTitle;
+    })
+    this.screeningsOfSelectedCinema.next(properScreenings);
   }
 
   setSecondStageInfoOfBooking(screening: Screening) {
@@ -118,6 +121,23 @@ export class BookingService {
     this.selectedTickets = selectedTickets;
     this.selectedTicketsCount.next(this.selectedTickets.length);
     this.selectedPaymentMethodName = paymentMethodName;
+  }
+
+  getIsFromFilmInfo() {
+    return this.isFromFilmInfoSubject;
+  }
+
+  getIsFromFilmInfoConstant() {
+    return this.isFromFilmInfo;
+  }
+
+  seIsFromFilmInfoConstant(isFromFilmInfo: boolean) {
+    this.isFromFilmInfo = isFromFilmInfo;
+  }
+
+  setIsFromFilmInfo(isFrom: boolean) {
+    this.isFromFilmInfoSubject.next(isFrom);
+    this.isFromFilmInfo = isFrom;
   }
 
   getOccupiedChairs(screeningId: string): Observable<Chair[]> {

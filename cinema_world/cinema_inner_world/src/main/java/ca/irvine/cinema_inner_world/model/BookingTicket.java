@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.Range;
 import lombok.AllArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,7 +27,6 @@ public class BookingTicket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(insertable = false, updatable = false, nullable = false) 
     private long id;
 
     @Column(columnDefinition = "VARCHAR2(20) NOT NULL DEFAULT 'BOOKING'")
@@ -42,17 +41,17 @@ public class BookingTicket {
     // END OF DEFAULT COLUMNS
 
     @JsonBackReference()
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "booking_id")
     private Booking bookingId;
 
     @JsonManagedReference()
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ticket_type", referencedColumnName = "type")
     private Ticket ticketType;
 
     @JsonBackReference()
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "username", referencedColumnName = "username")
     private User username;
 

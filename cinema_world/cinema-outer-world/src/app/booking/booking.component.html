@@ -1,6 +1,6 @@
 <mat-horizontal-stepper linear>
 
-  <mat-step editable="false" label="Válaszd ki a mozit">
+  <mat-step *ngIf="!isFromFilmInfo" editable="false" label="Válaszd ki a mozit">
     <app-booking-info></app-booking-info>
     <form>
       <app-film [inStepper]="true"></app-film>

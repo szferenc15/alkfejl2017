@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   films: Film[] = null;
   activeFilms: Film[] = null;
 
-  isLoggedIn: boolean = false;
+  hasLoggedInUser: boolean = false;
   loaded: boolean = false;
 
   filmSubscription: Subscription;
@@ -46,8 +46,12 @@ export class HomeComponent implements OnInit, OnDestroy {
       ];
       this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
       this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0].url);
-      this.isLoggedIn = this.authService.isLoggedIn();
+      this.hasLoggedInUser = this.authService.isLoggedIn();
       this.loaded = true;
+    })
+
+    this.authService.getHasActiveUser().subscribe((hasLoggedInUser: boolean) => {
+      this.hasLoggedInUser = hasLoggedInUser;
     })
   }
 
@@ -141,8 +145,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   setZeroStageInfoOfBooking(film: Film) {
+    this.bookingService.setIsFromFilmInfo(false);
     this.router.navigateByUrl('/booking');
-    setTimeout(() => {this.bookingService.setZeroStageInfoOfBooking(film)}, 0);
+    setTimeout(() => {this.bookingService.setZeroStageInfoOfBooking(film);}, 0);
   }
 }
 

@@ -29,8 +29,7 @@ public class Screening {
     // START OF DEFAULT COLUMNS
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(insertable = false, updatable = false, nullable = false)    
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) 
     private long id;
 
     @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT TRUE")
@@ -63,17 +62,17 @@ public class Screening {
     // END OF DEFAULT COLUMNS
 
     @JsonBackReference()
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "cinema_id")
     private Cinema cinemaId;
 
     @JsonManagedReference()
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "room_id")
     private Room roomId;
 
     @JsonManagedReference()
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "film_title")
     private Film filmTitle;
 

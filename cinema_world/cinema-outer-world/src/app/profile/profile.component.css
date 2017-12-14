@@ -4,7 +4,6 @@
 
 .information {
   background-color: rgba(0, 0, 0, 0.9);
-  color: white;
   font-size: 20px;
 }
 
@@ -15,4 +14,8 @@
 
 .profile-table {
   width: 40%;
+}
+
+.color-white  {
+  color: white;
 }

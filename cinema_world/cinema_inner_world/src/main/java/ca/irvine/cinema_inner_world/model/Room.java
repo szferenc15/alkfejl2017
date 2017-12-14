@@ -27,7 +27,6 @@ public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(insertable = false, updatable = false, nullable = false) 
     private long id;
 
     @Column(columnDefinition = "VARCHAR2(20)", unique = true)
@@ -57,7 +56,7 @@ public class Room {
     // END OF DEFAULT COLUMNS
 
     @JsonBackReference()
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "cinema_id")
     private Cinema cinemaId;
 

@@ -10,9 +10,20 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav small-caps">
+        <ul *ngIf="!hasLoggedInUser" class="navbar-nav small-caps">
           <li class="nav-item pl-2" routerLinkActive="hightlighted" *ngFor="let menuPoint of rightMenu">
             <a class="nav-link stroke-single stroke-double" routerLink="{{ menuPoint.path }}">{{ menuPoint.name }}</a>
+          </li>
+        </ul>
+
+        <ul *ngIf="hasLoggedInUser" class="navbar-nav small-caps">
+          <li class="nav-item pl-2" routerLinkActive="hightlighted">
+            <a class="nav-link stroke-single stroke-double" routerLink="/profile">Profil</a>
+          </li>
+          <li class="nav-item pl-2">
+            <a class="nav-link logout stroke-single stroke-double" routerLink="/home" (click)="logout()">
+               Kijelentkezés
+            </a>
           </li>
         </ul>
 

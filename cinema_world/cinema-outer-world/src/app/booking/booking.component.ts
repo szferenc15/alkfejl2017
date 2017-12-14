@@ -1,5 +1,6 @@
+import { BookingService } from './../services/booking.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ApplicationRef } from '@angular/core';
 
 @Component({
   selector: 'app-booking',
@@ -8,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingComponent implements OnInit {
 
-  constructor() { }
+  isFromFilmInfo: boolean = false;
+
+  constructor(private bookingService: BookingService, private applicationRef: ApplicationRef) { }
 
   ngOnInit() {
+    this.isFromFilmInfo = this.bookingService.getIsFromFilmInfoConstant();
+    this.bookingService.getIsFromFilmInfo().subscribe((isFromFilmInfo: boolean) => {
+      this.isFromFilmInfo = isFromFilmInfo;
+    })
   }
 
 }

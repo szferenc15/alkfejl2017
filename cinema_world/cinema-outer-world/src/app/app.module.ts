@@ -1,3 +1,4 @@
+import { TicketService } from './services/ticket.service';
 import { RegisterService } from './services/register.service';
 import { BookingService } from './services/booking.service';
 import { TimePipe } from './pipes/time.pipe';
@@ -43,6 +44,7 @@ import { MatButtonModule, MatSortModule,
          MatStepperModule, MatDatepickerModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { BookingInfoComponent } from './booking/booking-info/booking-info.component';
+import { AdminComponent } from './profile/admin/admin.component';
 
 
 const appRoutes: Routes = [
@@ -54,7 +56,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'booking', component: BookingComponent, canActivate: [CanActivateViaAuthGuard]},
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'booking', component: BookingComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
@@ -82,7 +84,8 @@ const appRoutes: Routes = [
     RoomStructureComponent,
     SummaryComponent,
     ProfileComponent,
-    BookingInfoComponent
+    BookingInfoComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +116,8 @@ const appRoutes: Routes = [
               CinemaService,
               ScreeningService,
               BookingService,
-              RegisterService],
+              RegisterService,
+              TicketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

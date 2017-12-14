@@ -1,0 +1,109 @@
+<!--
+<form [formGroup]="newFilmFormGroup" (ngSubmit)="newFilm()">
+  <h2 class="title pb-3">Új film felvitele</h2>
+  <table class="color-white">
+    <tr>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="title" placeholder="Filmcím">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="picture" placeholder="Kép">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="language" placeholder="Eredeti nyelv">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field >
+          <input matInput formControlName="playTime" placeholder="Játékidő (perc)">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="premiere" placeholder="Premier">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="director_fname" placeholder="Rendező keresztneve">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field >
+          <input matInput formControlName="director_lname" placeholder="Rendező vezetékneve">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="country" placeholder="Ország">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field >
+          <input matInput formControlName="year" placeholder="Megjelenési év">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field>
+          <input matInput formControlName="rate" placeholder="Értékelés">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field >
+          <input matInput formControlName="description" placeholder="Leírás">
+        </mat-form-field>
+      </td>
+      <td>
+          <button class="admin-btn btn btn-dark"
+                  mat-raised-button
+                  [disabled]="newFilmFormGroup.invalid"
+                  type="submit">
+                  Felvitel
+          </button>
+      </td>
+    </tr>
+  </table>
+</form> 
+-->
+
+<form [formGroup]="ticketUpdateGroup" (ngSubmit)="updateTicket(ticketUpdateGroup.get('type').value, ticketUpdateGroup.get('price').value)">
+    <h2 class="title pb-3">Jegytípus árának megváltoztatása</h2>
+    <table>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput formControlName="type" placeholder="Típus (azonosító)">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput formControlName="price" placeholder="Új ár">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <button class="admin-btn btn btn-dark"
+                    mat-raised-button
+                    [disabled]="ticketUpdateGroup.invalid"
+                    type="submit">
+                    Változtatás
+            </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+

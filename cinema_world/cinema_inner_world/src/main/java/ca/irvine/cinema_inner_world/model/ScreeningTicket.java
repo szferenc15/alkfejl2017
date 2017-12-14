@@ -2,7 +2,7 @@ package ca.irvine.cinema_inner_world.model;
 
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -21,16 +21,15 @@ import javax.persistence.GeneratedValue;
 public class ScreeningTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(insertable = false, updatable = false, nullable = false) 
     private long id;
 
     @JsonBackReference()
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "screening_id")
     private Screening screeningId;
 
     @JsonManagedReference()
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ticket_type", referencedColumnName = "type")
     private Ticket ticket;
 

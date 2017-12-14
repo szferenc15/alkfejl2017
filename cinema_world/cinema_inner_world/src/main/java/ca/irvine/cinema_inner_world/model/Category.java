@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Entity
 public class Category {
     @Id
-    @Column(columnDefinition = "VARCHAR2(20)", insertable = false, updatable = false, nullable = false)
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String category;
 
     /**
@@ -19,5 +19,12 @@ public class Category {
      */
     public String getCategory() {
         return category;
+    }
+
+    /**
+     * @param category the category to set
+     */
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

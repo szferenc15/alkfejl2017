@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -30,7 +31,7 @@ public class Film {
     // START OF DEFAULT COLUMNS
 
     @Id
-    @Column(columnDefinition = "VARCHAR2(50)", insertable = false, updatable = false, nullable = false)
+    @Column(columnDefinition = "VARCHAR2(50)")
     private String title;
 
     @Column(columnDefinition = "VARCHAR2(50)")
@@ -38,21 +39,6 @@ public class Film {
 
     @Column(columnDefinition = "VARCHAR2(30) NOT NULL")
     private String language;
-
-    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT TRUE")
-    private boolean synchron;
-
-    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
-    private boolean inscriptive;
-
-    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
-    private boolean imax;
-
-    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
-    private boolean threeDimensional;
-
-    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT FALSE")
-    private boolean fourDimensional;
 
     @Range(min = 1, max = 300)
     private short playTime;
@@ -78,7 +64,7 @@ public class Film {
 
     @DecimalMax("5.00")
     @DecimalMin("0.00")
-    @Column(columnDefinition = "DECIMAL DEFAULT NULL", precision = 2, insertable = false)
+    @Column(columnDefinition = "DECIMAL DEFAULT NULL", precision = 2)
     private BigDecimal rate;
 
     @Column(columnDefinition = "VARCHAR2(500) DEFAULT NULL")
@@ -86,7 +72,7 @@ public class Film {
 
     // END OF DEFAULT COLUMNS
 
-    @JsonManagedReference()
+    @JsonIgnoreProperties("films")
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "films", fetch = FetchType.EAGER)
     private Set<Cinema> cinemas = new HashSet<>();
 

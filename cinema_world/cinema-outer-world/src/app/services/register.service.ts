@@ -11,7 +11,6 @@ export class RegisterService {
     constructor(private http: Http) { }
 
     register(username: string, password: string, email: string, phoneNumber: string) {
-      console.log(username)
       let new_user = { username: username, password: password, email: email, phoneNumber: phoneNumber }
       let registerPromise = this.http.post('http://localhost:8080/user/register', new_user).toPromise()
 

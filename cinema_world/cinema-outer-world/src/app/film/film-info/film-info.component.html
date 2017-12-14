@@ -1,7 +1,7 @@
 <div class="container" *ngIf="loaded && showFilms == true">
   <div class="row padding-left-20 information">
     <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-3" align="center">
-      <h2 class="title pb-3"><b>{{ selectedCinema }}</b> mozi aktuális filmjei</h2>
+      <h2 class="title pb-3"><b>{{ selectedCinema.name }}</b> mozi aktuális filmjei</h2>
 
       <mat-table [dataSource]="filmDataSource" matSort>
         <ng-container matColumnDef="title">
@@ -56,7 +56,13 @@
 
         <ng-container matColumnDef="booking">
             <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 11%;">Foglalás</mat-header-cell>
-            <mat-cell *matCellDef="let row" style="flex: 0 0 11%;"><button class="btn btn-dark" mat-raised-button>Foglalás</button></mat-cell>
+            <mat-cell *matCellDef="let row" style="flex: 0 0 11%;">
+              <button class="btn btn-dark"
+                      mat-raised-button
+                      (click)="setZeroAndFirstStageInfoOfBooking(row)">
+                      Foglalás
+              </button>
+            </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="filmColumns"></mat-header-row>

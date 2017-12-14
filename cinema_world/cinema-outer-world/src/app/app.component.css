@@ -146,3 +146,8 @@ nav li {
   background: url('../assets/login_bg.jpg');
   background-size: cover;
 }
+
+.logout {
+  color: white;
+  cursor: pointer;
+}
