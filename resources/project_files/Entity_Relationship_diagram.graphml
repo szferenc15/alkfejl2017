@@ -21,10 +21,10 @@
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="60.009765625" x="59.9951171875" y="4.0">BOOKING</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="167.734375" x="2.0" y="30.701171875">P ID                        BIGINT
-F SCREENING_ID BIGINT
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="168.021484375" x="2.0" y="30.701171875">P ID                              BIGINT
+F SCREENING_ID       BIGINT
 
-FK_BOOK_SC_ID=SK_SC_ID
+FK_BOOK_SC_ID=PK_SC_ID
 <y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -41,7 +41,7 @@ FK_BOOK_SC_ID=SK_SC_ID
     <node id="n1">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="289.8865478119935" width="278.60858995137755" x="497.4918962722852" y="46.76499189627227"/>
+          <y:Geometry height="289.8865478119935" width="278.60858995137755" x="486.92642490545654" y="46.76499189627227"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="75.34375" x="101.63241997568878" y="4.000000000000007">SCREENING</y:NodeLabel>
@@ -59,9 +59,9 @@ F CINEMA_ID                    BIGINT
 F ROOM_ID                       BIGINT
 F FILM_TITLE                    VARCHAR2(50)
 
-FK_SC_CIN_ID=SK_CIN_ID
-FK_SC_ROOM_ID=SK_ROOM_ID
-FK_SC_FI_TI=SK_FI_TI<y:LabelModel>
+FK_SC_CIN_ID=PK_CIN_ID
+FK_SC_ROOM_ID=PK_ROOM_ID
+FK_SC_FI_TI=PK_FI_TI<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -77,11 +77,11 @@ FK_SC_FI_TI=SK_FI_TI<y:LabelModel>
     <node id="n2">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="93.0" width="175.0" x="-39.491896272285196" y="300.0119757494864"/>
+          <y:Geometry height="93.0" width="194.58614973262047" x="-60.89376368316586" y="174.11625382435273"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="71.341796875" x="51.8291015625" y="4.0">CATEGORY</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="172.703125" x="2.0" y="30.701171875">P CATEGORY VARCHAR2(20)<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="71.341796875" x="61.622176428810235" y="4.0">CATEGORY</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="189.373046875" x="2.0" y="30.701171875">P CATEGORY      VARCHAR2(20)<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -97,18 +97,18 @@ FK_SC_FI_TI=SK_FI_TI<y:LabelModel>
     <node id="n3">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="164.0" width="240.0" x="191.625" y="376.3403565640195"/>
+          <y:Geometry height="164.0" width="240.0" x="191.625" y="386.0840998795275"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="50.669921875" x="94.6650390625" y="4.0">CINEMA</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="121.609375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="222.044921875" x="2.0" y="30.701171875">P ID BIGINT
-   COUNTRY                  VARCHAR2(50)
-   CITY                            VARCHAR2(30)
-   DISTRICT                   VARCHAR2(8)
-   STREET                      VARCHAR2(50)
-   HOUSE_NUMBER      TINYINT
-   NAME                          VARCHAR2(20)
-   AMENITIES CHARGE SMALLINT<y:LabelModel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="121.609375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="235.380859375" x="2.0" y="30.701171875">P ID                                    BIGINT
+   COUNTRY                      VARCHAR2(50)
+   CITY                                VARCHAR2(30)
+   DISTRICT                       VARCHAR2(8)
+   STREET                          VARCHAR2(50)
+   HOUSE_NUMBER         TINYINT
+   NAME                              VARCHAR2(20)
+   AMENITIES CHARGE    SMALLINT<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -124,16 +124,16 @@ FK_SC_FI_TI=SK_FI_TI<y:LabelModel>
     <node id="n4">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="125.0" width="191.25" x="-47.6168962722852" y="112.27653970826577"/>
+          <y:Geometry height="125.0" width="191.25" x="-59.22568881685562" y="-6.214436227563112"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="105.349609375" x="42.9501953125" y="4.0">FILM_CATEGORY</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="92.20703125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="182.3828125" x="2.0" y="30.701171875">P ID BIGINT
-F FILM_TITLE VARCHAR2(50)
-F CATEGORY VARCHAR2(20)
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="92.20703125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="188.69921875" x="2.0" y="30.701171875">P ID                      BIGINT
+F FILM_TITLE      VARCHAR2(50)
+F CATEGORY      VARCHAR2(20)
 
-FK_FI_CAT_FI_TITLE=SK_FI_TI
-FK_FI_CAT_CAT=SK_CAT_CAT<y:LabelModel>
+FK_FI_CAT_FI_TITLE=PK_FI_TI
+FK_FI_CAT_CAT=PK_CAT_CAT<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -149,29 +149,22 @@ FK_FI_CAT_CAT=SK_CAT_CAT<y:LabelModel>
     <node id="n5">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="323.75" width="266.0" x="181.7581037277148" y="12.901539708265787"/>
+          <y:Geometry height="224.375" width="266.0" x="188.94917413480795" y="-55.90193622756311"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="31.333984375" x="117.3330078125" y="4.0">FILM</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="283.322265625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="256.052734375" x="2.0" y="30.701171875">P TITLE                                  VARCHAR2(50)
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="180.4140625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="256.052734375" x="2.0" y="30.701171875">P TITLE                                  VARCHAR2(50)
+   PICTURE                            VARCHAR2(50)
    LANGUAGE                        VARCHAR2(30)
-   SYNCHRON                        BOOLEAN
-   INSCRIPTIVE                      BOOLEAN
-   IMAX                                    BOOLEAN
-   THREE_DIMENSIONAL      BOOLEAN
-   FOUR_DIMENSIONAL        BOOLEAN
    PLAY_TIME                         SMALLINT
    PREMIERE                          DATE
    AGE_LIMIT                          TINYINT
    DIRECTOR_FIRST_NAME VARCHAR2(30)
-   DIRECTOR_LAST_NAME   VARCHAR2(50)
+   DIRECTOR_LAST_NAME   VARCHAR2(30)
    COUNTRY                           VARCHAR2(50)
    YEAR                                   SMALLINT
    RATE                                   DECIMAL
-   DESCRIPTION                    VARCHAR2(500)
-F CINEMA_ID                        BIGINT
-
-FK_FI_CIN_ID=SK_CIN_ID<y:LabelModel>
+   DESCRIPTION                    VARCHAR2(500)<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -187,19 +180,12 @@ FK_FI_CIN_ID=SK_CIN_ID<y:LabelModel>
     <node id="n6">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="183.75" width="328.75" x="765.5350148568341" y="595.7508103727716"/>
+          <y:Geometry height="69.07363636363641" width="194.58614973262047" x="827.8872118084114" y="627.549794893351"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="46.66796875" x="141.041015625" y="4.0">TICKET</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="136.310546875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="323.40625" x="2.0" y="30.701171875">P TYPE                                                         VARCHAR2(30)
-   BASIC_PRICE                                           SMALLINT
-   IMAX_PRICE                                             SMALLINT
-   IMAX_GLASS_PRICE                               SMALLINT
-   THREE_DIMENSIONAL_GLASS_PRICE SMALLINT
-   FOUR_DIMENSIONAL_PRICE                 SMALLINT
-   FOUR_DIMENSIONAL_GLASS_PRICE   SMALLINT
-   BED_ROOM_PRICE                                  SMALLINT
-   BED_ROOM_GLASS_PRICE                    SMALLINT<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="46.66796875" x="73.95909049131023" y="4.0">TICKET</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="186.712890625" x="2.0" y="30.701171875">P TYPE                VARCHAR2(30)
+   PRICE               SMALLINT<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -215,12 +201,12 @@ FK_FI_CIN_ID=SK_CIN_ID<y:LabelModel>
     <node id="n7">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="139.46515397082658" width="221.33508914100486" x="1024.0283630470017" y="211.02127228525126"/>
+          <y:Geometry height="139.46515397082658" width="221.33508914100486" x="1018.2719749883404" y="211.02127228525126"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="37.33984375" x="91.99762269550251" y="4.0">USER</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="77.505859375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="205.375" x="2.0" y="30.701171875">P USERNAME          VARCHAR2(15)
-   PASSWORD          VARCHAR2(42)
+   PASSWORD          VARCHAR2(25)
    EMAIL                    VARCHAR2(50)
    PHONE_NUMBER VARCHAR2(14)
    ADMINRIGHT         BOOLEAN<y:LabelModel>
@@ -239,19 +225,21 @@ FK_FI_CIN_ID=SK_CIN_ID<y:LabelModel>
     <node id="n8">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="176.1592382495948" width="245.57090761750408" x="795.5350148568341" y="376.3403565640195"/>
+          <y:Geometry height="204.3689839572192" width="245.57090761750408" x="795.5350148568341" y="376.34035656401943"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="109.3515625" x="68.10967255875198" y="4.0">BOOKING_TICKET</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="136.310546875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="229.076171875" x="2.0" y="30.701171875">P ID                     BIGINT
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="165.712890625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="237.7421875" x="2.0" y="30.701171875">P ID                     BIGINT
    PAYMENT        VARCHAR2(20)
    ROW                TINYINT
    CHAR               TINYINT
 F BOOKING_ID   BIGINT
 F TICKET_TYPE VARCHAR2(30)
+F USERNAME     VARCHAR(15)
 
-FK_BOOK_TI_BOOK_ID=SK_BOOK_ID
-FK_BOOK_TI_TIC_TYPE=SK_TIC_TYPE<y:LabelModel>
+FK_BOOK_TIC_BOOK_ID=PK_BOOK_ID
+FK_BOOK_TIC_TIC_TYPE=PK_TIC_TYPE
+FK_BOOK_TIC_US=PK_USER_US<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -267,20 +255,22 @@ FK_BOOK_TI_TIC_TYPE=SK_TIC_TYPE<y:LabelModel>
     <node id="n9">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="195.0" width="285.4166666666665" x="480.1183481901676" y="376.3403565640195"/>
+          <y:Geometry height="214.48748663101605" width="285.4166666666665" x="480.1183481901676" y="376.3403565640195"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="41.330078125" x="122.04329427083326" y="4.0">ROOM</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="151.01171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="228.712890625" x="2.0" y="30.701171875">P ID                                  BIGINT
-   NAME                            VARCHAR2(20)
-   VIP                                 BOOLEAN
-   BED_ROOM                   BOOLEAN
-   IMAX                               BOOLEAN
-   THREE_DIMENSIONAL BOOLEAN
-   FOUR_DIMENSIONAL   BOOLEAN
-F CINEMA_ID                    BIGINT
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="180.4140625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="272.0546875" x="2.0" y="30.701171874999943">P ID                                               BIGINT
+   NAME                                         VARCHAR2(20)
+   VIP                                              BOOLEAN
+   BED_ROOM                               BOOLEAN
+   IMAX                                           BOOLEAN
+   THREE_DIMENSIONAL             BOOLEAN
+   FOUR_DIMENSIONAL               BOOLEAN
+   ROW                                           TINYINT
+   SEAT_NUMBER                         TINYINT
+F CINEMA_ID                                BIGINT
 
-FK_ROOM_CIN_ID=SK_CIN_ID<y:LabelModel>
+FK_ROOM_CIN_ID=PK_CIN_ID<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -300,8 +290,8 @@ FK_ROOM_CIN_ID=SK_CIN_ID<y:LabelModel>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="100.0234375" x="76.74516941855745" y="4.0">USER_BOOKING</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="77.505859375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="243.759765625" x="2.0" y="30.701171875">F USERNAME   VARCHAR2(15)
-F BOOKING_ID BIGINT
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="77.505859375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="243.759765625" x="2.0" y="30.701171875">F USERNAME               VARCHAR2(15)
+F BOOKING_ID             BIGINT
 
 FK_USER_BOOK_US=SK_USER_US
 FK_USER_BOOK_BOOK_ID=SK_BOOK_ID<y:LabelModel>
@@ -320,16 +310,16 @@ FK_USER_BOOK_BOOK_ID=SK_BOOK_ID<y:LabelModel>
     <node id="n11">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="125.0" width="191.25" x="216.0" y="625.1258103727716"/>
+          <y:Geometry height="135.30588235294113" width="222.16764705882355" x="511.8740370864715" y="-118.54089045666888"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="124.685546875" x="33.2822265625" y="4.0">SCREENING_TICKET</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="92.20703125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="182.3828125" x="2.0" y="30.701171875">P ID BIGINT
-F FILM_TITLE VARCHAR2(50)
-F CATEGORY VARCHAR2(20)
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="124.685546875" x="48.7410500919118" y="4.0">SCREENING_TICKET</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="92.20703125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="214.03515625" x="2.0" y="30.701171875">P ID                              BIGINT
+F SCREENING_ID       BIGINT
+F TICKET                     VARCHAR2(30)
 
-FK_FI_CAT_FI_TITLE=SK_FI_TI
-FK_FI_CAT_CAT=SK_CAT_CAT<y:LabelModel>
+FK_SC_SC_ID=PK_SC_ID
+FK_SC_TIC=PK_TIC_TYPE<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -345,16 +335,14 @@ FK_FI_CAT_CAT=SK_CAT_CAT<y:LabelModel>
     <node id="n12">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="125.0" width="191.25" x="516.7600267379679" y="625.1258103727716"/>
+          <y:Geometry height="101.56438780020562" width="221.33508914100486" x="-74.26823338735805" y="297.1162538243527"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="109.3515625" x="40.94921875" y="4.0">BOOKING_TICKET</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="92.20703125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="182.3828125" x="2.0" y="30.701171875">P ID BIGINT
-F FILM_TITLE VARCHAR2(50)
-F CATEGORY VARCHAR2(20)
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="54.677734375" x="83.32867738300243" y="4.0">TRAILER</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="209.3828125" x="2.0" y="30.701171875">P URL                         VARCHAR(200)
+F FILM_TITLE            VARCHAR2(50)
 
-FK_FI_CAT_FI_TITLE=SK_FI_TI
-FK_FI_CAT_CAT=SK_CAT_CAT<y:LabelModel>
+FK_TRAILER_FI_TI=PK_FI_TI<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -370,12 +358,15 @@ FK_FI_CAT_CAT=SK_CAT_CAT<y:LabelModel>
     <node id="n13">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="125.0" width="191.25" x="-29.625" y="438.77596876381386"/>
+          <y:Geometry height="120.5" width="211.0605677809653" x="199.88258415381782" y="217.0285818259822"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="54.677734375" x="68.2861328125" y="4.0">TRAILER</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="129.3671875" x="2.0" y="30.701171875">P URL VARCHAR(200)
-F FILM_TITLE FILM<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="84.677734375" x="63.19141670298265" y="4.0">CINEMA_FILM</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="77.505859375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="198.033203125" x="2.0" y="30.701171875">F CINEMA _ID          BIGINT
+F FILM_TITLE           VARCHAR(50)
+
+FK_CIN_FILM_CIN_ID=PK_CIN_ID
+FK_CIN_FILM_FI_TI=PK_FI_TI<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -408,33 +399,23 @@ F FILM_TITLE FILM<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e2" source="n5" target="n3">
+    <edge id="e2" source="n1" target="n5">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="13.980546719940435" sy="-91.67863912578999" tx="133.0114126353909" ty="43.74406290404217"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e3" source="n1" target="n5">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="131.99590696747237" ty="16.931726094003267"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e4" source="n1" target="n3">
+    <edge id="e3" source="n1" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-139.30876644850872" sy="40.92007644372032" tx="49.637032085561486" ty="-78.15051699182703">
-            <y:Point x="473.68983957219257" y="232.62834224598936"/>
-            <y:Point x="473.68983957219257" y="354.4251336898396"/>
-            <y:Point x="361.2620320855615" y="354.4251336898396"/>
+            <y:Point x="463.442513368984" y="232.62834224598936"/>
+            <y:Point x="463.442513368984" y="366.13636363636357"/>
+            <y:Point x="361.2620320855615" y="366.13636363636357"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
@@ -442,17 +423,17 @@ F FILM_TITLE FILM<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e5" source="n1" target="n9">
+    <edge id="e4" source="n1" target="n9">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-13.969509724473141" sy="144.92128800789138" tx="0.0" ty="-97.50241371642596"/>
+          <y:Path sx="-3.404038357644481" sy="125.59026221953818" tx="0.0" ty="-107.24639824868571"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e6" source="n9" target="n3">
+    <edge id="e5" source="n9" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-142.6793924967447" sy="0.0" tx="119.9867563502674" ty="15.5"/>
@@ -462,27 +443,27 @@ F FILM_TITLE FILM<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e7" source="n8" target="n6">
+    <edge id="e6" source="n8" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="88.07051736840936" tx="-11.589546191248019" ty="-91.8303976053918"/>
+          <y:Path sx="0.0" sy="102.17393268734719" tx="-6.859818009135539" ty="-34.52005165345839"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one" target="crows_foot_one"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e8" source="n8" target="n0">
+    <edge id="e7" source="n8" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-14.2921056185844" sy="-88.10033163801478" tx="0.0" ty="60.2681884765625"/>
+          <y:Path sx="-14.2921056185844" sy="-102.20852134728483" tx="0.0" ty="60.2681884765625"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e9" source="n0" target="n1">
+    <edge id="e8" source="n0" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-89.990234375" sy="0.0" tx="139.3453110915982" ty="83.70907617504051"/>
@@ -492,11 +473,11 @@ F FILM_TITLE FILM<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e10" source="n10" target="n7">
+    <edge id="e9" source="n10" target="n7">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="126.78857754931619" sy="11.78893147799866" tx="14.731899869126892" ty="-69.70893784018327">
-            <y:Point x="1149.427807486631" y="122.54278074866309"/>
+          <y:Path sx="126.78857754931619" sy="11.78893147799866" tx="0.0" ty="-69.72707293988046">
+            <y:Point x="1128.939519558843" y="122.54278074866309"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
@@ -504,7 +485,7 @@ F FILM_TITLE FILM<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e11" source="n10" target="n0">
+    <edge id="e10" source="n10" target="n0">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-20.886142625607363" sy="74.43486229350671" tx="0.0" ty="-60.2681884765625"/>
@@ -514,16 +495,75 @@ F FILM_TITLE FILM<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e12" source="n13" target="n5">
+    <edge id="e11" source="n12" target="n5">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="18.478071905055003" sy="12.219264789330225" tx="-44.59633902183242" ty="80.9528038215629">
+            <y:Point x="167.6885026737968" y="351.33429005389274"/>
+            <y:Point x="167.6885026737968" y="137.23836759399978"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n8" target="n7">
       <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="87.14438502673798" sy="-62.53912885739692" tx="-83.14847805926559" ty="111.43067954307094">
-            <y:Point x="153.14438502673798" y="358.8168449197859"/>
-            <y:Point x="231.6096256684492" y="358.8168449197859"/>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1128.939519558843" y="478.524848542629"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="crows_foot_many_mandatory" target="crows_foot_one_mandatory"/>
+          <y:Arrows source="crows_foot_one" target="crows_foot_one"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e13" source="n1" target="n11">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-3.2728592652620137" sy="1.5244199735488166" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="crows_foot_one" target="crows_foot_many"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e14" source="n11" target="n6">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1259.6070641293452" y="-50.88794928019831"/>
+            <y:Point x="1259.6070641293452" y="662.0866130751692"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="crows_foot_one" target="crows_foot_one"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e15" source="n5" target="n13">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-9.34523568341433" sy="-5.051541098223311" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e16" source="n3" target="n13">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-6.212131955699533" sy="6.218104612867933" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
