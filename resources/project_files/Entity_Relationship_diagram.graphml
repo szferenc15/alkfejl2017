@@ -180,7 +180,7 @@ FK_FI_CAT_CAT=PK_CAT_CAT<y:LabelModel>
     <node id="n6">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="69.07363636363641" width="194.58614973262047" x="827.8872118084114" y="627.549794893351"/>
+          <y:Geometry height="69.07363636363641" width="194.58614973262047" x="1085.5979010839637" y="459.8795722502939"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="46.66796875" x="73.95909049131023" y="4.0">TICKET</y:NodeLabel>
@@ -446,7 +446,7 @@ FK_CIN_FILM_FI_TI=PK_FI_TI<y:LabelModel>
     <edge id="e6" source="n8" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="102.17393268734719" tx="-6.859818009135539" ty="-34.52005165345839"/>
+          <y:Path sx="-13.563617061308037" sy="15.891541889483108" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one" target="crows_foot_one"/>
           <y:BendStyle smoothed="false"/>
@@ -509,11 +509,10 @@ FK_CIN_FILM_FI_TI=PK_FI_TI<y:LabelModel>
       </data>
     </edge>
     <edge id="e12" source="n8" target="n7">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="1128.939519558843" y="478.524848542629"/>
+          <y:Path sx="0.9283615483175254" sy="-68.30548579753099" tx="0.0" ty="0.0">
+            <y:Point x="1128.939519558843" y="410.219362745098"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one" target="crows_foot_one"/>
@@ -522,7 +521,6 @@ FK_CIN_FILM_FI_TI=PK_FI_TI<y:LabelModel>
       </data>
     </edge>
     <edge id="e13" source="n1" target="n11">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-3.2728592652620137" sy="1.5244199735488166" tx="0.0" ty="0.0"/>
@@ -533,12 +531,11 @@ FK_CIN_FILM_FI_TI=PK_FI_TI<y:LabelModel>
       </data>
     </edge>
     <edge id="e14" source="n11" target="n6">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="1259.6070641293452" y="-50.88794928019831"/>
-            <y:Point x="1259.6070641293452" y="662.0866130751692"/>
+            <y:Point x="1316.3673136837124" y="-50.88794928019831"/>
+            <y:Point x="1316.3673136837124" y="494.4163904321121"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one" target="crows_foot_one"/>
@@ -547,7 +544,6 @@ FK_CIN_FILM_FI_TI=PK_FI_TI<y:LabelModel>
       </data>
     </edge>
     <edge id="e15" source="n5" target="n13">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-9.34523568341433" sy="-5.051541098223311" tx="0.0" ty="0.0"/>
@@ -558,7 +554,6 @@ FK_CIN_FILM_FI_TI=PK_FI_TI<y:LabelModel>
       </data>
     </edge>
     <edge id="e16" source="n3" target="n13">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-6.212131955699533" sy="6.218104612867933" tx="0.0" ty="0.0"/>
